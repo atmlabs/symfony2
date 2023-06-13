@@ -1,0 +1,41 @@
+{
+    "name": "symfony2/config",
+    "type": "library",
+    "description": "Symfony Config Component",
+    "keywords": [],
+    "homepage": "https://symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "symfony2/filesystem": "~2.3|~3.0.0",
+        "symfony/polyfill-ctype": "~1.8"
+    },
+    "require-dev": {
+        "symfony2/yaml": "~2.7|~3.0.0"
+    },
+    "suggest": {
+        "symfony2/yaml": "To use the yaml reference dumper"
+    },
+    "autoload": {
+        "psr-4": { "Symfony\\Component\\Config\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.8-dev"
+        }
+    }
+}

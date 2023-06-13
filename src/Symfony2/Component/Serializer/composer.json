@@ -1,0 +1,49 @@
+{
+    "name": "symfony2/serializer",
+    "type": "library",
+    "description": "Symfony Serializer Component",
+    "keywords": [],
+    "homepage": "https://symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "symfony/polyfill-ctype": "~1.8",
+        "symfony/polyfill-php55": "~1.0"
+    },
+    "require-dev": {
+        "symfony2/yaml": "^2.0.5|~3.0.0",
+        "symfony2/config": "~2.2|~3.0.0",
+        "symfony2/property-access": "~2.3|~3.0.0",
+        "doctrine/annotations": "~1.0",
+        "doctrine/cache": "~1.0"
+    },
+    "suggest": {
+        "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
+        "doctrine/cache": "For using the default cached annotation reader and metadata cache.",
+        "symfony2/yaml": "For using the default YAML mapping loader.",
+        "symfony2/config": "For using the XML mapping loader.",
+        "symfony2/property-access": "For using the ObjectNormalizer."
+    },
+    "autoload": {
+        "psr-4": { "Symfony\\Component\\Serializer\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.8-dev"
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "name": "symfony2/security-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony SecurityBundle",
+    "keywords": [],
+    "homepage": "https://symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "ext-xml": "*",
+        "symfony2/security": "^2.8.45|^3.4.15",
+        "symfony2/security-acl": "~2.7|~3.0.0",
+        "symfony2/http-kernel": "~2.7|~3.0.0",
+        "symfony/polyfill-php70": "~1.0"
+    },
+    "require-dev": {
+        "symfony2/browser-kit": "~2.7|~3.0.0",
+        "symfony2/console": "~2.7|~3.0.0",
+        "symfony2/css-selector": "^2.7|~3.0.0",
+        "symfony2/dependency-injection": "~2.8.41",
+        "symfony2/dom-crawler": "^2.7|~3.0.0",
+        "symfony2/form": "^2.8.18",
+        "symfony2/framework-bundle": "^2.8.18",
+        "symfony2/http-foundation": "~2.7|~3.0.0",
+        "symfony2/twig-bundle": "~2.7|~3.1.0",
+        "symfony2/twig-bridge": "^2.7.4|~3.1.0",
+        "symfony2/process": "^2.7|~3.0.0",
+        "symfony2/validator": "~2.7.25|^2.8.18|~3.2.5",
+        "symfony2/yaml": "^2.7|~3.0.0",
+        "symfony2/expression-language": "~2.7|~3.0.0",
+        "doctrine/doctrine-bundle": "~1.2",
+        "twig/twig": "~1.34|~2.4"
+    },
+    "autoload": {
+        "psr-4": { "Symfony\\Bundle\\SecurityBundle\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.8-dev"
+        }
+    }
+}

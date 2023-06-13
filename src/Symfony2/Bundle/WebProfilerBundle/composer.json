@@ -1,0 +1,43 @@
+{
+    "name": "symfony2/web-profiler-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony WebProfilerBundle",
+    "keywords": [],
+    "homepage": "https://symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "symfony2/http-kernel": "~2.4|~3.0.0",
+        "symfony2/routing": "~2.2|~3.0.0",
+        "symfony2/twig-bridge": "~2.7|~3.0.0",
+        "twig/twig": "~1.34|~2.4"
+    },
+    "require-dev": {
+        "symfony2/config": "~2.2|~3.0.0",
+        "symfony2/console": "~2.3|~3.0.0",
+        "symfony2/dependency-injection": "~2.2|~3.0.0",
+        "symfony2/stopwatch": "~2.2|~3.0.0"
+    },
+    "autoload": {
+        "psr-4": { "Symfony\\Bundle\\WebProfilerBundle\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.8-dev"
+        }
+    }
+}

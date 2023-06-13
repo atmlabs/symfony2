@@ -1,0 +1,92 @@
+{
+    "name": "symfony2/symfony2",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "ext-xml": "*",
+        "doctrine/common": "~2.4",
+        "twig/twig": "~2.4",
+        "psr/log": "~1.0",
+        "symfony2/security-acl": "~2.7|~3.0.0",
+        "symfony/polyfill-apcu": "~1.1",
+        "symfony/polyfill-ctype": "~1.8",
+        "symfony/polyfill-intl-icu": "~1.0",
+        "symfony/polyfill-mbstring": "~1.0",
+        "symfony/polyfill-util": "~1.0"
+    },
+    "replace": {
+        "symfony2/asset": "*",
+        "symfony2/browser-kit": "*",
+        "symfony2/class-loader": "*",
+        "symfony2/config": "*",
+        "symfony2/console": "*",
+        "symfony2/css-selector": "*",
+        "symfony2/dependency-injection": "*",
+        "symfony2/debug": "*",
+        "symfony2/debug-bundle": "*",
+        "symfony2/doctrine-bridge": "*",
+        "symfony2/dom-crawler": "*",
+        "symfony2/event-dispatcher": "*",
+        "symfony2/expression-language": "*",
+        "symfony2/filesystem": "*",
+        "symfony2/finder": "*",
+        "symfony2/form": "*",
+        "symfony2/framework-bundle": "*",
+        "symfony2/http-foundation": "*",
+        "symfony2/http-kernel": "*",
+        "symfony2/intl": "*",
+        "symfony2/ldap": "*",
+        "symfony2/locale": "*",
+        "symfony2/monolog-bridge": "*",
+        "symfony2/options-resolver": "*",
+        "symfony2/process": "*",
+        "symfony2/property-access": "*",
+        "symfony2/property-info": "*",
+        "symfony2/proxy-manager-bridge": "*",
+        "symfony2/routing": "*",
+        "symfony2/security": "*",
+        "symfony2/security-core": "*",
+        "symfony2/security-csrf": "*",
+        "symfony2/security-guard": "*",
+        "symfony2/security-http": "*",
+        "symfony2/security-bundle": "*",
+        "symfony2/security-acl": "*",
+        "symfony2/serializer": "*",
+        "symfony2/stopwatch": "*",
+        "symfony2/swiftmailer-bridge": "*",
+        "symfony2/templating": "*",
+        "symfony2/translation": "*",
+        "symfony2/twig-bridge": "*",
+        "symfony2/twig-bundle": "*",
+        "symfony2/validator": "*",
+        "symfony2/var-dumper": "*",
+        "symfony2/web-profiler-bundle": "*",
+        "symfony2/yaml": "*"
+    },
+    "require-dev": {},
+    "conflict": {
+        "phpdocumentor/reflection": "<1.0.7",
+        "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Symfony2\\Bridge\\Doctrine\\": "src/Symfony2/Bridge/Doctrine/",
+            "Symfony2\\Bridge\\Monolog\\": "src/Symfony2/Bridge/Monolog/",
+            "Symfony2\\Bridge\\ProxyManager\\": "src/Symfony2/Bridge/ProxyManager/",
+            "Symfony2\\Bridge\\Swiftmailer\\": "src/Symfony2/Bridge/Swiftmailer/",
+            "Symfony2\\Bridge\\Twig\\": "src/Symfony2/Bridge/Twig/",
+            "Symfony2\\Bundle\\": "src/Symfony2/Bundle/",
+            "Symfony2\\Component\\": "src/Symfony2/Component/"
+        },
+        "classmap": [
+            "src/Symfony2/Component/Intl/Resources/stubs"
+        ],
+        "exclude-from-classmap": [
+            "**/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "files": [ "src/Symfony2/Component/VarDumper/Resources/functions/dump.php" ]
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,58 @@
+{
+    "name": "symfony2/validator",
+    "type": "library",
+    "description": "Symfony Validator Component",
+    "keywords": [],
+    "homepage": "https://symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "symfony/polyfill-ctype": "~1.8",
+        "symfony/polyfill-mbstring": "~1.0",
+        "symfony2/translation": "~2.4|~3.0.0"
+    },
+    "require-dev": {
+        "symfony2/http-foundation": "~2.3|~3.0.0",
+        "symfony2/intl": "~2.7.25|^2.8.18|~3.2.5",
+        "symfony2/yaml": "^2.0.5|~3.0.0",
+        "symfony2/config": "~2.2|~3.0.0",
+        "symfony2/property-access": "~2.3|~3.0.0",
+        "symfony2/expression-language": "~2.4|~3.0.0",
+        "doctrine/annotations": "~1.0",
+        "doctrine/cache": "~1.0",
+        "egulias/email-validator": "^1.2.1"
+    },
+    "suggest": {
+        "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
+        "doctrine/cache": "For using the default cached annotation reader and metadata cache.",
+        "symfony2/http-foundation": "",
+        "symfony2/intl": "",
+        "symfony2/yaml": "",
+        "symfony2/config": "",
+        "egulias/email-validator": "Strict (RFC compliant) email validation",
+        "symfony2/property-access": "For using the 2.4 Validator API",
+        "symfony2/expression-language": "For using the 2.4 Expression validator"
+    },
+    "autoload": {
+        "psr-4": { "Symfony\\Component\\Validator\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.8-dev"
+        }
+    }
+}

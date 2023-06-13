@@ -1,0 +1,69 @@
+{
+    "name": "symfony2/http-kernel",
+    "type": "library",
+    "description": "Symfony HttpKernel Component",
+    "keywords": [],
+    "homepage": "https://symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        },
+        {
+            "name": "Symfony Community",
+            "homepage": "https://symfony.com/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "symfony2/event-dispatcher": "^2.6.7|~3.0.0",
+        "symfony2/http-foundation": "~2.7.36|~2.8.29|~3.1.6",
+        "symfony2/debug": "^2.6.2",
+        "symfony/polyfill-ctype": "~1.8",
+        "symfony/polyfill-php56": "~1.8",
+        "psr/log": "~1.0"
+    },
+    "require-dev": {
+        "symfony2/browser-kit": "~2.3|~3.0.0",
+        ""symfony2/class-loader": "~2.1|~3.0.0",
+        "symfony2/config": "~2.8",
+        "symfony2/console": "~2.3|~3.0.0",
+        "symfony2/css-selector": "^2.0.5|~3.0.0",
+        "symfony2/dependency-injection": "~2.8|~3.0.0",
+        "symfony2/dom-crawler": "^2.0.5|~3.0.0",
+        "symfony2/expression-language": "~2.4|~3.0.0",
+        "symfony2/finder": "^2.0.5|~3.0.0",
+        "symfony2/process": "^2.0.5|~3.0.0",
+        "symfony2/routing": "~2.8|~3.0.0",
+        "symfony2/stopwatch": "~2.3|~3.0.0",
+        "symfony2/templating": "~2.2|~3.0.0",
+        "symfony2/translation": "^2.0.5|~3.0.0",
+        "symfony2/var-dumper": "~2.6|~3.0.0"
+    },
+    "conflict": {
+        "symfony2/config": "<2.7",
+        "twig/twig": "<1.34|<2.4,>=2"
+    },
+    "suggest": {
+        "symfony2/browser-kit": "",
+        ""symfony2/class-loader": "",
+        "symfony2/config": "",
+        "symfony2/console": "",
+        "symfony2/dependency-injection": "",
+        "symfony2/finder": "",
+        "symfony2/var-dumper": ""
+    },
+    "autoload": {
+        "psr-4": { "Symfony\\Component\\HttpKernel\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.8-dev"
+        }
+    }
+}
