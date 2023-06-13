@@ -1,0 +1,40 @@
+{
+    "name": "sensio/distribution-bundle",
+    "description": "Base bundle for Symfony Distributions",
+    "keywords": ["distribution","configuration"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.9",
+        "symfony2/framework-bundle": "~2.3",
+        "symfony2/class-loader": "~2.2",
+        "symfony2/process": "~2.2",
+        "sensiolabs/security-checker": "~3.0|~4.0|~5.0|~6.0"
+    },
+    "require-dev": {
+        "symfony2/form": "~2.2",
+        "symfony2/validator": "~2.2",
+        "symfony2/yaml": "~2.2"
+    },
+    "suggest": {
+        "symfony2/form": "If you want to use the configurator",
+        "symfony2/validator": "If you want to use the configurator",
+        "symfony2/yaml": "If you want to use  the configurator"
+    },
+    "autoload": {
+        "psr-0": { "Sensio\\Bundle\\DistributionBundle": "" }
+    },
+    "target-dir": "Sensio/Bundle/DistributionBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}

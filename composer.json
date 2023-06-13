@@ -15,6 +15,7 @@
         "symfony/polyfill-util": "~1.0"
     },
     "replace": {
+        "sensio/distribution-bundle": "*",
         "symfony2/asset": "*",
         "symfony2/browser-kit": "*",
         "symfony2/class-loader": "*",
@@ -76,7 +77,8 @@
             "Symfony2\\Bridge\\Swiftmailer\\": "src/Symfony2/Bridge/Swiftmailer/",
             "Symfony2\\Bridge\\Twig\\": "src/Symfony2/Bridge/Twig/",
             "Symfony2\\Bundle\\": "src/Symfony2/Bundle/",
-            "Symfony2\\Component\\": "src/Symfony2/Component/"
+            "Symfony2\\Component\\": "src/Symfony2/Component/",
+            "Sensio\\Bundle\\": "src/Sensio/Bundle/"
         },
         "classmap": [
             "src/Symfony2/Component/Intl/Resources/stubs"
