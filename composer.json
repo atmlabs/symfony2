@@ -26,6 +26,7 @@
         "symfony2/debug": "*",
         "symfony2/debug-bundle": "*",
         "symfony2/doctrine-bridge": "*",
+        "symfony2/doctrine-bundle": "*",
         "symfony2/dom-crawler": "*",
         "symfony2/event-dispatcher": "*",
         "symfony2/expression-language": "*",
