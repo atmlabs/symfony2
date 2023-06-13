@@ -86,7 +86,7 @@
             "Symfony2\\Bundle\\": "src/Symfony2/Bundle/",
             "Symfony2\\Component\\": "src/Symfony2/Component/",
             "Sensio\\Bundle\\": "src/Sensio/Bundle/",
-            "Prestashop\\TranslationToolsBundle\\": "src/Prestashop/TranslationToolsBundle/"
+            "PrestaShop\\TranslationToolsBundle\\": "src/PrestaShop/TranslationToolsBundle/"
         },
         "classmap": [
             "src/Symfony2/Component/Intl/Resources/stubs"
