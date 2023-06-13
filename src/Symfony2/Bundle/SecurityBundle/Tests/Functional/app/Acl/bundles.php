@@ -10,7 +10,7 @@
  */
 
 return array(
-    new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+    new Symfony2\Bundle\DoctrineBundle\DoctrineBundle(),
     new Symfony2\Bundle\SecurityBundle\SecurityBundle(),
     new Symfony2\Bundle\FrameworkBundle\FrameworkBundle(),
     new Symfony2\Bundle\SecurityBundle\Tests\Functional\Bundle\AclBundle\AclBundle(),

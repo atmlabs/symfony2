@@ -11,7 +11,7 @@
 
 namespace Symfony2\Bundle\FrameworkBundle\Controller;
 
-use Doctrine\Bundle\DoctrineBundle\Registry;
+use Symfony2\Bundle\DoctrineBundle\Registry;
 use Symfony2\Component\DependencyInjection\ContainerAware;
 use Symfony2\Component\Form\Form;
 use Symfony2\Component\Form\FormBuilder;

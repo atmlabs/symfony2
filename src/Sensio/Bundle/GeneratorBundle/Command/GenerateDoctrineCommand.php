@@ -11,7 +11,7 @@
 
 namespace Sensio\Bundle\GeneratorBundle\Command;
 
-use Doctrine\Bundle\DoctrineBundle\Mapping\DisconnectedMetadataFactory;
+use Symfony2\Bundle\DoctrineBundle\Mapping\DisconnectedMetadataFactory;
 use Sensio\Bundle\GeneratorBundle\Command\GeneratorCommand;
 
 abstract class GenerateDoctrineCommand extends GeneratorCommand
