@@ -17,6 +17,7 @@
     },
     "replace": {
         "csa/guzzle-bundle": "*",
+        "guzzlehttp/log-subscriber": "^1.0",
         "prestashop/translationtools-bundle": "*",
         "sensio/distribution-bundle": "*",
         "sensio/framework-extra-bundle": "*",
