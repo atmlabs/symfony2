@@ -15,6 +15,7 @@
         "symfony/polyfill-util": "~1.0"
     },
     "replace": {
+        "prestashop/translationtools-bundle": "*",
         "sensio/distribution-bundle": "*",
         "sensio/framework-extra-bundle": "*",
         "sensio/generator-bundle": "*",
@@ -84,7 +85,8 @@
             "Symfony2\\Bridge\\Twig\\": "src/Symfony2/Bridge/Twig/",
             "Symfony2\\Bundle\\": "src/Symfony2/Bundle/",
             "Symfony2\\Component\\": "src/Symfony2/Component/",
-            "Sensio\\Bundle\\": "src/Sensio/Bundle/"
+            "Sensio\\Bundle\\": "src/Sensio/Bundle/",
+            "Prestashop\\Bundle\\TranslationToolsBundle": "src/Prestashop/TranslationtoolsBundle/"
         },
         "classmap": [
             "src/Symfony2/Component/Intl/Resources/stubs"
