@@ -7,10 +7,10 @@
     <parameters>
         <parameter key="doctrine.dbal.logger.chain.class">Doctrine\DBAL\Logging\LoggerChain</parameter>
         <parameter key="doctrine.dbal.logger.profiling.class">Doctrine\DBAL\Logging\DebugStack</parameter>
-        <parameter key="doctrine.dbal.logger.class">Symfony\Bridge\Doctrine\Logger\DbalLogger</parameter>
+        <parameter key="doctrine.dbal.logger.class">Symfony2\Bridge\Doctrine\Logger\DbalLogger</parameter>
         <parameter key="doctrine.dbal.configuration.class">Doctrine\DBAL\Configuration</parameter>
         <parameter key="doctrine.data_collector.class">Symfony2\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector</parameter>
-        <parameter key="doctrine.dbal.connection.event_manager.class">Symfony\Bridge\Doctrine\ContainerAwareEventManager</parameter>
+        <parameter key="doctrine.dbal.connection.event_manager.class">Symfony2\Bridge\Doctrine\ContainerAwareEventManager</parameter>
         <parameter key="doctrine.dbal.connection_factory.class">Symfony2\Bundle\DoctrineBundle\ConnectionFactory</parameter>
         <parameter key="doctrine.dbal.events.mysql_session_init.class">Doctrine\DBAL\Event\Listeners\MysqlSessionInit</parameter>
         <parameter key="doctrine.dbal.events.oracle_session_init.class">Doctrine\DBAL\Event\Listeners\OracleSessionInit</parameter>

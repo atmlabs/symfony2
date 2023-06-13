@@ -15,15 +15,15 @@
 namespace Symfony2\Bundle\DoctrineBundle\DependencyInjection;
 
 use Doctrine\ORM\Version;
-use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
-use Symfony\Component\DependencyInjection\Alias;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\DefinitionDecorator;
-use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Bridge\Doctrine\DependencyInjection\AbstractDoctrineExtension;
-use Symfony\Component\Config\FileLocator;
+use Symfony2\Component\DependencyInjection\Exception\InvalidArgumentException;
+use Symfony2\Component\DependencyInjection\Alias;
+use Symfony2\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony2\Component\DependencyInjection\ContainerBuilder;
+use Symfony2\Component\DependencyInjection\Definition;
+use Symfony2\Component\DependencyInjection\DefinitionDecorator;
+use Symfony2\Component\DependencyInjection\Reference;
+use Symfony2\Bridge\Doctrine\DependencyInjection\AbstractDoctrineExtension;
+use Symfony2\Component\Config\FileLocator;
 use Symfony2\Bundle\DoctrineCacheBundle\DependencyInjection\SymfonyBridgeAdapter;
 use Symfony2\Bundle\DoctrineCacheBundle\DependencyInjection\CacheProviderLoader;
 

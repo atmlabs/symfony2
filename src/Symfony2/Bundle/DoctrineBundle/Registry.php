@@ -14,9 +14,9 @@
 
 namespace Symfony2\Bundle\DoctrineBundle;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Bridge\Doctrine\RegistryInterface;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
+use Symfony2\Component\DependencyInjection\ContainerInterface;
+use Symfony2\Bridge\Doctrine\RegistryInterface;
+use Symfony2\Bridge\Doctrine\ManagerRegistry;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\EntityManager;
 

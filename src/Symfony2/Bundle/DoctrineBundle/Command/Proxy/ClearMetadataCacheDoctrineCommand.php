@@ -15,8 +15,8 @@
 namespace Symfony2\Bundle\DoctrineBundle\Command\Proxy;
 
 use Symfony2\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
+use Symfony2\Component\Console\Input\InputInterface;
+use Symfony2\Component\Console\Output\OutputInterface;
 use Doctrine\ORM\Tools\Console\Command\ClearCache\MetadataCommand;
 
 /**

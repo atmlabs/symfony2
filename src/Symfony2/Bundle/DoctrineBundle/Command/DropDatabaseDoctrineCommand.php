@@ -15,9 +15,9 @@
 namespace Symfony2\Bundle\DoctrineBundle\Command;
 
 use Doctrine\DBAL\DriverManager;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
+use Symfony2\Component\Console\Input\InputOption;
+use Symfony2\Component\Console\Input\InputInterface;
+use Symfony2\Component\Console\Output\OutputInterface;
 
 /**
  * Database tool allows you to easily drop and create your configured databases.

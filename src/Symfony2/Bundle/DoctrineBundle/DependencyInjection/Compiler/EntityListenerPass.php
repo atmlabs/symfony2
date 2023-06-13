@@ -12,9 +12,9 @@
 
 namespace Symfony2\Bundle\DoctrineBundle\DependencyInjection\Compiler;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
-use Symfony\Component\DependencyInjection\Reference;
+use Symfony2\Component\DependencyInjection\ContainerBuilder;
+use Symfony2\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use Symfony2\Component\DependencyInjection\Reference;
 
 /**
  * Class for Symfony bundles to register entity listeners

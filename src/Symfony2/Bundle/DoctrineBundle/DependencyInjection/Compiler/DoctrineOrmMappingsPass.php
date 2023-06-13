@@ -12,9 +12,9 @@
 
 namespace Symfony2\Bundle\DoctrineBundle\DependencyInjection\Compiler;
 
-use Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterMappingsPass;
-use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\Reference;
+use Symfony2\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterMappingsPass;
+use Symfony2\Component\DependencyInjection\Definition;
+use Symfony2\Component\DependencyInjection\Reference;
 
 /**
  * Class for Symfony bundles to configure mappings for model classes not in the

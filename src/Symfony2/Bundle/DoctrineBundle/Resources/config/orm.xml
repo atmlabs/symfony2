@@ -37,17 +37,17 @@
         <parameter key="doctrine.orm.metadata.staticphp.class">Doctrine\ORM\Mapping\Driver\StaticPHPDriver</parameter>
 
         <!-- cache warmer -->
-        <parameter key="doctrine.orm.proxy_cache_warmer.class">Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer</parameter>
+        <parameter key="doctrine.orm.proxy_cache_warmer.class">Symfony2\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer</parameter>
 
         <!-- form field factory guesser -->
-        <parameter key="form.type_guesser.doctrine.class">Symfony\Bridge\Doctrine\Form\DoctrineOrmTypeGuesser</parameter>
+        <parameter key="form.type_guesser.doctrine.class">Symfony2\Bridge\Doctrine\Form\DoctrineOrmTypeGuesser</parameter>
 
         <!-- validator -->
-        <parameter key="doctrine.orm.validator.unique.class">Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator</parameter>
-        <parameter key="doctrine.orm.validator_initializer.class">Symfony\Bridge\Doctrine\Validator\DoctrineInitializer</parameter>
+        <parameter key="doctrine.orm.validator.unique.class">Symfony2\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator</parameter>
+        <parameter key="doctrine.orm.validator_initializer.class">Symfony2\Bridge\Doctrine\Validator\DoctrineInitializer</parameter>
 
         <!-- security -->
-        <parameter key="doctrine.orm.security.user.provider.class">Symfony\Bridge\Doctrine\Security\User\EntityUserProvider</parameter>
+        <parameter key="doctrine.orm.security.user.provider.class">Symfony2\Bridge\Doctrine\Security\User\EntityUserProvider</parameter>
 
         <!-- listeners -->
         <parameter key="doctrine.orm.listeners.resolve_target_entity.class">Doctrine\ORM\Tools\ResolveTargetEntityListener</parameter>
@@ -88,7 +88,7 @@
             <argument type="service" id="doctrine" />
         </service>
 
-        <service id="form.type.entity" class="Symfony\Bridge\Doctrine\Form\Type\EntityType">
+        <service id="form.type.entity" class="Symfony2\Bridge\Doctrine\Form\Type\EntityType">
             <tag name="form.type" alias="entity" />
             <argument type="service" id="doctrine" />
         </service>

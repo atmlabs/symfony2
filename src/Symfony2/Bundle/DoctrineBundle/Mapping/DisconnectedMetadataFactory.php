@@ -17,7 +17,7 @@ namespace Symfony2\Bundle\DoctrineBundle\Mapping;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Mapping\MappingException;
 use Doctrine\ORM\Tools\DisconnectedClassMetadataFactory;
-use Symfony\Component\HttpKernel\Bundle\BundleInterface;
+use Symfony2\Component\HttpKernel\Bundle\BundleInterface;
 
 /**
  * This class provides methods to access Doctrine entity class metadata for a

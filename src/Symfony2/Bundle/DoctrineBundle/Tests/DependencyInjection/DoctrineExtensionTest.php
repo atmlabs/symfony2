@@ -239,9 +239,9 @@ class DoctrineExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('%doctrine.entity_managers%', $container->getDefinition('doctrine')->getArgument(2), "Set of the existing EntityManagers names is incorrect.");
 
         $arguments = $definition->getArguments();
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Reference', $arguments[0]);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Reference', $arguments[0]);
         $this->assertEquals('doctrine.dbal.default_connection', (string) $arguments[0]);
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Reference', $arguments[1]);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Reference', $arguments[1]);
         $this->assertEquals('doctrine.orm.default_configuration', (string) $arguments[1]);
 
         $definition = $container->getDefinition('doctrine.orm.default_configuration');

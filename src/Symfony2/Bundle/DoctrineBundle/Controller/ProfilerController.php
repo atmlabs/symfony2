@@ -16,8 +16,8 @@ namespace Symfony2\Bundle\DoctrineBundle\Controller;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\SQLServerPlatform;
-use Symfony\Component\DependencyInjection\ContainerAware;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony2\Component\DependencyInjection\ContainerAware;
+use Symfony2\Component\HttpFoundation\Response;
 
 /**
  * ProfilerController.
@@ -37,7 +37,7 @@ class ProfilerController extends ContainerAware
      */
     public function explainAction($token, $connectionName, $query)
     {
-        /** @var $profiler \Symfony\Component\HttpKernel\Profiler\Profiler */
+        /** @var $profiler \Symfony2\Component\HttpKernel\Profiler\Profiler */
         $profiler = $this->container->get('profiler');
         $profiler->disable();
 

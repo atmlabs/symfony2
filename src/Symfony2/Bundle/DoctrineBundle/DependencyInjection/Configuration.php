@@ -14,9 +14,9 @@
 
 namespace Symfony2\Bundle\DoctrineBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
-use Symfony\Component\Config\Definition\Builder\TreeBuilder;
-use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony2\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony2\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony2\Component\Config\Definition\ConfigurationInterface;
 
 /**
  * This class contains the configuration information for the bundle
@@ -328,7 +328,7 @@ class Configuration implements ConfigurationInterface
     /**
      * Return ORM target entity resolver node
      *
-     * @return \Symfony\Component\Config\Definition\Builder\NodeDefinition
+     * @return \Symfony2\Component\Config\Definition\Builder\NodeDefinition
      */
     private function getOrmTargetEntityResolverNode()
     {
@@ -348,7 +348,7 @@ class Configuration implements ConfigurationInterface
     /**
      * Return ORM entity listener node
      *
-     * @return \Symfony\Component\Config\Definition\Builder\NodeDefinition
+     * @return \Symfony2\Component\Config\Definition\Builder\NodeDefinition
      */
     private function getOrmEntityListenersNode()
     {

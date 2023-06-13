@@ -14,7 +14,7 @@
 
 namespace Symfony2\Bundle\DoctrineBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony2\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Doctrine\ORM\Tools\EntityGenerator;
 
 /**

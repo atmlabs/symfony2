@@ -130,7 +130,7 @@ Bugfix:
 
 ## 1.0.0-beta1 (2011-12-15)
 
- * [BC break] Changed the namespace from Symfony\Bundle to Doctrine\Bundle
+ * [BC break] Changed the namespace from Symfony2\Bundle to Doctrine\Bundle
  * Enhance error reporting during mapping validation when nested exceptions occur.
  * Add DoctrineValidationPass to load validation files conditionally
  * Moved the entity provider service to DoctrineBundle

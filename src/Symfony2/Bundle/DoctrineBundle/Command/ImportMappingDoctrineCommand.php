@@ -14,10 +14,10 @@
 
 namespace Symfony2\Bundle\DoctrineBundle\Command;
 
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
+use Symfony2\Component\Console\Input\InputArgument;
+use Symfony2\Component\Console\Input\InputOption;
+use Symfony2\Component\Console\Input\InputInterface;
+use Symfony2\Component\Console\Output\OutputInterface;
 use Doctrine\ORM\Mapping\Driver\DatabaseDriver;
 use Doctrine\ORM\Tools\DisconnectedClassMetadataFactory;
 use Doctrine\ORM\Tools\Export\ClassMetadataExporter;

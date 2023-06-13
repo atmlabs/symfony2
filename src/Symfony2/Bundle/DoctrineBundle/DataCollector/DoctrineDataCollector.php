@@ -17,9 +17,9 @@ namespace Symfony2\Bundle\DoctrineBundle\DataCollector;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\ORM\Tools\SchemaValidator;
 use Doctrine\ORM\Version;
-use Symfony\Bridge\Doctrine\DataCollector\DoctrineDataCollector as BaseCollector;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony2\Bridge\Doctrine\DataCollector\DoctrineDataCollector as BaseCollector;
+use Symfony2\Component\HttpFoundation\Request;
+use Symfony2\Component\HttpFoundation\Response;
 
 /**
  * DoctrineDataCollector.

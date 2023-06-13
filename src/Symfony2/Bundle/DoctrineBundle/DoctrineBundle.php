@@ -20,14 +20,14 @@ use Symfony2\Bundle\DoctrineBundle\Command\DropDatabaseDoctrineCommand;
 use Symfony2\Bundle\DoctrineBundle\Command\Proxy\RunSqlDoctrineCommand;
 use Symfony2\Bundle\DoctrineBundle\DependencyInjection\Compiler\EntityListenerPass;
 use Doctrine\ORM\Proxy\Autoloader;
-use Symfony\Component\Console\Application;
-use Symfony\Component\DependencyInjection\Compiler\PassConfig;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\IntrospectableContainerInterface;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\DoctrineValidationPass;
-use Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterEventListenersAndSubscribersPass;
-use Symfony\Bridge\Doctrine\DependencyInjection\Security\UserProvider\EntityFactory;
+use Symfony2\Component\Console\Application;
+use Symfony2\Component\DependencyInjection\Compiler\PassConfig;
+use Symfony2\Component\DependencyInjection\ContainerBuilder;
+use Symfony2\Component\DependencyInjection\IntrospectableContainerInterface;
+use Symfony2\Component\HttpKernel\Bundle\Bundle;
+use Symfony2\Bridge\Doctrine\DependencyInjection\CompilerPass\DoctrineValidationPass;
+use Symfony2\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterEventListenersAndSubscribersPass;
+use Symfony2\Bridge\Doctrine\DependencyInjection\Security\UserProvider\EntityFactory;
 
 /**
  * Bundle.
