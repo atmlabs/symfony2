@@ -1,0 +1,25 @@
+<?php
+
+{% block use_statements %}
+use Symfony2\Component\DependencyInjection\Definition;
+use Symfony2\Component\DependencyInjection\Reference;
+use Symfony2\Component\DependencyInjection\Parameter;
+{% endblock use_statements %}
+
+/*
+
+{% block services %}
+$container->setDefinition(
+    '{{ extension_alias }}.example',
+    new Definition(
+        '{{ namespace }}\Example',
+        array(
+            new Reference('service_id'),
+            "plain_value",
+            new Parameter('parameter_name'),
+        )
+    )
+);
+{% endblock services %}
+
+*/

@@ -16,6 +16,8 @@
     },
     "replace": {
         "sensio/distribution-bundle": "*",
+        "sensio/framework-extra-bundle": "*",
+        "sensio/generator-bundle": "*",
         "symfony2/asset": "*",
         "symfony2/browser-kit": "*",
         "symfony2/class-loader": "*",
