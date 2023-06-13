@@ -10,3 +10,4 @@ Further test is needed to ensure this does not cause any issue.
 #### Notes
 
 - Added security-acl to components (was not included initially)
+- Added all ps1.7 dependencies in Bundles and updated replace section in composer.json
