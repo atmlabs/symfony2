@@ -38,6 +38,6 @@ class ChoiceSubType extends AbstractType
      */
     public function getParent()
     {
-        return 'Symfony\Component\Form\Extension\Core\Type\ChoiceType';
+        return 'Symfony2\Component\Form\Extension\Core\Type\ChoiceType';
     }
 }

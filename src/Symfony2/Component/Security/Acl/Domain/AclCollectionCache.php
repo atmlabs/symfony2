@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
-use Symfony\Component\Security\Acl\Model\AclProviderInterface;
-use Symfony\Component\Security\Acl\Model\ObjectIdentityRetrievalStrategyInterface;
-use Symfony\Component\Security\Acl\Model\SecurityIdentityRetrievalStrategyInterface;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony2\Component\Security\Acl\Model\AclProviderInterface;
+use Symfony2\Component\Security\Acl\Model\ObjectIdentityRetrievalStrategyInterface;
+use Symfony2\Component\Security\Acl\Model\SecurityIdentityRetrievalStrategyInterface;
+use Symfony2\Component\Security\Core\Authentication\Token\TokenInterface;
 
 /**
  * This service caches ACLs for an entire collection of objects.

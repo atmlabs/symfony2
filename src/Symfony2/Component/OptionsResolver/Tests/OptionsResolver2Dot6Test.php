@@ -30,7 +30,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\UndefinedOptionsException
      * @expectedExceptionMessage The option "foo" does not exist. Defined options are: "a", "z".
      */
     public function testResolveFailsIfNonExistingOption()
@@ -42,7 +42,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\UndefinedOptionsException
      * @expectedExceptionMessage The options "baz", "foo", "ping" do not exist. Defined options are: "a", "z".
      */
     public function testResolveFailsIfMultipleNonExistingOptions()
@@ -54,7 +54,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testResolveFailsFromLazyOption()
     {
@@ -82,7 +82,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfSetDefaultFromLazyOption()
     {
@@ -226,7 +226,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfSetRequiredFromLazyOption()
     {
@@ -238,7 +238,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\MissingOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\MissingOptionsException
      */
     public function testResolveFailsIfRequiredOptionMissing()
     {
@@ -354,7 +354,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfSetDefinedFromLazyOption()
     {
@@ -451,7 +451,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\UndefinedOptionsException
      */
     public function testSetAllowedTypesFailsIfUnknownOption()
     {
@@ -459,7 +459,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfSetAllowedTypesFromLazyOption()
     {
@@ -481,10 +481,10 @@ class OptionsResolver2Dot6Test extends TestCase
         $this->resolver->setAllowedTypes('option', $allowedType);
 
         if (method_exists($this, 'expectException')) {
-            $this->expectException('Symfony\Component\OptionsResolver\Exception\InvalidOptionsException');
+            $this->expectException('Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException');
             $this->expectExceptionMessage($exceptionMessage);
         } else {
-            $this->setExpectedException('Symfony\Component\OptionsResolver\Exception\InvalidOptionsException', $exceptionMessage);
+            $this->setExpectedException('Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException', $exceptionMessage);
         }
 
         $this->resolver->resolve(array('option' => $actualType));
@@ -497,7 +497,7 @@ class OptionsResolver2Dot6Test extends TestCase
             array(false, 'string', 'The option "option" with value false is expected to be of type "string", but is of type "boolean".'),
             array(fopen(__FILE__, 'r'), 'string', 'The option "option" with value resource is expected to be of type "string", but is of type "resource".'),
             array(array(), 'string', 'The option "option" with value array is expected to be of type "string", but is of type "array".'),
-            array(new OptionsResolver(), 'string', 'The option "option" with value Symfony\Component\OptionsResolver\OptionsResolver is expected to be of type "string", but is of type "Symfony\Component\OptionsResolver\OptionsResolver".'),
+            array(new OptionsResolver(), 'string', 'The option "option" with value Symfony2\Component\OptionsResolver\OptionsResolver is expected to be of type "string", but is of type "Symfony2\Component\OptionsResolver\OptionsResolver".'),
             array(42, 'string', 'The option "option" with value 42 is expected to be of type "string", but is of type "integer".'),
             array(null, 'string', 'The option "option" with value null is expected to be of type "string", but is of type "NULL".'),
             array('bar', '\stdClass', 'The option "option" with value "bar" is expected to be of type "\stdClass", but is of type "string".'),
@@ -513,7 +513,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      * @expectedExceptionMessage The option "foo" with value 42 is expected to be of type "string" or "bool", but is of type "integer".
      */
     public function testResolveFailsIfInvalidTypeMultiple()
@@ -541,7 +541,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\UndefinedOptionsException
      */
     public function testAddAllowedTypesFailsIfUnknownOption()
     {
@@ -549,7 +549,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfAddAllowedTypesFromLazyOption()
     {
@@ -563,7 +563,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfInvalidAddedType()
     {
@@ -582,7 +582,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfInvalidAddedTypeMultiple()
     {
@@ -623,7 +623,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\UndefinedOptionsException
      */
     public function testSetAllowedValuesFailsIfUnknownOption()
     {
@@ -631,7 +631,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfSetAllowedValuesFromLazyOption()
     {
@@ -645,7 +645,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      * @expectedExceptionMessage The option "foo" with value 42 is invalid. Accepted values are: "bar".
      */
     public function testResolveFailsIfInvalidValue()
@@ -657,7 +657,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      * @expectedExceptionMessage The option "foo" with value null is invalid. Accepted values are: "bar".
      */
     public function testResolveFailsIfInvalidValueIsNull()
@@ -669,7 +669,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfInvalidValueStrict()
     {
@@ -696,7 +696,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      * @expectedExceptionMessage The option "foo" with value 42 is invalid. Accepted values are: "bar", false, null.
      */
     public function testResolveFailsIfInvalidValueMultiple()
@@ -747,7 +747,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfAllClosuresReturnFalse()
     {
@@ -774,7 +774,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\UndefinedOptionsException
      */
     public function testAddAllowedValuesFailsIfUnknownOption()
     {
@@ -782,7 +782,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfAddAllowedValuesFromLazyOption()
     {
@@ -796,7 +796,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfInvalidAddedValue()
     {
@@ -823,7 +823,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfInvalidAddedValueMultiple()
     {
@@ -860,7 +860,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfAllAddedClosuresReturnFalse()
     {
@@ -906,7 +906,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\UndefinedOptionsException
      */
     public function testSetNormalizerFailsIfUnknownOption()
     {
@@ -914,7 +914,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfSetNormalizerFromLazyOption()
     {
@@ -952,7 +952,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testValidateTypeBeforeNormalization()
     {
@@ -968,7 +968,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testValidateValueBeforeNormalization()
     {
@@ -1022,7 +1022,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\OptionDefinitionException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\OptionDefinitionException
      */
     public function testFailIfCyclicDependencyBetweenNormalizers()
     {
@@ -1041,7 +1041,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\OptionDefinitionException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\OptionDefinitionException
      */
     public function testFailIfCyclicDependencyBetweenNormalizerAndLazyOption()
     {
@@ -1163,7 +1163,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfSetDefaultsFromLazyOption()
     {
@@ -1244,7 +1244,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfRemoveFromLazyOption()
     {
@@ -1320,7 +1320,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testFailIfClearFromLazyption()
     {
@@ -1379,7 +1379,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testArrayAccessGetFailsOutsideResolve()
     {
@@ -1389,7 +1389,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testArrayAccessExistsFailsOutsideResolve()
     {
@@ -1399,7 +1399,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testArrayAccessSetNotSupported()
     {
@@ -1407,7 +1407,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testArrayAccessUnsetNotSupported()
     {
@@ -1417,7 +1417,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\NoSuchOptionException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\NoSuchOptionException
      * @expectedExceptionMessage The option "undefined" does not exist. Defined options are: "foo", "lazy".
      */
     public function testFailIfGetNonExisting()
@@ -1432,7 +1432,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\NoSuchOptionException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\NoSuchOptionException
      * @expectedExceptionMessage The optional option "defined" has no value set. You should make sure it is set with "isset" before reading it.
      */
     public function testFailIfGetDefinedButUnset()
@@ -1447,7 +1447,7 @@ class OptionsResolver2Dot6Test extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\OptionDefinitionException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\OptionDefinitionException
      */
     public function testFailIfCyclicDependency()
     {
@@ -1481,7 +1481,7 @@ class OptionsResolver2Dot6Test extends TestCase
      * only a subset of the defined options). Outside of resolve(), it's not
      * clear what is counted.
      *
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\AccessException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\AccessException
      */
     public function testCountFailsOutsideResolve()
     {

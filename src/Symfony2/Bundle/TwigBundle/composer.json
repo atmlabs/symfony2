@@ -37,7 +37,7 @@
         "doctrine/annotations": "~1.0"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Bundle\\TwigBundle\\": "" },
+        "psr-4": { "Symfony2\\Bundle\\TwigBundle\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

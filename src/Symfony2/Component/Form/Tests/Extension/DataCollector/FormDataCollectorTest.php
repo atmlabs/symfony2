@@ -66,11 +66,11 @@ class FormDataCollectorTest extends TestCase
 
     protected function setUp()
     {
-        $this->dataExtractor = $this->getMockBuilder('Symfony\Component\Form\Extension\DataCollector\FormDataExtractorInterface')->getMock();
+        $this->dataExtractor = $this->getMockBuilder('Symfony2\Component\Form\Extension\DataCollector\FormDataExtractorInterface')->getMock();
         $this->dataCollector = new FormDataCollector($this->dataExtractor);
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
-        $this->dataMapper = $this->getMockBuilder('Symfony\Component\Form\DataMapperInterface')->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->factory = $this->getMockBuilder('Symfony2\Component\Form\FormFactoryInterface')->getMock();
+        $this->dataMapper = $this->getMockBuilder('Symfony2\Component\Form\DataMapperInterface')->getMock();
         $this->form = $this->createForm('name');
         $this->childForm = $this->createForm('child');
         $this->view = new FormView();

@@ -11,7 +11,7 @@
 
 namespace Symfony2\Component\HttpKernel\EventListener;
 
-@trigger_error('The '.__NAMESPACE__.'\ErrorsLoggerListener class is deprecated since Symfony 2.6 and will be removed in 3.0. Use the Symfony\Component\HttpKernel\EventListener\DebugHandlersListener class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\ErrorsLoggerListener class is deprecated since Symfony 2.6 and will be removed in 3.0. Use the Symfony2\Component\HttpKernel\EventListener\DebugHandlersListener class instead.', E_USER_DEPRECATED);
 
 use Psr\Log\LoggerInterface;
 use Symfony2\Component\Debug\ErrorHandler;

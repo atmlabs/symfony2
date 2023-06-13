@@ -16,7 +16,7 @@ use Symfony2\Component\DependencyInjection\Definition;
 use Symfony2\Component\DependencyInjection\LazyProxy\Instantiator\RealServiceInstantiator;
 
 /**
- * Tests for {@see \Symfony\Component\DependencyInjection\Instantiator\RealServiceInstantiator}.
+ * Tests for {@see \Symfony2\Component\DependencyInjection\Instantiator\RealServiceInstantiator}.
  *
  * @author Marco Pivetta <ocramius@gmail.com>
  */
@@ -26,7 +26,7 @@ class RealServiceInstantiatorTest extends TestCase
     {
         $instantiator = new RealServiceInstantiator();
         $instance = new \stdClass();
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
         $callback = function () use ($instance) {
             return $instance;
         };

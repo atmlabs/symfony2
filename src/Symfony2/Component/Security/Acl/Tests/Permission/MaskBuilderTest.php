@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Tests\Permission;
+namespace Symfony2\Component\Security\Acl\Tests\Permission;
 
-use Symfony\Component\Security\Acl\Permission\MaskBuilder;
+use Symfony2\Component\Security\Acl\Permission\MaskBuilder;
 
 class MaskBuilderTest extends \PHPUnit_Framework_TestCase
 {

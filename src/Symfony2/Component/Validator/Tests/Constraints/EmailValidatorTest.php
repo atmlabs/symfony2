@@ -46,7 +46,7 @@ class EmailValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Validator\Exception\UnexpectedTypeException
      */
     public function testExpectsStringCompatibleType()
     {
@@ -110,7 +110,7 @@ class EmailValidatorTest extends AbstractConstraintValidatorTest
 
     /**
      * @dataProvider getDnsChecks
-     * @requires function Symfony\Bridge\PhpUnit\DnsMock::withMockedHosts
+     * @requires function Symfony2\Bridge\PhpUnit\DnsMock::withMockedHosts
      */
     public function testDnsChecks($type, $violation)
     {
@@ -146,7 +146,7 @@ class EmailValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * @requires function Symfony\Bridge\PhpUnit\DnsMock::withMockedHosts
+     * @requires function Symfony2\Bridge\PhpUnit\DnsMock::withMockedHosts
      */
     public function testHostnameIsProperlyParsed()
     {

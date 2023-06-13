@@ -55,10 +55,10 @@ class ValidationListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
-        $this->validator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ValidatorInterface')->getMock();
-        $this->violationMapper = $this->getMockBuilder('Symfony\Component\Form\Extension\Validator\ViolationMapper\ViolationMapperInterface')->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->factory = $this->getMockBuilder('Symfony2\Component\Form\FormFactoryInterface')->getMock();
+        $this->validator = $this->getMockBuilder('Symfony2\Component\Validator\Validator\ValidatorInterface')->getMock();
+        $this->violationMapper = $this->getMockBuilder('Symfony2\Component\Form\Extension\Validator\ViolationMapper\ViolationMapperInterface')->getMock();
         $this->listener = new ValidationListener($this->validator, $this->violationMapper);
         $this->message = 'Message';
         $this->messageTemplate = 'Message template';
@@ -88,7 +88,7 @@ class ValidationListenerTest extends TestCase
 
     private function getMockForm()
     {
-        return $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Form\Test\FormInterface')->getMock();
     }
 
     // More specific mapping tests can be found in ViolationMapperTest
@@ -128,9 +128,9 @@ class ValidationListenerTest extends TestCase
     public function testMapViolationAllowsNonSyncIfInvalidWithoutConstraintReference()
     {
         // constraint violations have no reference to the constraint if they are created by
-        //   Symfony\Component\Validator\ExecutionContext
+        //   Symfony2\Component\Validator\ExecutionContext
         // which is deprecated in favor of
-        //   Symfony\Component\Validator\Context\ExecutionContext
+        //   Symfony2\Component\Validator\Context\ExecutionContext
         $violation = $this->getConstraintViolation(Form::NOT_SYNCHRONIZED_ERROR, null);
         $form = $this->getForm('street');
 
@@ -184,7 +184,7 @@ class ValidationListenerTest extends TestCase
     public function testValidatorInterfaceSinceSymfony25()
     {
         // Mock of ValidatorInterface since apiVersion 2.5
-        $validator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ValidatorInterface')->getMock();
+        $validator = $this->getMockBuilder('Symfony2\Component\Validator\Validator\ValidatorInterface')->getMock();
 
         $listener = new ValidationListener($validator, $this->violationMapper);
         $this->assertAttributeSame($validator, 'validator', $listener);
@@ -196,7 +196,7 @@ class ValidationListenerTest extends TestCase
     public function testValidatorInterfaceUntilSymfony24()
     {
         // Mock of ValidatorInterface until apiVersion 2.4
-        $validator = $this->getMockBuilder('Symfony\Component\Validator\ValidatorInterface')->getMock();
+        $validator = $this->getMockBuilder('Symfony2\Component\Validator\ValidatorInterface')->getMock();
 
         $listener = new ValidationListener($validator, $this->violationMapper);
         $this->assertAttributeSame($validator, 'validator', $listener);

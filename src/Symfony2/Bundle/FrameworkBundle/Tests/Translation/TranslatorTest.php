@@ -77,7 +77,7 @@ class TranslatorTest extends TestCase
         $this->assertEquals('foobarbax (sr@latin)', $translator->trans('foobarbax'));
 
         // do it another time as the cache is primed now
-        $loader = $this->getMockBuilder('Symfony\Component\Translation\Loader\LoaderInterface')->getMock();
+        $loader = $this->getMockBuilder('Symfony2\Component\Translation\Loader\LoaderInterface')->getMock();
         $loader->expects($this->never())->method('load');
 
         $translator = $this->getTranslator($loader, array('cache_dir' => $this->tmpDir));
@@ -97,8 +97,8 @@ class TranslatorTest extends TestCase
 
     public function testTransWithCachingWithInvalidLocale()
     {
-        $loader = $this->getMockBuilder('Symfony\Component\Translation\Loader\LoaderInterface')->getMock();
-        $translator = $this->getTranslator($loader, array('cache_dir' => $this->tmpDir), 'loader', '\Symfony\Bundle\FrameworkBundle\Tests\Translation\TranslatorWithInvalidLocale');
+        $loader = $this->getMockBuilder('Symfony2\Component\Translation\Loader\LoaderInterface')->getMock();
+        $translator = $this->getTranslator($loader, array('cache_dir' => $this->tmpDir), 'loader', '\Symfony2\Bundle\FrameworkBundle\Tests\Translation\TranslatorWithInvalidLocale');
         $translator->setLocale('invalid locale');
 
         $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('\InvalidArgumentException');
@@ -107,7 +107,7 @@ class TranslatorTest extends TestCase
 
     public function testLoadResourcesWithoutCaching()
     {
-        $loader = new \Symfony\Component\Translation\Loader\YamlFileLoader();
+        $loader = new \Symfony2\Component\Translation\Loader\YamlFileLoader();
         $resourceFiles = array(
             'fr' => array(
                 __DIR__.'/../Fixtures/Resources/translations/messages.fr.yml',
@@ -122,7 +122,7 @@ class TranslatorTest extends TestCase
 
     public function testGetDefaultLocale()
     {
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
         $container
             ->expects($this->once())
             ->method('getParameter')
@@ -140,7 +140,7 @@ class TranslatorTest extends TestCase
     {
         $someCatalogue = $this->getCatalogue('some_locale', array());
 
-        $loader = $this->getMockBuilder('Symfony\Component\Translation\Loader\LoaderInterface')->getMock();
+        $loader = $this->getMockBuilder('Symfony2\Component\Translation\Loader\LoaderInterface')->getMock();
 
         $loader->expects($this->at(0))
             ->method('load')
@@ -195,7 +195,7 @@ class TranslatorTest extends TestCase
 
     protected function getLoader()
     {
-        $loader = $this->getMockBuilder('Symfony\Component\Translation\Loader\LoaderInterface')->getMock();
+        $loader = $this->getMockBuilder('Symfony2\Component\Translation\Loader\LoaderInterface')->getMock();
         $loader
             ->expects($this->at(0))
             ->method('load')
@@ -253,7 +253,7 @@ class TranslatorTest extends TestCase
 
     protected function getContainer($loader)
     {
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
         $container
             ->expects($this->any())
             ->method('get')
@@ -263,7 +263,7 @@ class TranslatorTest extends TestCase
         return $container;
     }
 
-    public function getTranslator($loader, $options = array(), $loaderFomat = 'loader', $translatorClass = '\Symfony\Bundle\FrameworkBundle\Translation\Translator')
+    public function getTranslator($loader, $options = array(), $loaderFomat = 'loader', $translatorClass = '\Symfony2\Bundle\FrameworkBundle\Translation\Translator')
     {
         $translator = $this->createTranslator($loader, $options, $translatorClass, $loaderFomat);
 
@@ -282,7 +282,7 @@ class TranslatorTest extends TestCase
 
     public function testWarmup()
     {
-        $loader = new \Symfony\Component\Translation\Loader\YamlFileLoader();
+        $loader = new \Symfony2\Component\Translation\Loader\YamlFileLoader();
         $resourceFiles = array(
             'fr' => array(
                 __DIR__.'/../Fixtures/Resources/translations/messages.fr.yml',
@@ -294,7 +294,7 @@ class TranslatorTest extends TestCase
         $translator->setFallbackLocales(array('fr'));
         $translator->warmup($this->tmpDir);
 
-        $loader = $this->getMockBuilder('Symfony\Component\Translation\Loader\LoaderInterface')->getMock();
+        $loader = $this->getMockBuilder('Symfony2\Component\Translation\Loader\LoaderInterface')->getMock();
         $loader
             ->expects($this->never())
             ->method('load');
@@ -305,7 +305,7 @@ class TranslatorTest extends TestCase
         $this->assertEquals('répertoire', $translator->trans('folder'));
     }
 
-    private function createTranslator($loader, $options, $translatorClass = '\Symfony\Bundle\FrameworkBundle\Translation\Translator', $loaderFomat = 'loader')
+    private function createTranslator($loader, $options, $translatorClass = '\Symfony2\Bundle\FrameworkBundle\Translation\Translator', $loaderFomat = 'loader')
     {
         return new $translatorClass(
             $this->getContainer($loader),

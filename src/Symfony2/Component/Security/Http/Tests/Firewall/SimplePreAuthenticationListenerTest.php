@@ -43,7 +43,7 @@ class SimplePreAuthenticationListenerTest extends TestCase
             ->will($this->returnValue($this->token))
         ;
 
-        $simpleAuthenticator = $this->getMockBuilder('Symfony\Component\Security\Http\Authentication\SimplePreAuthenticatorInterface')->getMock();
+        $simpleAuthenticator = $this->getMockBuilder('Symfony2\Component\Security\Http\Authentication\SimplePreAuthenticatorInterface')->getMock();
         $simpleAuthenticator
             ->expects($this->once())
             ->method('createToken')
@@ -80,7 +80,7 @@ class SimplePreAuthenticationListenerTest extends TestCase
             ->with($this->equalTo(null))
         ;
 
-        $simpleAuthenticator = $this->getMockBuilder('Symfony\Component\Security\Http\Authentication\SimplePreAuthenticatorInterface')->getMock();
+        $simpleAuthenticator = $this->getMockBuilder('Symfony2\Component\Security\Http\Authentication\SimplePreAuthenticatorInterface')->getMock();
         $simpleAuthenticator
             ->expects($this->once())
             ->method('createToken')
@@ -95,16 +95,16 @@ class SimplePreAuthenticationListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->authenticationManager = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager')
+        $this->authenticationManager = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\AuthenticationProviderManager')
             ->disableOriginalConstructor()
             ->getMock()
         ;
 
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
 
         $this->request = new Request(array(), array(), array(), array(), array(), array());
 
-        $this->event = $this->getMockBuilder('Symfony\Component\HttpKernel\Event\GetResponseEvent')->disableOriginalConstructor()->getMock();
+        $this->event = $this->getMockBuilder('Symfony2\Component\HttpKernel\Event\GetResponseEvent')->disableOriginalConstructor()->getMock();
         $this->event
             ->expects($this->any())
             ->method('getRequest')
@@ -112,8 +112,8 @@ class SimplePreAuthenticationListenerTest extends TestCase
         ;
 
         $this->logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
-        $this->tokenStorage = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
-        $this->token = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
+        $this->tokenStorage = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
+        $this->token = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
     }
 
     protected function tearDown()

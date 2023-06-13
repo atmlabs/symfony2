@@ -24,7 +24,7 @@ class RouterTest extends TestCase
 
     protected function setUp()
     {
-        $this->loader = $this->getMockBuilder('Symfony\Component\Config\Loader\LoaderInterface')->getMock();
+        $this->loader = $this->getMockBuilder('Symfony2\Component\Config\Loader\LoaderInterface')->getMock();
         $this->router = new Router($this->loader, 'routing.yml');
     }
 
@@ -104,7 +104,7 @@ class RouterTest extends TestCase
             ->method('load')->with('routing.yml', null)
             ->will($this->returnValue(new RouteCollection()));
 
-        $this->assertInstanceOf('Symfony\\Component\\Routing\\Matcher\\UrlMatcher', $this->router->getMatcher());
+        $this->assertInstanceOf('Symfony2\\Component\\Routing\\Matcher\\UrlMatcher', $this->router->getMatcher());
     }
 
     public function provideMatcherOptionsPreventingCaching()
@@ -126,7 +126,7 @@ class RouterTest extends TestCase
             ->method('load')->with('routing.yml', null)
             ->will($this->returnValue(new RouteCollection()));
 
-        $this->assertInstanceOf('Symfony\\Component\\Routing\\Generator\\UrlGenerator', $this->router->getGenerator());
+        $this->assertInstanceOf('Symfony2\\Component\\Routing\\Generator\\UrlGenerator', $this->router->getGenerator());
     }
 
     public function provideGeneratorOptionsPreventingCaching()
@@ -139,7 +139,7 @@ class RouterTest extends TestCase
 
     public function testMatchRequestWithUrlMatcherInterface()
     {
-        $matcher = $this->getMockBuilder('Symfony\Component\Routing\Matcher\UrlMatcherInterface')->getMock();
+        $matcher = $this->getMockBuilder('Symfony2\Component\Routing\Matcher\UrlMatcherInterface')->getMock();
         $matcher->expects($this->once())->method('match');
 
         $p = new \ReflectionProperty($this->router, 'matcher');
@@ -151,7 +151,7 @@ class RouterTest extends TestCase
 
     public function testMatchRequestWithRequestMatcherInterface()
     {
-        $matcher = $this->getMockBuilder('Symfony\Component\Routing\Matcher\RequestMatcherInterface')->getMock();
+        $matcher = $this->getMockBuilder('Symfony2\Component\Routing\Matcher\RequestMatcherInterface')->getMock();
         $matcher->expects($this->once())->method('matchRequest');
 
         $p = new \ReflectionProperty($this->router, 'matcher');

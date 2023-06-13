@@ -27,12 +27,12 @@ use Symfony2\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 class SessionTest extends TestCase
 {
     /**
-     * @var \Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface
+     * @var \Symfony2\Component\HttpFoundation\Session\Storage\SessionStorageInterface
      */
     protected $storage;
 
     /**
-     * @var \Symfony\Component\HttpFoundation\Session\SessionInterface
+     * @var \Symfony2\Component\HttpFoundation\Session\SessionInterface
      */
     protected $session;
 
@@ -211,7 +211,7 @@ class SessionTest extends TestCase
 
     public function testGetFlashBag()
     {
-        $this->assertInstanceOf('Symfony\\Component\\HttpFoundation\\Session\\Flash\\FlashBagInterface', $this->session->getFlashBag());
+        $this->assertInstanceOf('Symfony2\\Component\\HttpFoundation\\Session\\Flash\\FlashBagInterface', $this->session->getFlashBag());
     }
 
     public function testGetIterator()
@@ -240,6 +240,6 @@ class SessionTest extends TestCase
 
     public function testGetMeta()
     {
-        $this->assertInstanceOf('Symfony\Component\HttpFoundation\Session\Storage\MetadataBag', $this->session->getMetadataBag());
+        $this->assertInstanceOf('Symfony2\Component\HttpFoundation\Session\Storage\MetadataBag', $this->session->getMetadataBag());
     }
 }

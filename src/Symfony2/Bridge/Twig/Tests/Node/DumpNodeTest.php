@@ -36,7 +36,7 @@ if ($this->env->isDebug()) {
         }
     }
     // line 7
-    \Symfony\Component\VarDumper\VarDumper::dump($barvars);
+    \Symfony2\Component\VarDumper\VarDumper::dump($barvars);
 }
 
 EOTXT;
@@ -60,7 +60,7 @@ EOTXT;
             }
         }
         // line 7
-        \Symfony\Component\VarDumper\VarDumper::dump($barvars);
+        \Symfony2\Component\VarDumper\VarDumper::dump($barvars);
     }
 
 EOTXT;
@@ -81,7 +81,7 @@ EOTXT;
         $expected = <<<'EOTXT'
 if ($this->env->isDebug()) {
     // line 7
-    \Symfony\Component\VarDumper\VarDumper::dump(%foo%);
+    \Symfony2\Component\VarDumper\VarDumper::dump(%foo%);
 }
 
 EOTXT;
@@ -110,7 +110,7 @@ EOTXT;
         $expected = <<<'EOTXT'
 if ($this->env->isDebug()) {
     // line 7
-    \Symfony\Component\VarDumper\VarDumper::dump(array(
+    \Symfony2\Component\VarDumper\VarDumper::dump(array(
         "foo" => %foo%,
         "bar" => %bar%,
     ));

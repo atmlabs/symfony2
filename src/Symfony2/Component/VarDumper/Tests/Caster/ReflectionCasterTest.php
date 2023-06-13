@@ -90,7 +90,7 @@ EOTXT
 ReflectionParameter {
   +name: "arg1"
   position: 0
-  typeHint: "Symfony\Component\VarDumper\Tests\Fixtures\NotLoadableClass"
+  typeHint: "Symfony2\Component\VarDumper\Tests\Fixtures\NotLoadableClass"
   default: null
 }
 EOTXT
@@ -130,8 +130,8 @@ EOTXT
             <<<EOTXT
 Closure {
   returnType: "int"
-  class: "Symfony\Component\VarDumper\Tests\Caster\ReflectionCasterTest"
-  this: Symfony\Component\VarDumper\Tests\Caster\ReflectionCasterTest { …}
+  class: "Symfony2\Component\VarDumper\Tests\Caster\ReflectionCasterTest"
+  this: Symfony2\Component\VarDumper\Tests\Caster\ReflectionCasterTest { …}
   file: "%sReflectionCasterTest.php($line) : eval()'d code"
   line: "1 to 1"
 }
@@ -154,9 +154,9 @@ EOTXT
 
         $expectedDump = <<<'EODUMP'
 Generator {
-  this: Symfony\Component\VarDumper\Tests\Fixtures\GeneratorDemo { …}
+  this: Symfony2\Component\VarDumper\Tests\Fixtures\GeneratorDemo { …}
   executing: {
-    Symfony\Component\VarDumper\Tests\Fixtures\GeneratorDemo->baz(): {
+    Symfony2\Component\VarDumper\Tests\Fixtures\GeneratorDemo->baz(): {
       %sGeneratorDemo.php:14: """
         {\n
             yield from bar();\n
@@ -177,9 +177,9 @@ EODUMP;
         $expectedDump = <<<'EODUMP'
 array:2 [
   0 => ReflectionGenerator {
-    this: Symfony\Component\VarDumper\Tests\Fixtures\GeneratorDemo { …}
+    this: Symfony2\Component\VarDumper\Tests\Fixtures\GeneratorDemo { …}
     trace: {
-      3. Symfony\Component\VarDumper\Tests\Fixtures\GeneratorDemo::foo() ==> yield(): {
+      3. Symfony2\Component\VarDumper\Tests\Fixtures\GeneratorDemo::foo() ==> yield(): {
         src: {
           %sGeneratorDemo.php:9: """
             {\n
@@ -188,7 +188,7 @@ array:2 [
             """
         }
       }
-      2. Symfony\Component\VarDumper\Tests\Fixtures\bar() ==> Symfony\Component\VarDumper\Tests\Fixtures\GeneratorDemo::foo(): {
+      2. Symfony2\Component\VarDumper\Tests\Fixtures\bar() ==> Symfony2\Component\VarDumper\Tests\Fixtures\GeneratorDemo::foo(): {
         src: {
           %sGeneratorDemo.php:20: """
             {\n
@@ -197,7 +197,7 @@ array:2 [
             """
         }
       }
-      1. Symfony\Component\VarDumper\Tests\Fixtures\GeneratorDemo->baz() ==> Symfony\Component\VarDumper\Tests\Fixtures\bar(): {
+      1. Symfony2\Component\VarDumper\Tests\Fixtures\GeneratorDemo->baz() ==> Symfony2\Component\VarDumper\Tests\Fixtures\bar(): {
         src: {
           %sGeneratorDemo.php:14: """
             {\n
@@ -211,7 +211,7 @@ array:2 [
   }
   1 => Generator {
     executing: {
-      Symfony\Component\VarDumper\Tests\Fixtures\GeneratorDemo::foo(): {
+      Symfony2\Component\VarDumper\Tests\Fixtures\GeneratorDemo::foo(): {
         %sGeneratorDemo.php:10: """
               yield 1;\n
           }\n

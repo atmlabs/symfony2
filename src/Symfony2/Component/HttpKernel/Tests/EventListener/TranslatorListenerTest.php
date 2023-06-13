@@ -26,8 +26,8 @@ class TranslatorListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->translator = $this->getMockBuilder('Symfony\Component\Translation\TranslatorInterface')->getMock();
-        $this->requestStack = $this->getMockBuilder('Symfony\Component\HttpFoundation\RequestStack')->getMock();
+        $this->translator = $this->getMockBuilder('Symfony2\Component\Translation\TranslatorInterface')->getMock();
+        $this->requestStack = $this->getMockBuilder('Symfony2\Component\HttpFoundation\RequestStack')->getMock();
         $this->listener = new TranslatorListener($this->translator, $this->requestStack);
     }
 
@@ -97,7 +97,7 @@ class TranslatorListenerTest extends TestCase
 
     private function createHttpKernel()
     {
-        return $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\HttpKernel\HttpKernelInterface')->getMock();
     }
 
     private function createRequest($locale)

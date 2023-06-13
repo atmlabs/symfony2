@@ -15,7 +15,7 @@ use Twig\Compiler;
 use Twig\Node\Expression\FunctionExpression;
 
 /**
- * Compiles a call to {@link \Symfony\Component\Form\FormRendererInterface::renderBlock()}.
+ * Compiles a call to {@link \Symfony2\Component\Form\FormRendererInterface::renderBlock()}.
  *
  * The function name is used as block name. For example, if the function name
  * is "foo", the block "foo" will be rendered.
@@ -28,7 +28,7 @@ class RenderBlockNode extends FunctionExpression
     {
         $compiler->addDebugInfo($this);
         $arguments = iterator_to_array($this->getNode('arguments'));
-        $compiler->write('$this->env->getExtension(\'Symfony\Bridge\Twig\Extension\FormExtension\')->renderer->renderBlock(');
+        $compiler->write('$this->env->getExtension(\'Symfony2\Bridge\Twig\Extension\FormExtension\')->renderer->renderBlock(');
 
         if (isset($arguments[0])) {
             $compiler->subcompile($arguments[0]);

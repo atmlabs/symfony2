@@ -6,7 +6,7 @@
         "hostRegex": "#HOST_REGEX#",
         "scheme": "http|https",
         "method": "GET|HEAD",
-        "class": "Symfony\\Bundle\\FrameworkBundle\\Tests\\Console\\Descriptor\\RouteStub",
+        "class": "Symfony2\\Bundle\\FrameworkBundle\\Tests\\Console\\Descriptor\\RouteStub",
         "defaults": {
             "name": "Joseph"
         },
@@ -14,7 +14,7 @@
             "name": "[a-z]+"
         },
         "options": {
-            "compiler_class": "Symfony\\Component\\Routing\\RouteCompiler",
+            "compiler_class": "Symfony2\\Component\\Routing\\RouteCompiler",
             "opt1": "val1",
             "opt2": "val2"
         }
@@ -26,11 +26,11 @@
         "hostRegex": "#HOST_REGEX#",
         "scheme": "http|https",
         "method": "PUT|POST",
-        "class": "Symfony\\Bundle\\FrameworkBundle\\Tests\\Console\\Descriptor\\RouteStub",
+        "class": "Symfony2\\Bundle\\FrameworkBundle\\Tests\\Console\\Descriptor\\RouteStub",
         "defaults": [],
         "requirements": "NO CUSTOM",
         "options": {
-            "compiler_class": "Symfony\\Component\\Routing\\RouteCompiler",
+            "compiler_class": "Symfony2\\Component\\Routing\\RouteCompiler",
             "opt1": "val1",
             "opt2": "val2"
         }

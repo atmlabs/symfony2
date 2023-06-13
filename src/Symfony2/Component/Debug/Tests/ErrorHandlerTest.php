@@ -30,7 +30,7 @@ class ErrorHandlerTest extends TestCase
         $handler = ErrorHandler::register();
 
         try {
-            $this->assertInstanceOf('Symfony\Component\Debug\ErrorHandler', $handler);
+            $this->assertInstanceOf('Symfony2\Component\Debug\ErrorHandler', $handler);
             $this->assertSame($handler, ErrorHandler::register());
 
             $newHandler = new ErrorHandler();
@@ -110,7 +110,7 @@ class ErrorHandlerTest extends TestCase
 
             $trace = $exception->getTrace();
             $this->assertEquals(__FILE__, $trace[0]['file']);
-            $this->assertEquals('Symfony\Component\Debug\ErrorHandler', $trace[0]['class']);
+            $this->assertEquals('Symfony2\Component\Debug\ErrorHandler', $trace[0]['class']);
             $this->assertEquals('handleError', $trace[0]['function']);
             $this->assertEquals('->', $trace[0]['type']);
 
@@ -531,7 +531,7 @@ class ErrorHandlerTest extends TestCase
 
         $handler->handleException($exception);
 
-        $this->assertInstanceOf('Symfony\Component\Debug\Exception\ClassNotFoundException', $args[0]);
+        $this->assertInstanceOf('Symfony2\Component\Debug\Exception\ClassNotFoundException', $args[0]);
         $this->assertStringStartsWith("Attempted to load class \"Foo\" from the global namespace.\nDid you forget a \"use\" statement", $args[0]->getMessage());
     }
 

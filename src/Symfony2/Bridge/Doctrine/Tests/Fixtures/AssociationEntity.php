@@ -28,7 +28,7 @@ class AssociationEntity
     /**
      * @ORM\ManyToOne(targetEntity="SingleIntIdEntity")
      *
-     * @var \Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity
+     * @var \Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity
      */
     public $single;
 
@@ -39,7 +39,7 @@ class AssociationEntity
      *  @ORM\JoinColumn(name="composite_id2", referencedColumnName="id2")
      * })
      *
-     * @var \Symfony\Bridge\Doctrine\Tests\Fixtures\CompositeIntIdEntity
+     * @var \Symfony2\Bridge\Doctrine\Tests\Fixtures\CompositeIntIdEntity
      */
     public $composite;
 }

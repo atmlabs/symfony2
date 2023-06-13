@@ -131,7 +131,7 @@ class ExprBuilderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      */
     public function testThenInvalid()
     {

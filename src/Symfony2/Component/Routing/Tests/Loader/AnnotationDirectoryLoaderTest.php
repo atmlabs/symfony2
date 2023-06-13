@@ -43,8 +43,8 @@ class AnnotationDirectoryLoaderTest extends AbstractAnnotationLoaderTest
     public function testLoadIgnoresHiddenDirectories()
     {
         $this->expectAnnotationsToBeReadFrom(array(
-            'Symfony\Component\Routing\Tests\Fixtures\AnnotatedClasses\BarClass',
-            'Symfony\Component\Routing\Tests\Fixtures\AnnotatedClasses\FooClass',
+            'Symfony2\Component\Routing\Tests\Fixtures\AnnotatedClasses\BarClass',
+            'Symfony2\Component\Routing\Tests\Fixtures\AnnotatedClasses\FooClass',
         ));
 
         $this->reader

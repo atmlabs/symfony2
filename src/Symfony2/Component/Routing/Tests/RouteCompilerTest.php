@@ -22,7 +22,7 @@ class RouteCompilerTest extends TestCase
      */
     public function testCompile($name, $arguments, $prefix, $regex, $variables, $tokens)
     {
-        $r = new \ReflectionClass('Symfony\\Component\\Routing\\Route');
+        $r = new \ReflectionClass('Symfony2\\Component\\Routing\\Route');
         $route = $r->newInstanceArgs($arguments);
 
         $compiled = $route->compile();
@@ -201,7 +201,7 @@ class RouteCompilerTest extends TestCase
      */
     public function testCompileWithHost($name, $arguments, $prefix, $regex, $variables, $pathVariables, $tokens, $hostRegex, $hostVariables, $hostTokens)
     {
-        $r = new \ReflectionClass('Symfony\\Component\\Routing\\Route');
+        $r = new \ReflectionClass('Symfony2\\Component\\Routing\\Route');
         $route = $r->newInstanceArgs($arguments);
 
         $compiled = $route->compile();

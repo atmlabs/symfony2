@@ -77,7 +77,7 @@ abstract class BaseValidatorExtensionTest extends TypeTestCase
             'validation_groups' => new GroupSequence(array('group1', 'group2')),
         ));
 
-        $this->assertInstanceOf('Symfony\Component\Validator\Constraints\GroupSequence', $form->getConfig()->getOption('validation_groups'));
+        $this->assertInstanceOf('Symfony2\Component\Validator\Constraints\GroupSequence', $form->getConfig()->getOption('validation_groups'));
     }
 
     abstract protected function createForm(array $options = array());

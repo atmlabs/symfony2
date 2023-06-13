@@ -45,7 +45,7 @@ class FormError implements \Serializable
      * @param int|null    $messagePluralization The value for error message pluralization
      * @param mixed       $cause                The cause of the error
      *
-     * @see \Symfony\Component\Translation\Translator
+     * @see \Symfony2\Component\Translation\Translator
      */
     public function __construct($message, $messageTemplate = null, array $messageParameters = array(), $messagePluralization = null, $cause = null)
     {

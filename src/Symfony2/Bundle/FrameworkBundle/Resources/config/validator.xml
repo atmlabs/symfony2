@@ -5,14 +5,14 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="validator.class">Symfony\Component\Validator\Validator\ValidatorInterface</parameter>
-        <parameter key="validator.builder.class">Symfony\Component\Validator\ValidatorBuilderInterface</parameter>
-        <parameter key="validator.builder.factory.class">Symfony\Component\Validator\Validation</parameter>
-        <parameter key="validator.mapping.cache.apc.class">Symfony\Component\Validator\Mapping\Cache\ApcCache</parameter>
+        <parameter key="validator.class">Symfony2\Component\Validator\Validator\ValidatorInterface</parameter>
+        <parameter key="validator.builder.class">Symfony2\Component\Validator\ValidatorBuilderInterface</parameter>
+        <parameter key="validator.builder.factory.class">Symfony2\Component\Validator\Validation</parameter>
+        <parameter key="validator.mapping.cache.apc.class">Symfony2\Component\Validator\Mapping\Cache\ApcCache</parameter>
         <parameter key="validator.mapping.cache.prefix" />
-        <parameter key="validator.validator_factory.class">Symfony\Bundle\FrameworkBundle\Validator\ConstraintValidatorFactory</parameter>
-        <parameter key="validator.expression.class">Symfony\Component\Validator\Constraints\ExpressionValidator</parameter>
-        <parameter key="validator.email.class">Symfony\Component\Validator\Constraints\EmailValidator</parameter>
+        <parameter key="validator.validator_factory.class">Symfony2\Bundle\FrameworkBundle\Validator\ConstraintValidatorFactory</parameter>
+        <parameter key="validator.expression.class">Symfony2\Component\Validator\Constraints\ExpressionValidator</parameter>
+        <parameter key="validator.email.class">Symfony2\Component\Validator\Constraints\EmailValidator</parameter>
     </parameters>
 
     <services>
@@ -40,7 +40,7 @@
             <deprecated>The "%service_id%" service is deprecated since Symfony 2.5 and will be removed in 3.0.</deprecated>
         </service>
 
-        <service id="validator.mapping.cache.doctrine.apc" class="Symfony\Component\Validator\Mapping\Cache\DoctrineCache" public="false">
+        <service id="validator.mapping.cache.doctrine.apc" class="Symfony2\Component\Validator\Mapping\Cache\DoctrineCache" public="false">
             <argument type="service">
                 <service class="Doctrine\Common\Cache\ApcCache">
                     <call method="setNamespace">
@@ -62,7 +62,7 @@
 
         <service id="validator.email" class="%validator.email.class%">
             <argument></argument>
-            <tag name="validator.constraint_validator" alias="Symfony\Component\Validator\Constraints\EmailValidator" />
+            <tag name="validator.constraint_validator" alias="Symfony2\Component\Validator\Constraints\EmailValidator" />
         </service>
     </services>
 </container>

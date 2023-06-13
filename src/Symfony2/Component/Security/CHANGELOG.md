@@ -6,18 +6,18 @@ CHANGELOG
 
  * deprecated `getKey()` of the `AnonymousToken`, `RememberMeToken`,
    `AbstractRememberMeServices` and `DigestAuthenticationEntryPoint` classes in favor of `getSecret()`.
- * deprecated `Symfony\Component\Security\Core\Authentication\SimplePreAuthenticatorInterface`, use
-   `Symfony\Component\Security\Http\Authentication\SimplePreAuthenticatorInterface` instead
- * deprecated `Symfony\Component\Security\Core\Authentication\SimpleFormAuthenticatorInterface`, use
-   `Symfony\Component\Security\Http\Authentication\SimpleFormAuthenticatorInterface` instead
- * deprecated `Symfony\Component\Security\Core\Util\ClassUtils`, use
-   `Symfony\Component\Security\Acl\Util\ClassUtils` instead
- * deprecated the `Symfony\Component\Security\Core\Util\SecureRandom` class in favor of the `random_bytes()` function
+ * deprecated `Symfony2\Component\Security\Core\Authentication\SimplePreAuthenticatorInterface`, use
+   `Symfony2\Component\Security\Http\Authentication\SimplePreAuthenticatorInterface` instead
+ * deprecated `Symfony2\Component\Security\Core\Authentication\SimpleFormAuthenticatorInterface`, use
+   `Symfony2\Component\Security\Http\Authentication\SimpleFormAuthenticatorInterface` instead
+ * deprecated `Symfony2\Component\Security\Core\Util\ClassUtils`, use
+   `Symfony2\Component\Security\Acl\Util\ClassUtils` instead
+ * deprecated the `Symfony2\Component\Security\Core\Util\SecureRandom` class in favor of the `random_bytes()` function
  * deprecated `supportsAttribute()` and `supportsClass()` methods of
-   `Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface` and
-   `Symfony\Component\Security\Core\Authorization\Voter\VoterInterface`.
+   `Symfony2\Component\Security\Core\Authorization\AccessDecisionManagerInterface` and
+   `Symfony2\Component\Security\Core\Authorization\Voter\VoterInterface`.
  * deprecated `getSupportedAttributes()` and `getSupportedClasses()` methods of
-   `Symfony\Component\Security\Core\Authorization\Voter\AbstractVoter`, use `supports()` instead.
+   `Symfony2\Component\Security\Core\Authorization\Voter\AbstractVoter`, use `supports()` instead.
  * deprecated the `intention` option for all the authentication listeners,
    use the `csrf_token_id` option instead.
 
@@ -25,15 +25,15 @@ CHANGELOG
 -----
 
  * added LogoutUrlGenerator
- * added the triggering of the `Symfony\Component\Security\Http\SecurityEvents::INTERACTIVE_LOGIN` in `Symfony\Component\Security\Http\Firewall\SimplePreAuthenticationListener`
- * The MaskBuilder logic has been abstracted in the `Symfony\Component\Security\Acl\Permission\AbstractMaskBuilder`
-   and described in the `Symfony\Component\Security\Acl\Permission\MaskBuilderInterface`
- * added interface `Symfony\Component\Security\Acl\Permission\MaskBuilderRetrievalInterface`
+ * added the triggering of the `Symfony2\Component\Security\Http\SecurityEvents::INTERACTIVE_LOGIN` in `Symfony2\Component\Security\Http\Firewall\SimplePreAuthenticationListener`
+ * The MaskBuilder logic has been abstracted in the `Symfony2\Component\Security\Acl\Permission\AbstractMaskBuilder`
+   and described in the `Symfony2\Component\Security\Acl\Permission\MaskBuilderInterface`
+ * added interface `Symfony2\Component\Security\Acl\Permission\MaskBuilderRetrievalInterface`
 
 2.6.0
 -----
 
- * added Symfony\Component\Security\Http\Authentication\AuthenticationUtils
+ * added Symfony2\Component\Security\Http\Authentication\AuthenticationUtils
  * Deprecated the `SecurityContext` class in favor of the `AuthorizationChecker` and `TokenStorage` classes
 
 2.4.0
@@ -58,8 +58,8 @@ CHANGELOG
 2.2.0
 -----
 
- * `Symfony\Component\Security\Http\Firewall` and
-   `Symfony\Component\Security\Http\RememberMe\ResponseListener` now
+ * `Symfony2\Component\Security\Http\Firewall` and
+   `Symfony2\Component\Security\Http\RememberMe\ResponseListener` now
    implements EventSubscriberInterface
  * added secure random number generator
  * added PBKDF2 Password encoder

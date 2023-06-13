@@ -72,7 +72,7 @@ abstract class FileValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Validator\Exception\UnexpectedTypeException
      */
     public function testExpectsStringCompatibleTypeOrFile()
     {
@@ -228,7 +228,7 @@ abstract class FileValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testInvalidMaxSize()
     {
@@ -290,7 +290,7 @@ abstract class FileValidatorTest extends AbstractConstraintValidatorTest
     public function testValidMimeType()
     {
         $file = $this
-            ->getMockBuilder('Symfony\Component\HttpFoundation\File\File')
+            ->getMockBuilder('Symfony2\Component\HttpFoundation\File\File')
             ->setConstructorArgs(array(__DIR__.'/Fixtures/foo'))
             ->getMock();
         $file
@@ -314,7 +314,7 @@ abstract class FileValidatorTest extends AbstractConstraintValidatorTest
     public function testValidWildcardMimeType()
     {
         $file = $this
-            ->getMockBuilder('Symfony\Component\HttpFoundation\File\File')
+            ->getMockBuilder('Symfony2\Component\HttpFoundation\File\File')
             ->setConstructorArgs(array(__DIR__.'/Fixtures/foo'))
             ->getMock();
         $file
@@ -338,7 +338,7 @@ abstract class FileValidatorTest extends AbstractConstraintValidatorTest
     public function testInvalidMimeType()
     {
         $file = $this
-            ->getMockBuilder('Symfony\Component\HttpFoundation\File\File')
+            ->getMockBuilder('Symfony2\Component\HttpFoundation\File\File')
             ->setConstructorArgs(array(__DIR__.'/Fixtures/foo'))
             ->getMock();
         $file
@@ -368,7 +368,7 @@ abstract class FileValidatorTest extends AbstractConstraintValidatorTest
     public function testInvalidWildcardMimeType()
     {
         $file = $this
-            ->getMockBuilder('Symfony\Component\HttpFoundation\File\File')
+            ->getMockBuilder('Symfony2\Component\HttpFoundation\File\File')
             ->setConstructorArgs(array(__DIR__.'/Fixtures/foo'))
             ->getMock();
         $file
@@ -442,7 +442,7 @@ abstract class FileValidatorTest extends AbstractConstraintValidatorTest
             array(UPLOAD_ERR_EXTENSION, 'uploadExtensionErrorMessage'),
         );
 
-        if (class_exists('Symfony\Component\HttpFoundation\File\UploadedFile')) {
+        if (class_exists('Symfony2\Component\HttpFoundation\File\UploadedFile')) {
             // when no maxSize is specified on constraint, it should use the ini value
             $tests[] = array(UPLOAD_ERR_INI_SIZE, 'uploadIniSizeErrorMessage', array(
                 '{{ limit }}' => UploadedFile::getMaxFilesize() / 1048576,

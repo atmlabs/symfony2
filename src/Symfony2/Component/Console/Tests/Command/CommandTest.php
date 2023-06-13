@@ -42,7 +42,7 @@ class CommandTest extends TestCase
 
     /**
      * @expectedException        \LogicException
-     * @expectedExceptionMessage The command defined in "Symfony\Component\Console\Command\Command" cannot have an empty name.
+     * @expectedExceptionMessage The command defined in "Symfony2\Component\Console\Command\Command" cannot have an empty name.
      */
     public function testCommandNameCannotBeEmpty()
     {
@@ -287,7 +287,7 @@ class CommandTest extends TestCase
     }
 
     /**
-     * @expectedException        \Symfony\Component\Console\Exception\InvalidOptionException
+     * @expectedException        \Symfony2\Component\Console\Exception\InvalidOptionException
      * @expectedExceptionMessage The "--bar" option does not exist.
      */
     public function testRunWithInvalidOption()

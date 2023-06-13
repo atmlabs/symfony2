@@ -34,19 +34,19 @@ class AnnotationLoaderTest extends TestCase
 
     public function testInterface()
     {
-        $this->assertInstanceOf('Symfony\Component\Serializer\Mapping\Loader\LoaderInterface', $this->loader);
+        $this->assertInstanceOf('Symfony2\Component\Serializer\Mapping\Loader\LoaderInterface', $this->loader);
     }
 
     public function testLoadClassMetadataReturnsTrueIfSuccessful()
     {
-        $classMetadata = new ClassMetadata('Symfony\Component\Serializer\Tests\Fixtures\GroupDummy');
+        $classMetadata = new ClassMetadata('Symfony2\Component\Serializer\Tests\Fixtures\GroupDummy');
 
         $this->assertTrue($this->loader->loadClassMetadata($classMetadata));
     }
 
     public function testLoadClassMetadata()
     {
-        $classMetadata = new ClassMetadata('Symfony\Component\Serializer\Tests\Fixtures\GroupDummy');
+        $classMetadata = new ClassMetadata('Symfony2\Component\Serializer\Tests\Fixtures\GroupDummy');
         $this->loader->loadClassMetadata($classMetadata);
 
         $this->assertEquals(TestClassMetadataFactory::createClassMetadata(), $classMetadata);
@@ -54,8 +54,8 @@ class AnnotationLoaderTest extends TestCase
 
     public function testLoadClassMetadataAndMerge()
     {
-        $classMetadata = new ClassMetadata('Symfony\Component\Serializer\Tests\Fixtures\GroupDummy');
-        $parentClassMetadata = new ClassMetadata('Symfony\Component\Serializer\Tests\Fixtures\GroupDummyParent');
+        $classMetadata = new ClassMetadata('Symfony2\Component\Serializer\Tests\Fixtures\GroupDummy');
+        $parentClassMetadata = new ClassMetadata('Symfony2\Component\Serializer\Tests\Fixtures\GroupDummyParent');
 
         $this->loader->loadClassMetadata($parentClassMetadata);
         $classMetadata->merge($parentClassMetadata);

@@ -22,7 +22,7 @@ use Symfony2\Component\DependencyInjection\ParameterBag\ParameterBag;
 class DoctrineExtensionTest extends TestCase
 {
     /**
-     * @var \Symfony\Bridge\Doctrine\DependencyInjection\AbstractDoctrineExtension
+     * @var \Symfony2\Bridge\Doctrine\DependencyInjection\AbstractDoctrineExtension
      */
     private $extension;
 
@@ -31,7 +31,7 @@ class DoctrineExtensionTest extends TestCase
         parent::setUp();
 
         $this->extension = $this
-            ->getMockBuilder('Symfony\Bridge\Doctrine\DependencyInjection\AbstractDoctrineExtension')
+            ->getMockBuilder('Symfony2\Bridge\Doctrine\DependencyInjection\AbstractDoctrineExtension')
             ->setMethods(array(
                 'getMappingResourceConfigDirectory',
                 'getObjectManagerElementName',
@@ -267,12 +267,12 @@ class DoctrineExtensionTest extends TestCase
     }
 
     /**
-     * @return \Symfony\Component\DependencyInjection\ContainerBuilder
+     * @return \Symfony2\Component\DependencyInjection\ContainerBuilder
      */
     protected function createContainer(array $data = array())
     {
         return new ContainerBuilder(new ParameterBag(array_merge(array(
-            'kernel.bundles' => array('FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle'),
+            'kernel.bundles' => array('FrameworkBundle' => 'Symfony2\\Bundle\\FrameworkBundle\\FrameworkBundle'),
             'kernel.cache_dir' => __DIR__,
             'kernel.debug' => false,
             'kernel.environment' => 'test',

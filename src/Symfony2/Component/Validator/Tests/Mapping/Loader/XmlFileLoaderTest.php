@@ -32,7 +32,7 @@ class XmlFileLoaderTest extends TestCase
     public function testLoadClassMetadataReturnsTrueIfSuccessful()
     {
         $loader = new XmlFileLoader(__DIR__.'/constraint-mapping.xml');
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
 
         $this->assertTrue($loader->loadClassMetadata($metadata));
     }
@@ -48,17 +48,17 @@ class XmlFileLoaderTest extends TestCase
     public function testLoadClassMetadata()
     {
         $loader = new XmlFileLoader(__DIR__.'/constraint-mapping.xml');
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
 
         $loader->loadClassMetadata($metadata);
 
-        $expected = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $expected = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
         $expected->setGroupSequence(array('Foo', 'Entity'));
         $expected->addConstraint(new ConstraintA());
         $expected->addConstraint(new ConstraintB());
         $expected->addConstraint(new Callback('validateMe'));
         $expected->addConstraint(new Callback('validateMeStatic'));
-        $expected->addConstraint(new Callback(array('Symfony\Component\Validator\Tests\Fixtures\CallbackClass', 'callback')));
+        $expected->addConstraint(new Callback(array('Symfony2\Component\Validator\Tests\Fixtures\CallbackClass', 'callback')));
         $expected->addConstraint(new Traverse(false));
         $expected->addPropertyConstraint('firstName', new NotNull());
         $expected->addPropertyConstraint('firstName', new Range(array('min' => 3)));
@@ -83,11 +83,11 @@ class XmlFileLoaderTest extends TestCase
     public function testLoadClassMetadataWithNonStrings()
     {
         $loader = new XmlFileLoader(__DIR__.'/constraint-mapping-non-strings.xml');
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
 
         $loader->loadClassMetadata($metadata);
 
-        $expected = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $expected = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
         $expected->addPropertyConstraint('firstName', new Regex(array('pattern' => '/^1/', 'match' => false)));
 
         $properties = $metadata->getPropertyMetadata('firstName');
@@ -99,11 +99,11 @@ class XmlFileLoaderTest extends TestCase
     public function testLoadGroupSequenceProvider()
     {
         $loader = new XmlFileLoader(__DIR__.'/constraint-mapping.xml');
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity');
 
         $loader->loadClassMetadata($metadata);
 
-        $expected = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity');
+        $expected = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity');
         $expected->setGroupSequenceProvider(true);
 
         $this->assertEquals($expected, $metadata);
@@ -112,9 +112,9 @@ class XmlFileLoaderTest extends TestCase
     public function testThrowExceptionIfDocTypeIsSet()
     {
         $loader = new XmlFileLoader(__DIR__.'/withdoctype.xml');
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
 
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('\Symfony\Component\Validator\Exception\MappingException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('\Symfony2\Component\Validator\Exception\MappingException');
         $loader->loadClassMetadata($metadata);
     }
 
@@ -124,12 +124,12 @@ class XmlFileLoaderTest extends TestCase
     public function testDoNotModifyStateIfExceptionIsThrown()
     {
         $loader = new XmlFileLoader(__DIR__.'/withdoctype.xml');
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
 
         try {
             $loader->loadClassMetadata($metadata);
         } catch (MappingException $e) {
-            $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('\Symfony\Component\Validator\Exception\MappingException');
+            $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('\Symfony2\Component\Validator\Exception\MappingException');
             $loader->loadClassMetadata($metadata);
         }
     }

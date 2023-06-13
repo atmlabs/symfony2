@@ -156,7 +156,7 @@ class ExceptionHandler
      */
     private function failSafeHandle(\Exception $exception)
     {
-        if (class_exists('Symfony\Component\HttpFoundation\Response', false)
+        if (class_exists('Symfony2\Component\HttpFoundation\Response', false)
             && __CLASS__ !== \get_class($this)
             && ($reflector = new \ReflectionMethod($this, 'createResponse'))
             && __CLASS__ !== $reflector->class

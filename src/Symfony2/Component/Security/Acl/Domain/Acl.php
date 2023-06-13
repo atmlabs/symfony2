@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
 use Doctrine\Common\NotifyPropertyChanged;
 use Doctrine\Common\PropertyChangedListener;
-use Symfony\Component\Security\Acl\Model\AclInterface;
-use Symfony\Component\Security\Acl\Model\AuditableAclInterface;
-use Symfony\Component\Security\Acl\Model\EntryInterface;
-use Symfony\Component\Security\Acl\Model\ObjectIdentityInterface;
-use Symfony\Component\Security\Acl\Model\PermissionGrantingStrategyInterface;
-use Symfony\Component\Security\Acl\Model\SecurityIdentityInterface;
+use Symfony2\Component\Security\Acl\Model\AclInterface;
+use Symfony2\Component\Security\Acl\Model\AuditableAclInterface;
+use Symfony2\Component\Security\Acl\Model\EntryInterface;
+use Symfony2\Component\Security\Acl\Model\ObjectIdentityInterface;
+use Symfony2\Component\Security\Acl\Model\PermissionGrantingStrategyInterface;
+use Symfony2\Component\Security\Acl\Model\SecurityIdentityInterface;
 
 /**
  * An ACL implementation.

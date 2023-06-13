@@ -20,7 +20,7 @@ class DigestAuthenticationEntryPointTest extends TestCase
 {
     public function testStart()
     {
-        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
+        $request = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')->getMock();
 
         $authenticationException = new AuthenticationException('TheAuthenticationExceptionMessage');
 
@@ -33,7 +33,7 @@ class DigestAuthenticationEntryPointTest extends TestCase
 
     public function testStartWithNoException()
     {
-        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
+        $request = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')->getMock();
 
         $entryPoint = new DigestAuthenticationEntryPoint('TheRealmName', 'TheSecret');
         $response = $entryPoint->start($request);
@@ -44,7 +44,7 @@ class DigestAuthenticationEntryPointTest extends TestCase
 
     public function testStartWithNonceExpiredException()
     {
-        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
+        $request = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')->getMock();
 
         $nonceExpiredException = new NonceExpiredException('TheNonceExpiredExceptionMessage');
 

@@ -30,7 +30,7 @@ use Symfony2\Component\Validator\Mapping\ClassMetadata;
  */
 class ValidatorTypeGuesserTest extends TestCase
 {
-    const TEST_CLASS = 'Symfony\Component\Form\Tests\Extension\Validator\ValidatorTypeGuesserTest_TestClass';
+    const TEST_CLASS = 'Symfony2\Component\Form\Tests\Extension\Validator\ValidatorTypeGuesserTest_TestClass';
 
     const TEST_PROPERTY = 'property';
 
@@ -52,7 +52,7 @@ class ValidatorTypeGuesserTest extends TestCase
     protected function setUp()
     {
         $this->metadata = new ClassMetadata(self::TEST_CLASS);
-        $this->metadataFactory = $this->getMockBuilder('Symfony\Component\Validator\Mapping\Factory\MetadataFactoryInterface')->getMock();
+        $this->metadataFactory = $this->getMockBuilder('Symfony2\Component\Validator\Mapping\Factory\MetadataFactoryInterface')->getMock();
         $this->metadataFactory->expects($this->any())
             ->method('getMetadataFor')
             ->with(self::TEST_CLASS)
@@ -93,7 +93,7 @@ class ValidatorTypeGuesserTest extends TestCase
         if (\PHP_VERSION_ID >= 70000) {
             $this->markTestSkipped('Cannot use a class called True on PHP 7 or higher.');
         }
-        $true = 'Symfony\Component\Validator\Constraints\True';
+        $true = 'Symfony2\Component\Validator\Constraints\True';
         $this->testGuessRequired(new $true(), new ValueGuess(true, Guess::HIGH_CONFIDENCE));
     }
 
@@ -107,7 +107,7 @@ class ValidatorTypeGuesserTest extends TestCase
         $constraint = new Length(array('max' => '2'));
 
         $result = $this->guesser->guessMaxLengthForConstraint($constraint);
-        $this->assertInstanceOf('Symfony\Component\Form\Guess\ValueGuess', $result);
+        $this->assertInstanceOf('Symfony2\Component\Form\Guess\ValueGuess', $result);
         $this->assertEquals(2, $result->getValue());
         $this->assertEquals(Guess::HIGH_CONFIDENCE, $result->getConfidence());
     }
@@ -138,7 +138,7 @@ class ValidatorTypeGuesserTest extends TestCase
         $constraint = new Type($type);
 
         $result = $this->guesser->guessMaxLengthForConstraint($constraint);
-        $this->assertInstanceOf('Symfony\Component\Form\Guess\ValueGuess', $result);
+        $this->assertInstanceOf('Symfony2\Component\Form\Guess\ValueGuess', $result);
         $this->assertNull($result->getValue());
         $this->assertEquals(Guess::MEDIUM_CONFIDENCE, $result->getConfidence());
     }

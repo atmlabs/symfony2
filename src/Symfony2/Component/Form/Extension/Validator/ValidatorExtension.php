@@ -37,13 +37,13 @@ class ValidatorExtension extends AbstractExtension
     {
         // 2.5 API
         if ($validator instanceof ValidatorInterface) {
-            $metadata = $validator->getMetadataFor('Symfony\Component\Form\Form');
+            $metadata = $validator->getMetadataFor('Symfony2\Component\Form\Form');
         // 2.4 API
         } elseif ($validator instanceof LegacyValidatorInterface) {
-            @trigger_error('Passing an instance of Symfony\Component\Validator\ValidatorInterface as argument to the '.__METHOD__.' method is deprecated since Symfony 2.8 and will be removed in 3.0. Use an implementation of Symfony\Component\Validator\Validator\ValidatorInterface instead', E_USER_DEPRECATED);
-            $metadata = $validator->getMetadataFactory()->getMetadataFor('Symfony\Component\Form\Form');
+            @trigger_error('Passing an instance of Symfony2\Component\Validator\ValidatorInterface as argument to the '.__METHOD__.' method is deprecated since Symfony 2.8 and will be removed in 3.0. Use an implementation of Symfony2\Component\Validator\Validator\ValidatorInterface instead', E_USER_DEPRECATED);
+            $metadata = $validator->getMetadataFactory()->getMetadataFor('Symfony2\Component\Form\Form');
         } else {
-            throw new UnexpectedTypeException($validator, 'Symfony\Component\Validator\Validator\ValidatorInterface or Symfony\Component\Validator\ValidatorInterface');
+            throw new UnexpectedTypeException($validator, 'Symfony2\Component\Validator\Validator\ValidatorInterface or Symfony2\Component\Validator\ValidatorInterface');
         }
 
         // Register the form constraints in the validator programmatically.

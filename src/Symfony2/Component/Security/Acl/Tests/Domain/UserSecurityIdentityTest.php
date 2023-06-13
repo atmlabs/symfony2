@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Tests\Domain;
+namespace Symfony2\Component\Security\Acl\Tests\Domain;
 
-use Symfony\Component\Security\Acl\Domain\RoleSecurityIdentity;
-use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
+use Symfony2\Component\Security\Acl\Domain\RoleSecurityIdentity;
+use Symfony2\Component\Security\Acl\Domain\UserSecurityIdentity;
 
 class UserSecurityIdentityTest extends \PHPUnit_Framework_TestCase
 {
@@ -27,10 +27,10 @@ class UserSecurityIdentityTest extends \PHPUnit_Framework_TestCase
     // Test that constructor never changes the type, even for proxies
     public function testConstructorWithProxy()
     {
-        $id = new UserSecurityIdentity('foo', 'Acme\DemoBundle\Proxy\__CG__\Symfony\Component\Security\Acl\Tests\Domain\Foo');
+        $id = new UserSecurityIdentity('foo', 'Acme\DemoBundle\Proxy\__CG__\Symfony2\Component\Security\Acl\Tests\Domain\Foo');
 
         $this->assertEquals('foo', $id->getUsername());
-        $this->assertEquals('Acme\DemoBundle\Proxy\__CG__\Symfony\Component\Security\Acl\Tests\Domain\Foo', $id->getClass());
+        $this->assertEquals('Acme\DemoBundle\Proxy\__CG__\Symfony2\Component\Security\Acl\Tests\Domain\Foo', $id->getClass());
     }
 
     /**
@@ -43,7 +43,7 @@ class UserSecurityIdentityTest extends \PHPUnit_Framework_TestCase
 
     public function getCompareData()
     {
-        $account = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')
+        $account = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')
                             ->setMockClassName('USI_AccountImpl')
                             ->getMock();
         $account
@@ -52,7 +52,7 @@ class UserSecurityIdentityTest extends \PHPUnit_Framework_TestCase
             ->will($this->returnValue('foo'))
         ;
 
-        $token = $this->getMock('Symfony\Component\Security\Core\Authentication\Token\TokenInterface');
+        $token = $this->getMock('Symfony2\Component\Security\Core\Authentication\Token\TokenInterface');
         $token
             ->expects($this->any())
             ->method('getUser')

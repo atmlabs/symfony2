@@ -33,7 +33,7 @@ class LegacyValidatorTest extends AbstractLegacyApiTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ValidatorException
+     * @expectedException \Symfony2\Component\Validator\Exception\ValidatorException
      */
     public function testValidateValueRejectsValid()
     {

@@ -16,7 +16,7 @@ use Symfony2\Component\Form\FormError;
 
 class TimeTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\TimeType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\TimeType';
 
     /**
      * @group legacy
@@ -498,7 +498,7 @@ class TimeTypeTest extends BaseTypeTest
     {
         // Throws an exception if "data_class" option is not explicitly set
         // to null in the type
-        $this->assertInstanceOf('Symfony\Component\Form\FormInterface', $this->factory->create(static::TESTED_TYPE, new \DateTime()));
+        $this->assertInstanceOf('Symfony2\Component\Form\FormInterface', $this->factory->create(static::TESTED_TYPE, new \DateTime()));
     }
 
     public function testSingleTextWidgetShouldUseTheRightInputType()
@@ -713,7 +713,7 @@ class TimeTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Form\Exception\InvalidConfigurationException
      */
     public function testInitializeWithSecondsAndWithoutMinutes()
     {
@@ -724,7 +724,7 @@ class TimeTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testThrowExceptionIfHoursIsInvalid()
     {
@@ -734,7 +734,7 @@ class TimeTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testThrowExceptionIfMinutesIsInvalid()
     {
@@ -744,7 +744,7 @@ class TimeTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testThrowExceptionIfSecondsIsInvalid()
     {

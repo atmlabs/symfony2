@@ -141,7 +141,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testTransformRequiresDateTime()
     {
@@ -215,7 +215,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformPartiallyEmptyYear()
     {
@@ -230,7 +230,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformPartiallyEmptyMonth()
     {
@@ -245,7 +245,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformPartiallyEmptyDay()
     {
@@ -260,7 +260,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformPartiallyEmptyHour()
     {
@@ -275,7 +275,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformPartiallyEmptyMinute()
     {
@@ -290,7 +290,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformPartiallyEmptySecond()
     {
@@ -350,7 +350,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformRequiresArray()
     {
@@ -359,7 +359,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithNegativeYear()
     {
@@ -375,7 +375,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithNegativeMonth()
     {
@@ -391,7 +391,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithNegativeDay()
     {
@@ -407,7 +407,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithNegativeHour()
     {
@@ -423,7 +423,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithNegativeMinute()
     {
@@ -439,7 +439,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithNegativeSecond()
     {
@@ -455,7 +455,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithInvalidMonth()
     {
@@ -471,7 +471,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithInvalidDay()
     {
@@ -487,7 +487,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithStringDay()
     {
@@ -503,7 +503,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithStringMonth()
     {
@@ -519,7 +519,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithStringYear()
     {
@@ -535,7 +535,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithEmptyStringHour()
     {
@@ -551,7 +551,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithEmptyStringMinute()
     {
@@ -567,7 +567,7 @@ class DateTimeToArrayTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithEmptyStringSecond()
     {

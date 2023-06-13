@@ -44,16 +44,16 @@ class TimedPhpEngineTest extends TestCase
      */
     private function getContainer()
     {
-        return $this->getMockBuilder('Symfony\Component\DependencyInjection\Container')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\DependencyInjection\Container')->getMock();
     }
 
     /**
-     * @return \Symfony\Component\Templating\TemplateNameParserInterface
+     * @return \Symfony2\Component\Templating\TemplateNameParserInterface
      */
     private function getTemplateNameParser()
     {
-        $templateReference = $this->getMockBuilder('Symfony\Component\Templating\TemplateReferenceInterface')->getMock();
-        $templateNameParser = $this->getMockBuilder('Symfony\Component\Templating\TemplateNameParserInterface')->getMock();
+        $templateReference = $this->getMockBuilder('Symfony2\Component\Templating\TemplateReferenceInterface')->getMock();
+        $templateNameParser = $this->getMockBuilder('Symfony2\Component\Templating\TemplateNameParserInterface')->getMock();
         $templateNameParser->expects($this->any())
             ->method('parse')
             ->will($this->returnValue($templateReference));
@@ -66,29 +66,29 @@ class TimedPhpEngineTest extends TestCase
      */
     private function getGlobalVariables()
     {
-        return $this->getMockBuilder('Symfony\Bundle\FrameworkBundle\Templating\GlobalVariables')
+        return $this->getMockBuilder('Symfony2\Bundle\FrameworkBundle\Templating\GlobalVariables')
             ->disableOriginalConstructor()
             ->getMock();
     }
 
     /**
-     * @return \Symfony\Component\Templating\Storage\StringStorage
+     * @return \Symfony2\Component\Templating\Storage\StringStorage
      */
     private function getStorage()
     {
-        return $this->getMockBuilder('Symfony\Component\Templating\Storage\StringStorage')
+        return $this->getMockBuilder('Symfony2\Component\Templating\Storage\StringStorage')
             ->disableOriginalConstructor()
             ->getMockForAbstractClass();
     }
 
     /**
-     * @param \Symfony\Component\Templating\Storage\StringStorage $storage
+     * @param \Symfony2\Component\Templating\Storage\StringStorage $storage
      *
-     * @return \Symfony\Component\Templating\Loader\Loader
+     * @return \Symfony2\Component\Templating\Loader\Loader
      */
     private function getLoader($storage)
     {
-        $loader = $this->getMockForAbstractClass('Symfony\Component\Templating\Loader\Loader');
+        $loader = $this->getMockForAbstractClass('Symfony2\Component\Templating\Loader\Loader');
         $loader->expects($this->once())
             ->method('load')
             ->will($this->returnValue($storage));
@@ -97,20 +97,20 @@ class TimedPhpEngineTest extends TestCase
     }
 
     /**
-     * @return \Symfony\Component\Stopwatch\StopwatchEvent
+     * @return \Symfony2\Component\Stopwatch\StopwatchEvent
      */
     private function getStopwatchEvent()
     {
-        return $this->getMockBuilder('Symfony\Component\Stopwatch\StopwatchEvent')
+        return $this->getMockBuilder('Symfony2\Component\Stopwatch\StopwatchEvent')
             ->disableOriginalConstructor()
             ->getMock();
     }
 
     /**
-     * @return \Symfony\Component\Stopwatch\Stopwatch
+     * @return \Symfony2\Component\Stopwatch\Stopwatch
      */
     private function getStopwatch()
     {
-        return $this->getMockBuilder('Symfony\Component\Stopwatch\Stopwatch')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Stopwatch\Stopwatch')->getMock();
     }
 }

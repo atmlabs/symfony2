@@ -28,9 +28,9 @@ use Symfony2\Component\Validator\Tests\Fixtures\Reference;
  */
 abstract class AbstractValidatorTest extends TestCase
 {
-    const ENTITY_CLASS = 'Symfony\Component\Validator\Tests\Fixtures\Entity';
+    const ENTITY_CLASS = 'Symfony2\Component\Validator\Tests\Fixtures\Entity';
 
-    const REFERENCE_CLASS = 'Symfony\Component\Validator\Tests\Fixtures\Reference';
+    const REFERENCE_CLASS = 'Symfony2\Component\Validator\Tests\Fixtures\Reference';
 
     /**
      * @var FakeMetadataFactory
@@ -512,7 +512,7 @@ abstract class AbstractValidatorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\NoSuchMetadataException
+     * @expectedException \Symfony2\Component\Validator\Exception\NoSuchMetadataException
      */
     public function testFailOnScalarReferences()
     {
@@ -730,7 +730,7 @@ abstract class AbstractValidatorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\NoSuchMetadataException
+     * @expectedException \Symfony2\Component\Validator\Exception\NoSuchMetadataException
      */
     public function testMetadataMustExistIfTraversalIsDisabled()
     {
@@ -839,13 +839,13 @@ abstract class AbstractValidatorTest extends TestCase
     /**
      * Cannot be UnsupportedMetadataException for BC with Symfony < 2.5.
      *
-     * @expectedException \Symfony\Component\Validator\Exception\ValidatorException
+     * @expectedException \Symfony2\Component\Validator\Exception\ValidatorException
      * @group legacy
      */
     public function testLegacyValidatePropertyFailsIfPropertiesNotSupported()
     {
         // $metadata does not implement PropertyMetadataContainerInterface
-        $metadata = $this->getMockBuilder('Symfony\Component\Validator\MetadataInterface')->getMock();
+        $metadata = $this->getMockBuilder('Symfony2\Component\Validator\MetadataInterface')->getMock();
 
         $this->metadataFactory->addMetadataForValue('VALUE', $metadata);
 
@@ -970,13 +970,13 @@ abstract class AbstractValidatorTest extends TestCase
     /**
      * Cannot be UnsupportedMetadataException for BC with Symfony < 2.5.
      *
-     * @expectedException \Symfony\Component\Validator\Exception\ValidatorException
+     * @expectedException \Symfony2\Component\Validator\Exception\ValidatorException
      * @group legacy
      */
     public function testLegacyValidatePropertyValueFailsIfPropertiesNotSupported()
     {
         // $metadata does not implement PropertyMetadataContainerInterface
-        $metadata = $this->getMockBuilder('Symfony\Component\Validator\MetadataInterface')->getMock();
+        $metadata = $this->getMockBuilder('Symfony2\Component\Validator\MetadataInterface')->getMock();
 
         $this->metadataFactory->addMetadataForValue('VALUE', $metadata);
 

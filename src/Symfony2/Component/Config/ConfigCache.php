@@ -18,11 +18,11 @@ use Symfony2\Component\Config\Resource\SelfCheckingResourceChecker;
  * ConfigCache caches arbitrary content in files on disk.
  *
  * When in debug mode, those metadata resources that implement
- * \Symfony\Component\Config\Resource\SelfCheckingResourceInterface will
+ * \Symfony2\Component\Config\Resource\SelfCheckingResourceInterface will
  * be used to check cache freshness.
  *
  * During a transition period, also instances of
- * \Symfony\Component\Config\Resource\ResourceInterface will be checked
+ * \Symfony2\Component\Config\Resource\ResourceInterface will be checked
  * by means of the isFresh() method. This behaviour is deprecated since 2.8
  * and will be removed in 3.0.
  *

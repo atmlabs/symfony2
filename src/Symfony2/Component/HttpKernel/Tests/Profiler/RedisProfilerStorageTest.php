@@ -43,7 +43,7 @@ class RedisProfilerStorageTest extends AbstractProfilerStorageTest
     }
 
     /**
-     * @return \Symfony\Component\HttpKernel\Profiler\ProfilerStorageInterface
+     * @return \Symfony2\Component\HttpKernel\Profiler\ProfilerStorageInterface
      */
     protected function getStorage()
     {

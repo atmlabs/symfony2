@@ -76,7 +76,7 @@ class ConstraintValidatorFactory implements ConstraintValidatorFactoryInterface
         }
 
         if (!$this->validators[$name] instanceof ConstraintValidatorInterface) {
-            throw new UnexpectedTypeException($this->validators[$name], 'Symfony\Component\Validator\ConstraintValidatorInterface');
+            throw new UnexpectedTypeException($this->validators[$name], 'Symfony2\Component\Validator\ConstraintValidatorInterface');
         }
 
         return $this->validators[$name];

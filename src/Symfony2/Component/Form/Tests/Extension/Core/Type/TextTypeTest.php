@@ -13,7 +13,7 @@ namespace Symfony2\Component\Form\Tests\Extension\Core\Type;
 
 class TextTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\TextType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\TextType';
 
     public function testSubmitNull($expected = null, $norm = null, $view = null)
     {

@@ -25,7 +25,7 @@ class MemberMetadataTest extends TestCase
     protected function setUp()
     {
         $this->metadata = new TestMemberMetadata(
-            'Symfony\Component\Validator\Tests\Fixtures\Entity',
+            'Symfony2\Component\Validator\Tests\Fixtures\Entity',
             'getLastName',
             'lastName'
         );
@@ -62,7 +62,7 @@ class MemberMetadataTest extends TestCase
 
     public function testAddConstraintRequiresClassConstraints()
     {
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Validator\Exception\ConstraintDefinitionException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Validator\Exception\ConstraintDefinitionException');
 
         $this->metadata->addConstraint(new ClassConstraint());
     }

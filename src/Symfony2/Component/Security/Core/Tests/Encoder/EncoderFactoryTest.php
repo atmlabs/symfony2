@@ -22,12 +22,12 @@ class EncoderFactoryTest extends TestCase
 {
     public function testGetEncoderWithMessageDigestEncoder()
     {
-        $factory = new EncoderFactory(array('Symfony\Component\Security\Core\User\UserInterface' => array(
-            'class' => 'Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder',
+        $factory = new EncoderFactory(array('Symfony2\Component\Security\Core\User\UserInterface' => array(
+            'class' => 'Symfony2\Component\Security\Core\Encoder\MessageDigestPasswordEncoder',
             'arguments' => array('sha512', true, 5),
         )));
 
-        $encoder = $factory->getEncoder($this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock());
+        $encoder = $factory->getEncoder($this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock());
         $expectedEncoder = new MessageDigestPasswordEncoder('sha512', true, 5);
 
         $this->assertEquals($expectedEncoder->encodePassword('foo', 'moo'), $encoder->encodePassword('foo', 'moo'));
@@ -36,10 +36,10 @@ class EncoderFactoryTest extends TestCase
     public function testGetEncoderWithService()
     {
         $factory = new EncoderFactory(array(
-            'Symfony\Component\Security\Core\User\UserInterface' => new MessageDigestPasswordEncoder('sha1'),
+            'Symfony2\Component\Security\Core\User\UserInterface' => new MessageDigestPasswordEncoder('sha1'),
         ));
 
-        $encoder = $factory->getEncoder($this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock());
+        $encoder = $factory->getEncoder($this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock());
         $expectedEncoder = new MessageDigestPasswordEncoder('sha1');
         $this->assertEquals($expectedEncoder->encodePassword('foo', ''), $encoder->encodePassword('foo', ''));
 
@@ -51,10 +51,10 @@ class EncoderFactoryTest extends TestCase
     public function testGetEncoderWithClassName()
     {
         $factory = new EncoderFactory(array(
-            'Symfony\Component\Security\Core\User\UserInterface' => new MessageDigestPasswordEncoder('sha1'),
+            'Symfony2\Component\Security\Core\User\UserInterface' => new MessageDigestPasswordEncoder('sha1'),
         ));
 
-        $encoder = $factory->getEncoder('Symfony\Component\Security\Core\Tests\Encoder\SomeChildUser');
+        $encoder = $factory->getEncoder('Symfony2\Component\Security\Core\Tests\Encoder\SomeChildUser');
         $expectedEncoder = new MessageDigestPasswordEncoder('sha1');
         $this->assertEquals($expectedEncoder->encodePassword('foo', ''), $encoder->encodePassword('foo', ''));
     }
@@ -62,7 +62,7 @@ class EncoderFactoryTest extends TestCase
     public function testGetEncoderConfiguredForConcreteClassWithService()
     {
         $factory = new EncoderFactory(array(
-            'Symfony\Component\Security\Core\User\User' => new MessageDigestPasswordEncoder('sha1'),
+            'Symfony2\Component\Security\Core\User\User' => new MessageDigestPasswordEncoder('sha1'),
         ));
 
         $encoder = $factory->getEncoder(new User('user', 'pass'));
@@ -73,10 +73,10 @@ class EncoderFactoryTest extends TestCase
     public function testGetEncoderConfiguredForConcreteClassWithClassName()
     {
         $factory = new EncoderFactory(array(
-            'Symfony\Component\Security\Core\Tests\Encoder\SomeUser' => new MessageDigestPasswordEncoder('sha1'),
+            'Symfony2\Component\Security\Core\Tests\Encoder\SomeUser' => new MessageDigestPasswordEncoder('sha1'),
         ));
 
-        $encoder = $factory->getEncoder('Symfony\Component\Security\Core\Tests\Encoder\SomeChildUser');
+        $encoder = $factory->getEncoder('Symfony2\Component\Security\Core\Tests\Encoder\SomeChildUser');
         $expectedEncoder = new MessageDigestPasswordEncoder('sha1');
         $this->assertEquals($expectedEncoder->encodePassword('foo', ''), $encoder->encodePassword('foo', ''));
     }
@@ -84,7 +84,7 @@ class EncoderFactoryTest extends TestCase
     public function testGetNamedEncoderForEncoderAware()
     {
         $factory = new EncoderFactory(array(
-            'Symfony\Component\Security\Core\Tests\Encoder\EncAwareUser' => new MessageDigestPasswordEncoder('sha256'),
+            'Symfony2\Component\Security\Core\Tests\Encoder\EncAwareUser' => new MessageDigestPasswordEncoder('sha256'),
             'encoder_name' => new MessageDigestPasswordEncoder('sha1'),
         ));
 
@@ -96,7 +96,7 @@ class EncoderFactoryTest extends TestCase
     public function testGetNullNamedEncoderForEncoderAware()
     {
         $factory = new EncoderFactory(array(
-            'Symfony\Component\Security\Core\Tests\Encoder\EncAwareUser' => new MessageDigestPasswordEncoder('sha1'),
+            'Symfony2\Component\Security\Core\Tests\Encoder\EncAwareUser' => new MessageDigestPasswordEncoder('sha1'),
             'encoder_name' => new MessageDigestPasswordEncoder('sha256'),
         ));
 
@@ -113,7 +113,7 @@ class EncoderFactoryTest extends TestCase
     public function testGetInvalidNamedEncoderForEncoderAware()
     {
         $factory = new EncoderFactory(array(
-            'Symfony\Component\Security\Core\Tests\Encoder\EncAwareUser' => new MessageDigestPasswordEncoder('sha1'),
+            'Symfony2\Component\Security\Core\Tests\Encoder\EncAwareUser' => new MessageDigestPasswordEncoder('sha1'),
             'encoder_name' => new MessageDigestPasswordEncoder('sha256'),
         ));
 
@@ -125,11 +125,11 @@ class EncoderFactoryTest extends TestCase
     public function testGetEncoderForEncoderAwareWithClassName()
     {
         $factory = new EncoderFactory(array(
-            'Symfony\Component\Security\Core\Tests\Encoder\EncAwareUser' => new MessageDigestPasswordEncoder('sha1'),
+            'Symfony2\Component\Security\Core\Tests\Encoder\EncAwareUser' => new MessageDigestPasswordEncoder('sha1'),
             'encoder_name' => new MessageDigestPasswordEncoder('sha256'),
         ));
 
-        $encoder = $factory->getEncoder('Symfony\Component\Security\Core\Tests\Encoder\EncAwareUser');
+        $encoder = $factory->getEncoder('Symfony2\Component\Security\Core\Tests\Encoder\EncAwareUser');
         $expectedEncoder = new MessageDigestPasswordEncoder('sha1');
         $this->assertEquals($expectedEncoder->encodePassword('foo', ''), $encoder->encodePassword('foo', ''));
     }

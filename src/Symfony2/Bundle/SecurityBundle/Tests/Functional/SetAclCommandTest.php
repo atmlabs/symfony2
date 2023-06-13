@@ -37,8 +37,8 @@ use Symfony2\Component\Security\Acl\Permission\BasicPermissionMap;
  */
 class SetAclCommandTest extends WebTestCase
 {
-    const OBJECT_CLASS = 'Symfony\Bundle\SecurityBundle\Tests\Functional\Bundle\AclBundle\Entity\Car';
-    const SECURITY_CLASS = 'Symfony\Component\Security\Core\User\User';
+    const OBJECT_CLASS = 'Symfony2\Bundle\SecurityBundle\Tests\Functional\Bundle\AclBundle\Entity\Car';
+    const SECURITY_CLASS = 'Symfony2\Component\Security\Core\User\User';
 
     public function testSetAclUser()
     {
@@ -64,7 +64,7 @@ class SetAclCommandTest extends WebTestCase
         $securityIdentity2 = new UserSecurityIdentity($securityUsername2, self::SECURITY_CLASS);
         $permissionMap = new BasicPermissionMap();
 
-        /** @var \Symfony\Component\Security\Acl\Model\AclProviderInterface $aclProvider */
+        /** @var \Symfony2\Component\Security\Acl\Model\AclProviderInterface $aclProvider */
         $aclProvider = $application->getKernel()->getContainer()->get('security.acl.provider');
         $acl = $aclProvider->findAcl($objectIdentity, array($securityIdentity1));
 
@@ -108,7 +108,7 @@ class SetAclCommandTest extends WebTestCase
         $roleSecurityIdentity = new RoleSecurityIdentity($role);
         $permissionMap = new BasicPermissionMap();
 
-        /** @var \Symfony\Component\Security\Acl\Model\AclProviderInterface $aclProvider */
+        /** @var \Symfony2\Component\Security\Acl\Model\AclProviderInterface $aclProvider */
         $aclProvider = $application->getKernel()->getContainer()->get('security.acl.provider');
         $acl = $aclProvider->findAcl($objectIdentity, array($roleSecurityIdentity, $userSecurityIdentity));
 
@@ -151,7 +151,7 @@ class SetAclCommandTest extends WebTestCase
         $roleSecurityIdentity = new RoleSecurityIdentity($role);
         $permissionMap = new BasicPermissionMap();
 
-        /** @var \Symfony\Component\Security\Acl\Model\AclProviderInterface $aclProvider */
+        /** @var \Symfony2\Component\Security\Acl\Model\AclProviderInterface $aclProvider */
         $aclProvider = $application->getKernel()->getContainer()->get('security.acl.provider');
 
         $acl1 = $aclProvider->findAcl($objectIdentity1, array($roleSecurityIdentity));

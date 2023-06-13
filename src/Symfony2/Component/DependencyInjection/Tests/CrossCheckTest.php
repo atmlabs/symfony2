@@ -32,8 +32,8 @@ class CrossCheckTest extends TestCase
      */
     public function testCrossCheck($fixture, $type)
     {
-        $loaderClass = 'Symfony\\Component\\DependencyInjection\\Loader\\'.ucfirst($type).'FileLoader';
-        $dumperClass = 'Symfony\\Component\\DependencyInjection\\Dumper\\'.ucfirst($type).'Dumper';
+        $loaderClass = 'Symfony2\\Component\\DependencyInjection\\Loader\\'.ucfirst($type).'FileLoader';
+        $dumperClass = 'Symfony2\\Component\\DependencyInjection\\Dumper\\'.ucfirst($type).'Dumper';
 
         $tmp = tempnam(sys_get_temp_dir(), 'sf');
 

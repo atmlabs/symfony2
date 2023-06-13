@@ -11,17 +11,17 @@
 
 namespace Symfony2\Component\Locale\Stub\DateFormat;
 
-@trigger_error('The '.__NAMESPACE__.'\DayOfYearTransformer class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony\Component\Intl\DateFormatter\DateFormat\DayOfYearTransformer class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\DayOfYearTransformer class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony2\Component\Intl\DateFormatter\DateFormat\DayOfYearTransformer class instead.', E_USER_DEPRECATED);
 
 use Symfony2\Component\Intl\DateFormatter\DateFormat\DayOfYearTransformer as BaseDayOfYearTransformer;
 
 /**
- * Alias of {@link \Symfony\Component\Intl\DateFormatter\DateFormat\DayOfYearTransformer}.
+ * Alias of {@link \Symfony2\Component\Intl\DateFormatter\DateFormat\DayOfYearTransformer}.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 2.3, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Intl\DateFormatter\DateFormat\DayOfYearTransformer}
+ *             Use {@link \Symfony2\Component\Intl\DateFormatter\DateFormat\DayOfYearTransformer}
  *             instead.
  */
 class DayOfYearTransformer extends BaseDayOfYearTransformer

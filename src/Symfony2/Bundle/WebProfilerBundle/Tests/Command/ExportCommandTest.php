@@ -28,13 +28,13 @@ class ExportCommandTest extends TestCase
     public function testExecuteWithUnknownToken()
     {
         $profiler = $this
-            ->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profiler')
+            ->getMockBuilder('Symfony2\Component\HttpKernel\Profiler\Profiler')
             ->disableOriginalConstructor()
             ->getMock()
         ;
 
         $helperSet = new HelperSet();
-        $helper = $this->getMockBuilder('Symfony\Component\Console\Helper\FormatterHelper')->getMock();
+        $helper = $this->getMockBuilder('Symfony2\Component\Console\Helper\FormatterHelper')->getMock();
         $helper->expects($this->any())->method('formatSection');
         $helperSet->set($helper, 'formatter');
 
@@ -48,7 +48,7 @@ class ExportCommandTest extends TestCase
     public function testExecuteWithToken()
     {
         $profiler = $this
-            ->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profiler')
+            ->getMockBuilder('Symfony2\Component\HttpKernel\Profiler\Profiler')
             ->disableOriginalConstructor()
             ->getMock()
         ;
@@ -57,7 +57,7 @@ class ExportCommandTest extends TestCase
         $profiler->expects($this->once())->method('loadProfile')->with('TOKEN')->will($this->returnValue($profile));
 
         $helperSet = new HelperSet();
-        $helper = $this->getMockBuilder('Symfony\Component\Console\Helper\FormatterHelper')->getMock();
+        $helper = $this->getMockBuilder('Symfony2\Component\Console\Helper\FormatterHelper')->getMock();
         $helper->expects($this->any())->method('formatSection');
         $helperSet->set($helper, 'formatter');
 

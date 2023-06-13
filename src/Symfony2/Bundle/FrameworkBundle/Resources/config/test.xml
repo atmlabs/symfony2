@@ -5,11 +5,11 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="test.client.class">Symfony\Bundle\FrameworkBundle\Client</parameter>
+        <parameter key="test.client.class">Symfony2\Bundle\FrameworkBundle\Client</parameter>
         <parameter key="test.client.parameters" type="collection"></parameter>
-        <parameter key="test.client.history.class">Symfony\Component\BrowserKit\History</parameter>
-        <parameter key="test.client.cookiejar.class">Symfony\Component\BrowserKit\CookieJar</parameter>
-        <parameter key="test.session.listener.class">Symfony\Bundle\FrameworkBundle\EventListener\TestSessionListener</parameter>
+        <parameter key="test.client.history.class">Symfony2\Component\BrowserKit\History</parameter>
+        <parameter key="test.client.cookiejar.class">Symfony2\Component\BrowserKit\CookieJar</parameter>
+        <parameter key="test.session.listener.class">Symfony2\Bundle\FrameworkBundle\EventListener\TestSessionListener</parameter>
     </parameters>
 
     <services>

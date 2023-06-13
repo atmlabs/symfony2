@@ -303,7 +303,7 @@ class Route implements \Serializable
     public function setOptions(array $options)
     {
         $this->options = array(
-            'compiler_class' => 'Symfony\\Component\\Routing\\RouteCompiler',
+            'compiler_class' => 'Symfony2\\Component\\Routing\\RouteCompiler',
         );
 
         return $this->addOptions($options);

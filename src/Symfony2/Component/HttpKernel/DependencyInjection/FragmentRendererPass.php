@@ -53,7 +53,7 @@ class FragmentRendererPass implements CompilerPassInterface
             }
 
             $class = $container->getParameterBag()->resolveValue($def->getClass());
-            $interface = 'Symfony\Component\HttpKernel\Fragment\FragmentRendererInterface';
+            $interface = 'Symfony2\Component\HttpKernel\Fragment\FragmentRendererInterface';
 
             if (!is_subclass_of($class, $interface)) {
                 if (!class_exists($class, false)) {

@@ -22,7 +22,7 @@ class AddSecurityVotersPassTest extends TestCase
     {
         $container = new ContainerBuilder();
         $container
-            ->register('security.access.decision_manager', 'Symfony\Component\Security\Core\Authorization\AccessDecisionManager')
+            ->register('security.access.decision_manager', 'Symfony2\Component\Security\Core\Authorization\AccessDecisionManager')
             ->addArgument(array())
         ;
         $container

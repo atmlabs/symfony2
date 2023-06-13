@@ -23,7 +23,7 @@ class ResponseTest extends ResponseTestCase
     {
         $response = Response::create('foo', 301, array('Foo' => 'bar'));
 
-        $this->assertInstanceOf('Symfony\Component\HttpFoundation\Response', $response);
+        $this->assertInstanceOf('Symfony2\Component\HttpFoundation\Response', $response);
         $this->assertEquals(301, $response->getStatusCode());
         $this->assertEquals('bar', $response->headers->get('foo'));
     }
@@ -454,7 +454,7 @@ class ResponseTest extends ResponseTestCase
 
     public function testDefaultContentType()
     {
-        $headerMock = $this->getMockBuilder('Symfony\Component\HttpFoundation\ResponseHeaderBag')->setMethods(array('set'))->getMock();
+        $headerMock = $this->getMockBuilder('Symfony2\Component\HttpFoundation\ResponseHeaderBag')->setMethods(array('set'))->getMock();
         $headerMock->expects($this->at(0))
             ->method('set')
             ->with('Content-Type', 'text/html');

@@ -35,8 +35,8 @@ class OutputFormatterTest extends TestCase
         $this->assertEquals('\\<info>some info\\</info>', OutputFormatter::escape('<info>some info</info>'));
 
         $this->assertEquals(
-            "\033[33mSymfony\\Component\\Console does work very well!\033[39m",
-            $formatter->format('<comment>Symfony\Component\Console does work very well!</comment>')
+            "\033[33mSymfony2\\Component\\Console does work very well!\033[39m",
+            $formatter->format('<comment>Symfony2\Component\Console does work very well!</comment>')
         );
     }
 

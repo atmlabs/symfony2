@@ -52,7 +52,7 @@ class ClassUtils
      */
     public static function getRealClass($object)
     {
-        if (class_exists('Symfony\Component\Security\Acl\Util\ClassUtils')) {
+        if (class_exists('Symfony2\Component\Security\Acl\Util\ClassUtils')) {
             return AclClassUtils::getRealClass($object);
         }
 

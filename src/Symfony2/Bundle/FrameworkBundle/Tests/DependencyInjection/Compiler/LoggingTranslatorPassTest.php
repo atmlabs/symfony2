@@ -22,7 +22,7 @@ class LoggingTranslatorPassTest extends TestCase
     {
         $container = new ContainerBuilder();
         $container->setParameter('translator.logging', true);
-        $container->setParameter('translator.class', 'Symfony\Component\Translation\Translator');
+        $container->setParameter('translator.class', 'Symfony2\Component\Translation\Translator');
         $container->register('monolog.logger');
         $container->setAlias('logger', 'monolog.logger');
         $container->register('translator.default', '%translator.class%');

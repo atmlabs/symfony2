@@ -134,7 +134,7 @@ class RouteCollectionTest extends TestCase
 
         $collection->addOptions(array('option' => 'new-value'));
         $this->assertEquals(
-            array('option' => 'new-value', 'compiler_class' => 'Symfony\\Component\\Routing\\RouteCompiler'),
+            array('option' => 'new-value', 'compiler_class' => 'Symfony2\\Component\\Routing\\RouteCompiler'),
             $collection->get('bar')->getOptions(), '->addOptions() adds options to all routes and overwrites existing ones'
         );
     }

@@ -21,7 +21,7 @@ use Symfony2\Component\DependencyInjection\Reference;
 class CheckCircularReferencesPassTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\ServiceCircularReferenceException
      */
     public function testProcess()
     {
@@ -33,7 +33,7 @@ class CheckCircularReferencesPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\ServiceCircularReferenceException
      */
     public function testProcessWithAliases()
     {
@@ -46,7 +46,7 @@ class CheckCircularReferencesPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\ServiceCircularReferenceException
      */
     public function testProcessWithFactory()
     {
@@ -64,7 +64,7 @@ class CheckCircularReferencesPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\ServiceCircularReferenceException
      */
     public function testProcessDetectsIndirectCircularReference()
     {
@@ -77,7 +77,7 @@ class CheckCircularReferencesPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\ServiceCircularReferenceException
      */
     public function testProcessDetectsIndirectCircularReferenceWithFactory()
     {
@@ -95,7 +95,7 @@ class CheckCircularReferencesPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\ServiceCircularReferenceException
      */
     public function testDeepCircularReference()
     {

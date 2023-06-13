@@ -51,7 +51,7 @@ class FormTest_AuthorWithoutRefSetter
 
 class FormTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\FormType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\FormType';
 
     /**
      * @group legacy
@@ -65,7 +65,7 @@ class FormTypeTest extends BaseTypeTest
 
     public function testCreateFormInstances()
     {
-        $this->assertInstanceOf('Symfony\Component\Form\Form', $this->factory->create(static::TESTED_TYPE));
+        $this->assertInstanceOf('Symfony2\Component\Form\Form', $this->factory->create(static::TESTED_TYPE));
     }
 
     public function testPassRequiredAsOption()
@@ -198,27 +198,27 @@ class FormTypeTest extends BaseTypeTest
 
     public function testDataClassMayBeNull()
     {
-        $this->assertInstanceOf('Symfony\Component\Form\FormBuilderInterface', $this->factory->createBuilder(static::TESTED_TYPE, null, array(
+        $this->assertInstanceOf('Symfony2\Component\Form\FormBuilderInterface', $this->factory->createBuilder(static::TESTED_TYPE, null, array(
             'data_class' => null,
         )));
     }
 
     public function testDataClassMayBeAbstractClass()
     {
-        $this->assertInstanceOf('Symfony\Component\Form\FormBuilderInterface', $this->factory->createBuilder(static::TESTED_TYPE, null, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\AbstractAuthor',
+        $this->assertInstanceOf('Symfony2\Component\Form\FormBuilderInterface', $this->factory->createBuilder(static::TESTED_TYPE, null, array(
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\AbstractAuthor',
         )));
     }
 
     public function testDataClassMayBeInterface()
     {
-        $this->assertInstanceOf('Symfony\Component\Form\FormBuilderInterface', $this->factory->createBuilder(static::TESTED_TYPE, null, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\AuthorInterface',
+        $this->assertInstanceOf('Symfony2\Component\Form\FormBuilderInterface', $this->factory->createBuilder(static::TESTED_TYPE, null, array(
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\AuthorInterface',
         )));
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Form\Exception\InvalidArgumentException
      */
     public function testDataClassMustBeValidClassOrInterface()
     {
@@ -235,7 +235,7 @@ class FormTypeTest extends BaseTypeTest
     public function testSubmitWithEmptyDataCreatesObjectIfClassAvailable()
     {
         $form = $this->factory->createBuilder(static::TESTED_TYPE, null, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\Author',
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\Author',
             'required' => false,
         ))
             ->add('firstName', TextTypeTest::TESTED_TYPE)
@@ -296,7 +296,7 @@ class FormTypeTest extends BaseTypeTest
     public function testSubmitEmptyWithEmptyDataDontCreateObjectIfNotRequired()
     {
         $form = $this->factory->createBuilder(static::TESTED_TYPE, null, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\Author',
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\Author',
             'required' => false,
         ))
             ->add('firstName', TextTypeTest::TESTED_TYPE)
@@ -313,7 +313,7 @@ class FormTypeTest extends BaseTypeTest
     public function testSubmitEmptyWithEmptyDataCreatesObjectIfRequired()
     {
         $form = $this->factory->createBuilder(static::TESTED_TYPE, null, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\Author',
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\Author',
             'required' => true,
         ))
             ->add('firstName', TextTypeTest::TESTED_TYPE)
@@ -371,7 +371,7 @@ class FormTypeTest extends BaseTypeTest
         $author = new Author();
 
         $form = $this->factory->createBuilder(static::TESTED_TYPE, null, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\Author',
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\Author',
             'empty_data' => $author,
         ))
             ->add('firstName', TextTypeTest::TESTED_TYPE)
@@ -387,7 +387,7 @@ class FormTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testAttributesException()
     {
@@ -407,7 +407,7 @@ class FormTypeTest extends BaseTypeTest
 
         $builder = $this->factory->createBuilder(static::TESTED_TYPE, $author);
         $builder->add('reference', static::TESTED_TYPE, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\Author',
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\Author',
         ));
         $builder->get('reference')->add('firstName', TextTypeTest::TESTED_TYPE);
         $form = $builder->getForm();
@@ -430,7 +430,7 @@ class FormTypeTest extends BaseTypeTest
 
         $builder = $this->factory->createBuilder(static::TESTED_TYPE, $author);
         $builder->add('referenceCopy', static::TESTED_TYPE, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\Author',
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\Author',
         ));
         $builder->get('referenceCopy')->add('firstName', TextTypeTest::TESTED_TYPE);
         $form = $builder->getForm();
@@ -453,7 +453,7 @@ class FormTypeTest extends BaseTypeTest
 
         $builder = $this->factory->createBuilder(static::TESTED_TYPE, $author);
         $builder->add('referenceCopy', static::TESTED_TYPE, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\Author',
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\Author',
             'by_reference' => false,
         ));
         $builder->get('referenceCopy')->add('firstName', TextTypeTest::TESTED_TYPE);
@@ -698,7 +698,7 @@ class FormTypeTest extends BaseTypeTest
     public function testCanGetErrorsWhenButtonInForm()
     {
         $builder = $this->factory->createBuilder(static::TESTED_TYPE, null, array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\Author',
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\Author',
             'required' => false,
         ));
         $builder->add('foo', 'text');

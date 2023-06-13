@@ -48,7 +48,7 @@ class DoctrineParserCacheTest extends TestCase
         $doctrineCacheMock = $this->getMockBuilder('Doctrine\Common\Cache\Cache')->getMock();
         $parserCache = new DoctrineParserCache($doctrineCacheMock);
 
-        $expression = $this->getMockBuilder('Symfony\Component\ExpressionLanguage\ParsedExpression')
+        $expression = $this->getMockBuilder('Symfony2\Component\ExpressionLanguage\ParsedExpression')
             ->disableOriginalConstructor()
             ->getMock();
 

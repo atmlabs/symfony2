@@ -130,7 +130,7 @@ class ClassMapGeneratorTest extends TestCase
 
     public function testCreateMapFinderSupport()
     {
-        $finder = new \Symfony\Component\Finder\Finder();
+        $finder = new \Symfony2\Component\Finder\Finder();
         $finder->files()->in(__DIR__.'/Fixtures/beta/NamespaceCollision');
 
         $this->assertEqualsNormalized(array(

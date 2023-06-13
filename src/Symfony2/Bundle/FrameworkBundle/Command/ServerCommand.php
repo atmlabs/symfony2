@@ -27,7 +27,7 @@ abstract class ServerCommand extends ContainerAwareCommand
             return false;
         }
 
-        if (!class_exists('Symfony\Component\Process\Process')) {
+        if (!class_exists('Symfony2\Component\Process\Process')) {
             return false;
         }
 

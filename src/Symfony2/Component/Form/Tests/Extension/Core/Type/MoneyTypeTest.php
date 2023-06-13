@@ -15,7 +15,7 @@ use Symfony2\Component\Intl\Util\IntlTestHelper;
 
 class MoneyTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\MoneyType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\MoneyType';
 
     protected function setUp()
     {

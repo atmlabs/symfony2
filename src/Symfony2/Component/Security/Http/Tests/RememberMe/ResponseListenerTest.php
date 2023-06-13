@@ -84,14 +84,14 @@ class ResponseListenerTest extends TestCase
     private function getResponse()
     {
         $response = new Response();
-        $response->headers = $this->getMockBuilder('Symfony\Component\HttpFoundation\ResponseHeaderBag')->getMock();
+        $response->headers = $this->getMockBuilder('Symfony2\Component\HttpFoundation\ResponseHeaderBag')->getMock();
 
         return $response;
     }
 
     private function getEvent($request, $response, $type = HttpKernelInterface::MASTER_REQUEST)
     {
-        $event = $this->getMockBuilder('Symfony\Component\HttpKernel\Event\FilterResponseEvent')
+        $event = $this->getMockBuilder('Symfony2\Component\HttpKernel\Event\FilterResponseEvent')
             ->disableOriginalConstructor()
             ->getMock();
 

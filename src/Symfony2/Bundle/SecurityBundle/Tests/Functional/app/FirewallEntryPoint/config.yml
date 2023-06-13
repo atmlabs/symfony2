@@ -30,4 +30,4 @@ security:
                 users:
                     john: { password: doe, roles: [ROLE_SECURE] }
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony2\Component\Security\Core\User\User: plaintext

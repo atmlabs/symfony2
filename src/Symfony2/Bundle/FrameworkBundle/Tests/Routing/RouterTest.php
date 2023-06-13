@@ -154,7 +154,7 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\ParameterNotFoundException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\ParameterNotFoundException
      * @expectedExceptionMessage You have requested a non-existent parameter "nope".
      */
     public function testExceptionOnNonExistentParameter()
@@ -170,7 +170,7 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @expectedExceptionMessage The container parameter "object", used in the route configuration value "/%object%", must be a string or numeric, but it is of type object.
      */
     public function testExceptionOnNonStringParameter()
@@ -209,11 +209,11 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @return \Symfony\Component\DependencyInjection\Container
+     * @return \Symfony2\Component\DependencyInjection\Container
      */
     private function getServiceContainer(RouteCollection $routes)
     {
-        $loader = $this->getMockBuilder('Symfony\Component\Config\Loader\LoaderInterface')->getMock();
+        $loader = $this->getMockBuilder('Symfony2\Component\Config\Loader\LoaderInterface')->getMock();
 
         $loader
             ->expects($this->any())
@@ -221,7 +221,7 @@ class RouterTest extends TestCase
             ->will($this->returnValue($routes))
         ;
 
-        $sc = $this->getMockBuilder('Symfony\\Component\\DependencyInjection\\Container')->setMethods(array('get'))->getMock();
+        $sc = $this->getMockBuilder('Symfony2\\Component\\DependencyInjection\\Container')->setMethods(array('get'))->getMock();
 
         $sc
             ->expects($this->once())

@@ -440,13 +440,13 @@ EOF;
     public function testObjectSupportEnabled()
     {
         $input = <<<'EOF'
-foo: !!php/object:O:30:"Symfony\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
+foo: !!php/object:O:30:"Symfony2\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
 bar: 1
 EOF;
         $this->assertEquals(array('foo' => new B(), 'bar' => 1), $this->parser->parse($input, false, true), '->parse() is able to parse objects');
 
         $input = <<<'EOF'
-foo: !php/object:O:30:"Symfony\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
+foo: !php/object:O:30:"Symfony2\Component\Yaml\Tests\B":1:{s:1:"b";s:3:"foo";}
 bar: 1
 EOF;
         $this->assertEquals(array('foo' => new B(), 'bar' => 1), $this->parser->parse($input, false, true), '->parse() is able to parse objects');
@@ -533,7 +533,7 @@ YAML;
 
     /**
      * @dataProvider invalidDumpedObjectProvider
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testObjectsSupportDisabledWithExceptions($yaml)
     {
@@ -543,11 +543,11 @@ YAML;
     public function invalidDumpedObjectProvider()
     {
         $yamlTag = <<<'EOF'
-foo: !!php/object:O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
+foo: !!php/object:O:30:"Symfony2\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
 bar: 1
 EOF;
         $localTag = <<<'EOF'
-foo: !php/object:O:30:"Symfony\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
+foo: !php/object:O:30:"Symfony2\Tests\Component\Yaml\B":1:{s:1:"b";s:3:"foo";}
 bar: 1
 EOF;
 
@@ -574,13 +574,13 @@ EOF;
 
                 $this->fail('charsets other than UTF-8 are rejected.');
             } catch (\Exception $e) {
-                $this->assertInstanceOf('Symfony\Component\Yaml\Exception\ParseException', $e, 'charsets other than UTF-8 are rejected.');
+                $this->assertInstanceOf('Symfony2\Component\Yaml\Exception\ParseException', $e, 'charsets other than UTF-8 are rejected.');
             }
         }
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testUnindentedCollectionException()
     {
@@ -597,7 +597,7 @@ EOF;
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testShortcutKeyUnindentedCollectionException()
     {
@@ -613,7 +613,7 @@ EOF;
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      * @expectedExceptionMessageRegExp /^Multiple documents are not supported.+/
      */
     public function testMultipleDocumentsNotSupportedException()
@@ -634,7 +634,7 @@ EOL
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testSequenceInAMapping()
     {
@@ -694,7 +694,7 @@ EOT;
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testMappingInASequence()
     {
@@ -707,7 +707,7 @@ EOF
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      * @expectedExceptionMessage missing colon
      */
     public function testScalarInSequence()
@@ -1159,10 +1159,10 @@ EOT
     public function testParserThrowsExceptionWithCorrectLineNumber($lineNumber, $yaml)
     {
         if (method_exists($this, 'expectException')) {
-            $this->expectException('\Symfony\Component\Yaml\Exception\ParseException');
+            $this->expectException('\Symfony2\Component\Yaml\Exception\ParseException');
             $this->expectExceptionMessage(sprintf('Unexpected characters near "," at line %d (near "bar: "123",").', $lineNumber));
         } else {
-            $this->setExpectedException('\Symfony\Component\Yaml\Exception\ParseException', sprintf('Unexpected characters near "," at line %d (near "bar: "123",").', $lineNumber));
+            $this->setExpectedException('\Symfony2\Component\Yaml\Exception\ParseException', sprintf('Unexpected characters near "," at line %d (near "bar: "123",").', $lineNumber));
         }
 
         $this->parser->parse($yaml);
@@ -1233,7 +1233,7 @@ YAML
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      * @expectedExceptionMessage Reference "foo" does not exist at line 2
      */
     public function testParserCleansUpReferencesBetweenRuns()
@@ -1282,7 +1282,7 @@ YAML;
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      * @expectedExceptionMessage Reference "foo" does not exist
      */
     public function testEvalRefException()

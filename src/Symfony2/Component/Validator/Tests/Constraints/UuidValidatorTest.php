@@ -45,17 +45,17 @@ class UuidValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Validator\Exception\UnexpectedTypeException
      */
     public function testExpectsUuidConstraintCompatibleType()
     {
-        $constraint = $this->getMockForAbstractClass('Symfony\\Component\\Validator\\Constraint');
+        $constraint = $this->getMockForAbstractClass('Symfony2\\Component\\Validator\\Constraint');
 
         $this->validator->validate('216fff40-98d9-11e3-a5e2-0800200c9a66', $constraint);
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Validator\Exception\UnexpectedTypeException
      */
     public function testExpectsStringCompatibleType()
     {

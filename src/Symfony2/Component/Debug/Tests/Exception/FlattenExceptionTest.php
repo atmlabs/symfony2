@@ -143,7 +143,7 @@ class FlattenExceptionTest extends TestCase
 
         $this->assertEquals($flattened->getMessage(), 'Parse error: Oh noes!', 'The message is copied from the original exception.');
         $this->assertEquals($flattened->getCode(), 42, 'The code is copied from the original exception.');
-        $this->assertEquals($flattened->getClass(), 'Symfony\Component\Debug\Exception\FatalThrowableError', 'The class is set to the class of the original exception');
+        $this->assertEquals($flattened->getClass(), 'Symfony2\Component\Debug\Exception\FatalThrowableError', 'The class is set to the class of the original exception');
     }
 
     /**

@@ -55,7 +55,7 @@ class RememberMeTokenTest extends TestCase
 
     protected function getUser($roles = array('ROLE_FOO'))
     {
-        $user = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock();
+        $user = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock();
         $user
             ->expects($this->once())
             ->method('getRoles')

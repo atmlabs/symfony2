@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Exception;
+namespace Symfony2\Component\Security\Acl\Exception;
 
 /**
  * This exception is thrown when we cannot locate an ACE that matches the

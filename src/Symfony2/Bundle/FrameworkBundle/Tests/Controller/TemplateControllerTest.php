@@ -25,7 +25,7 @@ class TemplateControllerTest extends TestCase
         $twig = $this->getMockBuilder('Twig\Environment')->disableOriginalConstructor()->getMock();
         $twig->expects($this->once())->method('render')->willReturn('bar');
 
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
         $container->expects($this->at(0))->method('has')->will($this->returnValue(false));
         $container->expects($this->at(1))->method('has')->will($this->returnValue(true));
         $container->expects($this->at(2))->method('get')->will($this->returnValue($twig));
@@ -38,10 +38,10 @@ class TemplateControllerTest extends TestCase
 
     public function testTemplating()
     {
-        $templating = $this->getMockBuilder('Symfony\Bundle\FrameworkBundle\Templating\EngineInterface')->getMock();
+        $templating = $this->getMockBuilder('Symfony2\Bundle\FrameworkBundle\Templating\EngineInterface')->getMock();
         $templating->expects($this->once())->method('renderResponse')->willReturn(new Response('bar'));
 
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
         $container->expects($this->at(0))->method('has')->willReturn(true);
         $container->expects($this->at(1))->method('get')->will($this->returnValue($templating));
 
@@ -57,7 +57,7 @@ class TemplateControllerTest extends TestCase
      */
     public function testNoTwigNorTemplating()
     {
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
         $container->expects($this->at(0))->method('has')->willReturn(false);
         $container->expects($this->at(1))->method('has')->willReturn(false);
 

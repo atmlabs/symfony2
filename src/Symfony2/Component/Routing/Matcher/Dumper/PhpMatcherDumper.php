@@ -48,12 +48,12 @@ class PhpMatcherDumper extends MatcherDumper
     {
         $options = array_replace(array(
             'class' => 'ProjectUrlMatcher',
-            'base_class' => 'Symfony\\Component\\Routing\\Matcher\\UrlMatcher',
+            'base_class' => 'Symfony2\\Component\\Routing\\Matcher\\UrlMatcher',
         ), $options);
 
         // trailing slash support is only enabled if we know how to redirect the user
         $interfaces = class_implements($options['base_class']);
-        $supportsRedirections = isset($interfaces['Symfony\\Component\\Routing\\Matcher\\RedirectableUrlMatcherInterface']);
+        $supportsRedirections = isset($interfaces['Symfony2\\Component\\Routing\\Matcher\\RedirectableUrlMatcherInterface']);
 
         return <<<EOF
 <?php
@@ -421,7 +421,7 @@ EOF;
     private function getExpressionLanguage()
     {
         if (null === $this->expressionLanguage) {
-            if (!class_exists('Symfony\Component\ExpressionLanguage\ExpressionLanguage')) {
+            if (!class_exists('Symfony2\Component\ExpressionLanguage\ExpressionLanguage')) {
                 throw new \RuntimeException('Unable to use expressions as the Symfony ExpressionLanguage component is not installed.');
             }
             $this->expressionLanguage = new ExpressionLanguage(null, $this->expressionLanguageProviders);

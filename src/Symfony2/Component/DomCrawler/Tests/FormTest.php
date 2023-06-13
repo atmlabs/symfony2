@@ -20,7 +20,7 @@ class FormTest extends TestCase
     public static function setUpBeforeClass()
     {
         // Ensure that the private helper class FormFieldRegistry is loaded
-        class_exists('Symfony\\Component\\DomCrawler\\Form');
+        class_exists('Symfony2\\Component\\DomCrawler\\Form');
     }
 
     public function testConstructorThrowsExceptionIfTheNodeHasNoFormAncestor()
@@ -645,7 +645,7 @@ class FormTest extends TestCase
     {
         $form = $this->createForm('<form method="post"><input type="text" name="bar" value="bar" /><input type="submit" /></form>');
 
-        $this->assertInstanceOf('Symfony\\Component\\DomCrawler\\Field\\InputFormField', $form->get('bar'), '->get() returns the field object associated with the given name');
+        $this->assertInstanceOf('Symfony2\\Component\\DomCrawler\\Field\\InputFormField', $form->get('bar'), '->get() returns the field object associated with the given name');
 
         try {
             $form->get('foo');
@@ -661,7 +661,7 @@ class FormTest extends TestCase
 
         $fields = $form->all();
         $this->assertCount(1, $fields, '->all() return an array of form field objects');
-        $this->assertInstanceOf('Symfony\\Component\\DomCrawler\\Field\\InputFormField', $fields['bar'], '->all() return an array of form field objects');
+        $this->assertInstanceOf('Symfony2\\Component\\DomCrawler\\Field\\InputFormField', $fields['bar'], '->all() return an array of form field objects');
     }
 
     public function testSubmitWithoutAFormButton()
@@ -835,13 +835,13 @@ class FormTest extends TestCase
         ');
         $form = new Form($dom->getElementsByTagName('form')->item(0), 'http://example.com');
 
-        $this->assertInstanceOf('Symfony\Component\DomCrawler\Field\ChoiceFormField', $form->get('option'));
+        $this->assertInstanceOf('Symfony2\Component\DomCrawler\Field\ChoiceFormField', $form->get('option'));
     }
 
     protected function getFormFieldMock($name, $value = null)
     {
         $field = $this
-            ->getMockBuilder('Symfony\\Component\\DomCrawler\\Field\\FormField')
+            ->getMockBuilder('Symfony2\\Component\\DomCrawler\\Field\\FormField')
             ->setMethods(array('getName', 'getValue', 'setValue', 'initialize'))
             ->disableOriginalConstructor()
             ->getMock()

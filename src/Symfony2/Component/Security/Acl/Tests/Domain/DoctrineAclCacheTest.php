@@ -11,11 +11,11 @@
 
 namespace Symfony2\Component\Security\Acl\Tests\Domain;
 
-use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
-use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
-use Symfony\Component\Security\Acl\Domain\PermissionGrantingStrategy;
-use Symfony\Component\Security\Acl\Domain\Acl;
-use Symfony\Component\Security\Acl\Domain\DoctrineAclCache;
+use Symfony2\Component\Security\Acl\Domain\UserSecurityIdentity;
+use Symfony2\Component\Security\Acl\Domain\ObjectIdentity;
+use Symfony2\Component\Security\Acl\Domain\PermissionGrantingStrategy;
+use Symfony2\Component\Security\Acl\Domain\Acl;
+use Symfony2\Component\Security\Acl\Domain\DoctrineAclCache;
 use Doctrine\Common\Cache\ArrayCache;
 
 class DoctrineAclCacheTest extends \PHPUnit_Framework_TestCase

@@ -19,7 +19,7 @@ use Doctrine\DBAL\Platforms\SQLServer2008Platform;
 /**
  * DBAL based session storage.
  *
- * This implementation is very similar to Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
+ * This implementation is very similar to Symfony2\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
  * but uses a Doctrine connection and thus also works with non-PDO-based drivers like mysqli and OCI8.
  *
  * @author Fabien Potencier <fabien@symfony.com>

@@ -58,7 +58,7 @@ class ProxyDumper implements DumperInterface
         if ($definition->isShared()) {
             $instantiation .= ' $this->services[%s] =';
 
-            if (\defined('Symfony\Component\DependencyInjection\ContainerInterface::SCOPE_CONTAINER') && ContainerInterface::SCOPE_CONTAINER !== $scope = $definition->getScope(false)) {
+            if (\defined('Symfony2\Component\DependencyInjection\ContainerInterface::SCOPE_CONTAINER') && ContainerInterface::SCOPE_CONTAINER !== $scope = $definition->getScope(false)) {
                 $instantiation .= ' $this->scopedServices[%s][%1$s] =';
             }
         }

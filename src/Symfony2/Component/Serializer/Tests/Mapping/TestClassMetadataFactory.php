@@ -21,7 +21,7 @@ class TestClassMetadataFactory
 {
     public static function createClassMetadata($withParent = false, $withInterface = false)
     {
-        $expected = new ClassMetadata('Symfony\Component\Serializer\Tests\Fixtures\GroupDummy');
+        $expected = new ClassMetadata('Symfony2\Component\Serializer\Tests\Fixtures\GroupDummy');
 
         $foo = new AttributeMetadata('foo');
         $foo->addGroup('a');
@@ -66,7 +66,7 @@ class TestClassMetadataFactory
 
     public static function createXmlCLassMetadata()
     {
-        $expected = new ClassMetadata('Symfony\Component\Serializer\Tests\Fixtures\GroupDummy');
+        $expected = new ClassMetadata('Symfony2\Component\Serializer\Tests\Fixtures\GroupDummy');
 
         $foo = new AttributeMetadata('foo');
         $foo->addGroup('group1');

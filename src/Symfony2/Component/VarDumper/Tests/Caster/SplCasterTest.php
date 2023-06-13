@@ -191,7 +191,7 @@ EOTXT;
         $var = new MyArrayIterator(array(234));
 
         $expected = <<<EOTXT
-Symfony\Component\VarDumper\Tests\Caster\MyArrayIterator {
+Symfony2\Component\VarDumper\Tests\Caster\MyArrayIterator {
   -foo: 123
   flag::STD_PROP_LIST: false
   flag::ARRAY_AS_PROPS: false

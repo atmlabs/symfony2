@@ -33,12 +33,12 @@ class YamlFileLoaderTest extends TestCase
     protected function setUp()
     {
         $this->loader = new YamlFileLoader(__DIR__.'/../../Fixtures/serialization.yml');
-        $this->metadata = new ClassMetadata('Symfony\Component\Serializer\Tests\Fixtures\GroupDummy');
+        $this->metadata = new ClassMetadata('Symfony2\Component\Serializer\Tests\Fixtures\GroupDummy');
     }
 
     public function testInterface()
     {
-        $this->assertInstanceOf('Symfony\Component\Serializer\Mapping\Loader\LoaderInterface', $this->loader);
+        $this->assertInstanceOf('Symfony2\Component\Serializer\Mapping\Loader\LoaderInterface', $this->loader);
     }
 
     public function testLoadClassMetadataReturnsTrueIfSuccessful()
@@ -53,7 +53,7 @@ class YamlFileLoaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Serializer\Exception\MappingException
+     * @expectedException \Symfony2\Component\Serializer\Exception\MappingException
      */
     public function testLoadClassMetadataReturnsThrowsInvalidMapping()
     {

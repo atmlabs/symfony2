@@ -101,7 +101,7 @@ class DefinitionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\InvalidArgumentException
      * @expectedExceptionMessage Method name cannot be empty.
      */
     public function testExceptionOnEmptyMethodCall()
@@ -202,7 +202,7 @@ class DefinitionTest extends TestCase
 
     /**
      * @dataProvider invalidDeprecationMessageProvider
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\InvalidArgumentException
      */
     public function testSetDeprecatedWithInvalidDeprecationTemplate($message)
     {

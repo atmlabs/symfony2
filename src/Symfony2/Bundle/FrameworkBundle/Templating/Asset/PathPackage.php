@@ -14,7 +14,7 @@ namespace Symfony2\Bundle\FrameworkBundle\Templating\Asset;
 use Symfony2\Component\HttpFoundation\Request;
 use Symfony2\Component\Templating\Asset\PathPackage as BasePathPackage;
 
-@trigger_error('The Symfony\Bundle\FrameworkBundle\Templating\Asset\PathPackage is deprecated since Symfony 2.7 and will be removed in 3.0. Use the Asset component instead.', E_USER_DEPRECATED);
+@trigger_error('The Symfony2\Bundle\FrameworkBundle\Templating\Asset\PathPackage is deprecated since Symfony 2.7 and will be removed in 3.0. Use the Asset component instead.', E_USER_DEPRECATED);
 
 /**
  * The path packages adds a version and a base path to asset URLs.

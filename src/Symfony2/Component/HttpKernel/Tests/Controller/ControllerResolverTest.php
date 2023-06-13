@@ -65,9 +65,9 @@ class ControllerResolverTest extends TestCase
         $resolver = $this->createControllerResolver();
 
         $request = Request::create('/');
-        $request->attributes->set('_controller', array('Symfony\Component\HttpKernel\Tests\Controller\ControllerResolverTest', 'controllerMethod4'));
+        $request->attributes->set('_controller', array('Symfony2\Component\HttpKernel\Tests\Controller\ControllerResolverTest', 'controllerMethod4'));
         $controller = $resolver->getController($request);
-        $this->assertSame(array('Symfony\Component\HttpKernel\Tests\Controller\ControllerResolverTest', 'controllerMethod4'), $controller);
+        $this->assertSame(array('Symfony2\Component\HttpKernel\Tests\Controller\ControllerResolverTest', 'controllerMethod4'), $controller);
     }
 
     public function testGetControllerWithObjectAndMethodAsString()
@@ -75,9 +75,9 @@ class ControllerResolverTest extends TestCase
         $resolver = $this->createControllerResolver();
 
         $request = Request::create('/');
-        $request->attributes->set('_controller', 'Symfony\Component\HttpKernel\Tests\Controller\ControllerResolverTest::controllerMethod1');
+        $request->attributes->set('_controller', 'Symfony2\Component\HttpKernel\Tests\Controller\ControllerResolverTest::controllerMethod1');
         $controller = $resolver->getController($request);
-        $this->assertInstanceOf('Symfony\Component\HttpKernel\Tests\Controller\ControllerResolverTest', $controller[0], '->getController() returns a PHP callable');
+        $this->assertInstanceOf('Symfony2\Component\HttpKernel\Tests\Controller\ControllerResolverTest', $controller[0], '->getController() returns a PHP callable');
     }
 
     public function testGetControllerWithClassAndInvokeMethod()
@@ -85,9 +85,9 @@ class ControllerResolverTest extends TestCase
         $resolver = $this->createControllerResolver();
 
         $request = Request::create('/');
-        $request->attributes->set('_controller', 'Symfony\Component\HttpKernel\Tests\Controller\ControllerResolverTest');
+        $request->attributes->set('_controller', 'Symfony2\Component\HttpKernel\Tests\Controller\ControllerResolverTest');
         $controller = $resolver->getController($request);
-        $this->assertInstanceOf('Symfony\Component\HttpKernel\Tests\Controller\ControllerResolverTest', $controller);
+        $this->assertInstanceOf('Symfony2\Component\HttpKernel\Tests\Controller\ControllerResolverTest', $controller);
     }
 
     /**
@@ -107,9 +107,9 @@ class ControllerResolverTest extends TestCase
         $resolver = $this->createControllerResolver();
 
         $request = Request::create('/');
-        $request->attributes->set('_controller', 'Symfony\Component\HttpKernel\Tests\Controller\some_controller_function');
+        $request->attributes->set('_controller', 'Symfony2\Component\HttpKernel\Tests\Controller\some_controller_function');
         $controller = $resolver->getController($request);
-        $this->assertSame('Symfony\Component\HttpKernel\Tests\Controller\some_controller_function', $controller);
+        $this->assertSame('Symfony2\Component\HttpKernel\Tests\Controller\some_controller_function', $controller);
     }
 
     /**
@@ -131,7 +131,7 @@ class ControllerResolverTest extends TestCase
             array('foo'),
             array('oof::bar'),
             array('stdClass'),
-            array('Symfony\Component\HttpKernel\Tests\Controller\ControllerResolverTest::bar'),
+            array('Symfony2\Component\HttpKernel\Tests\Controller\ControllerResolverTest::bar'),
         );
     }
 
@@ -176,7 +176,7 @@ class ControllerResolverTest extends TestCase
         $request = Request::create('/');
         $request->attributes->set('foo', 'foo');
         $request->attributes->set('foobar', 'foobar');
-        $controller = 'Symfony\Component\HttpKernel\Tests\Controller\some_controller_function';
+        $controller = 'Symfony2\Component\HttpKernel\Tests\Controller\some_controller_function';
         $this->assertEquals(array('foo', 'foobar'), $resolver->getArguments($request, $controller));
 
         $request = Request::create('/');
@@ -216,8 +216,8 @@ class ControllerResolverTest extends TestCase
 
     public function testCreateControllerCanReturnAnyCallable()
     {
-        $mock = $this->getMockBuilder('Symfony\Component\HttpKernel\Controller\ControllerResolver')->setMethods(array('createController'))->getMock();
-        $mock->expects($this->once())->method('createController')->will($this->returnValue('Symfony\Component\HttpKernel\Tests\Controller\some_controller_function'));
+        $mock = $this->getMockBuilder('Symfony2\Component\HttpKernel\Controller\ControllerResolver')->setMethods(array('createController'))->getMock();
+        $mock->expects($this->once())->method('createController')->will($this->returnValue('Symfony2\Component\HttpKernel\Tests\Controller\some_controller_function'));
 
         $request = Request::create('/');
         $request->attributes->set('_controller', 'foobar');

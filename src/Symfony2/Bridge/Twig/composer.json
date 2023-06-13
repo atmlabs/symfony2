@@ -55,7 +55,7 @@
         "symfony2/expression-language": "For using the ExpressionExtension"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Bridge\\Twig\\": "" },
+        "psr-4": { "Symfony2\\Bridge\\Twig\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

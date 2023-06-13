@@ -35,7 +35,7 @@
         "symfony2/property-access": "For using the ObjectNormalizer."
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\Serializer\\": "" },
+        "psr-4": { "Symfony2\\Component\\Serializer\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

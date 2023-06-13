@@ -35,9 +35,9 @@ class PhpDocExtractorTest extends TestCase
      */
     public function testExtract($property, array $type = null, $shortDescription, $longDescription)
     {
-        $this->assertEquals($type, $this->extractor->getTypes('Symfony\Component\PropertyInfo\Tests\Fixtures\Dummy', $property));
-        $this->assertSame($shortDescription, $this->extractor->getShortDescription('Symfony\Component\PropertyInfo\Tests\Fixtures\Dummy', $property));
-        $this->assertSame($longDescription, $this->extractor->getLongDescription('Symfony\Component\PropertyInfo\Tests\Fixtures\Dummy', $property));
+        $this->assertEquals($type, $this->extractor->getTypes('Symfony2\Component\PropertyInfo\Tests\Fixtures\Dummy', $property));
+        $this->assertSame($shortDescription, $this->extractor->getShortDescription('Symfony2\Component\PropertyInfo\Tests\Fixtures\Dummy', $property));
+        $this->assertSame($longDescription, $this->extractor->getLongDescription('Symfony2\Component\PropertyInfo\Tests\Fixtures\Dummy', $property));
     }
 
     public function typesProvider()
@@ -60,12 +60,12 @@ class PhpDocExtractorTest extends TestCase
                 null,
             ),
             array('bal', array(new Type(Type::BUILTIN_TYPE_OBJECT, false, 'DateTime')), null, null),
-            array('parent', array(new Type(Type::BUILTIN_TYPE_OBJECT, false, 'Symfony\Component\PropertyInfo\Tests\Fixtures\ParentDummy')), null, null),
+            array('parent', array(new Type(Type::BUILTIN_TYPE_OBJECT, false, 'Symfony2\Component\PropertyInfo\Tests\Fixtures\ParentDummy')), null, null),
             array('collection', array(new Type(Type::BUILTIN_TYPE_ARRAY, false, null, true, new Type(Type::BUILTIN_TYPE_INT), new Type(Type::BUILTIN_TYPE_OBJECT, false, 'DateTime'))), null, null),
             array('mixedCollection', array(new Type(Type::BUILTIN_TYPE_ARRAY, false, null, true, null, null)), null, null),
             array('nestedCollection', array(new Type(Type::BUILTIN_TYPE_ARRAY, false, null, true, new Type(Type::BUILTIN_TYPE_INT), new Type(Type::BUILTIN_TYPE_ARRAY, false, null, true, new Type(Type::BUILTIN_TYPE_INT), new Type(Type::BUILTIN_TYPE_STRING, false)))), null, null),
             array('a', array(new Type(Type::BUILTIN_TYPE_INT)), 'A.', null),
-            array('b', array(new Type(Type::BUILTIN_TYPE_OBJECT, true, 'Symfony\Component\PropertyInfo\Tests\Fixtures\ParentDummy')), 'B.', null),
+            array('b', array(new Type(Type::BUILTIN_TYPE_OBJECT, true, 'Symfony2\Component\PropertyInfo\Tests\Fixtures\ParentDummy')), 'B.', null),
             array('c', array(new Type(Type::BUILTIN_TYPE_BOOL, true)), null, null),
             array('d', array(new Type(Type::BUILTIN_TYPE_BOOL)), null, null),
             array('e', array(new Type(Type::BUILTIN_TYPE_ARRAY, false, null, true, new Type(Type::BUILTIN_TYPE_INT), new Type(Type::BUILTIN_TYPE_RESOURCE))), null, null),
@@ -79,7 +79,7 @@ class PhpDocExtractorTest extends TestCase
 
     public function testParamTagTypeIsOmitted()
     {
-        $this->assertNull($this->extractor->getTypes('Symfony\Component\PropertyInfo\Tests\PhpDocExtractors\OmittedParamTagTypeDocBlock', 'omittedType'));
+        $this->assertNull($this->extractor->getTypes('Symfony2\Component\PropertyInfo\Tests\PhpDocExtractors\OmittedParamTagTypeDocBlock', 'omittedType'));
     }
 }
 

@@ -326,7 +326,7 @@ class PhpMatcherDumperTest extends TestCase
 
         return array(
            array($collection, 'url_matcher1.php', array()),
-           array($redirectCollection, 'url_matcher2.php', array('base_class' => 'Symfony\Component\Routing\Tests\Fixtures\RedirectableUrlMatcher')),
+           array($redirectCollection, 'url_matcher2.php', array('base_class' => 'Symfony2\Component\Routing\Tests\Fixtures\RedirectableUrlMatcher')),
            array($rootprefixCollection, 'url_matcher3.php', array()),
         );
     }
@@ -336,7 +336,7 @@ class PhpMatcherDumperTest extends TestCase
         $options = array('class' => $this->matcherClass);
 
         if ($redirectableStub) {
-            $options['base_class'] = '\Symfony\Component\Routing\Tests\Matcher\Dumper\RedirectableUrlMatcherStub';
+            $options['base_class'] = '\Symfony2\Component\Routing\Tests\Matcher\Dumper\RedirectableUrlMatcherStub';
         }
 
         $dumper = new PhpMatcherDumper($collection);

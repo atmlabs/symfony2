@@ -25,7 +25,7 @@ class ImportCommandTest extends TestCase
     public function testExecute()
     {
         $profiler = $this
-            ->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profiler')
+            ->getMockBuilder('Symfony2\Component\HttpKernel\Profiler\Profiler')
             ->disableOriginalConstructor()
             ->getMock()
         ;
@@ -33,7 +33,7 @@ class ImportCommandTest extends TestCase
         $profiler->expects($this->once())->method('import')->will($this->returnValue(new Profile('TOKEN')));
 
         $helperSet = new HelperSet();
-        $helper = $this->getMockBuilder('Symfony\Component\Console\Helper\FormatterHelper')->getMock();
+        $helper = $this->getMockBuilder('Symfony2\Component\Console\Helper\FormatterHelper')->getMock();
         $helper->expects($this->any())->method('formatSection');
         $helperSet->set($helper, 'formatter');
 

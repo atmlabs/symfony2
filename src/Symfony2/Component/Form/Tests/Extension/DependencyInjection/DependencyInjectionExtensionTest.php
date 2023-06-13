@@ -19,17 +19,17 @@ class DependencyInjectionExtensionTest extends TestCase
 {
     public function testGetTypeExtensions()
     {
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
 
-        $typeExtension1 = $this->getMockBuilder('Symfony\Component\Form\FormTypeExtensionInterface')->getMock();
+        $typeExtension1 = $this->getMockBuilder('Symfony2\Component\Form\FormTypeExtensionInterface')->getMock();
         $typeExtension1->expects($this->any())
             ->method('getExtendedType')
             ->willReturn('test');
-        $typeExtension2 = $this->getMockBuilder('Symfony\Component\Form\FormTypeExtensionInterface')->getMock();
+        $typeExtension2 = $this->getMockBuilder('Symfony2\Component\Form\FormTypeExtensionInterface')->getMock();
         $typeExtension2->expects($this->any())
             ->method('getExtendedType')
             ->willReturn('test');
-        $typeExtension3 = $this->getMockBuilder('Symfony\Component\Form\FormTypeExtensionInterface')->getMock();
+        $typeExtension3 = $this->getMockBuilder('Symfony2\Component\Form\FormTypeExtensionInterface')->getMock();
         $typeExtension3->expects($this->any())
             ->method('getExtendedType')
             ->willReturn('other');
@@ -58,13 +58,13 @@ class DependencyInjectionExtensionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Form\Exception\InvalidArgumentException
      */
     public function testThrowExceptionForInvalidExtendedType()
     {
         $formTypeExtension = $this->createFormTypeExtensionMock('unmatched');
 
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
 
         $container->expects($this->any())
             ->method('get')
@@ -81,20 +81,20 @@ class DependencyInjectionExtensionTest extends TestCase
 
     public function testGetTypeGuesser()
     {
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
         $container
             ->expects($this->once())
             ->method('get')
             ->with('foo')
-            ->willReturn($this->getMockBuilder('Symfony\Component\Form\FormTypeGuesserInterface')->getMock());
+            ->willReturn($this->getMockBuilder('Symfony2\Component\Form\FormTypeGuesserInterface')->getMock());
         $extension = new DependencyInjectionExtension($container, array(), array(), array('foo'));
 
-        $this->assertInstanceOf('Symfony\Component\Form\FormTypeGuesserChain', $extension->getTypeGuesser());
+        $this->assertInstanceOf('Symfony2\Component\Form\FormTypeGuesserChain', $extension->getTypeGuesser());
     }
 
     public function testGetTypeGuesserReturnsNullWhenNoTypeGuessersHaveBeenConfigured()
     {
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
         $extension = new DependencyInjectionExtension($container, array(), array(), array());
 
         $this->assertNull($extension->getTypeGuesser());
@@ -102,7 +102,7 @@ class DependencyInjectionExtensionTest extends TestCase
 
     private function createFormTypeExtensionMock($extendedType)
     {
-        $extension = $this->getMockBuilder('Symfony\Component\Form\FormTypeExtensionInterface')->getMock();
+        $extension = $this->getMockBuilder('Symfony2\Component\Form\FormTypeExtensionInterface')->getMock();
         $extension->expects($this->any())->method('getExtendedType')->willReturn($extendedType);
 
         return $extension;

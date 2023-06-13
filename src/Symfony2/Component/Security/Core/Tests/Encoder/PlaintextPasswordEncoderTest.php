@@ -39,7 +39,7 @@ class PlaintextPasswordEncoderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\BadCredentialsException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\BadCredentialsException
      */
     public function testEncodePasswordLength()
     {

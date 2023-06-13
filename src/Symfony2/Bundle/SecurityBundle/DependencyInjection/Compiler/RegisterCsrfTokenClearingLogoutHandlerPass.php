@@ -29,11 +29,11 @@ class RegisterCsrfTokenClearingLogoutHandlerPass implements CompilerPassInterfac
         $csrfTokenStorage = $container->findDefinition('security.csrf.token_storage');
         $csrfTokenStorageClass = $container->getParameterBag()->resolveValue($csrfTokenStorage->getClass());
 
-        if (!is_subclass_of($csrfTokenStorageClass, 'Symfony\Component\Security\Csrf\TokenStorage\ClearableTokenStorageInterface')) {
+        if (!is_subclass_of($csrfTokenStorageClass, 'Symfony2\Component\Security\Csrf\TokenStorage\ClearableTokenStorageInterface')) {
             return;
         }
 
-        $container->register('security.logout.handler.csrf_token_clearing', 'Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler')
+        $container->register('security.logout.handler.csrf_token_clearing', 'Symfony2\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler')
             ->addArgument(new Reference('security.csrf.token_storage'))
             ->setPublic(false);
 

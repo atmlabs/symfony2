@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
-use Symfony\Component\Security\Acl\Model\SecurityIdentityInterface;
-use Symfony\Component\Security\Core\Role\Role;
+use Symfony2\Component\Security\Acl\Model\SecurityIdentityInterface;
+use Symfony2\Component\Security\Core\Role\Role;
 
 /**
  * A SecurityIdentity implementation for roles.

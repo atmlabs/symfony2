@@ -23,11 +23,11 @@ class FormFactoryBuilderTest extends TestCase
 
     protected function setUp()
     {
-        $factory = new \ReflectionClass('Symfony\Component\Form\FormFactory');
+        $factory = new \ReflectionClass('Symfony2\Component\Form\FormFactory');
         $this->registry = $factory->getProperty('registry');
         $this->registry->setAccessible(true);
 
-        $this->guesser = $this->getMockBuilder('Symfony\Component\Form\FormTypeGuesserInterface')->getMock();
+        $this->guesser = $this->getMockBuilder('Symfony2\Component\Form\FormTypeGuesserInterface')->getMock();
         $this->type = new LegacyFooType();
     }
 

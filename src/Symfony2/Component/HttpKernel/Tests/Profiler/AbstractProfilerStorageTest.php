@@ -265,7 +265,7 @@ abstract class AbstractProfilerStorageTest extends TestCase
     }
 
     /**
-     * @return \Symfony\Component\HttpKernel\Profiler\ProfilerStorageInterface
+     * @return \Symfony2\Component\HttpKernel\Profiler\ProfilerStorageInterface
      */
     abstract protected function getStorage();
 }

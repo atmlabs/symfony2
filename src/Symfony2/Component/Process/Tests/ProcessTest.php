@@ -67,7 +67,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Process\Exception\InvalidArgumentException
      */
     public function testNegativeTimeoutFromConstructor()
     {
@@ -75,7 +75,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Process\Exception\InvalidArgumentException
      */
     public function testNegativeTimeoutFromSetter()
     {
@@ -232,7 +232,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\LogicException
+     * @expectedException \Symfony2\Component\Process\Exception\LogicException
      * @expectedExceptionMessage Input can not be set while the process is running.
      */
     public function testSetInputWhileRunningThrowsAnException()
@@ -252,8 +252,8 @@ class ProcessTest extends TestCase
 
     /**
      * @dataProvider provideInvalidInputValues
-     * @expectedException \Symfony\Component\Process\Exception\InvalidArgumentException
-     * @expectedExceptionMessage Symfony\Component\Process\Process::setInput only accepts strings or stream resources.
+     * @expectedException \Symfony2\Component\Process\Exception\InvalidArgumentException
+     * @expectedExceptionMessage Symfony2\Component\Process\Process::setInput only accepts strings or stream resources.
      */
     public function testInvalidInput($value)
     {
@@ -469,7 +469,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Process\Exception\RuntimeException
      * @expectedExceptionMessage TTY mode is not supported on Windows platform.
      */
     public function testTTYInWindowsEnvironment()
@@ -524,7 +524,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\ProcessFailedException
+     * @expectedException \Symfony2\Component\Process\Exception\ProcessFailedException
      */
     public function testMustRunThrowsException()
     {
@@ -697,7 +697,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Process\Exception\RuntimeException
      * @expectedExceptionMessage The process has been signaled
      */
     public function testProcessThrowsExceptionWhenExternallySignaled()
@@ -733,7 +733,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\ProcessTimedOutException
+     * @expectedException \Symfony2\Component\Process\Exception\ProcessTimedOutException
      * @expectedExceptionMessage exceeded the timeout of 0.1 seconds.
      */
     public function testRunProcessWithTimeout()
@@ -766,7 +766,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\ProcessTimedOutException
+     * @expectedException \Symfony2\Component\Process\Exception\ProcessTimedOutException
      * @expectedExceptionMessage exceeded the timeout of 0.1 seconds.
      */
     public function testCheckTimeoutOnStartedProcess()
@@ -831,7 +831,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\ProcessTimedOutException
+     * @expectedException \Symfony2\Component\Process\Exception\ProcessTimedOutException
      * @expectedExceptionMessage exceeded the timeout of 0.1 seconds.
      */
     public function testStartAfterATimeout()
@@ -912,7 +912,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\LogicException
+     * @expectedException \Symfony2\Component\Process\Exception\LogicException
      * @expectedExceptionMessage Can not send signal on a non running process.
      */
     public function testSignalProcessNotRunning()
@@ -929,10 +929,10 @@ class ProcessTest extends TestCase
         $process = $this->getProcess('foo');
 
         if (method_exists($this, 'expectException')) {
-            $this->expectException('Symfony\Component\Process\Exception\LogicException');
+            $this->expectException('Symfony2\Component\Process\Exception\LogicException');
             $this->expectExceptionMessage(sprintf('Process must be started before calling %s.', $method));
         } else {
-            $this->setExpectedException('Symfony\Component\Process\Exception\LogicException', sprintf('Process must be started before calling %s.', $method));
+            $this->setExpectedException('Symfony2\Component\Process\Exception\LogicException', sprintf('Process must be started before calling %s.', $method));
         }
 
         $process->{$method}();
@@ -951,7 +951,7 @@ class ProcessTest extends TestCase
 
     /**
      * @dataProvider provideMethodsThatNeedATerminatedProcess
-     * @expectedException \Symfony\Component\Process\Exception\LogicException
+     * @expectedException \Symfony2\Component\Process\Exception\LogicException
      * @expectedExceptionMessage Process must be terminated before calling
      */
     public function testMethodsThatNeedATerminatedProcess($method)
@@ -981,7 +981,7 @@ class ProcessTest extends TestCase
 
     /**
      * @dataProvider provideWrongSignal
-     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Process\Exception\RuntimeException
      */
     public function testWrongSignal($signal)
     {
@@ -1020,7 +1020,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Process\Exception\RuntimeException
      * @expectedExceptionMessage Disabling output while the process is running is not possible.
      */
     public function testDisableOutputWhileRunningThrowsException()
@@ -1031,7 +1031,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Process\Exception\RuntimeException
      * @expectedExceptionMessage Enabling output while the process is running is not possible.
      */
     public function testEnableOutputWhileRunningThrowsException()
@@ -1053,7 +1053,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\LogicException
+     * @expectedException \Symfony2\Component\Process\Exception\LogicException
      * @expectedExceptionMessage Output can not be disabled while an idle timeout is set.
      */
     public function testDisableOutputWhileIdleTimeoutIsSet()
@@ -1064,7 +1064,7 @@ class ProcessTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\LogicException
+     * @expectedException \Symfony2\Component\Process\Exception\LogicException
      * @expectedExceptionMessage timeout can not be set while the output is disabled.
      */
     public function testSetIdleTimeoutWhileOutputIsDisabled()
@@ -1105,15 +1105,15 @@ class ProcessTest extends TestCase
     public function provideStartMethods()
     {
         return array(
-            array('start', 'Symfony\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a callback.'),
-            array('run', 'Symfony\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a callback.'),
-            array('mustRun', 'Symfony\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a callback.'),
+            array('start', 'Symfony2\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a callback.'),
+            array('run', 'Symfony2\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a callback.'),
+            array('mustRun', 'Symfony2\Component\Process\Exception\LogicException', 'Output has been disabled, enable it to allow the use of a callback.'),
         );
     }
 
     /**
      * @dataProvider provideOutputFetchingMethods
-     * @expectedException \Symfony\Component\Process\Exception\LogicException
+     * @expectedException \Symfony2\Component\Process\Exception\LogicException
      * @expectedExceptionMessage Output has been disabled.
      */
     public function testGetOutputWhileDisabled($fetchMethod)
@@ -1265,10 +1265,10 @@ class ProcessTest extends TestCase
                 $this->markTestSkipped('PHP is compiled with --enable-sigchild.');
             } elseif (self::$notEnhancedSigchild) {
                 if (method_exists($this, 'expectException')) {
-                    $this->expectException('Symfony\Component\Process\Exception\RuntimeException');
+                    $this->expectException('Symfony2\Component\Process\Exception\RuntimeException');
                     $this->expectExceptionMessage('This PHP has been compiled with --enable-sigchild.');
                 } else {
-                    $this->setExpectedException('Symfony\Component\Process\Exception\RuntimeException', 'This PHP has been compiled with --enable-sigchild.');
+                    $this->setExpectedException('Symfony2\Component\Process\Exception\RuntimeException', 'This PHP has been compiled with --enable-sigchild.');
                 }
             }
         }

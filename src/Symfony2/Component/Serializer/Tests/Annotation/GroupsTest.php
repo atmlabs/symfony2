@@ -20,7 +20,7 @@ use Symfony2\Component\Serializer\Annotation\Groups;
 class GroupsTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\Serializer\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Serializer\Exception\InvalidArgumentException
      */
     public function testEmptyGroupsParameter()
     {
@@ -28,7 +28,7 @@ class GroupsTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Serializer\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Serializer\Exception\InvalidArgumentException
      */
     public function testNotAnArrayGroupsParameter()
     {
@@ -36,7 +36,7 @@ class GroupsTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Serializer\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Serializer\Exception\InvalidArgumentException
      */
     public function testInvalidGroupsParameter()
     {

@@ -96,9 +96,9 @@ abstract class AbstractConstraintValidatorTest extends TestCase
 
     protected function createContext()
     {
-        $translator = $this->getMockBuilder('Symfony\Component\Translation\TranslatorInterface')->getMock();
-        $validator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ValidatorInterface')->getMock();
-        $contextualValidator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ContextualValidatorInterface')->getMock();
+        $translator = $this->getMockBuilder('Symfony2\Component\Translation\TranslatorInterface')->getMock();
+        $validator = $this->getMockBuilder('Symfony2\Component\Validator\Validator\ValidatorInterface')->getMock();
+        $contextualValidator = $this->getMockBuilder('Symfony2\Component\Validator\Validator\ContextualValidatorInterface')->getMock();
 
         switch ($this->getApiVersion()) {
             case Validation::API_VERSION_2_5:
@@ -113,7 +113,7 @@ abstract class AbstractConstraintValidatorTest extends TestCase
                 $context = new LegacyExecutionContext(
                     $validator,
                     $this->root,
-                    $this->getMockBuilder('Symfony\Component\Validator\MetadataFactoryInterface')->getMock(),
+                    $this->getMockBuilder('Symfony2\Component\Validator\MetadataFactoryInterface')->getMock(),
                     $translator
                 );
                 break;
@@ -223,7 +223,7 @@ abstract class AbstractConstraintValidatorTest extends TestCase
             ->will($this->returnValue($validator));
         $validator->expects($this->at(2 * $i + 1))
             ->method('validate')
-            ->with($value, $this->logicalOr(null, array(), $this->isInstanceOf('\Symfony\Component\Validator\Constraints\Valid')), $group);
+            ->with($value, $this->logicalOr(null, array(), $this->isInstanceOf('\Symfony2\Component\Validator\Constraints\Valid')), $group);
     }
 
     protected function expectValidateValueAt($i, $propertyPath, $value, $constraints, $group = null)

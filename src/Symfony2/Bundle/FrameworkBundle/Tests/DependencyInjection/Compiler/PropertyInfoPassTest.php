@@ -31,7 +31,7 @@ class PropertyInfoPassTest extends TestCase
             new Reference('n3'),
         );
 
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerBuilder')->setMethods(array('findTaggedServiceIds'))->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerBuilder')->setMethods(array('findTaggedServiceIds'))->getMock();
 
         $container->expects($this->any())
             ->method('findTaggedServiceIds')
@@ -40,7 +40,7 @@ class PropertyInfoPassTest extends TestCase
         $propertyInfoPass = new PropertyInfoPass();
 
         $method = new \ReflectionMethod(
-            'Symfony\Bundle\FrameworkBundle\DependencyInjection\Compiler\PropertyInfoPass',
+            'Symfony2\Bundle\FrameworkBundle\DependencyInjection\Compiler\PropertyInfoPass',
             'findAndSortTaggedServices'
         );
         $method->setAccessible(true);
@@ -52,7 +52,7 @@ class PropertyInfoPassTest extends TestCase
 
     public function testReturningEmptyArrayWhenNoService()
     {
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerBuilder')->setMethods(array('findTaggedServiceIds'))->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerBuilder')->setMethods(array('findTaggedServiceIds'))->getMock();
 
         $container->expects($this->any())
             ->method('findTaggedServiceIds')
@@ -61,7 +61,7 @@ class PropertyInfoPassTest extends TestCase
         $propertyInfoPass = new PropertyInfoPass();
 
         $method = new \ReflectionMethod(
-            'Symfony\Bundle\FrameworkBundle\DependencyInjection\Compiler\PropertyInfoPass',
+            'Symfony2\Bundle\FrameworkBundle\DependencyInjection\Compiler\PropertyInfoPass',
             'findAndSortTaggedServices'
         );
         $method->setAccessible(true);

@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
 use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Cache\CacheProvider;
-use Symfony\Component\Security\Acl\Model\AclCacheInterface;
-use Symfony\Component\Security\Acl\Model\AclInterface;
-use Symfony\Component\Security\Acl\Model\ObjectIdentityInterface;
-use Symfony\Component\Security\Acl\Model\PermissionGrantingStrategyInterface;
+use Symfony2\Component\Security\Acl\Model\AclCacheInterface;
+use Symfony2\Component\Security\Acl\Model\AclInterface;
+use Symfony2\Component\Security\Acl\Model\ObjectIdentityInterface;
+use Symfony2\Component\Security\Acl\Model\PermissionGrantingStrategyInterface;
 
 /**
  * This class is a wrapper around the actual cache implementation.
@@ -169,7 +169,7 @@ class DoctrineAclCache implements AclCacheInterface
         $reflectionProperty->setValue($acl, $this->permissionGrantingStrategy);
         $reflectionProperty->setAccessible(false);
 
-        $aceAclProperty = new \ReflectionProperty('Symfony\Component\Security\Acl\Domain\Entry', 'acl');
+        $aceAclProperty = new \ReflectionProperty('Symfony2\Component\Security\Acl\Domain\Entry', 'acl');
         $aceAclProperty->setAccessible(true);
 
         foreach ($acl->getObjectAces() as $ace) {

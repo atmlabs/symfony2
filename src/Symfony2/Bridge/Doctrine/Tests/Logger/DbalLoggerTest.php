@@ -24,7 +24,7 @@ class DbalLoggerTest extends TestCase
         $logger = $this->getMockBuilder('Psr\\Log\\LoggerInterface')->getMock();
 
         $dbalLogger = $this
-            ->getMockBuilder('Symfony\\Bridge\\Doctrine\\Logger\\DbalLogger')
+            ->getMockBuilder('Symfony2\\Bridge\\Doctrine\\Logger\\DbalLogger')
             ->setConstructorArgs(array($logger, null))
             ->setMethods(array('log'))
             ->getMock()
@@ -56,7 +56,7 @@ class DbalLoggerTest extends TestCase
         $logger = $this->getMockBuilder('Psr\\Log\\LoggerInterface')->getMock();
 
         $dbalLogger = $this
-            ->getMockBuilder('Symfony\\Bridge\\Doctrine\\Logger\\DbalLogger')
+            ->getMockBuilder('Symfony2\\Bridge\\Doctrine\\Logger\\DbalLogger')
             ->setConstructorArgs(array($logger, null))
             ->setMethods(array('log'))
             ->getMock()
@@ -79,7 +79,7 @@ class DbalLoggerTest extends TestCase
         $logger = $this->getMockBuilder('Psr\\Log\\LoggerInterface')->getMock();
 
         $dbalLogger = $this
-            ->getMockBuilder('Symfony\\Bridge\\Doctrine\\Logger\\DbalLogger')
+            ->getMockBuilder('Symfony2\\Bridge\\Doctrine\\Logger\\DbalLogger')
             ->setConstructorArgs(array($logger, null))
             ->setMethods(array('log'))
             ->getMock()
@@ -110,7 +110,7 @@ class DbalLoggerTest extends TestCase
         $logger = $this->getMockBuilder('Psr\\Log\\LoggerInterface')->getMock();
 
         $dbalLogger = $this
-            ->getMockBuilder('Symfony\\Bridge\\Doctrine\\Logger\\DbalLogger')
+            ->getMockBuilder('Symfony2\\Bridge\\Doctrine\\Logger\\DbalLogger')
             ->setConstructorArgs(array($logger, null))
             ->setMethods(array('log'))
             ->getMock()
@@ -138,7 +138,7 @@ class DbalLoggerTest extends TestCase
         $logger = $this->getMockBuilder('Psr\\Log\\LoggerInterface')->getMock();
 
         $dbalLogger = $this
-            ->getMockBuilder('Symfony\\Bridge\\Doctrine\\Logger\\DbalLogger')
+            ->getMockBuilder('Symfony2\\Bridge\\Doctrine\\Logger\\DbalLogger')
             ->setConstructorArgs(array($logger, null))
             ->setMethods(array('log'))
             ->getMock()

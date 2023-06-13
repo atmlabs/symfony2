@@ -20,7 +20,7 @@ class TrimListenerTest extends TestCase
     public function testTrim()
     {
         $data = ' Foo! ';
-        $form = $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
+        $form = $this->getMockBuilder('Symfony2\Component\Form\Test\FormInterface')->getMock();
         $event = new FormEvent($form, $data);
 
         $filter = new TrimListener();
@@ -32,7 +32,7 @@ class TrimListenerTest extends TestCase
     public function testTrimSkipNonStrings()
     {
         $data = 1234;
-        $form = $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
+        $form = $this->getMockBuilder('Symfony2\Component\Form\Test\FormInterface')->getMock();
         $event = new FormEvent($form, $data);
 
         $filter = new TrimListener();

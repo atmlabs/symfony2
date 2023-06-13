@@ -392,7 +392,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testDecimalSeparatorMayNotBeDotIfGroupingSeparatorIsDot()
     {
@@ -407,7 +407,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testDecimalSeparatorMayNotBeDotIfGroupingSeparatorIsDotWithNoGroupSep()
     {
@@ -451,7 +451,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testDecimalSeparatorMayNotBeCommaIfGroupingSeparatorIsComma()
     {
@@ -463,7 +463,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testDecimalSeparatorMayNotBeCommaIfGroupingSeparatorIsCommaWithNoGroupSep()
     {
@@ -483,7 +483,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testTransformExpectsNumeric()
     {
@@ -493,7 +493,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformExpectsString()
     {
@@ -503,7 +503,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformExpectsValidNumber()
     {
@@ -513,7 +513,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      *
      * @see https://github.com/symfony/symfony/issues/3161
      */
@@ -525,7 +525,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformDisallowsNaN2()
     {
@@ -535,7 +535,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformDisallowsInfinity()
     {
@@ -545,7 +545,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformDisallowsInfinity2()
     {
@@ -555,7 +555,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformDisallowsNegativeInfinity()
     {
@@ -565,7 +565,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformDisallowsLeadingExtraCharacters()
     {
@@ -575,7 +575,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      * @expectedExceptionMessage The number contains unrecognized characters: "foo3"
      */
     public function testReverseTransformDisallowsCenteredExtraCharacters()
@@ -586,7 +586,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      * @expectedExceptionMessage The number contains unrecognized characters: "foo8"
      */
     public function testReverseTransformDisallowsCenteredExtraCharactersMultibyte()
@@ -602,7 +602,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      * @expectedExceptionMessage The number contains unrecognized characters: "foo8"
      */
     public function testReverseTransformIgnoresTrailingSpacesInExceptionMessage()
@@ -618,7 +618,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      * @expectedExceptionMessage The number contains unrecognized characters: "foo"
      */
     public function testReverseTransformDisallowsTrailingExtraCharacters()
@@ -629,7 +629,7 @@ class NumberToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      * @expectedExceptionMessage The number contains unrecognized characters: "foo"
      */
     public function testReverseTransformDisallowsTrailingExtraCharactersMultibyte()

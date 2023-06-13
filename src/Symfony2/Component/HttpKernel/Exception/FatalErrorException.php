@@ -11,7 +11,7 @@
 
 namespace Symfony2\Component\HttpKernel\Exception;
 
-@trigger_error('The '.__NAMESPACE__.'\FatalErrorException class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony\Component\Debug\Exception\FatalErrorException class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\FatalErrorException class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony2\Component\Debug\Exception\FatalErrorException class instead.', E_USER_DEPRECATED);
 
 /*
  * Fatal Error Exception.
@@ -20,4 +20,4 @@ namespace Symfony2\Component\HttpKernel\Exception;
  *
  * @deprecated since version 2.3, to be removed in 3.0. Use the same class from the Debug component instead.
  */
-class_exists('Symfony\Component\Debug\Exception\FatalErrorException');
+class_exists('Symfony2\Component\Debug\Exception\FatalErrorException');

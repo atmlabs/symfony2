@@ -39,7 +39,7 @@ class TranslationsCacheWarmer implements CacheWarmerInterface
         } elseif ($container instanceof TranslatorInterface) {
             $this->translator = $container;
         } else {
-            throw new \InvalidArgumentException(sprintf('%s only accepts instance of Symfony\Component\DependencyInjection\ContainerInterface or Symfony\Component\Translation\TranslatorInterface as first argument.', __CLASS__));
+            throw new \InvalidArgumentException(sprintf('%s only accepts instance of Symfony2\Component\DependencyInjection\ContainerInterface or Symfony2\Component\Translation\TranslatorInterface as first argument.', __CLASS__));
         }
     }
 

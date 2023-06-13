@@ -86,7 +86,7 @@ class TemplateLocatorTest extends TestCase
     protected function getFileLocator()
     {
         return $this
-            ->getMockBuilder('Symfony\Component\Config\FileLocator')
+            ->getMockBuilder('Symfony2\Component\Config\FileLocator')
             ->setMethods(array('locate'))
             ->setConstructorArgs(array('/path/to/fallback'))
             ->getMock()

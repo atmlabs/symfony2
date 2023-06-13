@@ -17,11 +17,11 @@ use Symfony2\Component\Validator\Tests\Fixtures\Entity;
 
 class GetterMetadataTest extends TestCase
 {
-    const CLASSNAME = 'Symfony\Component\Validator\Tests\Fixtures\Entity';
+    const CLASSNAME = 'Symfony2\Component\Validator\Tests\Fixtures\Entity';
 
     public function testInvalidPropertyName()
     {
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Validator\Exception\ValidatorException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Validator\Exception\ValidatorException');
 
         new GetterMetadata(self::CLASSNAME, 'foobar');
     }
@@ -62,8 +62,8 @@ class GetterMetadataTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ValidatorException
-     * @expectedExceptionMessage The hasLastName() method does not exist in class Symfony\Component\Validator\Tests\Fixtures\Entity.
+     * @expectedException \Symfony2\Component\Validator\Exception\ValidatorException
+     * @expectedExceptionMessage The hasLastName() method does not exist in class Symfony2\Component\Validator\Tests\Fixtures\Entity.
      */
     public function testUndefinedMethodNameThrowsException()
     {

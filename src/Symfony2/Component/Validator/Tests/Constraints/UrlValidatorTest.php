@@ -53,7 +53,7 @@ class UrlValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Validator\Exception\UnexpectedTypeException
      */
     public function testExpectsStringCompatibleType()
     {
@@ -204,7 +204,7 @@ class UrlValidatorTest extends AbstractConstraintValidatorTest
 
     /**
      * @dataProvider getCheckDns
-     * @requires function Symfony\Bridge\PhpUnit\DnsMock::withMockedHosts
+     * @requires function Symfony2\Bridge\PhpUnit\DnsMock::withMockedHosts
      */
     public function testCheckDns($violation)
     {

@@ -39,7 +39,7 @@
         "symfony2/serializer": "To use Serializer metadata"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\PropertyInfo\\": "" },
+        "psr-4": { "Symfony2\\Component\\PropertyInfo\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

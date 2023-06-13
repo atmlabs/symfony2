@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
-use Symfony\Component\Security\Acl\Exception\InvalidDomainObjectException;
-use Symfony\Component\Security\Acl\Model\ObjectIdentityRetrievalStrategyInterface;
+use Symfony2\Component\Security\Acl\Exception\InvalidDomainObjectException;
+use Symfony2\Component\Security\Acl\Model\ObjectIdentityRetrievalStrategyInterface;
 
 /**
  * Strategy to be used for retrieving object identities from domain objects.

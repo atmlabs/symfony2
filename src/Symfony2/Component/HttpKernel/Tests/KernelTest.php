@@ -73,7 +73,7 @@ class KernelTest extends TestCase
 
     public function testBootSetsTheContainerToTheBundles()
     {
-        $bundle = $this->getMockBuilder('Symfony\Component\HttpKernel\Bundle\Bundle')->getMock();
+        $bundle = $this->getMockBuilder('Symfony2\Component\HttpKernel\Bundle\Bundle')->getMock();
         $bundle->expects($this->once())
             ->method('setContainer');
 
@@ -125,7 +125,7 @@ class KernelTest extends TestCase
     public function testEnvParametersResourceIsAdded()
     {
         $container = new ContainerBuilder();
-        $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\Tests\Fixtures\KernelForTest')
+        $kernel = $this->getMockBuilder('Symfony2\Component\HttpKernel\Tests\Fixtures\KernelForTest')
             ->disableOriginalConstructor()
             ->setMethods(array('getContainerBuilder', 'prepareContainer', 'getCacheDir', 'getLogDir'))
             ->getMock();
@@ -170,7 +170,7 @@ class KernelTest extends TestCase
 
     public function testShutdownCallsShutdownOnAllBundles()
     {
-        $bundle = $this->getMockBuilder('Symfony\Component\HttpKernel\Bundle\Bundle')->getMock();
+        $bundle = $this->getMockBuilder('Symfony2\Component\HttpKernel\Bundle\Bundle')->getMock();
         $bundle->expects($this->once())
             ->method('shutdown');
 
@@ -182,7 +182,7 @@ class KernelTest extends TestCase
 
     public function testShutdownGivesNullContainerToAllBundles()
     {
-        $bundle = $this->getMockBuilder('Symfony\Component\HttpKernel\Bundle\Bundle')->getMock();
+        $bundle = $this->getMockBuilder('Symfony2\Component\HttpKernel\Bundle\Bundle')->getMock();
         $bundle->expects($this->at(3))
             ->method('setContainer')
             ->with(null);
@@ -202,7 +202,7 @@ class KernelTest extends TestCase
         $catch = true;
         $request = new Request();
 
-        $httpKernelMock = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernel')
+        $httpKernelMock = $this->getMockBuilder('Symfony2\Component\HttpKernel\HttpKernel')
             ->disableOriginalConstructor()
             ->getMock();
         $httpKernelMock
@@ -224,7 +224,7 @@ class KernelTest extends TestCase
         $catch = true;
         $request = new Request();
 
-        $httpKernelMock = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernel')
+        $httpKernelMock = $this->getMockBuilder('Symfony2\Component\HttpKernel\HttpKernel')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -751,7 +751,7 @@ EOF;
         $this->assertFalse($httpKernel->terminateCalled, 'terminate() is never called if the kernel class does not implement TerminableInterface');
 
         // implements TerminableInterface
-        $httpKernelMock = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernel')
+        $httpKernelMock = $this->getMockBuilder('Symfony2\Component\HttpKernel\HttpKernel')
             ->disableOriginalConstructor()
             ->setMethods(array('terminate'))
             ->getMock();
@@ -773,7 +773,7 @@ EOF;
     {
         $dir = __DIR__.'/Fixtures/123';
         require_once $dir.'/Kernel123.php';
-        $kernel = new \Symfony\Component\HttpKernel\Tests\Fixtures\_123\Kernel123('dev', true);
+        $kernel = new \Symfony2\Component\HttpKernel\Tests\Fixtures\_123\Kernel123('dev', true);
         $this->assertEquals('_123', $kernel->getName());
     }
 
@@ -785,7 +785,7 @@ EOF;
     protected function getBundle($dir = null, $parent = null, $className = null, $bundleName = null)
     {
         $bundle = $this
-            ->getMockBuilder('Symfony\Component\HttpKernel\Bundle\BundleInterface')
+            ->getMockBuilder('Symfony2\Component\HttpKernel\Bundle\BundleInterface')
             ->setMethods(array('getPath', 'getParent', 'getName'))
             ->disableOriginalConstructor()
         ;
@@ -830,7 +830,7 @@ EOF;
         $methods[] = 'registerBundles';
 
         $kernel = $this
-            ->getMockBuilder('Symfony\Component\HttpKernel\Kernel')
+            ->getMockBuilder('Symfony2\Component\HttpKernel\Kernel')
             ->setMethods($methods)
             ->setConstructorArgs(array('test', false))
             ->getMockForAbstractClass()
@@ -848,7 +848,7 @@ EOF;
 
     protected function getKernelForTest(array $methods = array())
     {
-        $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\Tests\Fixtures\KernelForTest')
+        $kernel = $this->getMockBuilder('Symfony2\Component\HttpKernel\Tests\Fixtures\KernelForTest')
             ->setConstructorArgs(array('test', false))
             ->setMethods($methods)
             ->getMock();

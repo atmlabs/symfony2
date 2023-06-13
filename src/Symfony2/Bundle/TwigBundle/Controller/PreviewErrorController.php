@@ -39,7 +39,7 @@ class PreviewErrorController
 
         /*
          * This Request mimics the parameters set by
-         * \Symfony\Component\HttpKernel\EventListener\ExceptionListener::duplicateRequest, with
+         * \Symfony2\Component\HttpKernel\EventListener\ExceptionListener::duplicateRequest, with
          * the additional "showException" flag.
          */
 

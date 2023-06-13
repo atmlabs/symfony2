@@ -105,7 +105,7 @@ class FormTypeCsrfExtension extends AbstractTypeExtension
             $tokenId = $options['csrf_token_id'] ?: ($form->getName() ?: \get_class($form->getConfig()->getType()->getInnerType()));
             $data = (string) $options['csrf_token_manager']->getToken($tokenId);
 
-            $csrfForm = $factory->createNamed($options['csrf_field_name'], 'Symfony\Component\Form\Extension\Core\Type\HiddenType', $data, array(
+            $csrfForm = $factory->createNamed($options['csrf_field_name'], 'Symfony2\Component\Form\Extension\Core\Type\HiddenType', $data, array(
                 'mapped' => false,
             ));
 
@@ -167,6 +167,6 @@ class FormTypeCsrfExtension extends AbstractTypeExtension
      */
     public function getExtendedType()
     {
-        return 'Symfony\Component\Form\Extension\Core\Type\FormType';
+        return 'Symfony2\Component\Form\Extension\Core\Type\FormType';
     }
 }

@@ -71,7 +71,7 @@ abstract class IteratorTestCase extends TestCase
     {
         $values = array();
         foreach ($iterator as $file) {
-            $this->assertInstanceOf('Symfony\\Component\\Finder\\SplFileInfo', $file);
+            $this->assertInstanceOf('Symfony2\\Component\\Finder\\SplFileInfo', $file);
             $values[] = $file->getPathname();
         }
 
@@ -91,7 +91,7 @@ abstract class IteratorTestCase extends TestCase
     {
         $values = array();
         foreach ($iterator as $file) {
-            $this->assertInstanceOf('Symfony\\Component\\Finder\\SplFileInfo', $file);
+            $this->assertInstanceOf('Symfony2\\Component\\Finder\\SplFileInfo', $file);
             $values[] = $file->getPathname();
         }
 

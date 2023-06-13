@@ -25,13 +25,13 @@ class RetryAuthenticationEntryPointTest extends TestCase
         $entryPoint = new RetryAuthenticationEntryPoint($httpPort, $httpsPort);
         $response = $entryPoint->start($request);
 
-        $this->assertInstanceOf('Symfony\Component\HttpFoundation\RedirectResponse', $response);
+        $this->assertInstanceOf('Symfony2\Component\HttpFoundation\RedirectResponse', $response);
         $this->assertEquals($expectedUrl, $response->headers->get('Location'));
     }
 
     public function dataForStart()
     {
-        if (!class_exists('Symfony\Component\HttpFoundation\Request')) {
+        if (!class_exists('Symfony2\Component\HttpFoundation\Request')) {
             return array(array());
         }
 

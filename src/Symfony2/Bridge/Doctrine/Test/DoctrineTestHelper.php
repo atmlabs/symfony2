@@ -35,7 +35,7 @@ class DoctrineTestHelper
         }
 
         $config = new \Doctrine\ORM\Configuration();
-        $config->setEntityNamespaces(array('SymfonyTestsDoctrine' => 'Symfony\Bridge\Doctrine\Tests\Fixtures'));
+        $config->setEntityNamespaces(array('SymfonyTestsDoctrine' => 'Symfony2\Bridge\Doctrine\Tests\Fixtures'));
         $config->setAutoGenerateProxyClasses(true);
         $config->setProxyDir(\sys_get_temp_dir());
         $config->setProxyNamespace('SymfonyTests\Doctrine');

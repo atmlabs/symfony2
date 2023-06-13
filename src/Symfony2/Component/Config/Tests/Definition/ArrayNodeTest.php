@@ -19,7 +19,7 @@ use Symfony2\Component\Config\Definition\ScalarNode;
 class ArrayNodeTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidTypeException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidTypeException
      */
     public function testNormalizeThrowsExceptionWhenFalseIsNotAllowed()
     {
@@ -28,7 +28,7 @@ class ArrayNodeTest extends TestCase
     }
 
     /**
-     * @expectedException        \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException        \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      * @expectedExceptionMessage Unrecognized option "foo" under "root"
      */
     public function testExceptionThrownOnUnrecognizedChild()

@@ -27,7 +27,7 @@ class DataCollectorTranslatorPass implements CompilerPassInterface
 
         $translatorClass = $container->getParameterBag()->resolveValue($container->findDefinition('translator')->getClass());
 
-        if (!is_subclass_of($translatorClass, 'Symfony\Component\Translation\TranslatorBagInterface')) {
+        if (!is_subclass_of($translatorClass, 'Symfony2\Component\Translation\TranslatorBagInterface')) {
             $container->removeDefinition('translator.data_collector');
             $container->removeDefinition('data_collector.translation');
         }

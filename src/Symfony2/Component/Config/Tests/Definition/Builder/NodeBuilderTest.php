@@ -83,10 +83,10 @@ class NodeBuilderTest extends TestCase
         $builder = new BaseNodeBuilder();
 
         $node = $builder->integerNode('foo')->min(3)->max(5);
-        $this->assertInstanceOf('Symfony\Component\Config\Definition\Builder\IntegerNodeDefinition', $node);
+        $this->assertInstanceOf('Symfony2\Component\Config\Definition\Builder\IntegerNodeDefinition', $node);
 
         $node = $builder->floatNode('bar')->min(3.0)->max(5.0);
-        $this->assertInstanceOf('Symfony\Component\Config\Definition\Builder\FloatNodeDefinition', $node);
+        $this->assertInstanceOf('Symfony2\Component\Config\Definition\Builder\FloatNodeDefinition', $node);
     }
 }
 

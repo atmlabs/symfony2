@@ -20,7 +20,7 @@ class FormLoginExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $container
-            ->register('localized_form_failure_handler', 'Symfony\Bundle\SecurityBundle\Tests\Functional\Bundle\FormLoginBundle\Security\LocalizedFormFailureHandler')
+            ->register('localized_form_failure_handler', 'Symfony2\Bundle\SecurityBundle\Tests\Functional\Bundle\FormLoginBundle\Security\LocalizedFormFailureHandler')
             ->addArgument(new Reference('router'))
         ;
     }

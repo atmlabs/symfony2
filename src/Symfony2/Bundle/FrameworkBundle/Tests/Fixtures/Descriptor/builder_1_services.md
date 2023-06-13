@@ -57,4 +57,4 @@ Aliases
 Services
 --------
 
-- `service_container`: `Symfony\Component\DependencyInjection\ContainerBuilder`
+- `service_container`: `Symfony2\Component\DependencyInjection\ContainerBuilder`

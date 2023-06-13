@@ -22,7 +22,7 @@ use Symfony2\Component\HttpFoundation\Session\Flash\AutoExpireFlashBag as FlashB
 class AutoExpireFlashBagTest extends TestCase
 {
     /**
-     * @var \Symfony\Component\HttpFoundation\Session\Flash\AutoExpireFlashBag
+     * @var \Symfony2\Component\HttpFoundation\Session\Flash\AutoExpireFlashBag
      */
     private $bag;
 

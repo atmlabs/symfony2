@@ -47,7 +47,7 @@ class ChainLoaderTest extends TestCase
         $this->assertFalse($loader->load(new TemplateReference('bar', 'php')), '->load() returns false if the template is not found');
         $this->assertFalse($loader->load(new TemplateReference('foo', 'php')), '->load() returns false if the template does not exist for the given renderer');
         $this->assertInstanceOf(
-            'Symfony\Component\Templating\Storage\FileStorage',
+            'Symfony2\Component\Templating\Storage\FileStorage',
             $loader->load(new TemplateReference('foo.php', 'php')),
             '->load() returns a FileStorage if the template exists'
         );

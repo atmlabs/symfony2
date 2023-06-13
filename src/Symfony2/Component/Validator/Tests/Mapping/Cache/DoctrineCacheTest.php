@@ -21,7 +21,7 @@ class DoctrineCacheTest extends TestCase
 
     public function testWrite()
     {
-        $meta = $this->getMockBuilder('Symfony\\Component\\Validator\\Mapping\\ClassMetadata')
+        $meta = $this->getMockBuilder('Symfony2\\Component\\Validator\\Mapping\\ClassMetadata')
             ->disableOriginalConstructor()
             ->setMethods(array('getClassName'))
             ->getMock();
@@ -33,7 +33,7 @@ class DoctrineCacheTest extends TestCase
         $this->cache->write($meta);
 
         $this->assertInstanceOf(
-            'Symfony\\Component\\Validator\\Mapping\\ClassMetadata',
+            'Symfony2\\Component\\Validator\\Mapping\\ClassMetadata',
             $this->cache->read('bar'),
             'write() stores metadata'
         );
@@ -41,7 +41,7 @@ class DoctrineCacheTest extends TestCase
 
     public function testHas()
     {
-        $meta = $this->getMockBuilder('Symfony\\Component\\Validator\\Mapping\\ClassMetadata')
+        $meta = $this->getMockBuilder('Symfony2\\Component\\Validator\\Mapping\\ClassMetadata')
             ->disableOriginalConstructor()
             ->setMethods(array('getClassName'))
             ->getMock();
@@ -58,7 +58,7 @@ class DoctrineCacheTest extends TestCase
 
     public function testRead()
     {
-        $meta = $this->getMockBuilder('Symfony\\Component\\Validator\\Mapping\\ClassMetadata')
+        $meta = $this->getMockBuilder('Symfony2\\Component\\Validator\\Mapping\\ClassMetadata')
             ->disableOriginalConstructor()
             ->setMethods(array('getClassName'))
             ->getMock();
@@ -72,7 +72,7 @@ class DoctrineCacheTest extends TestCase
         $this->cache->write($meta);
 
         $this->assertInstanceOf(
-            'Symfony\\Component\\Validator\\Mapping\\ClassMetadata',
+            'Symfony2\\Component\\Validator\\Mapping\\ClassMetadata',
             $this->cache->read('bar'),
             'read() returns metadata'
         );

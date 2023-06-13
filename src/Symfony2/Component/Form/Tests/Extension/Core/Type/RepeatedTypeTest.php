@@ -15,7 +15,7 @@ use Symfony2\Component\Form\Form;
 
 class RepeatedTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\RepeatedType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\RepeatedType';
 
     /**
      * @var Form
@@ -91,7 +91,7 @@ class RepeatedTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testSetInvalidOptions()
     {
@@ -102,7 +102,7 @@ class RepeatedTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testSetInvalidFirstOptions()
     {
@@ -113,7 +113,7 @@ class RepeatedTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testSetInvalidSecondOptions()
     {

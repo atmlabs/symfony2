@@ -163,7 +163,7 @@ class UrlMatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\ResourceNotFoundException
      */
     public function testTrailingEncodedNewlineIsNotOverlooked()
     {
@@ -207,7 +207,7 @@ class UrlMatcherTest extends TestCase
         $matcher = $this->getUrlMatcher($collection);
 
         $this->assertEquals(array('_route' => 'foo'), $matcher->match('/foo1'));
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Routing\Exception\ResourceNotFoundException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Routing\Exception\ResourceNotFoundException');
         $this->assertEquals(array(), $matcher->match('/foo'));
     }
 
@@ -264,7 +264,7 @@ class UrlMatcherTest extends TestCase
         // z and _format are optional.
         $this->assertEquals(array('w' => 'wwwww', 'x' => 'x', 'y' => 'y', 'z' => 'default-z', '_format' => 'html', '_route' => 'test'), $matcher->match('/wwwwwxy'));
 
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Routing\Exception\ResourceNotFoundException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Routing\Exception\ResourceNotFoundException');
         $matcher->match('/wxy.html');
     }
 
@@ -279,7 +279,7 @@ class UrlMatcherTest extends TestCase
 
         // Usually the character in front of an optional parameter can be left out, e.g. with pattern '/get/{what}' just '/get' would match.
         // But here the 't' in 'get' is not a separating character, so it makes no sense to match without it.
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Routing\Exception\ResourceNotFoundException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Routing\Exception\ResourceNotFoundException');
         $matcher->match('/ge');
     }
 
@@ -302,7 +302,7 @@ class UrlMatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\ResourceNotFoundException
      */
     public function testDefaultRequirementOfVariableDisallowsSlash()
     {
@@ -314,7 +314,7 @@ class UrlMatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\ResourceNotFoundException
      */
     public function testDefaultRequirementOfVariableDisallowsNextSeparator()
     {
@@ -326,7 +326,7 @@ class UrlMatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\ResourceNotFoundException
      */
     public function testSchemeRequirement()
     {
@@ -337,7 +337,7 @@ class UrlMatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\ResourceNotFoundException
      */
     public function testCondition()
     {
@@ -408,7 +408,7 @@ class UrlMatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\ResourceNotFoundException
      */
     public function testWithOutHostHostDoesNotMatch()
     {
@@ -420,7 +420,7 @@ class UrlMatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\ResourceNotFoundException
      */
     public function testPathIsCaseSensitive()
     {
@@ -465,7 +465,7 @@ class UrlMatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\ResourceNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\ResourceNotFoundException
      */
     public function testSchemeAndMethodMismatch()
     {

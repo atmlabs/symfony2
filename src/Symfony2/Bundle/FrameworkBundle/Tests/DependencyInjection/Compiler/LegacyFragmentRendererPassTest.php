@@ -43,7 +43,7 @@ class LegacyFragmentRendererPassTest extends TestCase
     {
         $builder = new ContainerBuilder();
         $fragmentHandlerDefinition = $builder->register('fragment.handler');
-        $builder->register('my_content_renderer', 'Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\RendererService')
+        $builder->register('my_content_renderer', 'Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\RendererService')
             ->addTag('kernel.fragment_renderer');
 
         $pass = new FragmentRendererPass();
@@ -53,7 +53,7 @@ class LegacyFragmentRendererPassTest extends TestCase
     }
 }
 
-class RendererService implements \Symfony\Component\HttpKernel\Fragment\FragmentRendererInterface
+class RendererService implements \Symfony2\Component\HttpKernel\Fragment\FragmentRendererInterface
 {
     public function render($uri, Request $request = null, array $options = array())
     {

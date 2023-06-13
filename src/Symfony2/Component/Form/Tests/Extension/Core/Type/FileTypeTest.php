@@ -18,7 +18,7 @@ use Symfony2\Component\HttpFoundation\File\UploadedFile;
 
 class FileTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\FileType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\FileType';
 
     /**
      * @group legacy
@@ -34,7 +34,7 @@ class FileTypeTest extends BaseTypeTest
     public function testSetData()
     {
         $form = $this->factory->createBuilder(static::TESTED_TYPE)->getForm();
-        $data = $this->getMockBuilder('Symfony\Component\HttpFoundation\File\File')
+        $data = $this->getMockBuilder('Symfony2\Component\HttpFoundation\File\File')
             ->setConstructorArgs(array(__DIR__.'/../../../Fixtures/foo', 'foo'))
             ->getMock();
 

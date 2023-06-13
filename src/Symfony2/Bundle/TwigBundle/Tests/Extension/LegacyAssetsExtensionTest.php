@@ -21,7 +21,7 @@ class LegacyAssetsExtensionTest extends TestCase
 {
     protected function setUp()
     {
-        if (!class_exists('Symfony\Component\Templating\Helper\CoreAssetsHelper')) {
+        if (!class_exists('Symfony2\Component\Templating\Helper\CoreAssetsHelper')) {
             $this->markTestSkipped('The CoreAssetsHelper class does only exist with symfony2/templating < 3.0 installed.');
         }
     }
@@ -70,7 +70,7 @@ class LegacyAssetsExtensionTest extends TestCase
 
     private function createRequestContextMock($scheme, $host, $httpPort, $httpsPort)
     {
-        $context = $this->getMockBuilder('Symfony\Component\Routing\RequestContext')
+        $context = $this->getMockBuilder('Symfony2\Component\Routing\RequestContext')
             ->disableOriginalConstructor()
             ->getMock();
         $context->expects($this->any())
@@ -91,7 +91,7 @@ class LegacyAssetsExtensionTest extends TestCase
 
     private function createContainerMock($helper)
     {
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
         $container->expects($this->any())
             ->method('get')
             ->with('templating.helper.assets')
@@ -102,7 +102,7 @@ class LegacyAssetsExtensionTest extends TestCase
 
     private function createHelperMock($path, $packageName, $returnValue)
     {
-        $helper = $this->getMockBuilder('Symfony\Component\Templating\Helper\CoreAssetsHelper')
+        $helper = $this->getMockBuilder('Symfony2\Component\Templating\Helper\CoreAssetsHelper')
             ->disableOriginalConstructor()
             ->getMock();
         $helper->expects($this->any())

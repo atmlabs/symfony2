@@ -27,7 +27,7 @@ class RedirectableUrlMatcherTest extends TestCase
         $matcher = new RedirectableUrlMatcher($coll, $context = new RequestContext());
 
         $this->assertEquals(array(
-                '_controller' => 'Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction',
+                '_controller' => 'Symfony2\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction',
                 'path' => '/foo/',
                 'permanent' => true,
                 'scheme' => null,
@@ -47,7 +47,7 @@ class RedirectableUrlMatcherTest extends TestCase
         $matcher = new RedirectableUrlMatcher($coll, $context = new RequestContext());
 
         $this->assertEquals(array(
-                '_controller' => 'Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction',
+                '_controller' => 'Symfony2\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction',
                 'path' => '/foo',
                 'permanent' => true,
                 'scheme' => 'https',

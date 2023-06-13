@@ -18,12 +18,12 @@ class DataTransformerChainTest extends TestCase
 {
     public function testTransform()
     {
-        $transformer1 = $this->getMockBuilder('Symfony\Component\Form\DataTransformerInterface')->getMock();
+        $transformer1 = $this->getMockBuilder('Symfony2\Component\Form\DataTransformerInterface')->getMock();
         $transformer1->expects($this->once())
             ->method('transform')
             ->with($this->identicalTo('foo'))
             ->will($this->returnValue('bar'));
-        $transformer2 = $this->getMockBuilder('Symfony\Component\Form\DataTransformerInterface')->getMock();
+        $transformer2 = $this->getMockBuilder('Symfony2\Component\Form\DataTransformerInterface')->getMock();
         $transformer2->expects($this->once())
             ->method('transform')
             ->with($this->identicalTo('bar'))
@@ -36,12 +36,12 @@ class DataTransformerChainTest extends TestCase
 
     public function testReverseTransform()
     {
-        $transformer2 = $this->getMockBuilder('Symfony\Component\Form\DataTransformerInterface')->getMock();
+        $transformer2 = $this->getMockBuilder('Symfony2\Component\Form\DataTransformerInterface')->getMock();
         $transformer2->expects($this->once())
             ->method('reverseTransform')
             ->with($this->identicalTo('foo'))
             ->will($this->returnValue('bar'));
-        $transformer1 = $this->getMockBuilder('Symfony\Component\Form\DataTransformerInterface')->getMock();
+        $transformer1 = $this->getMockBuilder('Symfony2\Component\Form\DataTransformerInterface')->getMock();
         $transformer1->expects($this->once())
             ->method('reverseTransform')
             ->with($this->identicalTo('bar'))

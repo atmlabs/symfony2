@@ -46,7 +46,7 @@ class ConsoleHandlerTest extends TestCase
      */
     public function testVerbosityMapping($verbosity, $level, $isHandling, array $map = array())
     {
-        $output = $this->getMockBuilder('Symfony\Component\Console\Output\OutputInterface')->getMock();
+        $output = $this->getMockBuilder('Symfony2\Component\Console\Output\OutputInterface')->getMock();
         $output
             ->expects($this->atLeastOnce())
             ->method('getVerbosity')
@@ -81,7 +81,7 @@ class ConsoleHandlerTest extends TestCase
 
     public function testVerbosityChanged()
     {
-        $output = $this->getMockBuilder('Symfony\Component\Console\Output\OutputInterface')->getMock();
+        $output = $this->getMockBuilder('Symfony2\Component\Console\Output\OutputInterface')->getMock();
         $output
             ->expects($this->at(0))
             ->method('getVerbosity')
@@ -104,14 +104,14 @@ class ConsoleHandlerTest extends TestCase
     public function testGetFormatter()
     {
         $handler = new ConsoleHandler();
-        $this->assertInstanceOf('Symfony\Bridge\Monolog\Formatter\ConsoleFormatter', $handler->getFormatter(),
+        $this->assertInstanceOf('Symfony2\Bridge\Monolog\Formatter\ConsoleFormatter', $handler->getFormatter(),
             '-getFormatter returns ConsoleFormatter by default'
         );
     }
 
     public function testWritingAndFormatting()
     {
-        $output = $this->getMockBuilder('Symfony\Component\Console\Output\OutputInterface')->getMock();
+        $output = $this->getMockBuilder('Symfony2\Component\Console\Output\OutputInterface')->getMock();
         $output
             ->expects($this->any())
             ->method('getVerbosity')
@@ -166,12 +166,12 @@ class ConsoleHandlerTest extends TestCase
             $logger->addInfo('After terminate message.');
         });
 
-        $event = new ConsoleCommandEvent(new Command('foo'), $this->getMockBuilder('Symfony\Component\Console\Input\InputInterface')->getMock(), $output);
+        $event = new ConsoleCommandEvent(new Command('foo'), $this->getMockBuilder('Symfony2\Component\Console\Input\InputInterface')->getMock(), $output);
         $dispatcher->dispatch(ConsoleEvents::COMMAND, $event);
         $this->assertContains('Before command message.', $out = $output->fetch());
         $this->assertContains('After command message.', $out);
 
-        $event = new ConsoleTerminateEvent(new Command('foo'), $this->getMockBuilder('Symfony\Component\Console\Input\InputInterface')->getMock(), $output, 0);
+        $event = new ConsoleTerminateEvent(new Command('foo'), $this->getMockBuilder('Symfony2\Component\Console\Input\InputInterface')->getMock(), $output, 0);
         $dispatcher->dispatch(ConsoleEvents::TERMINATE, $event);
         $this->assertContains('Before terminate message.', $out = $output->fetch());
         $this->assertContains('After terminate message.', $out);

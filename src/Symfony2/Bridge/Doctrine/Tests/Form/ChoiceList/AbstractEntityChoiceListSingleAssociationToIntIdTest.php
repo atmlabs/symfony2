@@ -15,7 +15,7 @@ use Symfony2\Bridge\Doctrine\Form\ChoiceList\EntityChoiceList;
 use Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleAssociationToIntIdEntity;
 use Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdNoToStringEntity;
 
-if (!class_exists('Symfony\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
+if (!class_exists('Symfony2\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
     return;
 }
 
@@ -30,14 +30,14 @@ abstract class AbstractEntityChoiceListSingleAssociationToIntIdTest extends Abst
 {
     protected function getEntityClass()
     {
-        return 'Symfony\Bridge\Doctrine\Tests\Fixtures\SingleAssociationToIntIdEntity';
+        return 'Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleAssociationToIntIdEntity';
     }
 
     protected function getClassesMetadata()
     {
         return array(
             $this->em->getClassMetadata($this->getEntityClass()),
-            $this->em->getClassMetadata('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdNoToStringEntity'),
+            $this->em->getClassMetadata('Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdNoToStringEntity'),
         );
     }
 
@@ -47,7 +47,7 @@ abstract class AbstractEntityChoiceListSingleAssociationToIntIdTest extends Abst
     }
 
     /**
-     * @return \Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
+     * @return \Symfony2\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
      */
     protected function createObjects()
     {

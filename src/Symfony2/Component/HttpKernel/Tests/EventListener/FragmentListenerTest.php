@@ -51,7 +51,7 @@ class FragmentListenerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
+     * @expectedException \Symfony2\Component\HttpKernel\Exception\AccessDeniedHttpException
      */
     public function testAccessDeniedWithNonSafeMethods()
     {
@@ -64,7 +64,7 @@ class FragmentListenerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
+     * @expectedException \Symfony2\Component\HttpKernel\Exception\AccessDeniedHttpException
      */
     public function testAccessDeniedWithWrongSignature()
     {
@@ -117,6 +117,6 @@ class FragmentListenerTest extends TestCase
 
     private function createGetResponseEvent(Request $request, $requestType = HttpKernelInterface::MASTER_REQUEST)
     {
-        return new GetResponseEvent($this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock(), $request, $requestType);
+        return new GetResponseEvent($this->getMockBuilder('Symfony2\Component\HttpKernel\HttpKernelInterface')->getMock(), $request, $requestType);
     }
 }

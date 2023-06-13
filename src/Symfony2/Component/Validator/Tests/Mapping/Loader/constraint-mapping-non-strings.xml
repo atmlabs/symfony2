@@ -4,9 +4,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
-  <namespace prefix="custom">Symfony\Component\Validator\Tests\Fixtures\</namespace>
+  <namespace prefix="custom">Symfony2\Component\Validator\Tests\Fixtures\</namespace>
 
-  <class name="Symfony\Component\Validator\Tests\Fixtures\Entity">
+  <class name="Symfony2\Component\Validator\Tests\Fixtures\Entity">
     <property name="firstName">
       <!-- Constraint with a Boolean -->
       <constraint name="Regex">

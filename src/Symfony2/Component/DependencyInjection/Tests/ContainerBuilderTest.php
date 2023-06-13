@@ -80,7 +80,7 @@ class ContainerBuilderTest extends TestCase
         $builder = new ContainerBuilder();
         $builder->register('foo', 'Bar\FooClass');
         $this->assertTrue($builder->hasDefinition('foo'), '->register() registers a new service definition');
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Definition', $builder->getDefinition('foo'), '->register() returns the newly created Definition instance');
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Definition', $builder->getDefinition('foo'), '->register() returns the newly created Definition instance');
     }
 
     public function testHas()
@@ -132,7 +132,7 @@ class ContainerBuilderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\InvalidArgumentException
      * @dataProvider provideBadId
      */
     public function testBadAliasId($id)
@@ -142,7 +142,7 @@ class ContainerBuilderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\InvalidArgumentException
      * @dataProvider provideBadId
      */
     public function testBadDefinitionId($id)
@@ -164,7 +164,7 @@ class ContainerBuilderTest extends TestCase
     }
 
     /**
-     * @expectedException        \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException        \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @expectedExceptionMessage You have requested a synthetic service ("foo"). The DIC does not know how to construct this service.
      */
     public function testGetUnsetLoadingServiceWhenCreateServiceThrowsAnException()
@@ -308,7 +308,7 @@ class ContainerBuilderTest extends TestCase
         $builder = new ContainerBuilder();
         $builder->setResourceTracking(false);
         $builderCompilerPasses = $builder->getCompiler()->getPassConfig()->getPasses();
-        $builder->addCompilerPass($this->getMockBuilder('Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface')->getMock());
+        $builder->addCompilerPass($this->getMockBuilder('Symfony2\Component\DependencyInjection\Compiler\CompilerPassInterface')->getMock());
 
         $this->assertCount(\count($builder->getCompiler()->getPassConfig()->getPasses()) - 1, $builderCompilerPasses);
     }
@@ -484,7 +484,7 @@ class ContainerBuilderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @expectedExceptionMessage Constructing service "foo" from a parent definition is not supported at build time.
      */
     public function testResolveServicesWithDecoratedDefinition()
@@ -615,10 +615,10 @@ class ContainerBuilderTest extends TestCase
 
         $this->assertCount(1, $resources, '1 resource was registered');
 
-        /* @var $resource \Symfony\Component\Config\Resource\FileResource */
+        /* @var $resource \Symfony2\Component\Config\Resource\FileResource */
         $resource = end($resources);
 
-        $this->assertInstanceOf('Symfony\Component\Config\Resource\FileResource', $resource);
+        $this->assertInstanceOf('Symfony2\Component\Config\Resource\FileResource', $resource);
         $this->assertSame(realpath(__DIR__.'/Fixtures/includes/classes.php'), realpath($resource->getResource()));
     }
 
@@ -638,10 +638,10 @@ class ContainerBuilderTest extends TestCase
 
         $this->assertCount(1, $resources, '1 resource was registered');
 
-        /* @var $resource \Symfony\Component\Config\Resource\FileResource */
+        /* @var $resource \Symfony2\Component\Config\Resource\FileResource */
         $resource = end($resources);
 
-        $this->assertInstanceOf('Symfony\Component\Config\Resource\FileResource', $resource);
+        $this->assertInstanceOf('Symfony2\Component\Config\Resource\FileResource', $resource);
         $this->assertSame(realpath(__DIR__.'/Fixtures/includes/classes.php'), realpath($resource->getResource()));
     }
 
@@ -697,7 +697,7 @@ class ContainerBuilderTest extends TestCase
 
     public function testRegisteredButNotLoadedExtension()
     {
-        $extension = $this->getMockBuilder('Symfony\\Component\\DependencyInjection\\Extension\\ExtensionInterface')->getMock();
+        $extension = $this->getMockBuilder('Symfony2\\Component\\DependencyInjection\\Extension\\ExtensionInterface')->getMock();
         $extension->expects($this->once())->method('getAlias')->will($this->returnValue('project'));
         $extension->expects($this->never())->method('load');
 
@@ -709,7 +709,7 @@ class ContainerBuilderTest extends TestCase
 
     public function testRegisteredAndLoadedExtension()
     {
-        $extension = $this->getMockBuilder('Symfony\\Component\\DependencyInjection\\Extension\\ExtensionInterface')->getMock();
+        $extension = $this->getMockBuilder('Symfony2\\Component\\DependencyInjection\\Extension\\ExtensionInterface')->getMock();
         $extension->expects($this->exactly(2))->method('getAlias')->will($this->returnValue('project'));
         $extension->expects($this->once())->method('load')->with(array(array('foo' => 'bar')));
 

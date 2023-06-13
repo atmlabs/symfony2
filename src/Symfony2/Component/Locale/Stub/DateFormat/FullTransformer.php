@@ -11,17 +11,17 @@
 
 namespace Symfony2\Component\Locale\Stub\DateFormat;
 
-@trigger_error('The '.__NAMESPACE__.'\FullTransformer class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony\Component\Intl\DateFormatter\DateFormat\FullTransformer class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\FullTransformer class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony2\Component\Intl\DateFormatter\DateFormat\FullTransformer class instead.', E_USER_DEPRECATED);
 
 use Symfony2\Component\Intl\DateFormatter\DateFormat\FullTransformer as BaseFullTransformer;
 
 /**
- * Alias of {@link \Symfony\Component\Intl\DateFormatter\DateFormat\FullTransformer}.
+ * Alias of {@link \Symfony2\Component\Intl\DateFormatter\DateFormat\FullTransformer}.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 2.3, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Intl\DateFormatter\DateFormat\FullTransformer}
+ *             Use {@link \Symfony2\Component\Intl\DateFormatter\DateFormat\FullTransformer}
  *             instead.
  */
 class FullTransformer extends BaseFullTransformer

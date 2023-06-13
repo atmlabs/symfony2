@@ -17,12 +17,12 @@ use Symfony2\Component\Validator\Tests\Fixtures\Entity;
 
 class PropertyMetadataTest extends TestCase
 {
-    const CLASSNAME = 'Symfony\Component\Validator\Tests\Fixtures\Entity';
-    const PARENTCLASS = 'Symfony\Component\Validator\Tests\Fixtures\EntityParent';
+    const CLASSNAME = 'Symfony2\Component\Validator\Tests\Fixtures\Entity';
+    const PARENTCLASS = 'Symfony2\Component\Validator\Tests\Fixtures\EntityParent';
 
     public function testInvalidPropertyName()
     {
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Validator\Exception\ValidatorException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Validator\Exception\ValidatorException');
 
         new PropertyMetadata(self::CLASSNAME, 'foobar');
     }
@@ -50,7 +50,7 @@ class PropertyMetadataTest extends TestCase
         $metadata = new PropertyMetadata(self::CLASSNAME, 'internal');
         $metadata->name = 'test';
 
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Validator\Exception\ValidatorException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Validator\Exception\ValidatorException');
         $metadata->getPropertyValue($entity);
     }
 }

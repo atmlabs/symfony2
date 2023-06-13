@@ -41,7 +41,7 @@ class TemplateCacheWarmer implements CacheWarmerInterface
         } elseif ($container instanceof Environment) {
             $this->twig = $container;
         } else {
-            throw new \InvalidArgumentException(sprintf('%s only accepts instance of Symfony\Component\DependencyInjection\ContainerInterface or Environment as first argument.', __CLASS__));
+            throw new \InvalidArgumentException(sprintf('%s only accepts instance of Symfony2\Component\DependencyInjection\ContainerInterface or Environment as first argument.', __CLASS__));
         }
 
         $this->iterator = $iterator;

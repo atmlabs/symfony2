@@ -31,8 +31,8 @@ class CustomNormalizerTest extends TestCase
 
     public function testInterface()
     {
-        $this->assertInstanceOf('Symfony\Component\Serializer\Normalizer\NormalizerInterface', $this->normalizer);
-        $this->assertInstanceOf('Symfony\Component\Serializer\Normalizer\DenormalizerInterface', $this->normalizer);
+        $this->assertInstanceOf('Symfony2\Component\Serializer\Normalizer\NormalizerInterface', $this->normalizer);
+        $this->assertInstanceOf('Symfony2\Component\Serializer\Normalizer\DenormalizerInterface', $this->normalizer);
     }
 
     public function testSerialize()
@@ -63,8 +63,8 @@ class CustomNormalizerTest extends TestCase
 
     public function testSupportsDenormalization()
     {
-        $this->assertTrue($this->normalizer->supportsDenormalization(array(), 'Symfony\Component\Serializer\Tests\Fixtures\ScalarDummy'));
+        $this->assertTrue($this->normalizer->supportsDenormalization(array(), 'Symfony2\Component\Serializer\Tests\Fixtures\ScalarDummy'));
         $this->assertFalse($this->normalizer->supportsDenormalization(array(), 'stdClass'));
-        $this->assertTrue($this->normalizer->supportsDenormalization(array(), 'Symfony\Component\Serializer\Tests\Fixtures\DenormalizableDummy'));
+        $this->assertTrue($this->normalizer->supportsDenormalization(array(), 'Symfony2\Component\Serializer\Tests\Fixtures\DenormalizableDummy'));
     }
 }

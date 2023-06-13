@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Tests\Domain;
+namespace Symfony2\Component\Security\Acl\Tests\Domain;
 
-use Symfony\Component\Security\Acl\Domain\ObjectIdentityRetrievalStrategy;
+use Symfony2\Component\Security\Acl\Domain\ObjectIdentityRetrievalStrategy;
 
 class ObjectIdentityRetrievalStrategyTest extends \PHPUnit_Framework_TestCase
 {

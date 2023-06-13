@@ -11,17 +11,17 @@
 
 namespace Symfony2\Component\Locale\Stub\DateFormat;
 
-@trigger_error('The '.__NAMESPACE__.'\YearTransformer class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony\Component\Intl\DateFormatter\DateFormat\YearTransformer class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\YearTransformer class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony2\Component\Intl\DateFormatter\DateFormat\YearTransformer class instead.', E_USER_DEPRECATED);
 
 use Symfony2\Component\Intl\DateFormatter\DateFormat\YearTransformer as BaseYearTransformer;
 
 /**
- * Alias of {@link \Symfony\Component\Intl\DateFormatter\DateFormat\YearTransformer}.
+ * Alias of {@link \Symfony2\Component\Intl\DateFormatter\DateFormat\YearTransformer}.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 2.3, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Intl\DateFormatter\DateFormat\YearTransformer}
+ *             Use {@link \Symfony2\Component\Intl\DateFormatter\DateFormat\YearTransformer}
  *             instead.
  */
 class YearTransformer extends BaseYearTransformer

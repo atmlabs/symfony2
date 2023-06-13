@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Tests\Domain;
+namespace Symfony2\Component\Security\Acl\Tests\Domain;
 
-use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
-use Symfony\Component\Security\Acl\Domain\RoleSecurityIdentity;
-use Symfony\Component\Security\Acl\Domain\PermissionGrantingStrategy;
-use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
-use Symfony\Component\Security\Acl\Domain\Acl;
+use Symfony2\Component\Security\Acl\Domain\UserSecurityIdentity;
+use Symfony2\Component\Security\Acl\Domain\RoleSecurityIdentity;
+use Symfony2\Component\Security\Acl\Domain\PermissionGrantingStrategy;
+use Symfony2\Component\Security\Acl\Domain\ObjectIdentity;
+use Symfony2\Component\Security\Acl\Domain\Acl;
 
 class AclTest extends \PHPUnit_Framework_TestCase
 {
@@ -208,7 +208,7 @@ class AclTest extends \PHPUnit_Framework_TestCase
     {
         $sids = array(new RoleSecurityIdentity('ROLE_FOO'), new RoleSecurityIdentity('ROLE_IDDQD'));
         $masks = array(1, 2, 4);
-        $strategy = $this->getMock('Symfony\Component\Security\Acl\Model\PermissionGrantingStrategyInterface');
+        $strategy = $this->getMock('Symfony2\Component\Security\Acl\Model\PermissionGrantingStrategyInterface');
         $acl = new Acl(1, new ObjectIdentity(1, 'foo'), $strategy, array(), true);
 
         $strategy
@@ -225,7 +225,7 @@ class AclTest extends \PHPUnit_Framework_TestCase
     {
         $sids = array(new RoleSecurityIdentity('ROLE_FOO'), new RoleSecurityIdentity('ROLE_IDDQD'));
         $masks = array(1, 2, 4);
-        $strategy = $this->getMock('Symfony\Component\Security\Acl\Model\PermissionGrantingStrategyInterface');
+        $strategy = $this->getMock('Symfony2\Component\Security\Acl\Model\PermissionGrantingStrategyInterface');
         $acl = new Acl(1, new ObjectIdentity(1, 'foo'), $strategy, array(), true);
 
         $strategy
@@ -491,9 +491,9 @@ class AclTest extends \PHPUnit_Framework_TestCase
         $listener = $this->getMock('Doctrine\Common\PropertyChangedListener');
         foreach ($expectedChanges as $index => $property) {
             if (in_array($property, $aceProperties)) {
-                $class = 'Symfony\Component\Security\Acl\Domain\Entry';
+                $class = 'Symfony2\Component\Security\Acl\Domain\Entry';
             } else {
-                $class = 'Symfony\Component\Security\Acl\Domain\Acl';
+                $class = 'Symfony2\Component\Security\Acl\Domain\Acl';
             }
 
             $listener

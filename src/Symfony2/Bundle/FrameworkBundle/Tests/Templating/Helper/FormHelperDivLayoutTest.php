@@ -35,7 +35,7 @@ class FormHelperDivLayoutTest extends AbstractDivLayoutTest
     {
         // should be moved to the Form component once absolute file paths are supported
         // by the default name parser in the Templating component
-        $reflClass = new \ReflectionClass('Symfony\Bundle\FrameworkBundle\FrameworkBundle');
+        $reflClass = new \ReflectionClass('Symfony2\Bundle\FrameworkBundle\FrameworkBundle');
         $root = realpath(\dirname($reflClass->getFileName()).'/Resources/views');
         $rootTheme = realpath(__DIR__.'/Resources');
         $templateNameParser = new StubTemplateNameParser($root, $rootTheme);
@@ -63,7 +63,7 @@ class FormHelperDivLayoutTest extends AbstractDivLayoutTest
 
     public function testStartTagHasNoActionAttributeWhenActionIsEmpty()
     {
-        $form = $this->factory->create('Symfony\Component\Form\Extension\Core\Type\FormType', null, array(
+        $form = $this->factory->create('Symfony2\Component\Form\Extension\Core\Type\FormType', null, array(
             'method' => 'get',
             'action' => '',
         ));
@@ -75,7 +75,7 @@ class FormHelperDivLayoutTest extends AbstractDivLayoutTest
 
     public function testStartTagHasActionAttributeWhenActionIsZero()
     {
-        $form = $this->factory->create('Symfony\Component\Form\Extension\Core\Type\FormType', null, array(
+        $form = $this->factory->create('Symfony2\Component\Form\Extension\Core\Type\FormType', null, array(
             'method' => 'get',
             'action' => '0',
         ));
@@ -90,7 +90,7 @@ class FormHelperDivLayoutTest extends AbstractDivLayoutTest
         $this->engine->setCharset('ISO-8859-1');
 
         $view = $this->factory
-            ->createNamed('name', 'Symfony\Component\Form\Extension\Core\Type\MoneyType')
+            ->createNamed('name', 'Symfony2\Component\Form\Extension\Core\Type\MoneyType')
             ->createView()
         ;
 

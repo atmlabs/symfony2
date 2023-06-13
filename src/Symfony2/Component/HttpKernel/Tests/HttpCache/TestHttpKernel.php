@@ -34,7 +34,7 @@ class TestHttpKernel extends HttpKernel implements ControllerResolverInterface
         $this->status = $status;
         $this->headers = $headers;
         $this->customizer = $customizer;
-        $this->trustedHeadersReflector = new \ReflectionProperty('Symfony\Component\HttpFoundation\Request', 'trustedHeaders');
+        $this->trustedHeadersReflector = new \ReflectionProperty('Symfony2\Component\HttpFoundation\Request', 'trustedHeaders');
         $this->trustedHeadersReflector->setAccessible(true);
 
         parent::__construct(new EventDispatcher(), $this);

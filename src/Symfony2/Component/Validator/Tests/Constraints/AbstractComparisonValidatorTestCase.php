@@ -78,7 +78,7 @@ abstract class AbstractComparisonValidatorTestCase extends AbstractConstraintVal
 
     /**
      * @dataProvider provideInvalidConstraintOptions
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testThrowsConstraintExceptionIfNoValueOrProperty($options)
     {

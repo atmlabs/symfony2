@@ -1,6 +1,6 @@
 {
     "type": "function",
     "name": "staticMethod",
-    "class": "Symfony\\Bundle\\FrameworkBundle\\Tests\\Console\\Descriptor\\CallableClass",
+    "class": "Symfony2\\Bundle\\FrameworkBundle\\Tests\\Console\\Descriptor\\CallableClass",
     "static": true
 }

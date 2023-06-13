@@ -13,7 +13,7 @@ namespace Symfony2\Bridge\Doctrine\Tests\Form\ChoiceList;
 
 use Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity;
 
-if (!class_exists('Symfony\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
+if (!class_exists('Symfony2\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
     return;
 }
 
@@ -24,11 +24,11 @@ abstract class AbstractEntityChoiceListSingleIntIdTest extends AbstractEntityCho
 {
     protected function getEntityClass()
     {
-        return 'Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity';
+        return 'Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity';
     }
 
     /**
-     * @return \Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
+     * @return \Symfony2\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
      */
     protected function createObjects()
     {

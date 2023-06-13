@@ -35,10 +35,10 @@ class PropertyInfoExtractorTest extends TestCase
 
     public function testInstanceOf()
     {
-        $this->assertInstanceOf('Symfony\Component\PropertyInfo\PropertyInfoExtractorInterface', $this->propertyInfo);
-        $this->assertInstanceOf('Symfony\Component\PropertyInfo\PropertyTypeExtractorInterface', $this->propertyInfo);
-        $this->assertInstanceOf('Symfony\Component\PropertyInfo\PropertyDescriptionExtractorInterface', $this->propertyInfo);
-        $this->assertInstanceOf('Symfony\Component\PropertyInfo\PropertyAccessExtractorInterface', $this->propertyInfo);
+        $this->assertInstanceOf('Symfony2\Component\PropertyInfo\PropertyInfoExtractorInterface', $this->propertyInfo);
+        $this->assertInstanceOf('Symfony2\Component\PropertyInfo\PropertyTypeExtractorInterface', $this->propertyInfo);
+        $this->assertInstanceOf('Symfony2\Component\PropertyInfo\PropertyDescriptionExtractorInterface', $this->propertyInfo);
+        $this->assertInstanceOf('Symfony2\Component\PropertyInfo\PropertyAccessExtractorInterface', $this->propertyInfo);
     }
 
     public function testGetShortDescription()

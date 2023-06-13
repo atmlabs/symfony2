@@ -11,7 +11,7 @@
 
 namespace Symfony2\Bridge\Doctrine\Tests\Form\ChoiceList;
 
-if (!class_exists('Symfony\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
+if (!class_exists('Symfony2\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
     return;
 }
 

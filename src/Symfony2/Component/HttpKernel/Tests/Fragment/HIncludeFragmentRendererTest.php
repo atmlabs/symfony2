@@ -76,7 +76,7 @@ class HIncludeFragmentRendererTest extends TestCase
 
     public function testRenderWithDefaultText()
     {
-        $engine = $this->getMockBuilder('Symfony\\Component\\Templating\\EngineInterface')->getMock();
+        $engine = $this->getMockBuilder('Symfony2\\Component\\Templating\\EngineInterface')->getMock();
         $engine->expects($this->once())
             ->method('exists')
             ->with('default')
@@ -89,7 +89,7 @@ class HIncludeFragmentRendererTest extends TestCase
 
     public function testRenderWithEngineAndDefaultText()
     {
-        $engine = $this->getMockBuilder('Symfony\\Component\\Templating\\EngineInterface')->getMock();
+        $engine = $this->getMockBuilder('Symfony2\\Component\\Templating\\EngineInterface')->getMock();
         $engine->expects($this->once())
             ->method('exists')
             ->with('loading...')

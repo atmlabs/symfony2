@@ -25,9 +25,9 @@ class CsrfValidationListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
-        $this->tokenManager = $this->getMockBuilder('Symfony\Component\Security\Csrf\CsrfTokenManagerInterface')->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->factory = $this->getMockBuilder('Symfony2\Component\Form\FormFactoryInterface')->getMock();
+        $this->tokenManager = $this->getMockBuilder('Symfony2\Component\Security\Csrf\CsrfTokenManagerInterface')->getMock();
         $this->form = $this->getBuilder('post')
             ->setDataMapper($this->getDataMapper())
             ->getForm();
@@ -53,12 +53,12 @@ class CsrfValidationListenerTest extends TestCase
 
     protected function getDataMapper()
     {
-        return $this->getMockBuilder('Symfony\Component\Form\DataMapperInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Form\DataMapperInterface')->getMock();
     }
 
     protected function getMockForm()
     {
-        return $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Form\Test\FormInterface')->getMock();
     }
 
     // https://github.com/symfony/symfony/pull/5838
@@ -77,7 +77,7 @@ class CsrfValidationListenerTest extends TestCase
     public function testMaxPostSizeExceeded()
     {
         $serverParams = $this
-            ->getMockBuilder('\Symfony\Component\Form\Util\ServerParams')
+            ->getMockBuilder('\Symfony2\Component\Form\Util\ServerParams')
             ->disableOriginalConstructor()
             ->getMock()
         ;

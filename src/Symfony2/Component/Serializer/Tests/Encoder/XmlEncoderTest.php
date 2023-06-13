@@ -60,7 +60,7 @@ class XmlEncoderTest extends TestCase
     }
 
     /**
-     * @expectedException        \Symfony\Component\Serializer\Exception\UnexpectedValueException
+     * @expectedException        \Symfony2\Component\Serializer\Exception\UnexpectedValueException
      * @expectedExceptionMessage Document types are not allowed.
      */
     public function testDocTypeIsNotAllowed()
@@ -505,7 +505,7 @@ XML;
     }
 
     /**
-     * @expectedException \Symfony\Component\Serializer\Exception\UnexpectedValueException
+     * @expectedException \Symfony2\Component\Serializer\Exception\UnexpectedValueException
      */
     public function testDecodeInvalidXml()
     {
@@ -513,7 +513,7 @@ XML;
     }
 
     /**
-     * @expectedException \Symfony\Component\Serializer\Exception\UnexpectedValueException
+     * @expectedException \Symfony2\Component\Serializer\Exception\UnexpectedValueException
      */
     public function testPreventsComplexExternalEntities()
     {
@@ -523,10 +523,10 @@ XML;
     public function testDecodeEmptyXml()
     {
         if (method_exists($this, 'expectException')) {
-            $this->expectException('Symfony\Component\Serializer\Exception\UnexpectedValueException');
+            $this->expectException('Symfony2\Component\Serializer\Exception\UnexpectedValueException');
             $this->expectExceptionMessage('Invalid XML data, it can not be empty.');
         } else {
-            $this->setExpectedException('Symfony\Component\Serializer\Exception\UnexpectedValueException', 'Invalid XML data, it can not be empty.');
+            $this->setExpectedException('Symfony2\Component\Serializer\Exception\UnexpectedValueException', 'Invalid XML data, it can not be empty.');
         }
         $this->encoder->decode(' ', 'xml');
     }
@@ -650,7 +650,7 @@ XML;
      */
     private function createMockDateTimeNormalizer()
     {
-        $mock = $this->getMockBuilder('\Symfony\Component\Serializer\Normalizer\CustomNormalizer')->getMock();
+        $mock = $this->getMockBuilder('\Symfony2\Component\Serializer\Normalizer\CustomNormalizer')->getMock();
 
         $mock
             ->expects($this->once())

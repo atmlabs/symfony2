@@ -42,7 +42,7 @@ class HttpKernelExtensionTest extends TestCase
 
     public function testUnknownFragmentRenderer()
     {
-        $context = $this->getMockBuilder('Symfony\\Component\\HttpFoundation\\RequestStack')
+        $context = $this->getMockBuilder('Symfony2\\Component\\HttpFoundation\\RequestStack')
             ->disableOriginalConstructor()
             ->getMock()
         ;
@@ -60,11 +60,11 @@ class HttpKernelExtensionTest extends TestCase
 
     protected function getFragmentHandler($return)
     {
-        $strategy = $this->getMockBuilder('Symfony\\Component\\HttpKernel\\Fragment\\FragmentRendererInterface')->getMock();
+        $strategy = $this->getMockBuilder('Symfony2\\Component\\HttpKernel\\Fragment\\FragmentRendererInterface')->getMock();
         $strategy->expects($this->once())->method('getName')->will($this->returnValue('inline'));
         $strategy->expects($this->once())->method('render')->will($return);
 
-        $context = $this->getMockBuilder('Symfony\\Component\\HttpFoundation\\RequestStack')
+        $context = $this->getMockBuilder('Symfony2\\Component\\HttpFoundation\\RequestStack')
             ->disableOriginalConstructor()
             ->getMock()
         ;

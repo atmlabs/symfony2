@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Tests\Domain;
+namespace Symfony2\Component\Security\Acl\Tests\Domain;
 
-use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
-use Symfony\Component\Security\Acl\Domain\RoleSecurityIdentity;
-use Symfony\Component\Security\Acl\Domain\Acl;
-use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
-use Symfony\Component\Security\Acl\Domain\PermissionGrantingStrategy;
-use Symfony\Component\Security\Acl\Exception\NoAceFoundException;
+use Symfony2\Component\Security\Acl\Domain\ObjectIdentity;
+use Symfony2\Component\Security\Acl\Domain\RoleSecurityIdentity;
+use Symfony2\Component\Security\Acl\Domain\Acl;
+use Symfony2\Component\Security\Acl\Domain\UserSecurityIdentity;
+use Symfony2\Component\Security\Acl\Domain\PermissionGrantingStrategy;
+use Symfony2\Component\Security\Acl\Exception\NoAceFoundException;
 
 class PermissionGrantingStrategyTest extends \PHPUnit_Framework_TestCase
 {
@@ -73,7 +73,7 @@ class PermissionGrantingStrategyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Acl\Exception\NoAceFoundException
+     * @expectedException \Symfony2\Component\Security\Acl\Exception\NoAceFoundException
      */
     public function testIsGrantedReturnsExceptionIfNoAceIsFound()
     {
@@ -107,7 +107,7 @@ class PermissionGrantingStrategyTest extends \PHPUnit_Framework_TestCase
         $acl = $this->getAcl($strategy);
         $sid = new UserSecurityIdentity('johannes', 'Foo');
 
-        $logger = $this->getMock('Symfony\Component\Security\Acl\Model\AuditLoggerInterface');
+        $logger = $this->getMock('Symfony2\Component\Security\Acl\Model\AuditLoggerInterface');
         $logger
             ->expects($this->once())
             ->method('logIfNeeded')
@@ -126,7 +126,7 @@ class PermissionGrantingStrategyTest extends \PHPUnit_Framework_TestCase
         $acl = $this->getAcl($strategy);
         $sid = new UserSecurityIdentity('johannes', 'Foo');
 
-        $logger = $this->getMock('Symfony\Component\Security\Acl\Model\AuditLoggerInterface');
+        $logger = $this->getMock('Symfony2\Component\Security\Acl\Model\AuditLoggerInterface');
         $logger
             ->expects($this->once())
             ->method('logIfNeeded')

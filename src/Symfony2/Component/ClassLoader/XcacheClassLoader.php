@@ -23,14 +23,14 @@ namespace Symfony2\Component\ClassLoader;
  *     use Symfony2\Component\ClassLoader\ClassLoader;
  *
  *     $loader = new ClassLoader();
- *     $loader->addPrefix('Symfony\Component', __DIR__.'/component');
+ *     $loader->addPrefix('Symfony2\Component', __DIR__.'/component');
  *     $loader->addPrefix('Symfony',           __DIR__.'/framework');
  *
  *     // or with a Composer autoloader
  *     use Composer\Autoload\ClassLoader;
  *
  *     $loader = new ClassLoader();
- *     $loader->add('Symfony\Component', __DIR__.'/component');
+ *     $loader->add('Symfony2\Component', __DIR__.'/component');
  *     $loader->add('Symfony',           __DIR__.'/framework');
  *
  *     $cachedLoader = new XcacheClassLoader('my_prefix', $loader);

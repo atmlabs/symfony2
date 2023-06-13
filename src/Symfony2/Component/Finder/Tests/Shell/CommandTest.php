@@ -21,7 +21,7 @@ class CommandTest extends TestCase
 {
     public function testCreate()
     {
-        $this->assertInstanceOf('Symfony\Component\Finder\Shell\Command', Command::create());
+        $this->assertInstanceOf('Symfony2\Component\Finder\Shell\Command', Command::create());
     }
 
     public function testAdd()

@@ -103,8 +103,8 @@ class AutowirePassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
-     * @expectedExceptionMessage Unable to autowire argument of type "Symfony\Component\DependencyInjection\Tests\Compiler\CollisionInterface" for the service "a". Multiple services exist for this interface (c1, c2, c3).
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedExceptionMessage Unable to autowire argument of type "Symfony2\Component\DependencyInjection\Tests\Compiler\CollisionInterface" for the service "a". Multiple services exist for this interface (c1, c2, c3).
      */
     public function testTypeCollision()
     {
@@ -121,8 +121,8 @@ class AutowirePassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
-     * @expectedExceptionMessage Unable to autowire argument of type "Symfony\Component\DependencyInjection\Tests\Compiler\Foo" for the service "a". Multiple services exist for this class (a1, a2).
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedExceptionMessage Unable to autowire argument of type "Symfony2\Component\DependencyInjection\Tests\Compiler\Foo" for the service "a". Multiple services exist for this class (a1, a2).
      */
     public function testTypeNotGuessable()
     {
@@ -138,8 +138,8 @@ class AutowirePassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
-     * @expectedExceptionMessage Unable to autowire argument of type "Symfony\Component\DependencyInjection\Tests\Compiler\A" for the service "a". Multiple services exist for this class (a1, a2).
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedExceptionMessage Unable to autowire argument of type "Symfony2\Component\DependencyInjection\Tests\Compiler\A" for the service "a". Multiple services exist for this class (a1, a2).
      */
     public function testTypeNotGuessableWithSubclass()
     {
@@ -155,8 +155,8 @@ class AutowirePassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
-     * @expectedExceptionMessage Unable to autowire argument of type "Symfony\Component\DependencyInjection\Tests\Compiler\CollisionInterface" for the service "a". No services were found matching this interface and it cannot be auto-registered.
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedExceptionMessage Unable to autowire argument of type "Symfony2\Component\DependencyInjection\Tests\Compiler\CollisionInterface" for the service "a". No services were found matching this interface and it cannot be auto-registered.
      */
     public function testTypeNotGuessableNoServicesFound()
     {
@@ -216,13 +216,13 @@ class AutowirePassTest extends TestCase
         $this->assertEquals('autowired.symfony\component\dependencyinjection\tests\compiler\dunglas', $container->getDefinition('coop_tilleuls')->getArgument(0));
         $this->assertEquals('autowired.symfony\component\dependencyinjection\tests\compiler\dunglas', $container->getDefinition('coop_tilleuls')->getArgument(1));
 
-        $dunglasDefinition = $container->getDefinition('autowired.Symfony\Component\DependencyInjection\Tests\Compiler\Dunglas');
+        $dunglasDefinition = $container->getDefinition('autowired.Symfony2\Component\DependencyInjection\Tests\Compiler\Dunglas');
         $this->assertEquals(__NAMESPACE__.'\Dunglas', $dunglasDefinition->getClass());
         $this->assertFalse($dunglasDefinition->isPublic());
         $this->assertCount(1, $dunglasDefinition->getArguments());
         $this->assertEquals('autowired.symfony\component\dependencyinjection\tests\compiler\lille', $dunglasDefinition->getArgument(0));
 
-        $lilleDefinition = $container->getDefinition('autowired.Symfony\Component\DependencyInjection\Tests\Compiler\Lille');
+        $lilleDefinition = $container->getDefinition('autowired.Symfony2\Component\DependencyInjection\Tests\Compiler\Lille');
         $this->assertEquals(__NAMESPACE__.'\Lille', $lilleDefinition->getClass());
     }
 
@@ -273,8 +273,8 @@ class AutowirePassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
-     * @expectedExceptionMessage Cannot autowire argument 2 for Symfony\Component\DependencyInjection\Tests\Compiler\BadTypeHintedArgument because the type-hinted class does not exist (Class Symfony\Component\DependencyInjection\Tests\Compiler\NotARealClass does not exist).
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedExceptionMessage Cannot autowire argument 2 for Symfony2\Component\DependencyInjection\Tests\Compiler\BadTypeHintedArgument because the type-hinted class does not exist (Class Symfony2\Component\DependencyInjection\Tests\Compiler\NotARealClass does not exist).
      */
     public function testClassNotFoundThrowsException()
     {
@@ -288,8 +288,8 @@ class AutowirePassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
-     * @expectedExceptionMessage Cannot autowire argument 2 for Symfony\Component\DependencyInjection\Tests\Compiler\BadParentTypeHintedArgument because the type-hinted class does not exist (Class Symfony\Component\DependencyInjection\Tests\Compiler\OptionalServiceClass does not exist).
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedExceptionMessage Cannot autowire argument 2 for Symfony2\Component\DependencyInjection\Tests\Compiler\BadParentTypeHintedArgument because the type-hinted class does not exist (Class Symfony2\Component\DependencyInjection\Tests\Compiler\OptionalServiceClass does not exist).
      */
     public function testParentClassNotFoundThrowsException()
     {
@@ -347,7 +347,7 @@ class AutowirePassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @expectedExceptionMessage Unable to autowire argument index 1 ($foo) for the service "arg_no_type_hint". If this is an object, give it a type-hint. Otherwise, specify this argument's value explicitly.
      */
     public function testScalarArgsCannotBeAutowired()
@@ -366,7 +366,7 @@ class AutowirePassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @expectedExceptionMessage Unable to autowire argument index 1 ($foo) for the service "not_really_optional_scalar". If this is an object, give it a type-hint. Otherwise, specify this argument's value explicitly.
      */
     public function testOptionalScalarNotReallyOptionalThrowException()
@@ -446,7 +446,7 @@ class AutowirePassTest extends TestCase
     public function testProcessDoesNotTriggerDeprecations()
     {
         $container = new ContainerBuilder();
-        $container->register('deprecated', 'Symfony\Component\DependencyInjection\Tests\Fixtures\DeprecatedClass')->setDeprecated(true);
+        $container->register('deprecated', 'Symfony2\Component\DependencyInjection\Tests\Fixtures\DeprecatedClass')->setDeprecated(true);
         $container->register('foo', __NAMESPACE__.'\Foo');
         $container->register('bar', __NAMESPACE__.'\Bar')->setAutowired(true);
 
@@ -483,7 +483,7 @@ class AutowirePassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @expectedExceptionMessage Service "a" can use either autowiring or a factory, not both.
      */
     public function testWithFactory()

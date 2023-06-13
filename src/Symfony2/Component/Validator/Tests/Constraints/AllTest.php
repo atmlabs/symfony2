@@ -21,7 +21,7 @@ use Symfony2\Component\Validator\Constraints\Valid;
 class AllTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testRejectNonConstraints()
     {
@@ -31,7 +31,7 @@ class AllTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testRejectValidConstraint()
     {

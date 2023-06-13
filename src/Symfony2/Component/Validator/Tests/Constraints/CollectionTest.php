@@ -24,7 +24,7 @@ use Symfony2\Component\Validator\Constraints\Valid;
 class CollectionTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testRejectInvalidFieldsOption()
     {
@@ -34,7 +34,7 @@ class CollectionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testRejectNonConstraints()
     {
@@ -44,7 +44,7 @@ class CollectionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testRejectValidConstraint()
     {
@@ -54,7 +54,7 @@ class CollectionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testRejectValidConstraintWithinOptional()
     {
@@ -64,7 +64,7 @@ class CollectionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testRejectValidConstraintWithinRequired()
     {

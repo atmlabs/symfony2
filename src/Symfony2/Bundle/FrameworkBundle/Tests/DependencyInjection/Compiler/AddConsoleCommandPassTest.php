@@ -24,7 +24,7 @@ class AddConsoleCommandPassTest extends TestCase
     {
         $container = new ContainerBuilder();
         $container->addCompilerPass(new AddConsoleCommandPass());
-        $container->setParameter('my-command.class', 'Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\MyCommand');
+        $container->setParameter('my-command.class', 'Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\MyCommand');
 
         $definition = new Definition('%my-command.class%');
         $definition->addTag('console.command');
@@ -49,7 +49,7 @@ class AddConsoleCommandPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new AddConsoleCommandPass());
 
-        $definition = new Definition('Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\MyCommand');
+        $definition = new Definition('Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\MyCommand');
         $definition->addTag('console.command');
         $definition->setPublic(false);
         $container->setDefinition('my-command', $definition);
@@ -66,7 +66,7 @@ class AddConsoleCommandPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new AddConsoleCommandPass());
 
-        $definition = new Definition('Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\MyCommand');
+        $definition = new Definition('Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\MyCommand');
         $definition->addTag('console.command');
         $definition->setAbstract(true);
         $container->setDefinition('my-command', $definition);
@@ -76,7 +76,7 @@ class AddConsoleCommandPassTest extends TestCase
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The service "my-command" tagged "console.command" must be a subclass of "Symfony\Component\Console\Command\Command".
+     * @expectedExceptionMessage The service "my-command" tagged "console.command" must be a subclass of "Symfony2\Component\Console\Command\Command".
      */
     public function testProcessThrowAnExceptionIfTheServiceIsNotASubclassOfCommand()
     {

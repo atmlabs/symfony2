@@ -28,7 +28,7 @@ class ClassCollectionLoaderTest extends TestCase
     {
         require_once __DIR__.'/Fixtures/deps/traits.php';
 
-        $r = new \ReflectionClass('Symfony\Component\ClassLoader\ClassCollectionLoader');
+        $r = new \ReflectionClass('Symfony2\Component\ClassLoader\ClassCollectionLoader');
         $m = $r->getMethod('getOrderedClasses');
         $m->setAccessible(true);
 
@@ -59,7 +59,7 @@ class ClassCollectionLoaderTest extends TestCase
             'ClassesWithParents\\A',
         );
 
-        $r = new \ReflectionClass('Symfony\Component\ClassLoader\ClassCollectionLoader');
+        $r = new \ReflectionClass('Symfony2\Component\ClassLoader\ClassCollectionLoader');
         $m = $r->getMethod('getOrderedClasses');
         $m->setAccessible(true);
 
@@ -117,7 +117,7 @@ class ClassCollectionLoaderTest extends TestCase
             'ClassesWithParents\\E',
         );
 
-        $r = new \ReflectionClass('Symfony\Component\ClassLoader\ClassCollectionLoader');
+        $r = new \ReflectionClass('Symfony2\Component\ClassLoader\ClassCollectionLoader');
         $m = $r->getMethod('getOrderedClasses');
         $m->setAccessible(true);
 
@@ -159,7 +159,7 @@ class ClassCollectionLoaderTest extends TestCase
             'ClassesWithParents\\G',
         );
 
-        $r = new \ReflectionClass('Symfony\Component\ClassLoader\ClassCollectionLoader');
+        $r = new \ReflectionClass('Symfony2\Component\ClassLoader\ClassCollectionLoader');
         $m = $r->getMethod('getOrderedClasses');
         $m->setAccessible(true);
 

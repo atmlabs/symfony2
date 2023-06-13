@@ -292,8 +292,8 @@ class Controller extends ContainerAware
      */
     public function createFormBuilder($data = null, array $options = array())
     {
-        if (method_exists('Symfony\Component\Form\AbstractType', 'getBlockPrefix')) {
-            $type = 'Symfony\Component\Form\Extension\Core\Type\FormType';
+        if (method_exists('Symfony2\Component\Form\AbstractType', 'getBlockPrefix')) {
+            $type = 'Symfony2\Component\Form\Extension\Core\Type\FormType';
         } else {
             // not using the class name is deprecated since Symfony 2.8 and
             // is only used for backwards compatibility with older versions
@@ -385,7 +385,7 @@ class Controller extends ContainerAware
     public function get($id)
     {
         if ('request' === $id) {
-            @trigger_error('The "request" service is deprecated and will be removed in 3.0. Add a typehint for Symfony\\Component\\HttpFoundation\\Request to your controller parameters to retrieve the request instead.', E_USER_DEPRECATED);
+            @trigger_error('The "request" service is deprecated and will be removed in 3.0. Add a typehint for Symfony2\\Component\\HttpFoundation\\Request to your controller parameters to retrieve the request instead.', E_USER_DEPRECATED);
         }
 
         return $this->container->get($id);

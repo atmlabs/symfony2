@@ -24,7 +24,7 @@
         "psr/log": "~1.0"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\Security\\Guard\\": "" },
+        "psr-4": { "Symfony2\\Component\\Security\\Guard\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

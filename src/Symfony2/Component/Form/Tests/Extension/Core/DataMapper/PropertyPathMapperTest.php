@@ -35,8 +35,8 @@ class PropertyPathMapperTest extends TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->propertyAccessor = $this->getMockBuilder('Symfony\Component\PropertyAccess\PropertyAccessorInterface')->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->propertyAccessor = $this->getMockBuilder('Symfony2\Component\PropertyAccess\PropertyAccessorInterface')->getMock();
         $this->mapper = new PropertyPathMapper($this->propertyAccessor);
     }
 
@@ -45,7 +45,7 @@ class PropertyPathMapperTest extends TestCase
      */
     private function getPropertyPath($path)
     {
-        return $this->getMockBuilder('Symfony\Component\PropertyAccess\PropertyPath')
+        return $this->getMockBuilder('Symfony2\Component\PropertyAccess\PropertyPath')
             ->setConstructorArgs(array($path))
             ->setMethods(array('getValue', 'setValue'))
             ->getMock();
@@ -60,7 +60,7 @@ class PropertyPathMapperTest extends TestCase
      */
     private function getForm(FormConfigInterface $config, $synchronized = true, $submitted = true)
     {
-        $form = $this->getMockBuilder('Symfony\Component\Form\Form')
+        $form = $this->getMockBuilder('Symfony2\Component\Form\Form')
             ->setConstructorArgs(array($config))
             ->setMethods(array('isSynchronized', 'isSubmitted'))
             ->getMock();
@@ -168,7 +168,7 @@ class PropertyPathMapperTest extends TestCase
         $config->setPropertyPath($propertyPath);
         $config->setData($default);
 
-        $form = $this->getMockBuilder('Symfony\Component\Form\Form')
+        $form = $this->getMockBuilder('Symfony2\Component\Form\Form')
             ->setConstructorArgs(array($config))
             ->setMethods(array('setData'))
             ->getMock();
@@ -193,7 +193,7 @@ class PropertyPathMapperTest extends TestCase
         $config->setPropertyPath($propertyPath);
         $config->setData($default);
 
-        $form = $this->getMockBuilder('Symfony\Component\Form\Form')
+        $form = $this->getMockBuilder('Symfony2\Component\Form\Form')
             ->setConstructorArgs(array($config))
             ->setMethods(array('setData'))
             ->getMock();

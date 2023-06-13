@@ -1,1 +1,1 @@
-Symfony\Bundle\FrameworkBundle\Tests\Console\Descriptor\CallableClass::method()
+Symfony2\Bundle\FrameworkBundle\Tests\Console\Descriptor\CallableClass::method()

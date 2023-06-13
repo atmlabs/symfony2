@@ -401,7 +401,7 @@ class ExecutionContext implements ExecutionContextInterface
      */
     public function getMetadataFactory()
     {
-        @trigger_error('The '.__METHOD__.' is deprecated since Symfony 2.5 and will be removed in 3.0. Use the new Symfony\Component\Validator\Context\ExecutionContext::getValidator method in combination with Symfony\Component\Validator\Validator\ValidatorInterface::getMetadataFor or Symfony\Component\Validator\Validator\ValidatorInterface::hasMetadataFor method instead.', E_USER_DEPRECATED);
+        @trigger_error('The '.__METHOD__.' is deprecated since Symfony 2.5 and will be removed in 3.0. Use the new Symfony2\Component\Validator\Context\ExecutionContext::getValidator method in combination with Symfony2\Component\Validator\Validator\ValidatorInterface::getMetadataFor or Symfony2\Component\Validator\Validator\ValidatorInterface::hasMetadataFor method instead.', E_USER_DEPRECATED);
 
         $validator = $this->getValidator();
 

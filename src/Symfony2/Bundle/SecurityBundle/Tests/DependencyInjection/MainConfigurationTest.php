@@ -33,7 +33,7 @@ class MainConfigurationTest extends TestCase
     );
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      */
     public function testNoConfigForProvider()
     {
@@ -49,7 +49,7 @@ class MainConfigurationTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      */
     public function testManyConfigForProvider()
     {

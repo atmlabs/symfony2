@@ -42,13 +42,13 @@ class LegacyExecutionContextTest extends TestCase
 
     protected function setUp()
     {
-        $this->visitor = $this->getMockBuilder('Symfony\Component\Validator\ValidationVisitor')
+        $this->visitor = $this->getMockBuilder('Symfony2\Component\Validator\ValidationVisitor')
             ->disableOriginalConstructor()
             ->getMock();
         $this->violations = new ConstraintViolationList();
-        $this->metadata = $this->getMockBuilder('Symfony\Component\Validator\MetadataInterface')->getMock();
-        $this->metadataFactory = $this->getMockBuilder('Symfony\Component\Validator\MetadataFactoryInterface')->getMock();
-        $this->globalContext = $this->getMockBuilder('Symfony\Component\Validator\GlobalExecutionContextInterface')->getMock();
+        $this->metadata = $this->getMockBuilder('Symfony2\Component\Validator\MetadataInterface')->getMock();
+        $this->metadataFactory = $this->getMockBuilder('Symfony2\Component\Validator\MetadataFactoryInterface')->getMock();
+        $this->globalContext = $this->getMockBuilder('Symfony2\Component\Validator\GlobalExecutionContextInterface')->getMock();
         $this->globalContext->expects($this->any())
             ->method('getRoot')
             ->will($this->returnValue('Root'));
@@ -61,7 +61,7 @@ class LegacyExecutionContextTest extends TestCase
         $this->globalContext->expects($this->any())
             ->method('getMetadataFactory')
             ->will($this->returnValue($this->metadataFactory));
-        $this->translator = $this->getMockBuilder('Symfony\Component\Translation\TranslatorInterface')->getMock();
+        $this->translator = $this->getMockBuilder('Symfony2\Component\Translation\TranslatorInterface')->getMock();
         $this->context = new ExecutionContext($this->globalContext, $this->translator, self::TRANS_DOMAIN, $this->metadata, 'currentValue', 'Group', 'foo.bar');
     }
 

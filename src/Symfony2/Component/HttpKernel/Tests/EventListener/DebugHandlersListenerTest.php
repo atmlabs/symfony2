@@ -69,7 +69,7 @@ class DebugHandlersListenerTest extends TestCase
         $listener = new DebugHandlersListener(null);
         $eHandler = new ErrorHandler();
         $event = new KernelEvent(
-            $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock(),
+            $this->getMockBuilder('Symfony2\Component\HttpKernel\HttpKernelInterface')->getMock(),
             Request::create('/'),
             HttpKernelInterface::MASTER_REQUEST
         );
@@ -93,7 +93,7 @@ class DebugHandlersListenerTest extends TestCase
     {
         $dispatcher = new EventDispatcher();
         $listener = new DebugHandlersListener(null);
-        $app = $this->getMockBuilder('Symfony\Component\Console\Application')->getMock();
+        $app = $this->getMockBuilder('Symfony2\Component\Console\Application')->getMock();
         $app->expects($this->once())->method('getHelperSet')->will($this->returnValue(new HelperSet()));
         $command = new Command(__FUNCTION__);
         $command->setApplication($app);

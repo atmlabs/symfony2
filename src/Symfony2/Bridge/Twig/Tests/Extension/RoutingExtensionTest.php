@@ -25,7 +25,7 @@ class RoutingExtensionTest extends TestCase
     public function testEscaping($template, $mustBeEscaped)
     {
         $twig = new Environment($this->getMockBuilder('Twig\Loader\LoaderInterface')->getMock(), array('debug' => true, 'cache' => false, 'autoescape' => 'html', 'optimizations' => 0));
-        $twig->addExtension(new RoutingExtension($this->getMockBuilder('Symfony\Component\Routing\Generator\UrlGeneratorInterface')->getMock()));
+        $twig->addExtension(new RoutingExtension($this->getMockBuilder('Symfony2\Component\Routing\Generator\UrlGeneratorInterface')->getMock()));
 
         $nodes = $twig->parse($twig->tokenize(new Source($template, '')));
 

@@ -36,7 +36,7 @@ class YamlDumper extends Dumper
      */
     public function dump(array $options = array())
     {
-        if (!class_exists('Symfony\Component\Yaml\Dumper')) {
+        if (!class_exists('Symfony2\Component\Yaml\Dumper')) {
             throw new RuntimeException('Unable to dump the container as the Symfony Yaml Component is not installed.');
         }
 

@@ -79,7 +79,7 @@ class UrlPackageTest extends TestCase
 
     public function testVersionStrategyGivesAbsoluteURL()
     {
-        $versionStrategy = $this->getMockBuilder('Symfony\Component\Asset\VersionStrategy\VersionStrategyInterface')->getMock();
+        $versionStrategy = $this->getMockBuilder('Symfony2\Component\Asset\VersionStrategy\VersionStrategyInterface')->getMock();
         $versionStrategy->expects($this->any())
             ->method('applyVersion')
             ->willReturn('https://cdn.com/bar/main.css');
@@ -89,7 +89,7 @@ class UrlPackageTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Asset\Exception\LogicException
+     * @expectedException \Symfony2\Component\Asset\Exception\LogicException
      */
     public function testNoBaseUrls()
     {
@@ -97,7 +97,7 @@ class UrlPackageTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Asset\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Asset\Exception\InvalidArgumentException
      */
     public function testWrongBaseUrl()
     {
@@ -106,7 +106,7 @@ class UrlPackageTest extends TestCase
 
     private function getContext($secure)
     {
-        $context = $this->getMockBuilder('Symfony\Component\Asset\Context\ContextInterface')->getMock();
+        $context = $this->getMockBuilder('Symfony2\Component\Asset\Context\ContextInterface')->getMock();
         $context->expects($this->any())->method('isSecure')->will($this->returnValue($secure));
 
         return $context;

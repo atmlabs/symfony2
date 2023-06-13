@@ -30,7 +30,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testCopyFails()
     {
@@ -41,7 +41,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testCopyUnreadableFileFails()
     {
@@ -119,7 +119,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testCopyWithOverrideWithReadOnlyTargetFails()
     {
@@ -223,7 +223,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testMkdirCreatesDirectoriesFails()
     {
@@ -245,7 +245,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testTouchFails()
     {
@@ -381,7 +381,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testFilesExistsFails()
     {
@@ -597,7 +597,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testChownSymlinkFails()
     {
@@ -614,7 +614,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testChownFail()
     {
@@ -672,7 +672,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testChgrpSymlinkFails()
     {
@@ -689,7 +689,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testChgrpFail()
     {
@@ -714,7 +714,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testRenameThrowsExceptionIfTargetAlreadyExists()
     {
@@ -742,7 +742,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testRenameThrowsExceptionOnError()
     {
@@ -1121,7 +1121,7 @@ class FilesystemTest extends FilesystemTestCase
 
     public function testTempnamWithMockScheme()
     {
-        stream_wrapper_register('mock', 'Symfony\Component\Filesystem\Tests\Fixtures\MockStream\MockStream');
+        stream_wrapper_register('mock', 'Symfony2\Component\Filesystem\Tests\Fixtures\MockStream\MockStream');
 
         $scheme = 'mock://';
         $dirname = $scheme.$this->workspace;
@@ -1133,7 +1133,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testTempnamWithZlibSchemeFails()
     {
@@ -1158,7 +1158,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testTempnamWithPharSchemeFails()
     {
@@ -1177,7 +1177,7 @@ class FilesystemTest extends FilesystemTestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      */
     public function testTempnamWithHTTPSchemeFails()
     {

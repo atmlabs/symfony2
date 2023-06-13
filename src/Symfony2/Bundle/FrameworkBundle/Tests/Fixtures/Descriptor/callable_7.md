@@ -1,3 +1,3 @@
 
 - Type: `object`
-- Name: `Symfony\Bundle\FrameworkBundle\Tests\Console\Descriptor\CallableClass`
+- Name: `Symfony2\Bundle\FrameworkBundle\Tests\Console\Descriptor\CallableClass`

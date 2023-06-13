@@ -40,7 +40,7 @@ class Node
             $attributes[] = sprintf('%s: %s', $name, str_replace("\n", '', var_export($value, true)));
         }
 
-        $repr = array(str_replace('Symfony\Component\ExpressionLanguage\Node\\', '', \get_class($this)).'('.implode(', ', $attributes));
+        $repr = array(str_replace('Symfony2\Component\ExpressionLanguage\Node\\', '', \get_class($this)).'('.implode(', ', $attributes));
 
         if (\count($this->nodes)) {
             foreach ($this->nodes as $node) {

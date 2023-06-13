@@ -17,7 +17,7 @@ use Symfony2\Component\DependencyInjection\ContainerBuilder;
 use Symfony2\Component\DependencyInjection\Dumper\PhpDumper;
 
 /**
- * Integration tests for {@see \Symfony\Component\DependencyInjection\Dumper\PhpDumper} combined
+ * Integration tests for {@see \Symfony2\Component\DependencyInjection\Dumper\PhpDumper} combined
  * with the ProxyManager bridge.
  *
  * @author Marco Pivetta <ocramius@gmail.com>

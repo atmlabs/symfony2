@@ -15,9 +15,9 @@ use Symfony2\Component\Validator\Constraints as Assert;
 use Symfony2\Component\Validator\ExecutionContextInterface;
 
 /**
- * @Symfony\Component\Validator\Tests\Fixtures\ConstraintA
+ * @Symfony2\Component\Validator\Tests\Fixtures\ConstraintA
  * @Assert\GroupSequence({"Foo", "Entity"})
- * @Assert\Callback({"Symfony\Component\Validator\Tests\Fixtures\CallbackClass", "callback"})
+ * @Assert\Callback({"Symfony2\Component\Validator\Tests\Fixtures\CallbackClass", "callback"})
  */
 class Entity extends EntityParent implements EntityInterfaceB
 {

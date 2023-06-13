@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
-use Symfony\Component\Security\Acl\Exception\NoAceFoundException;
-use Symfony\Component\Security\Acl\Model\AclInterface;
-use Symfony\Component\Security\Acl\Model\AuditLoggerInterface;
-use Symfony\Component\Security\Acl\Model\EntryInterface;
-use Symfony\Component\Security\Acl\Model\PermissionGrantingStrategyInterface;
-use Symfony\Component\Security\Acl\Model\SecurityIdentityInterface;
+use Symfony2\Component\Security\Acl\Exception\NoAceFoundException;
+use Symfony2\Component\Security\Acl\Model\AclInterface;
+use Symfony2\Component\Security\Acl\Model\AuditLoggerInterface;
+use Symfony2\Component\Security\Acl\Model\EntryInterface;
+use Symfony2\Component\Security\Acl\Model\PermissionGrantingStrategyInterface;
+use Symfony2\Component\Security\Acl\Model\SecurityIdentityInterface;
 
 /**
  * The permission granting strategy to apply to the access control list.

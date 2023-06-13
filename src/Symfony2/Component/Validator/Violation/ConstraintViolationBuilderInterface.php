@@ -12,7 +12,7 @@
 namespace Symfony2\Component\Validator\Violation;
 
 /**
- * Builds {@link \Symfony\Component\Validator\ConstraintViolationInterface}
+ * Builds {@link \Symfony2\Component\Validator\ConstraintViolationInterface}
  * objects.
  *
  * Use the various methods on this interface to configure the built violation.
@@ -64,7 +64,7 @@ interface ConstraintViolationBuilderInterface
      *
      * @return $this
      *
-     * @see \Symfony\Component\Translation\TranslatorInterface
+     * @see \Symfony2\Component\Translation\TranslatorInterface
      */
     public function setTranslationDomain($translationDomain);
 
@@ -85,7 +85,7 @@ interface ConstraintViolationBuilderInterface
      *
      * @return $this
      *
-     * @see \Symfony\Component\Translation\TranslatorInterface::transChoice()
+     * @see \Symfony2\Component\Translation\TranslatorInterface::transChoice()
      */
     public function setPlural($number);
 

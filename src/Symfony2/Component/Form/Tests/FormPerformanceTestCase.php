@@ -15,7 +15,7 @@ use Symfony2\Component\Form\Test\FormPerformanceTestCase as BaseFormPerformanceT
 
 /**
  * @deprecated since version 2.3, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Form\Test\FormPerformanceTestCase} instead.
+ *             Use {@link \Symfony2\Component\Form\Test\FormPerformanceTestCase} instead.
  */
 abstract class FormPerformanceTestCase extends BaseFormPerformanceTestCase
 {
@@ -24,7 +24,7 @@ abstract class FormPerformanceTestCase extends BaseFormPerformanceTestCase
      */
     protected function setUp()
     {
-        @trigger_error('The '.__CLASS__.' class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony\Component\Form\Test\FormPerformanceTestCase class instead.', E_USER_DEPRECATED);
+        @trigger_error('The '.__CLASS__.' class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony2\Component\Form\Test\FormPerformanceTestCase class instead.', E_USER_DEPRECATED);
         parent::setUp();
     }
 }

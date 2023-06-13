@@ -90,7 +90,7 @@ class PropertyAccessorTest extends TestCase
 
     /**
      * @dataProvider getPathsWithMissingProperty
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchPropertyException
      */
     public function testGetValueThrowsExceptionIfPropertyNotFound($objectOrArray, $path)
     {
@@ -107,7 +107,7 @@ class PropertyAccessorTest extends TestCase
 
     /**
      * @dataProvider getPathsWithMissingIndex
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchIndexException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchIndexException
      */
     public function testGetValueThrowsExceptionIfIndexNotFoundAndIndexExceptionsEnabled($objectOrArray, $path)
     {
@@ -116,7 +116,7 @@ class PropertyAccessorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchIndexException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchIndexException
      */
     public function testGetValueThrowsExceptionIfNotArrayAccess()
     {
@@ -167,7 +167,7 @@ class PropertyAccessorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchPropertyException
      */
     public function testGetValueDoesNotReadMagicCallByDefault()
     {
@@ -191,7 +191,7 @@ class PropertyAccessorTest extends TestCase
 
     /**
      * @dataProvider getPathsWithUnexpectedType
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\UnexpectedTypeException
      * @expectedExceptionMessage PropertyAccessor requires a graph of objects or arrays to operate on
      */
     public function testGetValueThrowsExceptionIfNotObjectOrArray($objectOrArray, $path)
@@ -211,7 +211,7 @@ class PropertyAccessorTest extends TestCase
 
     /**
      * @dataProvider getPathsWithMissingProperty
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchPropertyException
      */
     public function testSetValueThrowsExceptionIfPropertyNotFound($objectOrArray, $path)
     {
@@ -240,7 +240,7 @@ class PropertyAccessorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchIndexException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchIndexException
      */
     public function testSetValueThrowsExceptionIfNotArrayAccess()
     {
@@ -259,7 +259,7 @@ class PropertyAccessorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchPropertyException
      */
     public function testSetValueThrowsExceptionIfThereAreMissingParameters()
     {
@@ -269,7 +269,7 @@ class PropertyAccessorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchPropertyException
      */
     public function testSetValueDoesNotUpdateMagicCallByDefault()
     {
@@ -291,7 +291,7 @@ class PropertyAccessorTest extends TestCase
 
     /**
      * @dataProvider getPathsWithUnexpectedType
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\UnexpectedTypeException
      * @expectedExceptionMessage PropertyAccessor requires a graph of objects or arrays to operate on
      */
     public function testSetValueThrowsExceptionIfNotObjectOrArray($objectOrArray, $path)
@@ -528,7 +528,7 @@ class PropertyAccessorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\InvalidArgumentException
      * @expectedExceptionMessage Expected argument of type "DateTime", "string" given
      */
     public function testThrowTypeError()
@@ -539,7 +539,7 @@ class PropertyAccessorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\InvalidArgumentException
      * @expectedExceptionMessage Expected argument of type "DateTime", "NULL" given
      */
     public function testThrowTypeErrorWithNullArgument()
@@ -569,7 +569,7 @@ class PropertyAccessorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\InvalidArgumentException
      * @expectedExceptionMessage Expected argument of type "Countable", "string" given
      */
     public function testThrowTypeErrorWithInterface()

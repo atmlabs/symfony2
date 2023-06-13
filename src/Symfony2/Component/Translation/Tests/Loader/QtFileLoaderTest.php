@@ -29,7 +29,7 @@ class QtFileLoaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Translation\Exception\NotFoundResourceException
+     * @expectedException \Symfony2\Component\Translation\Exception\NotFoundResourceException
      */
     public function testLoadNonExistingResource()
     {
@@ -39,7 +39,7 @@ class QtFileLoaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Translation\Exception\InvalidResourceException
+     * @expectedException \Symfony2\Component\Translation\Exception\InvalidResourceException
      */
     public function testLoadNonLocalResource()
     {
@@ -49,7 +49,7 @@ class QtFileLoaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Translation\Exception\InvalidResourceException
+     * @expectedException \Symfony2\Component\Translation\Exception\InvalidResourceException
      */
     public function testLoadInvalidResource()
     {
@@ -64,10 +64,10 @@ class QtFileLoaderTest extends TestCase
         $resource = __DIR__.'/../fixtures/empty.xlf';
 
         if (method_exists($this, 'expectException')) {
-            $this->expectException('Symfony\Component\Translation\Exception\InvalidResourceException');
+            $this->expectException('Symfony2\Component\Translation\Exception\InvalidResourceException');
             $this->expectExceptionMessage(sprintf('Unable to load "%s".', $resource));
         } else {
-            $this->setExpectedException('Symfony\Component\Translation\Exception\InvalidResourceException', sprintf('Unable to load "%s".', $resource));
+            $this->setExpectedException('Symfony2\Component\Translation\Exception\InvalidResourceException', sprintf('Unable to load "%s".', $resource));
         }
 
         $loader->load($resource, 'en', 'domain1');

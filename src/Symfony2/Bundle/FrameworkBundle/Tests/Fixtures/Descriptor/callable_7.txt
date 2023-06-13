@@ -1,1 +1,1 @@
-Symfony\Bundle\FrameworkBundle\Tests\Console\Descriptor\CallableClass::__invoke()
+Symfony2\Bundle\FrameworkBundle\Tests\Console\Descriptor\CallableClass::__invoke()

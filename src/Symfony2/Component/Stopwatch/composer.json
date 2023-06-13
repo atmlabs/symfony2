@@ -19,7 +19,7 @@
         "php": ">=5.3.9"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\Stopwatch\\": "" },
+        "psr-4": { "Symfony2\\Component\\Stopwatch\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

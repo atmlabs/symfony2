@@ -11,19 +11,19 @@
 
 namespace Symfony2\Component\Locale\Stub;
 
-@trigger_error('The '.__NAMESPACE__.'\StubLocale class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony\Component\Intl\Locale\Locale and Symfony\Component\Intl\Intl classes instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\StubLocale class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony2\Component\Intl\Locale\Locale and Symfony2\Component\Intl\Intl classes instead.', E_USER_DEPRECATED);
 
 use Symfony2\Component\Intl\Intl;
 use Symfony2\Component\Intl\Locale\Locale;
 
 /**
- * Alias of {@link \Symfony\Component\Intl\Locale\Locale}.
+ * Alias of {@link \Symfony2\Component\Intl\Locale\Locale}.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 2.3, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Intl\Locale\Locale} and
- *             {@link \Symfony\Component\Intl\Intl} instead.
+ *             Use {@link \Symfony2\Component\Intl\Locale\Locale} and
+ *             {@link \Symfony2\Component\Intl\Intl} instead.
  */
 class StubLocale extends Locale
 {

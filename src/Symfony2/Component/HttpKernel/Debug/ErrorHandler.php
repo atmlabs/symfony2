@@ -11,7 +11,7 @@
 
 namespace Symfony2\Component\HttpKernel\Debug;
 
-@trigger_error('The '.__NAMESPACE__.'\ErrorHandler class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony\Component\Debug\ErrorHandler class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\ErrorHandler class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony2\Component\Debug\ErrorHandler class instead.', E_USER_DEPRECATED);
 
 use Symfony2\Component\Debug\ErrorHandler as DebugErrorHandler;
 

@@ -5,18 +5,18 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="templating.engine.php.class">Symfony\Bundle\FrameworkBundle\Templating\PhpEngine</parameter>
-        <parameter key="templating.helper.slots.class">Symfony\Component\Templating\Helper\SlotsHelper</parameter>
-        <parameter key="templating.helper.actions.class">Symfony\Bundle\FrameworkBundle\Templating\Helper\ActionsHelper</parameter>
-        <parameter key="templating.helper.request.class">Symfony\Bundle\FrameworkBundle\Templating\Helper\RequestHelper</parameter>
-        <parameter key="templating.helper.session.class">Symfony\Bundle\FrameworkBundle\Templating\Helper\SessionHelper</parameter>
-        <parameter key="templating.helper.code.class">Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper</parameter>
-        <parameter key="templating.helper.translator.class">Symfony\Bundle\FrameworkBundle\Templating\Helper\TranslatorHelper</parameter>
-        <parameter key="templating.helper.form.class">Symfony\Bundle\FrameworkBundle\Templating\Helper\FormHelper</parameter>
-        <parameter key="templating.helper.stopwatch.class">Symfony\Bundle\FrameworkBundle\Templating\Helper\StopwatchHelper</parameter>
-        <parameter key="templating.form.engine.class">Symfony\Component\Form\Extension\Templating\TemplatingRendererEngine</parameter>
-        <parameter key="templating.form.renderer.class">Symfony\Component\Form\FormRenderer</parameter>
-        <parameter key="templating.globals.class">Symfony\Bundle\FrameworkBundle\Templating\GlobalVariables</parameter>
+        <parameter key="templating.engine.php.class">Symfony2\Bundle\FrameworkBundle\Templating\PhpEngine</parameter>
+        <parameter key="templating.helper.slots.class">Symfony2\Component\Templating\Helper\SlotsHelper</parameter>
+        <parameter key="templating.helper.actions.class">Symfony2\Bundle\FrameworkBundle\Templating\Helper\ActionsHelper</parameter>
+        <parameter key="templating.helper.request.class">Symfony2\Bundle\FrameworkBundle\Templating\Helper\RequestHelper</parameter>
+        <parameter key="templating.helper.session.class">Symfony2\Bundle\FrameworkBundle\Templating\Helper\SessionHelper</parameter>
+        <parameter key="templating.helper.code.class">Symfony2\Bundle\FrameworkBundle\Templating\Helper\CodeHelper</parameter>
+        <parameter key="templating.helper.translator.class">Symfony2\Bundle\FrameworkBundle\Templating\Helper\TranslatorHelper</parameter>
+        <parameter key="templating.helper.form.class">Symfony2\Bundle\FrameworkBundle\Templating\Helper\FormHelper</parameter>
+        <parameter key="templating.helper.stopwatch.class">Symfony2\Bundle\FrameworkBundle\Templating\Helper\StopwatchHelper</parameter>
+        <parameter key="templating.form.engine.class">Symfony2\Component\Form\Extension\Templating\TemplatingRendererEngine</parameter>
+        <parameter key="templating.form.renderer.class">Symfony2\Component\Form\FormRenderer</parameter>
+        <parameter key="templating.globals.class">Symfony2\Bundle\FrameworkBundle\Templating\GlobalVariables</parameter>
     </parameters>
 
     <services>

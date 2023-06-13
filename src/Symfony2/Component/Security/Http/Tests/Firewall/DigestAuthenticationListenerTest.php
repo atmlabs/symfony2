@@ -35,12 +35,12 @@ class DigestAuthenticationListenerTest extends TestCase
 
         $entryPoint = new DigestAuthenticationEntryPoint($realm, $secret);
 
-        $user = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock();
+        $user = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock();
         $user->method('getPassword')->willReturn($password);
 
         $providerKey = 'TheProviderKey';
 
-        $tokenStorage = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
+        $tokenStorage = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
         $tokenStorage
             ->expects($this->once())
             ->method('getToken')
@@ -52,12 +52,12 @@ class DigestAuthenticationListenerTest extends TestCase
             ->with($this->equalTo(new UsernamePasswordToken($user, $password, $providerKey)))
         ;
 
-        $userProvider = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserProviderInterface')->getMock();
+        $userProvider = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserProviderInterface')->getMock();
         $userProvider->method('loadUserByUsername')->willReturn($user);
 
         $listener = new DigestAuthenticationListener($tokenStorage, $userProvider, $providerKey, $entryPoint);
 
-        $event = $this->getMockBuilder('Symfony\Component\HttpKernel\Event\GetResponseEvent')->disableOriginalConstructor()->getMock();
+        $event = $this->getMockBuilder('Symfony2\Component\HttpKernel\Event\GetResponseEvent')->disableOriginalConstructor()->getMock();
         $event
             ->expects($this->any())
             ->method('getRequest')

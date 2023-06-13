@@ -26,19 +26,19 @@ class FormConfigTest extends TestCase
             array('A0'),
             array('A9'),
             array('Z0'),
-            array('#', 'Symfony\Component\Form\Exception\InvalidArgumentException'),
-            array('a#', 'Symfony\Component\Form\Exception\InvalidArgumentException'),
-            array('a$', 'Symfony\Component\Form\Exception\InvalidArgumentException'),
-            array('a%', 'Symfony\Component\Form\Exception\InvalidArgumentException'),
-            array('a ', 'Symfony\Component\Form\Exception\InvalidArgumentException'),
-            array("a\t", 'Symfony\Component\Form\Exception\InvalidArgumentException'),
-            array("a\n", 'Symfony\Component\Form\Exception\InvalidArgumentException'),
+            array('#', 'Symfony2\Component\Form\Exception\InvalidArgumentException'),
+            array('a#', 'Symfony2\Component\Form\Exception\InvalidArgumentException'),
+            array('a$', 'Symfony2\Component\Form\Exception\InvalidArgumentException'),
+            array('a%', 'Symfony2\Component\Form\Exception\InvalidArgumentException'),
+            array('a ', 'Symfony2\Component\Form\Exception\InvalidArgumentException'),
+            array("a\t", 'Symfony2\Component\Form\Exception\InvalidArgumentException'),
+            array("a\n", 'Symfony2\Component\Form\Exception\InvalidArgumentException'),
             array('a-'),
             array('a_'),
             array('a:'),
             // Periods are allowed by the HTML4 spec, but disallowed by us
             // because they break the generated property paths
-            array('a.', 'Symfony\Component\Form\Exception\InvalidArgumentException'),
+            array('a.', 'Symfony2\Component\Form\Exception\InvalidArgumentException'),
             // Contrary to the HTML4 spec, we allow names starting with a
             // number, otherwise naming fields by collection indices is not
             // possible.
@@ -58,10 +58,10 @@ class FormConfigTest extends TestCase
             // NULL is allowed
             array(null),
             // Other types are not
-            array(1.23, 'Symfony\Component\Form\Exception\UnexpectedTypeException'),
-            array(5., 'Symfony\Component\Form\Exception\UnexpectedTypeException'),
-            array(true, 'Symfony\Component\Form\Exception\UnexpectedTypeException'),
-            array(new \stdClass(), 'Symfony\Component\Form\Exception\UnexpectedTypeException'),
+            array(1.23, 'Symfony2\Component\Form\Exception\UnexpectedTypeException'),
+            array(5., 'Symfony2\Component\Form\Exception\UnexpectedTypeException'),
+            array(true, 'Symfony2\Component\Form\Exception\UnexpectedTypeException'),
+            array(new \stdClass(), 'Symfony2\Component\Form\Exception\UnexpectedTypeException'),
         );
     }
 
@@ -70,7 +70,7 @@ class FormConfigTest extends TestCase
      */
     public function testNameAcceptsOnlyNamesValidAsIdsInHtml4($name, $expectedException = null)
     {
-        $dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
 
         if (null !== $expectedException && method_exists($this, 'expectException')) {
             $this->expectException($expectedException);
@@ -87,7 +87,7 @@ class FormConfigTest extends TestCase
     {
         $config = $this->getConfigBuilder()->getFormConfig();
 
-        $this->assertInstanceOf('Symfony\Component\Form\NativeRequestHandler', $config->getRequestHandler());
+        $this->assertInstanceOf('Symfony2\Component\Form\NativeRequestHandler', $config->getRequestHandler());
     }
 
     public function testGetRequestHandlerReusesNativeRequestHandlerInstance()
@@ -139,7 +139,7 @@ class FormConfigTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Form\Exception\InvalidArgumentException
      */
     public function testSetMethodDoesNotAllowOtherValues()
     {
@@ -148,7 +148,7 @@ class FormConfigTest extends TestCase
 
     private function getConfigBuilder($name = 'name')
     {
-        $dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
 
         return new FormConfigBuilder($name, null, $dispatcher);
     }

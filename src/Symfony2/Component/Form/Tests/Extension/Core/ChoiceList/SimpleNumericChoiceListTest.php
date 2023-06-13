@@ -48,7 +48,7 @@ class SimpleNumericChoiceListTest extends AbstractChoiceListTest
     }
 
     /**
-     * @return \Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
+     * @return \Symfony2\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
      */
     protected function createChoiceList()
     {

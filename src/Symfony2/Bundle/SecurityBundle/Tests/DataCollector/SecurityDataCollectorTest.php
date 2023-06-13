@@ -55,7 +55,7 @@ class SecurityDataCollectorTest extends TestCase
      */
     public function testLegacyCollectWhenAuthenticationTokenIsNull()
     {
-        $tokenStorage = $this->getMockBuilder('Symfony\Component\Security\Core\SecurityContextInterface')->getMock();
+        $tokenStorage = $this->getMockBuilder('Symfony2\Component\Security\Core\SecurityContextInterface')->getMock();
         $collector = new SecurityDataCollector($tokenStorage, $this->getRoleHierarchy());
         $collector->collect($this->getRequest(), $this->getResponse());
 
@@ -79,7 +79,7 @@ class SecurityDataCollectorTest extends TestCase
 
         $this->assertTrue($collector->isEnabled());
         $this->assertTrue($collector->isAuthenticated());
-        $this->assertSame('Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken', $collector->getTokenClass());
+        $this->assertSame('Symfony2\Component\Security\Core\Authentication\Token\UsernamePasswordToken', $collector->getTokenClass());
         $this->assertTrue($collector->supportsRoleHierarchy());
         $this->assertSame($normalizedRoles, $collector->getRoles());
         $this->assertSame($inheritedRoles, $collector->getInheritedRoles());
@@ -130,7 +130,7 @@ class SecurityDataCollectorTest extends TestCase
     private function getRequest()
     {
         return $this
-            ->getMockBuilder('Symfony\Component\HttpFoundation\Request')
+            ->getMockBuilder('Symfony2\Component\HttpFoundation\Request')
             ->disableOriginalConstructor()
             ->getMock();
     }
@@ -138,7 +138,7 @@ class SecurityDataCollectorTest extends TestCase
     private function getResponse()
     {
         return $this
-            ->getMockBuilder('Symfony\Component\HttpFoundation\Response')
+            ->getMockBuilder('Symfony2\Component\HttpFoundation\Response')
             ->disableOriginalConstructor()
             ->getMock();
     }

@@ -43,7 +43,7 @@ class DebugExtensionTest extends TestCase
             'kernel.root_dir' => __DIR__.'/Fixtures',
             'kernel.charset' => 'UTF-8',
             'kernel.debug' => true,
-            'kernel.bundles' => array('DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle'),
+            'kernel.bundles' => array('DebugBundle' => 'Symfony2\\Bundle\\DebugBundle\\DebugBundle'),
         )));
 
         return $container;

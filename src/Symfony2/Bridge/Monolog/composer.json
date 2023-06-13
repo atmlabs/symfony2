@@ -33,7 +33,7 @@
         "symfony2/event-dispatcher": "Needed when using log messages in console commands."
      },
     "autoload": {
-        "psr-4": { "Symfony\\Bridge\\Monolog\\": "" },
+        "psr-4": { "Symfony2\\Bridge\\Monolog\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

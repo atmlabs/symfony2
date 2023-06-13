@@ -24,7 +24,7 @@ class PropertyPathTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\InvalidPropertyPathException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\InvalidPropertyPathException
      */
     public function testDotIsRequiredBeforeProperty()
     {
@@ -32,7 +32,7 @@ class PropertyPathTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\InvalidPropertyPathException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\InvalidPropertyPathException
      */
     public function testDotCannotBePresentAtTheBeginning()
     {
@@ -54,7 +54,7 @@ class PropertyPathTest extends TestCase
 
     /**
      * @dataProvider providePathsContainingUnexpectedCharacters
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\InvalidPropertyPathException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\InvalidPropertyPathException
      */
     public function testUnexpectedCharacters($path)
     {
@@ -62,7 +62,7 @@ class PropertyPathTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\InvalidPropertyPathException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\InvalidPropertyPathException
      */
     public function testPathCannotBeEmpty()
     {
@@ -70,7 +70,7 @@ class PropertyPathTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\InvalidArgumentException
      */
     public function testPathCannotBeNull()
     {
@@ -78,7 +78,7 @@ class PropertyPathTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\InvalidArgumentException
      */
     public function testPathCannotBeFalse()
     {

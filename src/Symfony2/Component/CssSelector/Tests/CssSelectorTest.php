@@ -40,7 +40,7 @@ class CssSelectorTest extends TestCase
             CssSelector::toXPath('h1:');
             $this->fail('->parse() throws an Exception if the css selector is not valid');
         } catch (\Exception $e) {
-            $this->assertInstanceOf('\Symfony\Component\CssSelector\Exception\ParseException', $e, '->parse() throws an Exception if the css selector is not valid');
+            $this->assertInstanceOf('\Symfony2\Component\CssSelector\Exception\ParseException', $e, '->parse() throws an Exception if the css selector is not valid');
             $this->assertEquals('Expected identifier, but <eof at 3> found.', $e->getMessage(), '->parse() throws an Exception if the css selector is not valid');
         }
     }

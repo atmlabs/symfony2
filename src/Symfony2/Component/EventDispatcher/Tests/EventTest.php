@@ -21,12 +21,12 @@ use Symfony2\Component\EventDispatcher\EventDispatcher;
 class EventTest extends TestCase
 {
     /**
-     * @var \Symfony\Component\EventDispatcher\Event
+     * @var \Symfony2\Component\EventDispatcher\Event
      */
     protected $event;
 
     /**
-     * @var \Symfony\Component\EventDispatcher\EventDispatcher
+     * @var \Symfony2\Component\EventDispatcher\EventDispatcher
      */
     protected $dispatcher;
 

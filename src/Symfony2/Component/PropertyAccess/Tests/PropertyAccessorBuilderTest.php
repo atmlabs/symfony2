@@ -50,7 +50,7 @@ class PropertyAccessorBuilderTest extends TestCase
 
     public function testGetPropertyAccessor()
     {
-        $this->assertInstanceOf('Symfony\Component\PropertyAccess\PropertyAccessor', $this->builder->getPropertyAccessor());
-        $this->assertInstanceOf('Symfony\Component\PropertyAccess\PropertyAccessor', $this->builder->enableMagicCall()->getPropertyAccessor());
+        $this->assertInstanceOf('Symfony2\Component\PropertyAccess\PropertyAccessor', $this->builder->getPropertyAccessor());
+        $this->assertInstanceOf('Symfony2\Component\PropertyAccess\PropertyAccessor', $this->builder->enableMagicCall()->getPropertyAccessor());
     }
 }

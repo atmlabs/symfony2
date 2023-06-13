@@ -35,7 +35,7 @@ class ExtensionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\InvalidArgumentException
      * @expectedExceptionMessage The config array has no 'enabled' key.
      */
     public function testIsConfigEnabledOnNonEnableableConfig()

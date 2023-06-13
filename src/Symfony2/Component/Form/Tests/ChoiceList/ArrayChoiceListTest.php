@@ -43,7 +43,7 @@ class ArrayChoiceListTest extends AbstractChoiceListTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Form\Exception\InvalidArgumentException
      */
     public function testFailIfKeyMismatch()
     {

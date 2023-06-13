@@ -17,7 +17,7 @@ use Symfony2\Component\Form\Extension\Core\ChoiceList\ObjectChoiceList;
 
 class ChoiceTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\ChoiceType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\ChoiceType';
 
     private $choices = array(
         'Bernhard' => 'a',
@@ -104,7 +104,7 @@ class ChoiceTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testChoicesOptionExpectsArrayOrTraversable()
     {
@@ -114,7 +114,7 @@ class ChoiceTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testChoiceListOptionExpectsChoiceListInterface()
     {
@@ -124,7 +124,7 @@ class ChoiceTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testChoiceLoaderOptionExpectsChoiceLoaderInterface()
     {
@@ -135,7 +135,7 @@ class ChoiceTypeTest extends BaseTypeTest
 
     public function testChoiceListAndChoicesCanBeEmpty()
     {
-        $this->assertInstanceOf('Symfony\Component\Form\FormInterface', $this->factory->create(static::TESTED_TYPE, null, array(
+        $this->assertInstanceOf('Symfony2\Component\Form\FormInterface', $this->factory->create(static::TESTED_TYPE, null, array(
             'choices_as_values' => true,
         )));
     }
@@ -2351,7 +2351,7 @@ class ChoiceTypeTest extends BaseTypeTest
     // https://github.com/symfony/symfony/issues/3298
     public function testInitializeWithEmptyChoices()
     {
-        $this->assertInstanceOf('Symfony\Component\Form\FormInterface', $this->factory->createNamed('name', static::TESTED_TYPE, null, array(
+        $this->assertInstanceOf('Symfony2\Component\Form\FormInterface', $this->factory->createNamed('name', static::TESTED_TYPE, null, array(
             'choices' => array(),
             'choices_as_values' => true,
         )));
@@ -2396,7 +2396,7 @@ class ChoiceTypeTest extends BaseTypeTest
                 'choices_as_values' => true,
             )
         );
-        $builder->add('subChoice', 'Symfony\Component\Form\Tests\Fixtures\ChoiceSubType');
+        $builder->add('subChoice', 'Symfony2\Component\Form\Tests\Fixtures\ChoiceSubType');
         $form = $builder->getForm();
 
         // The default 'choices' normalizer would fill the $choiceLabels, but it has been replaced

@@ -92,7 +92,7 @@ class FrameworkExtension extends Extension
             $this->registerFormConfiguration($config, $container, $loader);
             $config['validation']['enabled'] = true;
 
-            if (!class_exists('Symfony\Component\Validator\Validation')) {
+            if (!class_exists('Symfony2\Component\Validator\Validation')) {
                 throw new LogicException('The Validator component is required to use the Form component.');
             }
 
@@ -158,29 +158,29 @@ class FrameworkExtension extends Extension
         }
 
         $this->addClassesToCompile(array(
-            'Symfony\\Component\\Config\\FileLocator',
+            'Symfony2\\Component\\Config\\FileLocator',
 
-            'Symfony\\Component\\Debug\\ErrorHandler',
+            'Symfony2\\Component\\Debug\\ErrorHandler',
 
-            'Symfony\\Component\\EventDispatcher\\Event',
-            'Symfony\\Component\\EventDispatcher\\ContainerAwareEventDispatcher',
+            'Symfony2\\Component\\EventDispatcher\\Event',
+            'Symfony2\\Component\\EventDispatcher\\ContainerAwareEventDispatcher',
 
-            'Symfony\\Component\\HttpKernel\\EventListener\\ResponseListener',
-            'Symfony\\Component\\HttpKernel\\EventListener\\RouterListener',
-            'Symfony\\Component\\HttpKernel\\Controller\\ControllerResolver',
-            'Symfony\\Component\\HttpKernel\\Event\\KernelEvent',
-            'Symfony\\Component\\HttpKernel\\Event\\FilterControllerEvent',
-            'Symfony\\Component\\HttpKernel\\Event\\FilterResponseEvent',
-            'Symfony\\Component\\HttpKernel\\Event\\GetResponseEvent',
-            'Symfony\\Component\\HttpKernel\\Event\\GetResponseForControllerResultEvent',
-            'Symfony\\Component\\HttpKernel\\Event\\GetResponseForExceptionEvent',
-            'Symfony\\Component\\HttpKernel\\KernelEvents',
-            'Symfony\\Component\\HttpKernel\\Config\\FileLocator',
+            'Symfony2\\Component\\HttpKernel\\EventListener\\ResponseListener',
+            'Symfony2\\Component\\HttpKernel\\EventListener\\RouterListener',
+            'Symfony2\\Component\\HttpKernel\\Controller\\ControllerResolver',
+            'Symfony2\\Component\\HttpKernel\\Event\\KernelEvent',
+            'Symfony2\\Component\\HttpKernel\\Event\\FilterControllerEvent',
+            'Symfony2\\Component\\HttpKernel\\Event\\FilterResponseEvent',
+            'Symfony2\\Component\\HttpKernel\\Event\\GetResponseEvent',
+            'Symfony2\\Component\\HttpKernel\\Event\\GetResponseForControllerResultEvent',
+            'Symfony2\\Component\\HttpKernel\\Event\\GetResponseForExceptionEvent',
+            'Symfony2\\Component\\HttpKernel\\KernelEvents',
+            'Symfony2\\Component\\HttpKernel\\Config\\FileLocator',
 
-            'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
-            'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
+            'Symfony2\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
+            'Symfony2\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
             // Cannot be included because annotations will parse the big compiled class file
-            // 'Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller',
+            // 'Symfony2\\Bundle\\FrameworkBundle\\Controller\\Controller',
         ));
     }
 
@@ -272,13 +272,13 @@ class FrameworkExtension extends Extension
 
         // Choose storage class based on the DSN
         $supported = array(
-            'sqlite' => 'Symfony\Component\HttpKernel\Profiler\SqliteProfilerStorage',
-            'mysql' => 'Symfony\Component\HttpKernel\Profiler\MysqlProfilerStorage',
-            'file' => 'Symfony\Component\HttpKernel\Profiler\FileProfilerStorage',
-            'mongodb' => 'Symfony\Component\HttpKernel\Profiler\MongoDbProfilerStorage',
-            'memcache' => 'Symfony\Component\HttpKernel\Profiler\MemcacheProfilerStorage',
-            'memcached' => 'Symfony\Component\HttpKernel\Profiler\MemcachedProfilerStorage',
-            'redis' => 'Symfony\Component\HttpKernel\Profiler\RedisProfilerStorage',
+            'sqlite' => 'Symfony2\Component\HttpKernel\Profiler\SqliteProfilerStorage',
+            'mysql' => 'Symfony2\Component\HttpKernel\Profiler\MysqlProfilerStorage',
+            'file' => 'Symfony2\Component\HttpKernel\Profiler\FileProfilerStorage',
+            'mongodb' => 'Symfony2\Component\HttpKernel\Profiler\MongoDbProfilerStorage',
+            'memcache' => 'Symfony2\Component\HttpKernel\Profiler\MemcacheProfilerStorage',
+            'memcached' => 'Symfony2\Component\HttpKernel\Profiler\MemcachedProfilerStorage',
+            'redis' => 'Symfony2\Component\HttpKernel\Profiler\RedisProfilerStorage',
         );
         list($class) = explode(':', $config['dsn'], 2);
         if (!isset($supported[$class])) {
@@ -296,7 +296,7 @@ class FrameworkExtension extends Extension
             if (isset($config['matcher']['service'])) {
                 $container->setAlias('profiler.request_matcher', $config['matcher']['service']);
             } elseif (isset($config['matcher']['ip']) || isset($config['matcher']['path']) || isset($config['matcher']['ips'])) {
-                $definition = $container->register('profiler.request_matcher', 'Symfony\\Component\\HttpFoundation\\RequestMatcher');
+                $definition = $container->register('profiler.request_matcher', 'Symfony2\\Component\\HttpFoundation\\RequestMatcher');
                 $definition->setPublic(false);
 
                 if (isset($config['matcher']['ip'])) {
@@ -336,10 +336,10 @@ class FrameworkExtension extends Extension
         $container->setParameter('request_listener.https_port', $config['https_port']);
 
         $this->addClassesToCompile(array(
-            'Symfony\\Component\\Routing\\Generator\\UrlGenerator',
-            'Symfony\\Component\\Routing\\RequestContext',
-            'Symfony\\Component\\Routing\\Router',
-            'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher',
+            'Symfony2\\Component\\Routing\\Generator\\UrlGenerator',
+            'Symfony2\\Component\\Routing\\RequestContext',
+            'Symfony2\\Component\\Routing\\Router',
+            'Symfony2\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher',
             $container->findDefinition('router.default')->getClass(),
         ));
     }
@@ -378,12 +378,12 @@ class FrameworkExtension extends Extension
         $container->setParameter('session.save_path', $config['save_path']);
 
         $this->addClassesToCompile(array(
-            'Symfony\\Bundle\\FrameworkBundle\\EventListener\\SessionListener',
-            'Symfony\\Component\\HttpFoundation\\Session\\Storage\\NativeSessionStorage',
-            'Symfony\\Component\\HttpFoundation\\Session\\Storage\\PhpBridgeSessionStorage',
-            'Symfony\\Component\\HttpFoundation\\Session\\Storage\\Handler\\NativeFileSessionHandler',
-            'Symfony\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\AbstractProxy',
-            'Symfony\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\SessionHandlerProxy',
+            'Symfony2\\Bundle\\FrameworkBundle\\EventListener\\SessionListener',
+            'Symfony2\\Component\\HttpFoundation\\Session\\Storage\\NativeSessionStorage',
+            'Symfony2\\Component\\HttpFoundation\\Session\\Storage\\PhpBridgeSessionStorage',
+            'Symfony2\\Component\\HttpFoundation\\Session\\Storage\\Handler\\NativeFileSessionHandler',
+            'Symfony2\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\AbstractProxy',
+            'Symfony2\\Component\\HttpFoundation\\Session\\Storage\\Proxy\\SessionHandlerProxy',
             $container->getDefinition('session')->getClass(),
         ));
 
@@ -458,9 +458,9 @@ class FrameworkExtension extends Extension
         }
 
         $this->addClassesToCompile(array(
-            'Symfony\\Bundle\\FrameworkBundle\\Templating\\GlobalVariables',
-            'Symfony\\Bundle\\FrameworkBundle\\Templating\\TemplateReference',
-            'Symfony\\Bundle\\FrameworkBundle\\Templating\\TemplateNameParser',
+            'Symfony2\\Bundle\\FrameworkBundle\\Templating\\GlobalVariables',
+            'Symfony2\\Bundle\\FrameworkBundle\\Templating\\TemplateReference',
+            'Symfony2\\Bundle\\FrameworkBundle\\Templating\\TemplateNameParser',
             $container->findDefinition('templating.locator')->getClass(),
         ));
 
@@ -497,9 +497,9 @@ class FrameworkExtension extends Extension
             }
 
             $this->addClassesToCompile(array(
-                'Symfony\\Component\\Templating\\Storage\\FileStorage',
-                'Symfony\\Bundle\\FrameworkBundle\\Templating\\PhpEngine',
-                'Symfony\\Bundle\\FrameworkBundle\\Templating\\Loader\\FilesystemLoader',
+                'Symfony2\\Component\\Templating\\Storage\\FileStorage',
+                'Symfony2\\Bundle\\FrameworkBundle\\Templating\\PhpEngine',
+                'Symfony2\\Bundle\\FrameworkBundle\\Templating\\Loader\\FilesystemLoader',
             ));
         }
 
@@ -589,18 +589,18 @@ class FrameworkExtension extends Extension
 
         // Discover translation directories
         $dirs = array();
-        if (class_exists('Symfony\Component\Validator\Validation')) {
-            $r = new \ReflectionClass('Symfony\Component\Validator\Validation');
+        if (class_exists('Symfony2\Component\Validator\Validation')) {
+            $r = new \ReflectionClass('Symfony2\Component\Validator\Validation');
 
             $dirs[] = \dirname($r->getFileName()).'/Resources/translations';
         }
-        if (class_exists('Symfony\Component\Form\Form')) {
-            $r = new \ReflectionClass('Symfony\Component\Form\Form');
+        if (class_exists('Symfony2\Component\Form\Form')) {
+            $r = new \ReflectionClass('Symfony2\Component\Form\Form');
 
             $dirs[] = \dirname($r->getFileName()).'/Resources/translations';
         }
-        if (class_exists('Symfony\Component\Security\Core\Exception\AuthenticationException')) {
-            $r = new \ReflectionClass('Symfony\Component\Security\Core\Exception\AuthenticationException');
+        if (class_exists('Symfony2\Component\Security\Core\Exception\AuthenticationException')) {
+            $r = new \ReflectionClass('Symfony2\Component\Security\Core\Exception\AuthenticationException');
 
             $dirs[] = \dirname(\dirname($r->getFileName())).'/Resources/translations';
         }
@@ -665,7 +665,7 @@ class FrameworkExtension extends Extension
             return;
         }
 
-        if (!class_exists('Symfony\Component\Validator\Validation')) {
+        if (!class_exists('Symfony2\Component\Validator\Validation')) {
             throw new LogicException('Validation support cannot be enabled as the Validator component is not installed.');
         }
 
@@ -717,8 +717,8 @@ class FrameworkExtension extends Extension
     {
         $files = array(array(), array());
 
-        if (interface_exists('Symfony\Component\Form\FormInterface')) {
-            $reflClass = new \ReflectionClass('Symfony\Component\Form\FormInterface');
+        if (interface_exists('Symfony2\Component\Form\FormInterface')) {
+            $reflClass = new \ReflectionClass('Symfony2\Component\Form\FormInterface');
             $files[0][] = \dirname($reflClass->getFileName()).'/Resources/config/validation.xml';
             $container->addResource(new FileResource($files[0][0]));
         }
@@ -785,7 +785,7 @@ class FrameworkExtension extends Extension
 
     private function registerPropertyAccessConfiguration(array $config, ContainerBuilder $container, XmlFileLoader $loader)
     {
-        if (!class_exists('Symfony\Component\PropertyAccess\PropertyAccessor')) {
+        if (!class_exists('Symfony2\Component\PropertyAccess\PropertyAccessor')) {
             return;
         }
 
@@ -821,7 +821,7 @@ class FrameworkExtension extends Extension
         $loader->load('serializer.xml');
         $chainLoader = $container->getDefinition('serializer.mapping.chain_loader');
 
-        if (!class_exists('Symfony\Component\PropertyAccess\PropertyAccessor')) {
+        if (!class_exists('Symfony2\Component\PropertyAccess\PropertyAccessor')) {
             $container->removeAlias('serializer.property_accessor');
             $container->removeDefinition('serializer.normalizer.object');
         }
@@ -829,7 +829,7 @@ class FrameworkExtension extends Extension
         $serializerLoaders = array();
         if (isset($config['enable_annotations']) && $config['enable_annotations']) {
             $annotationLoader = new Definition(
-                'Symfony\Component\Serializer\Mapping\Loader\AnnotationLoader',
+                'Symfony2\Component\Serializer\Mapping\Loader\AnnotationLoader',
                  array(new Reference('annotation_reader'))
             );
             $annotationLoader->setPublic(false);
@@ -841,7 +841,7 @@ class FrameworkExtension extends Extension
             $dirname = $bundle['path'];
 
             if (is_file($file = $dirname.'/Resources/config/serialization.xml')) {
-                $definition = new Definition('Symfony\Component\Serializer\Mapping\Loader\XmlFileLoader', array($file));
+                $definition = new Definition('Symfony2\Component\Serializer\Mapping\Loader\XmlFileLoader', array($file));
                 $definition->setPublic(false);
 
                 $serializerLoaders[] = $definition;
@@ -849,7 +849,7 @@ class FrameworkExtension extends Extension
             }
 
             if (is_file($file = $dirname.'/Resources/config/serialization.yml')) {
-                $definition = new Definition('Symfony\Component\Serializer\Mapping\Loader\YamlFileLoader', array($file));
+                $definition = new Definition('Symfony2\Component\Serializer\Mapping\Loader\YamlFileLoader', array($file));
                 $definition->setPublic(false);
 
                 $serializerLoaders[] = $definition;
@@ -858,13 +858,13 @@ class FrameworkExtension extends Extension
 
             if (is_dir($dir = $dirname.'/Resources/config/serialization')) {
                 foreach (Finder::create()->files()->in($dir)->name('*.xml') as $file) {
-                    $definition = new Definition('Symfony\Component\Serializer\Mapping\Loader\XmlFileLoader', array($file->getPathname()));
+                    $definition = new Definition('Symfony2\Component\Serializer\Mapping\Loader\XmlFileLoader', array($file->getPathname()));
                     $definition->setPublic(false);
 
                     $serializerLoaders[] = $definition;
                 }
                 foreach (Finder::create()->files()->in($dir)->name('*.yml') as $file) {
-                    $definition = new Definition('Symfony\Component\Serializer\Mapping\Loader\YamlFileLoader', array($file->getPathname()));
+                    $definition = new Definition('Symfony2\Component\Serializer\Mapping\Loader\YamlFileLoader', array($file->getPathname()));
                     $definition->setPublic(false);
 
                     $serializerLoaders[] = $definition;
@@ -908,7 +908,7 @@ class FrameworkExtension extends Extension
         $loader->load('property_info.xml');
 
         if (class_exists('phpDocumentor\Reflection\ClassReflector')) {
-            $definition = $container->register('property_info.php_doc_extractor', 'Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor');
+            $definition = $container->register('property_info.php_doc_extractor', 'Symfony2\Component\PropertyInfo\Extractor\PhpDocExtractor');
             $definition->addTag('property_info.description_extractor', array('priority' => -1000));
             $definition->addTag('property_info.type_extractor', array('priority' => -1001));
         }

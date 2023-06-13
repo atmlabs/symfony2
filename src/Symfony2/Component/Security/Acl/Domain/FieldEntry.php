@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
-use Symfony\Component\Security\Acl\Model\AclInterface;
-use Symfony\Component\Security\Acl\Model\FieldEntryInterface;
-use Symfony\Component\Security\Acl\Model\SecurityIdentityInterface;
+use Symfony2\Component\Security\Acl\Model\AclInterface;
+use Symfony2\Component\Security\Acl\Model\FieldEntryInterface;
+use Symfony2\Component\Security\Acl\Model\SecurityIdentityInterface;
 
 /**
  * Field-aware ACE implementation which is auditable.

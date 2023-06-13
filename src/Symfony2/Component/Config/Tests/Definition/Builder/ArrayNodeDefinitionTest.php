@@ -36,7 +36,7 @@ class ArrayNodeDefinitionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidDefinitionException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidDefinitionException
      * @dataProvider providePrototypeNodeSpecificCalls
      */
     public function testPrototypeNodeSpecificOption($method, $args)
@@ -59,7 +59,7 @@ class ArrayNodeDefinitionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidDefinitionException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidDefinitionException
      */
     public function testConcreteNodeSpecificOption()
     {
@@ -72,7 +72,7 @@ class ArrayNodeDefinitionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidDefinitionException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidDefinitionException
      */
     public function testPrototypeNodesCantHaveADefaultValueWhenUsingDefaultChildren()
     {
@@ -153,8 +153,8 @@ class ArrayNodeDefinitionTest extends TestCase
         ;
         $node = $nodeDefinition->getNode();
 
-        $this->assertInstanceOf('Symfony\Component\Config\Definition\PrototypedArrayNode', $node);
-        $this->assertInstanceOf('Symfony\Component\Config\Definition\PrototypedArrayNode', $node->getPrototype());
+        $this->assertInstanceOf('Symfony2\Component\Config\Definition\PrototypedArrayNode', $node);
+        $this->assertInstanceOf('Symfony2\Component\Config\Definition\PrototypedArrayNode', $node->getPrototype());
     }
 
     public function testEnabledNodeDefaults()

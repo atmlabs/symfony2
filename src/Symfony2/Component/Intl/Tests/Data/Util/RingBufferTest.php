@@ -53,7 +53,7 @@ class RingBufferTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\OutOfBoundsException
+     * @expectedException \Symfony2\Component\Intl\Exception\OutOfBoundsException
      */
     public function testReadNonExistingFails()
     {
@@ -73,7 +73,7 @@ class RingBufferTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\OutOfBoundsException
+     * @expectedException \Symfony2\Component\Intl\Exception\OutOfBoundsException
      */
     public function testReadOverwrittenFails()
     {

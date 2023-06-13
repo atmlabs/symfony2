@@ -67,7 +67,7 @@ class ConfigurationTest extends TestCase
 
     /**
      * @dataProvider getTestInvalidSessionName
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      */
     public function testInvalidSessionName($sessionName)
     {
@@ -121,7 +121,7 @@ class ConfigurationTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      */
     public function testInvalidTypeTrustedProxies()
     {
@@ -136,7 +136,7 @@ class ConfigurationTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      */
     public function testInvalidValueTrustedProxies()
     {
@@ -151,7 +151,7 @@ class ConfigurationTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      * @expectedExceptionMessage You cannot use assets settings under "framework.templating" and "assets" configurations in the same project.
      * @group legacy
      */

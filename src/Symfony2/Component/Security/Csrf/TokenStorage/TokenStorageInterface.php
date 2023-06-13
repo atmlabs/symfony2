@@ -25,7 +25,7 @@ interface TokenStorageInterface
      *
      * @return string The stored token
      *
-     * @throws \Symfony\Component\Security\Csrf\Exception\TokenNotFoundException If the token ID does not exist
+     * @throws \Symfony2\Component\Security\Csrf\Exception\TokenNotFoundException If the token ID does not exist
      */
     public function getToken($tokenId);
 

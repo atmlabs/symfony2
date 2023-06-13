@@ -26,7 +26,7 @@ class PhpEngineTest extends TestCase
     public function testEvaluateAddsAppGlobal()
     {
         $container = $this->getContainer();
-        $loader = $this->getMockForAbstractClass('Symfony\Component\Templating\Loader\Loader');
+        $loader = $this->getMockForAbstractClass('Symfony2\Component\Templating\Loader\Loader');
         $engine = new PhpEngine(new TemplateNameParser(), $container, $loader, $app = new GlobalVariables($container));
         $globals = $engine->getGlobals();
         $this->assertSame($app, $globals['app']);
@@ -35,7 +35,7 @@ class PhpEngineTest extends TestCase
     public function testEvaluateWithoutAvailableRequest()
     {
         $container = new Container();
-        $loader = $this->getMockForAbstractClass('Symfony\Component\Templating\Loader\Loader');
+        $loader = $this->getMockForAbstractClass('Symfony2\Component\Templating\Loader\Loader');
         $engine = new PhpEngine(new TemplateNameParser(), $container, $loader, new GlobalVariables($container));
 
         $container->set('request_stack', null);
@@ -50,7 +50,7 @@ class PhpEngineTest extends TestCase
     public function testGetInvalidHelper()
     {
         $container = $this->getContainer();
-        $loader = $this->getMockForAbstractClass('Symfony\Component\Templating\Loader\Loader');
+        $loader = $this->getMockForAbstractClass('Symfony2\Component\Templating\Loader\Loader');
         $engine = new PhpEngine(new TemplateNameParser(), $container, $loader);
 
         $engine->get('non-existing-helper');

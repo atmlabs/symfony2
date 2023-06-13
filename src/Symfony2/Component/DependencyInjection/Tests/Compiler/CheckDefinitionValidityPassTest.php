@@ -19,7 +19,7 @@ use Symfony2\Component\DependencyInjection\ContainerInterface;
 class CheckDefinitionValidityPassTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      */
     public function testProcessDetectsSyntheticNonPublicDefinitions()
     {
@@ -30,7 +30,7 @@ class CheckDefinitionValidityPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @group legacy
      */
     public function testProcessDetectsSyntheticPrototypeDefinitions()
@@ -42,7 +42,7 @@ class CheckDefinitionValidityPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @group legacy
      */
     public function testProcessDetectsSharedPrototypeDefinitions()
@@ -54,7 +54,7 @@ class CheckDefinitionValidityPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      */
     public function testProcessDetectsNonSyntheticNonAbstractDefinitionWithoutClass()
     {
@@ -65,7 +65,7 @@ class CheckDefinitionValidityPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @group legacy
      */
     public function testLegacyProcessDetectsBothFactorySyntaxesUsed()
@@ -103,7 +103,7 @@ class CheckDefinitionValidityPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      */
     public function testInvalidTags()
     {

@@ -545,7 +545,7 @@ class QuestionHelperTest extends TestCase
             '  [<info>żółw  </info>] bar',
             '  [<info>łabądź</info>] baz',
         );
-        $output = $this->getMockBuilder('\Symfony\Component\Console\Output\OutputInterface')->getMock();
+        $output = $this->getMockBuilder('\Symfony2\Component\Console\Output\OutputInterface')->getMock();
         $output->method('getFormatter')->willReturn(new OutputFormatter());
 
         $dialog = new QuestionHelper();
@@ -560,7 +560,7 @@ class QuestionHelperTest extends TestCase
     }
 
     /**
-     * @expectedException        \Symfony\Component\Console\Exception\RuntimeException
+     * @expectedException        \Symfony2\Component\Console\Exception\RuntimeException
      * @expectedExceptionMessage Aborted
      */
     public function testAskThrowsExceptionOnMissingInput()
@@ -572,7 +572,7 @@ class QuestionHelperTest extends TestCase
     }
 
     /**
-     * @expectedException        \Symfony\Component\Console\Exception\RuntimeException
+     * @expectedException        \Symfony2\Component\Console\Exception\RuntimeException
      * @expectedExceptionMessage Aborted
      */
     public function testAskThrowsExceptionOnMissingInputWithValidator()
@@ -649,7 +649,7 @@ class QuestionHelperTest extends TestCase
 
     protected function createInputInterfaceMock($interactive = true)
     {
-        $mock = $this->getMockBuilder('Symfony\Component\Console\Input\InputInterface')->getMock();
+        $mock = $this->getMockBuilder('Symfony2\Component\Console\Input\InputInterface')->getMock();
         $mock->expects($this->any())
             ->method('isInteractive')
             ->will($this->returnValue($interactive));

@@ -49,7 +49,7 @@ class NativeRequestHandlerTest extends AbstractRequestHandlerTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      */
     public function testRequestShouldBeNull()
     {

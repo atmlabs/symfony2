@@ -30,7 +30,7 @@ class AnnotationLoaderTest extends TestCase
     {
         $reader = new AnnotationReader();
         $loader = new AnnotationLoader($reader);
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
 
         $this->assertTrue($loader->loadClassMetadata($metadata));
     }
@@ -46,14 +46,14 @@ class AnnotationLoaderTest extends TestCase
     public function testLoadClassMetadata()
     {
         $loader = new AnnotationLoader(new AnnotationReader());
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
 
         $loader->loadClassMetadata($metadata);
 
-        $expected = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $expected = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
         $expected->setGroupSequence(array('Foo', 'Entity'));
         $expected->addConstraint(new ConstraintA());
-        $expected->addConstraint(new Callback(array('Symfony\Component\Validator\Tests\Fixtures\CallbackClass', 'callback')));
+        $expected->addConstraint(new Callback(array('Symfony2\Component\Validator\Tests\Fixtures\CallbackClass', 'callback')));
         $expected->addConstraint(new Callback(array('callback' => 'validateMe', 'payload' => 'foo')));
         $expected->addConstraint(new Callback('validateMeStatic'));
         $expected->addPropertyConstraint('firstName', new NotNull());
@@ -86,10 +86,10 @@ class AnnotationLoaderTest extends TestCase
         $loader = new AnnotationLoader(new AnnotationReader());
 
         // Load Parent MetaData
-        $parent_metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\EntityParent');
+        $parent_metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\EntityParent');
         $loader->loadClassMetadata($parent_metadata);
 
-        $expected_parent = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\EntityParent');
+        $expected_parent = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\EntityParent');
         $expected_parent->addPropertyConstraint('other', new NotNull());
         $expected_parent->getReflectionClass();
 
@@ -104,26 +104,26 @@ class AnnotationLoaderTest extends TestCase
         $loader = new AnnotationLoader(new AnnotationReader());
 
         // Load Parent MetaData
-        $parent_metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\EntityParent');
+        $parent_metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\EntityParent');
         $loader->loadClassMetadata($parent_metadata);
 
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
 
         // Merge parent metaData.
         $metadata->mergeConstraints($parent_metadata);
 
         $loader->loadClassMetadata($metadata);
 
-        $expected_parent = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\EntityParent');
+        $expected_parent = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\EntityParent');
         $expected_parent->addPropertyConstraint('other', new NotNull());
         $expected_parent->getReflectionClass();
 
-        $expected = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity');
+        $expected = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity');
         $expected->mergeConstraints($expected_parent);
 
         $expected->setGroupSequence(array('Foo', 'Entity'));
         $expected->addConstraint(new ConstraintA());
-        $expected->addConstraint(new Callback(array('Symfony\Component\Validator\Tests\Fixtures\CallbackClass', 'callback')));
+        $expected->addConstraint(new Callback(array('Symfony2\Component\Validator\Tests\Fixtures\CallbackClass', 'callback')));
         $expected->addConstraint(new Callback(array('callback' => 'validateMe', 'payload' => 'foo')));
         $expected->addConstraint(new Callback('validateMeStatic'));
         $expected->addPropertyConstraint('firstName', new NotNull());
@@ -152,10 +152,10 @@ class AnnotationLoaderTest extends TestCase
     {
         $loader = new AnnotationLoader(new AnnotationReader());
 
-        $metadata = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity');
+        $metadata = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity');
         $loader->loadClassMetadata($metadata);
 
-        $expected = new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity');
+        $expected = new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity');
         $expected->setGroupSequenceProvider(true);
         $expected->getReflectionClass();
 

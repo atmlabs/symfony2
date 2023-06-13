@@ -30,8 +30,8 @@ class AbstractNormalizerTest extends TestCase
 
     protected function setUp()
     {
-        $loader = $this->getMockBuilder('Symfony\Component\Serializer\Mapping\Loader\LoaderChain')->setConstructorArgs(array(array()))->getMock();
-        $this->classMetadata = $this->getMockBuilder('Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory')->setConstructorArgs(array($loader))->getMock();
+        $loader = $this->getMockBuilder('Symfony2\Component\Serializer\Mapping\Loader\LoaderChain')->setConstructorArgs(array(array()))->getMock();
+        $this->classMetadata = $this->getMockBuilder('Symfony2\Component\Serializer\Mapping\Factory\ClassMetadataFactory')->setConstructorArgs(array($loader))->getMock();
         $this->normalizer = new AbstractNormalizerDummy($this->classMetadata);
     }
 
@@ -100,7 +100,7 @@ class AbstractNormalizerTest extends TestCase
         $context = array(AbstractNormalizer::OBJECT_TO_POPULATE => $proxyDummy);
 
         $normalizer = new ObjectNormalizer();
-        $normalizer->denormalize(array('foo' => 'bar'), 'Symfony\Component\Serializer\Tests\Fixtures\ToBeProxyfiedDummy', null, $context);
+        $normalizer->denormalize(array('foo' => 'bar'), 'Symfony2\Component\Serializer\Tests\Fixtures\ToBeProxyfiedDummy', null, $context);
 
         $this->assertSame('bar', $proxyDummy->getFoo());
     }

@@ -8,7 +8,7 @@ use Symfony2\Component\Routing\RequestContext;
  * This class has been auto-generated
  * by the Symfony Routing Component.
  */
-class ProjectUrlMatcher extends Symfony\Component\Routing\Matcher\UrlMatcher
+class ProjectUrlMatcher extends Symfony2\Component\Routing\Matcher\UrlMatcher
 {
     public function __construct(RequestContext $context)
     {

@@ -13,7 +13,7 @@ namespace Symfony2\Component\OptionsResolver\Exception;
 
 /**
  * Thrown when trying to read an option outside of or write it inside of
- * {@link \Symfony\Component\OptionsResolver\Options::resolve()}.
+ * {@link \Symfony2\Component\OptionsResolver\Options::resolve()}.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */

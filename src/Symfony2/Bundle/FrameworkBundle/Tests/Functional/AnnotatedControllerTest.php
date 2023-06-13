@@ -28,7 +28,7 @@ class AnnotatedControllerTest extends WebTestCase
     public function getRoutes()
     {
         return array(
-            array('/null_request', 'Symfony\Component\HttpFoundation\Request'),
+            array('/null_request', 'Symfony2\Component\HttpFoundation\Request'),
             array('/null_argument', ''),
             array('/null_argument_with_route_param', ''),
             array('/null_argument_with_route_param/value', 'value'),

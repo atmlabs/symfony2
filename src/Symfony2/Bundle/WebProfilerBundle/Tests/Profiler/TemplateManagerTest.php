@@ -28,12 +28,12 @@ class TemplateManagerTest extends TestCase
     protected $twigEnvironment;
 
     /**
-     * @var \Symfony\Component\HttpKernel\Profiler\Profiler
+     * @var \Symfony2\Component\HttpKernel\Profiler\Profiler
      */
     protected $profiler;
 
     /**
-     * @var \Symfony\Bundle\WebProfilerBundle\Profiler\TemplateManager
+     * @var \Symfony2\Bundle\WebProfilerBundle\Profiler\TemplateManager
      */
     protected $templateManager;
 
@@ -53,7 +53,7 @@ class TemplateManagerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     * @expectedException \Symfony2\Component\HttpKernel\Exception\NotFoundHttpException
      */
     public function testGetNameOfInvalidTemplate()
     {
@@ -125,7 +125,7 @@ class TemplateManagerTest extends TestCase
 
     protected function mockProfile()
     {
-        return $this->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profile')->disableOriginalConstructor()->getMock();
+        return $this->getMockBuilder('Symfony2\Component\HttpKernel\Profiler\Profile')->disableOriginalConstructor()->getMock();
     }
 
     protected function mockTwigEnvironment()
@@ -148,7 +148,7 @@ class TemplateManagerTest extends TestCase
 
     protected function mockProfiler()
     {
-        $this->profiler = $this->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profiler')
+        $this->profiler = $this->getMockBuilder('Symfony2\Component\HttpKernel\Profiler\Profiler')
             ->disableOriginalConstructor()
             ->getMock();
 

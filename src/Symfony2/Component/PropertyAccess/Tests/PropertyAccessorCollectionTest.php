@@ -147,7 +147,7 @@ abstract class PropertyAccessorCollectionTest extends PropertyAccessorArrayAcces
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchPropertyException
      * @expectedExceptionMessage Neither the property "axes" nor one of the methods "addAx()"/"removeAx()", "addAxe()"/"removeAxe()", "addAxis()"/"removeAxis()", "setAxes()", "axes()", "__set()" or "__call()" exist and have public access in class "Mock_PropertyAccessorCollectionTest_CarNoAdderAndRemover
      */
     public function testSetValueFailsIfNoAdderNorRemoverFound()
@@ -188,7 +188,7 @@ abstract class PropertyAccessorCollectionTest extends PropertyAccessorArrayAcces
     }
 
     /**
-     * @expectedException \Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException
+     * @expectedException \Symfony2\Component\PropertyAccess\Exception\NoSuchPropertyException
      * expectedExceptionMessageRegExp /The property "axes" in class "Mock_PropertyAccessorCollectionTest_Car[^"]*" can be defined with the methods "addAxis()", "removeAxis()" but the new value must be an array or an instance of \Traversable, "string" given./
      */
     public function testSetValueFailsIfAdderAndRemoverExistButValueIsNotTraversable()

@@ -17,7 +17,7 @@ use Symfony2\Bridge\PhpUnit\ClockMock;
 /**
  * @author Dominic Tubach <dominic.tubach@to.com>
  *
- * @covers \Symfony\Bridge\PhpUnit\ClockMock
+ * @covers \Symfony2\Bridge\PhpUnit\ClockMock
  */
 class ClockMockTest extends TestCase
 {

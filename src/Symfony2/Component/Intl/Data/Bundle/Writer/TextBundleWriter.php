@@ -17,7 +17,7 @@ use Symfony2\Component\Intl\Exception\UnexpectedTypeException;
  * Writes .txt resource bundles.
  *
  * The resulting files can be converted to binary .res files using a
- * {@link \Symfony\Component\Intl\ResourceBundle\Compiler\BundleCompilerInterface}
+ * {@link \Symfony2\Component\Intl\ResourceBundle\Compiler\BundleCompilerInterface}
  * implementation.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>

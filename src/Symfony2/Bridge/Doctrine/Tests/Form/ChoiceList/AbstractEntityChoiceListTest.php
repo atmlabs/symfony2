@@ -16,7 +16,7 @@ use Symfony2\Bridge\Doctrine\Form\ChoiceList\EntityChoiceList;
 use Symfony2\Bridge\Doctrine\Test\DoctrineTestHelper;
 use Symfony2\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest;
 
-if (!class_exists('Symfony\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
+if (!class_exists('Symfony2\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
     return;
 }
 
@@ -83,7 +83,7 @@ abstract class AbstractEntityChoiceListTest extends AbstractChoiceListTest
     }
 
     /**
-     * @return \Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
+     * @return \Symfony2\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
      */
     protected function createChoiceList()
     {

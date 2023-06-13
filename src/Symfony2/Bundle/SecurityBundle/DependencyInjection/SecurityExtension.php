@@ -68,7 +68,7 @@ class SecurityExtension extends Extension
         $loader->load('collectors.xml');
         $loader->load('guard.xml');
 
-        if (!class_exists('Symfony\Component\ExpressionLanguage\ExpressionLanguage')) {
+        if (!class_exists('Symfony2\Component\ExpressionLanguage\ExpressionLanguage')) {
             $container->removeDefinition('security.expression_language');
             $container->removeDefinition('security.access.expression_voter');
         }
@@ -104,16 +104,16 @@ class SecurityExtension extends Extension
 
         // add some required classes for compilation
         $this->addClassesToCompile(array(
-            'Symfony\Component\Security\Http\Firewall',
-            'Symfony\Component\Security\Core\User\UserProviderInterface',
-            'Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager',
-            'Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage',
-            'Symfony\Component\Security\Core\Authorization\AccessDecisionManager',
-            'Symfony\Component\Security\Core\Authorization\AuthorizationChecker',
-            'Symfony\Component\Security\Core\Authorization\Voter\VoterInterface',
-            'Symfony\Bundle\SecurityBundle\Security\FirewallMap',
-            'Symfony\Bundle\SecurityBundle\Security\FirewallContext',
-            'Symfony\Component\HttpFoundation\RequestMatcher',
+            'Symfony2\Component\Security\Http\Firewall',
+            'Symfony2\Component\Security\Core\User\UserProviderInterface',
+            'Symfony2\Component\Security\Core\Authentication\AuthenticationProviderManager',
+            'Symfony2\Component\Security\Core\Authentication\Token\Storage\TokenStorage',
+            'Symfony2\Component\Security\Core\Authorization\AccessDecisionManager',
+            'Symfony2\Component\Security\Core\Authorization\AuthorizationChecker',
+            'Symfony2\Component\Security\Core\Authorization\Voter\VoterInterface',
+            'Symfony2\Bundle\SecurityBundle\Security\FirewallMap',
+            'Symfony2\Bundle\SecurityBundle\Security\FirewallContext',
+            'Symfony2\Component\HttpFoundation\RequestMatcher',
         ));
     }
 
@@ -182,7 +182,7 @@ class SecurityExtension extends Extension
         }
 
         $this->addClassesToCompile(array(
-            'Symfony\\Component\\Security\\Http\\AccessMap',
+            'Symfony2\\Component\\Security\\Http\\AccessMap',
         ));
 
         foreach ($config['access_control'] as $access) {
@@ -598,7 +598,7 @@ class SecurityExtension extends Extension
         }
 
         $container
-            ->register($id, 'Symfony\Component\ExpressionLanguage\SerializedParsedExpression')
+            ->register($id, 'Symfony2\Component\ExpressionLanguage\SerializedParsedExpression')
             ->setPublic(false)
             ->addArgument($expression)
             ->addArgument(serialize($this->getExpressionLanguage()->parse($expression, array('token', 'user', 'object', 'roles', 'request', 'trust_resolver'))->getNodes()))
@@ -669,7 +669,7 @@ class SecurityExtension extends Extension
     private function getExpressionLanguage()
     {
         if (null === $this->expressionLanguage) {
-            if (!class_exists('Symfony\Component\ExpressionLanguage\ExpressionLanguage')) {
+            if (!class_exists('Symfony2\Component\ExpressionLanguage\ExpressionLanguage')) {
                 throw new \RuntimeException('Unable to use expressions as the Symfony ExpressionLanguage component is not installed.');
             }
             $this->expressionLanguage = new ExpressionLanguage();

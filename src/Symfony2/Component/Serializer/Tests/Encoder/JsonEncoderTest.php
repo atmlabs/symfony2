@@ -66,7 +66,7 @@ class JsonEncoderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Serializer\Exception\UnexpectedValueException
+     * @expectedException \Symfony2\Component\Serializer\Exception\UnexpectedValueException
      */
     public function testEncodeNotUtf8WithoutPartialOnError()
     {

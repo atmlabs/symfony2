@@ -42,7 +42,7 @@ class DeprecationErrorHandler
 
     public static function preBind($listener, FormEvent $event)
     {
-        set_error_handler(array('Symfony\Component\Form\Test\DeprecationErrorHandler', 'handle'));
+        set_error_handler(array('Symfony2\Component\Form\Test\DeprecationErrorHandler', 'handle'));
         $listener->preBind($event);
         restore_error_handler();
     }

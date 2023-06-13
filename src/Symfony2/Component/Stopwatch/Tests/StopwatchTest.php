@@ -30,7 +30,7 @@ class StopwatchTest extends TestCase
         $stopwatch = new Stopwatch();
         $event = $stopwatch->start('foo', 'cat');
 
-        $this->assertInstanceOf('Symfony\Component\Stopwatch\StopwatchEvent', $event);
+        $this->assertInstanceOf('Symfony2\Component\Stopwatch\StopwatchEvent', $event);
         $this->assertEquals('cat', $event->getCategory());
         $this->assertSame($event, $stopwatch->getEvent('foo'));
     }
@@ -54,14 +54,14 @@ class StopwatchTest extends TestCase
     {
         $stopwatch = new Stopwatch();
 
-        $sections = new \ReflectionProperty('Symfony\Component\Stopwatch\Stopwatch', 'sections');
+        $sections = new \ReflectionProperty('Symfony2\Component\Stopwatch\Stopwatch', 'sections');
         $sections->setAccessible(true);
         $section = $sections->getValue($stopwatch);
 
-        $events = new \ReflectionProperty('Symfony\Component\Stopwatch\Section', 'events');
+        $events = new \ReflectionProperty('Symfony2\Component\Stopwatch\Section', 'events');
         $events->setAccessible(true);
 
-        $stopwatchMockEvent = $this->getMockBuilder('Symfony\Component\Stopwatch\StopwatchEvent')
+        $stopwatchMockEvent = $this->getMockBuilder('Symfony2\Component\Stopwatch\StopwatchEvent')
             ->setConstructorArgs(array(microtime(true) * 1000))
             ->getMock()
         ;
@@ -78,7 +78,7 @@ class StopwatchTest extends TestCase
         usleep(200000);
         $event = $stopwatch->stop('foo');
 
-        $this->assertInstanceOf('Symfony\Component\Stopwatch\StopwatchEvent', $event);
+        $this->assertInstanceOf('Symfony2\Component\Stopwatch\StopwatchEvent', $event);
         $this->assertEquals(200, $event->getDuration(), null, self::DELTA);
     }
 

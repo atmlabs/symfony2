@@ -31,15 +31,15 @@ class TwigExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('twig.xml');
 
-        if (class_exists('Symfony\Component\Form\Form')) {
+        if (class_exists('Symfony2\Component\Form\Form')) {
             $loader->load('form.xml');
         }
 
-        if (interface_exists('Symfony\Component\Templating\EngineInterface')) {
+        if (interface_exists('Symfony2\Component\Templating\EngineInterface')) {
             $loader->load('templating.xml');
         }
 
-        if (!interface_exists('Symfony\Component\Translation\TranslatorInterface')) {
+        if (!interface_exists('Symfony2\Component\Translation\TranslatorInterface')) {
             $container->removeDefinition('twig.translation.extractor');
         }
 

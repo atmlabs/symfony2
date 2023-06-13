@@ -80,7 +80,7 @@ interface SessionStorageInterface
      * session design. See https://bugs.php.net/bug.php?id=61470 for a discussion.
      * So you must make sure the regenerated session is saved BEFORE sending the
      * headers with the new ID. Symfony's HttpKernel offers a listener for this.
-     * See Symfony\Component\HttpKernel\EventListener\SaveSessionListener.
+     * See Symfony2\Component\HttpKernel\EventListener\SaveSessionListener.
      * Otherwise session data could get lost again for concurrent requests with the
      * new ID. One result could be that you get logged out after just logging in.
      *

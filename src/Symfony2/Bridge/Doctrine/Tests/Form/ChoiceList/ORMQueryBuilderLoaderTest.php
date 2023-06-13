@@ -20,7 +20,7 @@ use Symfony2\Bridge\Doctrine\Test\DoctrineTestHelper;
 class ORMQueryBuilderLoaderTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      * @group legacy
      */
     public function testItOnlyWorksWithQueryBuilderOrClosure()
@@ -29,7 +29,7 @@ class ORMQueryBuilderLoaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      * @group legacy
      */
     public function testClosureRequiresTheEntityManager()
@@ -41,12 +41,12 @@ class ORMQueryBuilderLoaderTest extends TestCase
 
     public function testIdentifierTypeIsStringArray()
     {
-        $this->checkIdentifierType('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleStringIdEntity', Connection::PARAM_STR_ARRAY);
+        $this->checkIdentifierType('Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleStringIdEntity', Connection::PARAM_STR_ARRAY);
     }
 
     public function testIdentifierTypeIsIntegerArray()
     {
-        $this->checkIdentifierType('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity', Connection::PARAM_INT_ARRAY);
+        $this->checkIdentifierType('Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity', Connection::PARAM_INT_ARRAY);
     }
 
     protected function checkIdentifierType($classname, $expectedType)
@@ -101,7 +101,7 @@ class ORMQueryBuilderLoaderTest extends TestCase
             ->willReturn($query);
 
         $qb->select('e')
-            ->from('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity', 'e');
+            ->from('Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity', 'e');
 
         $loader = new ORMQueryBuilderLoader($qb);
         $loader->getEntitiesByIds('id', array(1, '', 2, 3, 'foo', '9223372036854775808'));
@@ -167,7 +167,7 @@ class ORMQueryBuilderLoaderTest extends TestCase
             ->willReturn($query);
 
         $qb->select('e')
-            ->from('Symfony\Bridge\Doctrine\Tests\Fixtures\EmbeddedIdentifierEntity', 'e');
+            ->from('Symfony2\Bridge\Doctrine\Tests\Fixtures\EmbeddedIdentifierEntity', 'e');
 
         $loader = new ORMQueryBuilderLoader($qb);
         $loader->getEntitiesByIds('id.value', array(1, '', 2, 3, 'foo'));
@@ -176,8 +176,8 @@ class ORMQueryBuilderLoaderTest extends TestCase
     public function provideGuidEntityClasses()
     {
         return array(
-            array('Symfony\Bridge\Doctrine\Tests\Fixtures\GuidIdEntity'),
-            array('Symfony\Bridge\Doctrine\Tests\Fixtures\UuidIdEntity'),
+            array('Symfony2\Bridge\Doctrine\Tests\Fixtures\GuidIdEntity'),
+            array('Symfony2\Bridge\Doctrine\Tests\Fixtures\UuidIdEntity'),
         );
     }
 }

@@ -51,7 +51,7 @@ class JsonEncodeTest extends TestCase
 
     /**
      * @requires function json_last_error_msg
-     * @expectedException \Symfony\Component\Serializer\Exception\UnexpectedValueException
+     * @expectedException \Symfony2\Component\Serializer\Exception\UnexpectedValueException
      */
     public function testEncodeWithError()
     {

@@ -30,24 +30,24 @@ class ProfilerListenerTest extends TestCase
      */
     public function testLegacyEventsWithoutRequestStack()
     {
-        $profile = $this->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profile')
+        $profile = $this->getMockBuilder('Symfony2\Component\HttpKernel\Profiler\Profile')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $profiler = $this->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profiler')
+        $profiler = $this->getMockBuilder('Symfony2\Component\HttpKernel\Profiler\Profiler')
             ->disableOriginalConstructor()
             ->getMock();
         $profiler->expects($this->once())
             ->method('collect')
             ->will($this->returnValue($profile));
 
-        $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+        $kernel = $this->getMockBuilder('Symfony2\Component\HttpKernel\HttpKernelInterface')->getMock();
 
-        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')
+        $request = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $response = $this->getMockBuilder('Symfony\Component\HttpFoundation\Response')
+        $response = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Response')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -62,11 +62,11 @@ class ProfilerListenerTest extends TestCase
      */
     public function testKernelTerminate()
     {
-        $profile = $this->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profile')
+        $profile = $this->getMockBuilder('Symfony2\Component\HttpKernel\Profiler\Profile')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $profiler = $this->getMockBuilder('Symfony\Component\HttpKernel\Profiler\Profiler')
+        $profiler = $this->getMockBuilder('Symfony2\Component\HttpKernel\Profiler\Profiler')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -74,17 +74,17 @@ class ProfilerListenerTest extends TestCase
             ->method('collect')
             ->will($this->returnValue($profile));
 
-        $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+        $kernel = $this->getMockBuilder('Symfony2\Component\HttpKernel\HttpKernelInterface')->getMock();
 
-        $masterRequest = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')
+        $masterRequest = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $subRequest = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')
+        $subRequest = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')
             ->disableOriginalConstructor()
             ->getMock();
 
-        $response = $this->getMockBuilder('Symfony\Component\HttpFoundation\Response')
+        $response = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Response')
             ->disableOriginalConstructor()
             ->getMock();
 

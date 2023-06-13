@@ -183,7 +183,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testTransformRequiresValidDateTime()
     {
@@ -199,7 +199,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
 
         // HOW TO REPRODUCE?
 
-        //$this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Form\Extension\Core\DataTransformer\TransformationFailedException');
+        //$this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Form\Extension\Core\DataTransformer\TransformationFailedException');
 
         //$transformer->transform(1.5);
     }
@@ -293,7 +293,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformRequiresString()
     {
@@ -302,7 +302,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWrapsIntlErrors()
     {
@@ -311,7 +311,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      */
     public function testValidateDateFormatOption()
     {
@@ -319,7 +319,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      */
     public function testValidateTimeFormatOption()
     {
@@ -327,7 +327,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformWithNonExistingDate()
     {
@@ -337,7 +337,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformOutOfTimestampRange()
     {
@@ -346,7 +346,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformFiveDigitYears()
     {
@@ -355,7 +355,7 @@ class DateTimeToLocalizedStringTransformerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\TransformationFailedException
+     * @expectedException \Symfony2\Component\Form\Exception\TransformationFailedException
      */
     public function testReverseTransformFiveDigitYearsWithTimestamp()
     {

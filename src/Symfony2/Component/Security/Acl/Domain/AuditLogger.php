@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
-use Symfony\Component\Security\Acl\Model\AuditableEntryInterface;
-use Symfony\Component\Security\Acl\Model\EntryInterface;
-use Symfony\Component\Security\Acl\Model\AuditLoggerInterface;
+use Symfony2\Component\Security\Acl\Model\AuditableEntryInterface;
+use Symfony2\Component\Security\Acl\Model\EntryInterface;
+use Symfony2\Component\Security\Acl\Model\AuditLoggerInterface;
 
 /**
  * Base audit logger implementation.

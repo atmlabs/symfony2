@@ -22,7 +22,7 @@ use Symfony2\Component\HttpFoundation\Session\Flash\FlashBag;
 class FlashBagTest extends TestCase
 {
     /**
-     * @var \Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface
+     * @var \Symfony2\Component\HttpFoundation\Session\Flash\FlashBagInterface
      */
     private $bag;
 

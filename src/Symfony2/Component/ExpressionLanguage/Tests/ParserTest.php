@@ -19,7 +19,7 @@ use Symfony2\Component\ExpressionLanguage\Parser;
 class ParserTest extends TestCase
 {
     /**
-     * @expectedException        \Symfony\Component\ExpressionLanguage\SyntaxError
+     * @expectedException        \Symfony2\Component\ExpressionLanguage\SyntaxError
      * @expectedExceptionMessage Variable "foo" is not valid around position 1 for expression `foo`.
      */
     public function testParseWithInvalidName()
@@ -30,7 +30,7 @@ class ParserTest extends TestCase
     }
 
     /**
-     * @expectedException        \Symfony\Component\ExpressionLanguage\SyntaxError
+     * @expectedException        \Symfony2\Component\ExpressionLanguage\SyntaxError
      * @expectedExceptionMessage Variable "foo" is not valid around position 1 for expression `foo`.
      */
     public function testParseWithZeroInNames()
@@ -165,7 +165,7 @@ class ParserTest extends TestCase
 
     /**
      * @dataProvider getInvalidPostfixData
-     * @expectedException \Symfony\Component\ExpressionLanguage\SyntaxError
+     * @expectedException \Symfony2\Component\ExpressionLanguage\SyntaxError
      */
     public function testParseWithInvalidPostfixData($expr, $names = array())
     {

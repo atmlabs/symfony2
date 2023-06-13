@@ -13,7 +13,7 @@ namespace Symfony2\Component\Form\Tests\Extension\Core\Type;
 
 class PasswordTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\PasswordType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\PasswordType';
 
     /**
      * @group legacy

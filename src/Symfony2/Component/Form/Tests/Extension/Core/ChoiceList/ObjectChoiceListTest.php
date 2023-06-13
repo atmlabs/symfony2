@@ -174,7 +174,7 @@ class ObjectChoiceListTest extends AbstractChoiceListTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\StringCastException
+     * @expectedException \Symfony2\Component\Form\Exception\StringCastException
      */
     public function testInitArrayThrowsExceptionIfToStringNotFound()
     {
@@ -302,7 +302,7 @@ class ObjectChoiceListTest extends AbstractChoiceListTest
     }
 
     /**
-     * @return \Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
+     * @return \Symfony2\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
      */
     protected function createChoiceList()
     {

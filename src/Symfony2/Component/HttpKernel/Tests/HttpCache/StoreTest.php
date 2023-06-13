@@ -103,7 +103,7 @@ class StoreTest extends TestCase
         $response = $this->store->lookup($this->request);
 
         $this->assertNotNull($response);
-        $this->assertInstanceOf('Symfony\Component\HttpFoundation\Response', $response);
+        $this->assertInstanceOf('Symfony2\Component\HttpFoundation\Response', $response);
     }
 
     public function testDoesNotFindAnEntryWithLookupWhenNoneExists()
@@ -152,7 +152,7 @@ class StoreTest extends TestCase
         $this->storeSimpleEntry();
         $this->store->invalidate($this->request);
         $response = $this->store->lookup($this->request);
-        $this->assertInstanceOf('Symfony\Component\HttpFoundation\Response', $response);
+        $this->assertInstanceOf('Symfony2\Component\HttpFoundation\Response', $response);
         $this->assertFalse($response->isFresh());
     }
 

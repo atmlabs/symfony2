@@ -36,16 +36,16 @@ use Symfony2\Component\Form\Tests\Extension\Core\Type\FormTypeTest;
 
 class EntityTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Bridge\Doctrine\Form\Type\EntityType';
+    const TESTED_TYPE = 'Symfony2\Bridge\Doctrine\Form\Type\EntityType';
 
-    const ITEM_GROUP_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\GroupableEntity';
-    const SINGLE_IDENT_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity';
-    const SINGLE_IDENT_NO_TO_STRING_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdNoToStringEntity';
-    const SINGLE_STRING_IDENT_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\SingleStringIdEntity';
-    const SINGLE_ASSOC_IDENT_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\SingleAssociationToIntIdEntity';
-    const SINGLE_STRING_CASTABLE_IDENT_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\SingleStringCastableIdEntity';
-    const COMPOSITE_IDENT_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\CompositeIntIdEntity';
-    const COMPOSITE_STRING_IDENT_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\CompositeStringIdEntity';
+    const ITEM_GROUP_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\GroupableEntity';
+    const SINGLE_IDENT_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity';
+    const SINGLE_IDENT_NO_TO_STRING_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdNoToStringEntity';
+    const SINGLE_STRING_IDENT_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleStringIdEntity';
+    const SINGLE_ASSOC_IDENT_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleAssociationToIntIdEntity';
+    const SINGLE_STRING_CASTABLE_IDENT_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleStringCastableIdEntity';
+    const COMPOSITE_IDENT_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\CompositeIntIdEntity';
+    const COMPOSITE_STRING_IDENT_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\CompositeStringIdEntity';
 
     /**
      * @var EntityManager
@@ -127,7 +127,7 @@ class EntityTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\MissingOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\MissingOptionsException
      */
     public function testClassOptionIsRequired()
     {
@@ -135,7 +135,7 @@ class EntityTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Form\Exception\RuntimeException
      */
     public function testInvalidClassOption()
     {
@@ -199,7 +199,7 @@ class EntityTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testConfigureQueryBuilderWithNonQueryBuilderAndNonClosure()
     {
@@ -211,7 +211,7 @@ class EntityTypeTest extends BaseTypeTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      */
     public function testConfigureQueryBuilderWithClosureReturningNonQueryBuilder()
     {
@@ -805,7 +805,7 @@ class EntityTypeTest extends BaseTypeTest
         $field->submit(1);
 
         $unitOfWorkIdentityMap = $this->em->getUnitOfWork()->getIdentityMap();
-        $managedEntitiesNames = array_map('strval', $unitOfWorkIdentityMap['Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity']);
+        $managedEntitiesNames = array_map('strval', $unitOfWorkIdentityMap['Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity']);
 
         $this->assertContains((string) $entity1, $managedEntitiesNames);
         $this->assertNotContains((string) $entity2, $managedEntitiesNames);
@@ -1177,7 +1177,7 @@ class EntityTypeTest extends BaseTypeTest
         $choiceLoader2 = $form->get('property2')->getConfig()->getOption('choice_loader');
         $choiceLoader3 = $form->get('property3')->getConfig()->getOption('choice_loader');
 
-        $this->assertInstanceOf('Symfony\Component\Form\ChoiceList\Loader\ChoiceLoaderInterface', $choiceLoader1);
+        $this->assertInstanceOf('Symfony2\Component\Form\ChoiceList\Loader\ChoiceLoaderInterface', $choiceLoader1);
         $this->assertSame($choiceLoader1, $choiceLoader2);
         $this->assertSame($choiceLoader1, $choiceLoader3);
     }
@@ -1237,7 +1237,7 @@ class EntityTypeTest extends BaseTypeTest
         $choiceLoader2 = $form->get('property2')->getConfig()->getOption('choice_loader');
         $choiceLoader3 = $form->get('property3')->getConfig()->getOption('choice_loader');
 
-        $this->assertInstanceOf('Symfony\Component\Form\ChoiceList\Loader\ChoiceLoaderInterface', $choiceLoader1);
+        $this->assertInstanceOf('Symfony2\Component\Form\ChoiceList\Loader\ChoiceLoaderInterface', $choiceLoader1);
         $this->assertSame($choiceLoader1, $choiceLoader2);
         $this->assertSame($choiceLoader1, $choiceLoader3);
     }
@@ -1265,7 +1265,7 @@ class EntityTypeTest extends BaseTypeTest
             'choice_label' => 'name',
         ));
 
-        $this->assertInstanceOf('Symfony\Component\Form\ChoiceList\Loader\ChoiceLoaderInterface', $field1->getConfig()->getOption('choice_loader'));
+        $this->assertInstanceOf('Symfony2\Component\Form\ChoiceList\Loader\ChoiceLoaderInterface', $field1->getConfig()->getOption('choice_loader'));
         $this->assertSame($field1->getConfig()->getOption('choice_loader'), $field2->getConfig()->getOption('choice_loader'));
     }
 

@@ -134,7 +134,7 @@ EOF
             }
         }
 
-        /** @var $container \Symfony\Component\DependencyInjection\ContainerInterface */
+        /** @var $container \Symfony2\Component\DependencyInjection\ContainerInterface */
         $container = $this->getContainer();
         /** @var $aclProvider MutableAclProviderInterface */
         $aclProvider = $container->get('security.acl.provider');

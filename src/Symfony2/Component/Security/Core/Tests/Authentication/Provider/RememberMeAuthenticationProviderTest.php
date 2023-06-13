@@ -23,23 +23,23 @@ class RememberMeAuthenticationProviderTest extends TestCase
         $provider = $this->getProvider();
 
         $this->assertTrue($provider->supports($this->getSupportedToken()));
-        $this->assertFalse($provider->supports($this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock()));
+        $this->assertFalse($provider->supports($this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\TokenInterface')->getMock()));
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\AuthenticationException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\AuthenticationException
      * @expectedExceptionMessage The token is not supported by this authentication provider.
      */
     public function testAuthenticateWhenTokenIsNotSupported()
     {
         $provider = $this->getProvider();
 
-        $token = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
+        $token = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
         $provider->authenticate($token);
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\BadCredentialsException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\BadCredentialsException
      */
     public function testAuthenticateWhenSecretsDoNotMatch()
     {
@@ -50,11 +50,11 @@ class RememberMeAuthenticationProviderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\DisabledException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\DisabledException
      */
     public function testAuthenticateWhenPreChecksFails()
     {
-        $userChecker = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserCheckerInterface')->getMock();
+        $userChecker = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserCheckerInterface')->getMock();
         $userChecker->expects($this->once())
             ->method('checkPreAuth')
             ->will($this->throwException(new DisabledException()));
@@ -66,7 +66,7 @@ class RememberMeAuthenticationProviderTest extends TestCase
 
     public function testAuthenticate()
     {
-        $user = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock();
+        $user = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock();
         $user->expects($this->exactly(2))
              ->method('getRoles')
              ->will($this->returnValue(array('ROLE_FOO')));
@@ -76,7 +76,7 @@ class RememberMeAuthenticationProviderTest extends TestCase
         $token = $this->getSupportedToken($user);
         $authToken = $provider->authenticate($token);
 
-        $this->assertInstanceOf('Symfony\Component\Security\Core\Authentication\Token\RememberMeToken', $authToken);
+        $this->assertInstanceOf('Symfony2\Component\Security\Core\Authentication\Token\RememberMeToken', $authToken);
         $this->assertSame($user, $authToken->getUser());
         $this->assertEquals(array(new Role('ROLE_FOO')), $authToken->getRoles());
         $this->assertEquals('', $authToken->getCredentials());
@@ -85,14 +85,14 @@ class RememberMeAuthenticationProviderTest extends TestCase
     protected function getSupportedToken($user = null, $secret = 'test')
     {
         if (null === $user) {
-            $user = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock();
+            $user = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock();
             $user
                 ->expects($this->any())
                 ->method('getRoles')
                 ->will($this->returnValue(array()));
         }
 
-        $token = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\RememberMeToken')->setMethods(array('getProviderKey'))->setConstructorArgs(array($user, 'foo', $secret))->getMock();
+        $token = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\RememberMeToken')->setMethods(array('getProviderKey'))->setConstructorArgs(array($user, 'foo', $secret))->getMock();
         $token
             ->expects($this->once())
             ->method('getProviderKey')
@@ -104,7 +104,7 @@ class RememberMeAuthenticationProviderTest extends TestCase
     protected function getProvider($userChecker = null, $key = 'test')
     {
         if (null === $userChecker) {
-            $userChecker = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserCheckerInterface')->getMock();
+            $userChecker = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserCheckerInterface')->getMock();
         }
 
         return new RememberMeAuthenticationProvider($userChecker, $key, 'foo');

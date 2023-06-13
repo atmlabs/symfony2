@@ -66,7 +66,7 @@ class ProcessBuilderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Process\Exception\InvalidArgumentException
      */
     public function testNegativeTimeoutFromSetter()
     {
@@ -163,7 +163,7 @@ class ProcessBuilderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\LogicException
+     * @expectedException \Symfony2\Component\Process\Exception\LogicException
      */
     public function testShouldThrowALogicExceptionIfNoPrefixAndNoArgument()
     {
@@ -215,8 +215,8 @@ class ProcessBuilderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Process\Exception\InvalidArgumentException
-     * @expectedExceptionMessage Symfony\Component\Process\ProcessBuilder::setInput only accepts strings or stream resources.
+     * @expectedException \Symfony2\Component\Process\Exception\InvalidArgumentException
+     * @expectedExceptionMessage Symfony2\Component\Process\ProcessBuilder::setInput only accepts strings or stream resources.
      */
     public function testInvalidInput()
     {

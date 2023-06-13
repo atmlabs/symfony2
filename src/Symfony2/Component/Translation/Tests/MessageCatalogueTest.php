@@ -83,10 +83,10 @@ class MessageCatalogueTest extends TestCase
 
     public function testAddCatalogue()
     {
-        $r = $this->getMockBuilder('Symfony\Component\Config\Resource\ResourceInterface')->getMock();
+        $r = $this->getMockBuilder('Symfony2\Component\Config\Resource\ResourceInterface')->getMock();
         $r->expects($this->any())->method('__toString')->will($this->returnValue('r'));
 
-        $r1 = $this->getMockBuilder('Symfony\Component\Config\Resource\ResourceInterface')->getMock();
+        $r1 = $this->getMockBuilder('Symfony2\Component\Config\Resource\ResourceInterface')->getMock();
         $r1->expects($this->any())->method('__toString')->will($this->returnValue('r1'));
 
         $catalogue = new MessageCatalogue('en', array('domain1' => array('foo' => 'foo'), 'domain2' => array('bar' => 'bar')));
@@ -105,13 +105,13 @@ class MessageCatalogueTest extends TestCase
 
     public function testAddFallbackCatalogue()
     {
-        $r = $this->getMockBuilder('Symfony\Component\Config\Resource\ResourceInterface')->getMock();
+        $r = $this->getMockBuilder('Symfony2\Component\Config\Resource\ResourceInterface')->getMock();
         $r->expects($this->any())->method('__toString')->will($this->returnValue('r'));
 
-        $r1 = $this->getMockBuilder('Symfony\Component\Config\Resource\ResourceInterface')->getMock();
+        $r1 = $this->getMockBuilder('Symfony2\Component\Config\Resource\ResourceInterface')->getMock();
         $r1->expects($this->any())->method('__toString')->will($this->returnValue('r1'));
 
-        $r2 = $this->getMockBuilder('Symfony\Component\Config\Resource\ResourceInterface')->getMock();
+        $r2 = $this->getMockBuilder('Symfony2\Component\Config\Resource\ResourceInterface')->getMock();
         $r2->expects($this->any())->method('__toString')->will($this->returnValue('r2'));
 
         $catalogue = new MessageCatalogue('fr_FR', array('domain1' => array('foo' => 'foo'), 'domain2' => array('bar' => 'bar')));
@@ -170,11 +170,11 @@ class MessageCatalogueTest extends TestCase
     public function testGetAddResource()
     {
         $catalogue = new MessageCatalogue('en');
-        $r = $this->getMockBuilder('Symfony\Component\Config\Resource\ResourceInterface')->getMock();
+        $r = $this->getMockBuilder('Symfony2\Component\Config\Resource\ResourceInterface')->getMock();
         $r->expects($this->any())->method('__toString')->will($this->returnValue('r'));
         $catalogue->addResource($r);
         $catalogue->addResource($r);
-        $r1 = $this->getMockBuilder('Symfony\Component\Config\Resource\ResourceInterface')->getMock();
+        $r1 = $this->getMockBuilder('Symfony2\Component\Config\Resource\ResourceInterface')->getMock();
         $r1->expects($this->any())->method('__toString')->will($this->returnValue('r1'));
         $catalogue->addResource($r1);
 

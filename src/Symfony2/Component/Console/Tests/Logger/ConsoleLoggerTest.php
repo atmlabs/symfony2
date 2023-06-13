@@ -116,9 +116,9 @@ class ConsoleLoggerTest extends TestCase
     public function testObjectCastToString()
     {
         if (method_exists($this, 'createPartialMock')) {
-            $dummy = $this->createPartialMock('Symfony\Component\Console\Tests\Logger\DummyTest', array('__toString'));
+            $dummy = $this->createPartialMock('Symfony2\Component\Console\Tests\Logger\DummyTest', array('__toString'));
         } else {
-            $dummy = $this->getMock('Symfony\Component\Console\Tests\Logger\DummyTest', array('__toString'));
+            $dummy = $this->getMock('Symfony2\Component\Console\Tests\Logger\DummyTest', array('__toString'));
         }
         $dummy->expects($this->once())
             ->method('__toString')

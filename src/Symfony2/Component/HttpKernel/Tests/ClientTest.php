@@ -27,10 +27,10 @@ class ClientTest extends TestCase
 
         $client->request('GET', '/');
         $this->assertEquals('Request: /', $client->getResponse()->getContent(), '->doRequest() uses the request handler to make the request');
-        $this->assertInstanceOf('Symfony\Component\BrowserKit\Request', $client->getInternalRequest());
-        $this->assertInstanceOf('Symfony\Component\HttpFoundation\Request', $client->getRequest());
-        $this->assertInstanceOf('Symfony\Component\BrowserKit\Response', $client->getInternalResponse());
-        $this->assertInstanceOf('Symfony\Component\HttpFoundation\Response', $client->getResponse());
+        $this->assertInstanceOf('Symfony2\Component\BrowserKit\Request', $client->getInternalRequest());
+        $this->assertInstanceOf('Symfony2\Component\HttpFoundation\Request', $client->getRequest());
+        $this->assertInstanceOf('Symfony2\Component\BrowserKit\Response', $client->getInternalResponse());
+        $this->assertInstanceOf('Symfony2\Component\HttpFoundation\Response', $client->getResponse());
 
         $client->request('GET', 'http://www.example.com/');
         $this->assertEquals('Request: /', $client->getResponse()->getContent(), '->doRequest() uses the request handler to make the request');
@@ -150,7 +150,7 @@ class ClientTest extends TestCase
         $client = new Client($kernel);
 
         $file = $this
-            ->getMockBuilder('Symfony\Component\HttpFoundation\File\UploadedFile')
+            ->getMockBuilder('Symfony2\Component\HttpFoundation\File\UploadedFile')
             ->setConstructorArgs(array($source, 'original', 'mime/original', 123, UPLOAD_ERR_OK, true))
             ->setMethods(array('getSize'))
             ->getMock()

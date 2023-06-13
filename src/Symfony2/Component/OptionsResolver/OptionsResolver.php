@@ -31,7 +31,7 @@ class OptionsResolver implements Options, OptionsResolverInterface
      *
      * @internal
      */
-    const OPTIONS_INTERFACE = 'Symfony\\Component\\OptionsResolver\\Options';
+    const OPTIONS_INTERFACE = 'Symfony2\\Component\\OptionsResolver\\Options';
 
     /**
      * The names of all defined options.

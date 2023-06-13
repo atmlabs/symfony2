@@ -20,7 +20,7 @@ class TokenStorageTest extends TestCase
     {
         $tokenStorage = new TokenStorage();
         $this->assertNull($tokenStorage->getToken());
-        $token = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
+        $token = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
         $tokenStorage->setToken($token);
         $this->assertSame($token, $tokenStorage->getToken());
     }

@@ -4,8 +4,8 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
-  <class name="Symfony\Component\Form\Form">
-    <constraint name="Symfony\Component\Form\Extension\Validator\Constraints\Form" />
+  <class name="Symfony2\Component\Form\Form">
+    <constraint name="Symfony2\Component\Form\Extension\Validator\Constraints\Form" />
     <property name="children">
         <constraint name="Valid" />
     </property>

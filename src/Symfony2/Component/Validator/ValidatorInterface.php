@@ -17,7 +17,7 @@ namespace Symfony2\Component\Validator;
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 2.5, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Validator\Validator\ValidatorInterface} instead.
+ *             Use {@link \Symfony2\Component\Validator\Validator\ValidatorInterface} instead.
  */
 interface ValidatorInterface
 {

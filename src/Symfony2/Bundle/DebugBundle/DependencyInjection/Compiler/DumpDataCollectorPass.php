@@ -16,7 +16,7 @@ use Symfony2\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony2\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * Registers the file link format for the {@link \Symfony\Component\HttpKernel\DataCollector\DumpDataCollector}.
+ * Registers the file link format for the {@link \Symfony2\Component\HttpKernel\DataCollector\DumpDataCollector}.
  *
  * @author Christian Flothmann <christian.flothmann@xabbuh.de>
  */

@@ -208,7 +208,7 @@ class LegacyOptionsResolverTest extends TestCase
     }
 
     /**
-     * @expectedException        \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
+     * @expectedException        \Symfony2\Component\OptionsResolver\Exception\UndefinedOptionsException
      * @expectedExceptionMessage The option "foo" does not exist. Defined options are: "one", "three", "two".
      */
     public function testResolveFailsIfNonExistingOption()
@@ -231,7 +231,7 @@ class LegacyOptionsResolverTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\MissingOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\MissingOptionsException
      */
     public function testResolveFailsIfMissingRequiredOption()
     {
@@ -319,7 +319,7 @@ class LegacyOptionsResolverTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfOptionValueNotAllowed()
     {
@@ -463,7 +463,7 @@ class LegacyOptionsResolverTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfOptionTypeNotAllowed()
     {
@@ -481,7 +481,7 @@ class LegacyOptionsResolverTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfOptionTypeNotAllowedMultipleOptions()
     {
@@ -502,7 +502,7 @@ class LegacyOptionsResolverTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfOptionTypeNotAllowedAddTypes()
     {
@@ -679,7 +679,7 @@ class LegacyOptionsResolverTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\InvalidOptionsException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\InvalidOptionsException
      */
     public function testResolveFailsIfValueAllowedCallbackReturnsFalse()
     {

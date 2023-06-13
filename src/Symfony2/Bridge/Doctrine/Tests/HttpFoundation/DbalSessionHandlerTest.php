@@ -26,6 +26,6 @@ class DbalSessionHandlerTest extends TestCase
         $connection = $this->getMockBuilder('Doctrine\DBAL\Connection')->disableOriginalConstructor()->getMock();
         $handler = new DbalSessionHandler($connection);
 
-        $this->assertInstanceOf('Symfony\Bridge\Doctrine\HttpFoundation\DbalSessionHandler', $handler);
+        $this->assertInstanceOf('Symfony2\Bridge\Doctrine\HttpFoundation\DbalSessionHandler', $handler);
     }
 }

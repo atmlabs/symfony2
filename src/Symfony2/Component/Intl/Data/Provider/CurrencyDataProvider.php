@@ -101,7 +101,7 @@ class CurrencyDataProvider
     }
 
     /**
-     * Data provider for {@link \Symfony\Component\Intl\Currency::getFractionDigits()}.
+     * Data provider for {@link \Symfony2\Component\Intl\Currency::getFractionDigits()}.
      */
     public function getFractionDigits($currency)
     {
@@ -113,7 +113,7 @@ class CurrencyDataProvider
     }
 
     /**
-     * Data provider for {@link \Symfony\Component\Intl\Currency::getRoundingIncrement()}.
+     * Data provider for {@link \Symfony2\Component\Intl\Currency::getRoundingIncrement()}.
      */
     public function getRoundingIncrement($currency)
     {
@@ -125,7 +125,7 @@ class CurrencyDataProvider
     }
 
     /**
-     * Data provider for {@link \Symfony\Component\Intl\Currency::getNumericCode()}.
+     * Data provider for {@link \Symfony2\Component\Intl\Currency::getNumericCode()}.
      */
     public function getNumericCode($currency)
     {
@@ -133,7 +133,7 @@ class CurrencyDataProvider
     }
 
     /**
-     * Data provider for {@link \Symfony\Component\Intl\Currency::forNumericCode()}.
+     * Data provider for {@link \Symfony2\Component\Intl\Currency::forNumericCode()}.
      */
     public function forNumericCode($numericCode)
     {

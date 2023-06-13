@@ -42,7 +42,7 @@ class YamlExtension extends AbstractExtension
             $dumper = new YamlDumper();
         }
 
-        if (\defined('Symfony\Component\Yaml\Yaml::DUMP_OBJECT')) {
+        if (\defined('Symfony2\Component\Yaml\Yaml::DUMP_OBJECT')) {
             return $dumper->dump($input, $inline, 0, \is_bool($dumpObjects) ? Yaml::DUMP_OBJECT : 0);
         }
 

@@ -19,7 +19,7 @@ class AuthorType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Symfony\Component\Form\Tests\Fixtures\Author',
+            'data_class' => 'Symfony2\Component\Form\Tests\Fixtures\Author',
         ));
     }
 }

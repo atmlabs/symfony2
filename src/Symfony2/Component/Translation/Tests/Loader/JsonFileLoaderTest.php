@@ -40,7 +40,7 @@ class JsonFileLoaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Translation\Exception\NotFoundResourceException
+     * @expectedException \Symfony2\Component\Translation\Exception\NotFoundResourceException
      */
     public function testLoadNonExistingResource()
     {
@@ -50,7 +50,7 @@ class JsonFileLoaderTest extends TestCase
     }
 
     /**
-     * @expectedException           \Symfony\Component\Translation\Exception\InvalidResourceException
+     * @expectedException           \Symfony2\Component\Translation\Exception\InvalidResourceException
      * @expectedExceptionMessage    Error parsing JSON - Syntax error, malformed JSON
      */
     public function testParseException()

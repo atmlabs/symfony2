@@ -67,7 +67,7 @@ class YamlReferenceDumper
 
                 // check for attribute as key
                 if ($key = $node->getKeyAttribute()) {
-                    $keyNodeClass = 'Symfony\Component\Config\Definition\\'.($prototype instanceof ArrayNode ? 'ArrayNode' : 'ScalarNode');
+                    $keyNodeClass = 'Symfony2\Component\Config\Definition\\'.($prototype instanceof ArrayNode ? 'ArrayNode' : 'ScalarNode');
                     $keyNode = new $keyNodeClass($key, $node);
 
                     $info = 'Prototype';

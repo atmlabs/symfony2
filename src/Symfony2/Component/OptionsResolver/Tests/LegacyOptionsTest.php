@@ -187,7 +187,7 @@ class LegacyOptionsTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\OptionDefinitionException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\OptionDefinitionException
      */
     public function testFailForCyclicDependencies()
     {
@@ -203,7 +203,7 @@ class LegacyOptionsTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\OptionDefinitionException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\OptionDefinitionException
      */
     public function testFailForCyclicDependenciesBetweenNormalizers()
     {
@@ -222,7 +222,7 @@ class LegacyOptionsTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\OptionDefinitionException
+     * @expectedException \Symfony2\Component\OptionsResolver\Exception\OptionDefinitionException
      */
     public function testFailForCyclicDependenciesBetweenNormalizerAndLazyOption()
     {

@@ -90,7 +90,7 @@ class IntlBundleReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\ResourceBundleNotFoundException
+     * @expectedException \Symfony2\Component\Intl\Exception\ResourceBundleNotFoundException
      */
     public function testReadFailsIfNonExistingLocale()
     {
@@ -98,7 +98,7 @@ class IntlBundleReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\ResourceBundleNotFoundException
+     * @expectedException \Symfony2\Component\Intl\Exception\ResourceBundleNotFoundException
      */
     public function testReadFailsIfNonExistingFallbackLocale()
     {
@@ -106,7 +106,7 @@ class IntlBundleReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Intl\Exception\RuntimeException
      */
     public function testReadFailsIfNonExistingDirectory()
     {

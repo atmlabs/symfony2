@@ -21,11 +21,11 @@ use Symfony2\Component\Security\Core\User\LdapUserProvider;
 class LdapUserProviderTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\UsernameNotFoundException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\UsernameNotFoundException
      */
     public function testLoadUserByUsernameFailsIfCantConnectToLdap()
     {
-        $ldap = $this->getMockBuilder('Symfony\Component\Ldap\LdapClientInterface')->getMock();
+        $ldap = $this->getMockBuilder('Symfony2\Component\Ldap\LdapClientInterface')->getMock();
         $ldap
             ->expects($this->once())
             ->method('bind')
@@ -37,11 +37,11 @@ class LdapUserProviderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\UsernameNotFoundException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\UsernameNotFoundException
      */
     public function testLoadUserByUsernameFailsIfNoLdapEntries()
     {
-        $ldap = $this->getMockBuilder('Symfony\Component\Ldap\LdapClientInterface')->getMock();
+        $ldap = $this->getMockBuilder('Symfony2\Component\Ldap\LdapClientInterface')->getMock();
         $ldap
             ->expects($this->once())
             ->method('escape')
@@ -53,11 +53,11 @@ class LdapUserProviderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\UsernameNotFoundException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\UsernameNotFoundException
      */
     public function testLoadUserByUsernameFailsIfMoreThanOneLdapEntry()
     {
-        $ldap = $this->getMockBuilder('Symfony\Component\Ldap\LdapClientInterface')->getMock();
+        $ldap = $this->getMockBuilder('Symfony2\Component\Ldap\LdapClientInterface')->getMock();
         $ldap
             ->expects($this->once())
             ->method('escape')
@@ -79,7 +79,7 @@ class LdapUserProviderTest extends TestCase
 
     public function testSuccessfulLoadUserByUsername()
     {
-        $ldap = $this->getMockBuilder('Symfony\Component\Ldap\LdapClientInterface')->getMock();
+        $ldap = $this->getMockBuilder('Symfony2\Component\Ldap\LdapClientInterface')->getMock();
         $ldap
             ->expects($this->once())
             ->method('escape')
@@ -99,7 +99,7 @@ class LdapUserProviderTest extends TestCase
 
         $provider = new LdapUserProvider($ldap, 'ou=MyBusiness,dc=symfony,dc=com');
         $this->assertInstanceOf(
-            'Symfony\Component\Security\Core\User\User',
+            'Symfony2\Component\Security\Core\User\User',
             $provider->loadUserByUsername('foo')
         );
     }

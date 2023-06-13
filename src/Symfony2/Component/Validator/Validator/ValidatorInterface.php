@@ -28,7 +28,7 @@ interface ValidatorInterface extends MetadataFactoryInterface
      * Validates a value against a constraint or a list of constraints.
      *
      * If no constraint is passed, the constraint
-     * {@link \Symfony\Component\Validator\Constraints\Valid} is assumed.
+     * {@link \Symfony2\Component\Validator\Constraints\Valid} is assumed.
      *
      * @param mixed                                              $value       The value to validate
      * @param Constraint|Constraint[]                            $constraints The constraint(s) to validate against

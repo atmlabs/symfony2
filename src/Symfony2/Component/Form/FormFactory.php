@@ -28,7 +28,7 @@ class FormFactory implements FormFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function create($type = 'Symfony\Component\Form\Extension\Core\Type\FormType', $data = null, array $options = array())
+    public function create($type = 'Symfony2\Component\Form\Extension\Core\Type\FormType', $data = null, array $options = array())
     {
         return $this->createBuilder($type, $data, $options)->getForm();
     }
@@ -36,7 +36,7 @@ class FormFactory implements FormFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createNamed($name, $type = 'Symfony\Component\Form\Extension\Core\Type\FormType', $data = null, array $options = array())
+    public function createNamed($name, $type = 'Symfony2\Component\Form\Extension\Core\Type\FormType', $data = null, array $options = array())
     {
         return $this->createNamedBuilder($name, $type, $data, $options)->getForm();
     }
@@ -52,7 +52,7 @@ class FormFactory implements FormFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createBuilder($type = 'Symfony\Component\Form\Extension\Core\Type\FormType', $data = null, array $options = array())
+    public function createBuilder($type = 'Symfony2\Component\Form\Extension\Core\Type\FormType', $data = null, array $options = array())
     {
         $name = null;
 
@@ -64,7 +64,7 @@ class FormFactory implements FormFactoryInterface
             $typeObject = $this->registry->getType($type);
             $name = $type;
         } else {
-            throw new UnexpectedTypeException($type, 'string, Symfony\Component\Form\ResolvedFormTypeInterface or Symfony\Component\Form\FormTypeInterface');
+            throw new UnexpectedTypeException($type, 'string, Symfony2\Component\Form\ResolvedFormTypeInterface or Symfony2\Component\Form\FormTypeInterface');
         }
 
         if (method_exists($typeObject, 'getBlockPrefix')) {
@@ -87,7 +87,7 @@ class FormFactory implements FormFactoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createNamedBuilder($name, $type = 'Symfony\Component\Form\Extension\Core\Type\FormType', $data = null, array $options = array())
+    public function createNamedBuilder($name, $type = 'Symfony2\Component\Form\Extension\Core\Type\FormType', $data = null, array $options = array())
     {
         if (null !== $data && !array_key_exists('data', $options)) {
             $options['data'] = $data;
@@ -101,7 +101,7 @@ class FormFactory implements FormFactoryInterface
         } elseif ($type instanceof ResolvedFormTypeInterface) {
             @trigger_error(sprintf('Passing type instances to FormBuilder::add(), Form::add() or the FormFactory is deprecated since Symfony 2.8 and will not be supported in 3.0. Use the fully-qualified type class name instead (%s).', \get_class($type->getInnerType())), E_USER_DEPRECATED);
         } else {
-            throw new UnexpectedTypeException($type, 'string, Symfony\Component\Form\ResolvedFormTypeInterface or Symfony\Component\Form\FormTypeInterface');
+            throw new UnexpectedTypeException($type, 'string, Symfony2\Component\Form\ResolvedFormTypeInterface or Symfony2\Component\Form\FormTypeInterface');
         }
 
         $builder = $type->createBuilder($this, $name, $options);
@@ -119,7 +119,7 @@ class FormFactory implements FormFactoryInterface
     public function createBuilderForProperty($class, $property, $data = null, array $options = array())
     {
         if (null === $guesser = $this->registry->getTypeGuesser()) {
-            return $this->createNamedBuilder($property, 'Symfony\Component\Form\Extension\Core\Type\TextType', $data, $options);
+            return $this->createNamedBuilder($property, 'Symfony2\Component\Form\Extension\Core\Type\TextType', $data, $options);
         }
 
         $typeGuess = $guesser->guessType($class, $property);
@@ -127,7 +127,7 @@ class FormFactory implements FormFactoryInterface
         $requiredGuess = $guesser->guessRequired($class, $property);
         $patternGuess = $guesser->guessPattern($class, $property);
 
-        $type = $typeGuess ? $typeGuess->getType() : 'Symfony\Component\Form\Extension\Core\Type\TextType';
+        $type = $typeGuess ? $typeGuess->getType() : 'Symfony2\Component\Form\Extension\Core\Type\TextType';
 
         $maxLength = $maxLengthGuess ? $maxLengthGuess->getValue() : null;
         $pattern = $patternGuess ? $patternGuess->getValue() : null;

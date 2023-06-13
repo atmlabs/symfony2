@@ -31,7 +31,7 @@
         "doctrine/dbal": "For using the built-in ACL implementation"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\Security\\Acl\\": "" },
+        "psr-4": { "Symfony2\\Component\\Security\\Acl\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

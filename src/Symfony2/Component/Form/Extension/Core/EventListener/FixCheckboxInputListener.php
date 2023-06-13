@@ -26,7 +26,7 @@ use Symfony2\Component\Form\FormEvents;
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 2.7, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Form\Extension\Core\DataMapper\CheckboxListMapper} instead.
+ *             Use {@link \Symfony2\Component\Form\Extension\Core\DataMapper\CheckboxListMapper} instead.
  */
 class FixCheckboxInputListener implements EventSubscriberInterface
 {

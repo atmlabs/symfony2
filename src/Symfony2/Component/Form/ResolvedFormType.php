@@ -62,10 +62,10 @@ class ResolvedFormType implements ResolvedFormTypeInterface
 
         if (method_exists($innerType, 'getBlockPrefix')) {
             $reflector = new \ReflectionMethod($innerType, 'getName');
-            $isOldOverwritten = 'Symfony\Component\Form\AbstractType' !== $reflector->getDeclaringClass()->getName();
+            $isOldOverwritten = 'Symfony2\Component\Form\AbstractType' !== $reflector->getDeclaringClass()->getName();
 
             $reflector = new \ReflectionMethod($innerType, 'getBlockPrefix');
-            $isNewOverwritten = 'Symfony\Component\Form\AbstractType' !== $reflector->getDeclaringClass()->getName();
+            $isNewOverwritten = 'Symfony2\Component\Form\AbstractType' !== $reflector->getDeclaringClass()->getName();
 
             // Bundles compatible with both 2.3 and 2.8 should implement both methods
             // Anyone else should only override getBlockPrefix() if they actually
@@ -91,7 +91,7 @@ class ResolvedFormType implements ResolvedFormTypeInterface
 
         foreach ($typeExtensions as $extension) {
             if (!$extension instanceof FormTypeExtensionInterface) {
-                throw new UnexpectedTypeException($extension, 'Symfony\Component\Form\FormTypeExtensionInterface');
+                throw new UnexpectedTypeException($extension, 'Symfony2\Component\Form\FormTypeExtensionInterface');
             }
         }
 
@@ -235,7 +235,7 @@ class ResolvedFormType implements ResolvedFormTypeInterface
     /**
      * Returns the configured options resolver used for this type.
      *
-     * @return \Symfony\Component\OptionsResolver\OptionsResolverInterface The options resolver
+     * @return \Symfony2\Component\OptionsResolver\OptionsResolverInterface The options resolver
      */
     public function getOptionsResolver()
     {
@@ -250,10 +250,10 @@ class ResolvedFormType implements ResolvedFormTypeInterface
 
             if (method_exists($this->innerType, 'configureOptions')) {
                 $reflector = new \ReflectionMethod($this->innerType, 'setDefaultOptions');
-                $isOldOverwritten = 'Symfony\Component\Form\AbstractType' !== $reflector->getDeclaringClass()->getName();
+                $isOldOverwritten = 'Symfony2\Component\Form\AbstractType' !== $reflector->getDeclaringClass()->getName();
 
                 $reflector = new \ReflectionMethod($this->innerType, 'configureOptions');
-                $isNewOverwritten = 'Symfony\Component\Form\AbstractType' !== $reflector->getDeclaringClass()->getName();
+                $isNewOverwritten = 'Symfony2\Component\Form\AbstractType' !== $reflector->getDeclaringClass()->getName();
 
                 if ($isOldOverwritten && !$isNewOverwritten) {
                     @trigger_error(\get_class($this->innerType).': The FormTypeInterface::setDefaultOptions() method is deprecated since Symfony 2.7 and will be removed in 3.0. Use configureOptions() instead. This method will be added to the FormTypeInterface with Symfony 3.0.', E_USER_DEPRECATED);
@@ -267,10 +267,10 @@ class ResolvedFormType implements ResolvedFormTypeInterface
 
                 if (method_exists($extension, 'configureOptions')) {
                     $reflector = new \ReflectionMethod($extension, 'setDefaultOptions');
-                    $isOldOverwritten = 'Symfony\Component\Form\AbstractTypeExtension' !== $reflector->getDeclaringClass()->getName();
+                    $isOldOverwritten = 'Symfony2\Component\Form\AbstractTypeExtension' !== $reflector->getDeclaringClass()->getName();
 
                     $reflector = new \ReflectionMethod($extension, 'configureOptions');
-                    $isNewOverwritten = 'Symfony\Component\Form\AbstractTypeExtension' !== $reflector->getDeclaringClass()->getName();
+                    $isNewOverwritten = 'Symfony2\Component\Form\AbstractTypeExtension' !== $reflector->getDeclaringClass()->getName();
 
                     if ($isOldOverwritten && !$isNewOverwritten) {
                         @trigger_error(\get_class($extension).': The FormTypeExtensionInterface::setDefaultOptions() method is deprecated since Symfony 2.7 and will be removed in 3.0. Use configureOptions() instead. This method will be added to the FormTypeExtensionInterface with Symfony 3.0.', E_USER_DEPRECATED);

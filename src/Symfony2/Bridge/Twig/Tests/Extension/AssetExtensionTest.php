@@ -55,7 +55,7 @@ class AssetExtensionTest extends TestCase
 
     private function createExtension(Package $package)
     {
-        $foundationExtension = $this->getMockBuilder('Symfony\Bridge\Twig\Extension\HttpFoundationExtension')->disableOriginalConstructor()->getMock();
+        $foundationExtension = $this->getMockBuilder('Symfony2\Bridge\Twig\Extension\HttpFoundationExtension')->disableOriginalConstructor()->getMock();
         $foundationExtension
             ->expects($this->any())
             ->method('generateAbsoluteUrl')

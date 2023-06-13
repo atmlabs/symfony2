@@ -25,7 +25,7 @@ abstract class AbstractAnnotationLoaderTest extends TestCase
 
     public function getClassLoader($reader)
     {
-        return $this->getMockBuilder('Symfony\Component\Routing\Loader\AnnotationClassLoader')
+        return $this->getMockBuilder('Symfony2\Component\Routing\Loader\AnnotationClassLoader')
             ->setConstructorArgs(array($reader))
             ->getMockForAbstractClass()
         ;

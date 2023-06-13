@@ -124,7 +124,7 @@ class ArrayKeyChoiceListTest extends AbstractChoiceListTest
 
     /**
      * @dataProvider provideInvalidChoices
-     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Form\Exception\InvalidArgumentException
      */
     public function testGetValuesForChoicesFailsIfInvalidChoices(array $choices)
     {

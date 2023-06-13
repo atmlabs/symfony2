@@ -19,7 +19,7 @@ namespace Symfony2\Component\ClassLoader;
  *     $loader = new ClassLoader();
  *
  *     // register classes with namespaces
- *     $loader->addPrefix('Symfony\Component', __DIR__.'/component');
+ *     $loader->addPrefix('Symfony2\Component', __DIR__.'/component');
  *     $loader->addPrefix('Symfony',           __DIR__.'/framework');
  *
  *     // activate the autoloader
@@ -28,8 +28,8 @@ namespace Symfony2\Component\ClassLoader;
  *     // to enable searching the include path (e.g. for PEAR packages)
  *     $loader->setUseIncludePath(true);
  *
- * In this example, if you try to use a class in the Symfony\Component
- * namespace or one of its children (Symfony\Component\Console for instance),
+ * In this example, if you try to use a class in the Symfony2\Component
+ * namespace or one of its children (Symfony2\Component\Console for instance),
  * the autoloader will first look for the class under the component/
  * directory, and it will then fallback to the framework/ directory if not
  * found before giving up.

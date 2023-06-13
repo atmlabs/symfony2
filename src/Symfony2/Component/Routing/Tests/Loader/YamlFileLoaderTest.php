@@ -20,7 +20,7 @@ class YamlFileLoaderTest extends TestCase
 {
     public function testSupports()
     {
-        $loader = new YamlFileLoader($this->getMockBuilder('Symfony\Component\Config\FileLocator')->getMock());
+        $loader = new YamlFileLoader($this->getMockBuilder('Symfony2\Component\Config\FileLocator')->getMock());
 
         $this->assertTrue($loader->supports('foo.yml'), '->supports() returns true if the resource is loadable');
         $this->assertTrue($loader->supports('foo.yaml'), '->supports() returns true if the resource is loadable');
@@ -69,7 +69,7 @@ class YamlFileLoaderTest extends TestCase
         $routeCollection = $loader->load('special_route_name.yml');
         $route = $routeCollection->get('#$péß^a|');
 
-        $this->assertInstanceOf('Symfony\Component\Routing\Route', $route);
+        $this->assertInstanceOf('Symfony2\Component\Routing\Route', $route);
         $this->assertSame('/true', $route->getPath());
     }
 
@@ -79,7 +79,7 @@ class YamlFileLoaderTest extends TestCase
         $routeCollection = $loader->load('validpattern.yml');
         $route = $routeCollection->get('blog_show');
 
-        $this->assertInstanceOf('Symfony\Component\Routing\Route', $route);
+        $this->assertInstanceOf('Symfony2\Component\Routing\Route', $route);
         $this->assertSame('/blog/{slug}', $route->getPath());
         $this->assertSame('{locale}.example.com', $route->getHost());
         $this->assertSame('MyBundle:Blog:show', $route->getDefault('_controller'));
@@ -99,7 +99,7 @@ class YamlFileLoaderTest extends TestCase
         $routeCollection = $loader->load('legacy_validpattern.yml');
         $route = $routeCollection->get('blog_show_legacy');
 
-        $this->assertInstanceOf('Symfony\Component\Routing\Route', $route);
+        $this->assertInstanceOf('Symfony2\Component\Routing\Route', $route);
         $this->assertSame('/blog/{slug}', $route->getPath());
         $this->assertSame('{locale}.example.com', $route->getHost());
         $this->assertSame('MyBundle:Blog:show', $route->getDefault('_controller'));
@@ -117,7 +117,7 @@ class YamlFileLoaderTest extends TestCase
         $routes = $routeCollection->all();
 
         $this->assertCount(2, $routes, 'Two routes are loaded');
-        $this->assertContainsOnly('Symfony\Component\Routing\Route', $routes);
+        $this->assertContainsOnly('Symfony2\Component\Routing\Route', $routes);
 
         foreach ($routes as $route) {
             $this->assertSame('/{foo}/blog/{slug}', $route->getPath());

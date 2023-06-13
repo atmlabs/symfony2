@@ -87,7 +87,7 @@ class ExpressionValidator extends ConstraintValidator
     private function getExpressionLanguage()
     {
         if (null === $this->expressionLanguage) {
-            if (!class_exists('Symfony\Component\ExpressionLanguage\ExpressionLanguage')) {
+            if (!class_exists('Symfony2\Component\ExpressionLanguage\ExpressionLanguage')) {
                 throw new RuntimeException('Unable to use expressions as the Symfony ExpressionLanguage component is not installed.');
             }
             $this->expressionLanguage = new ExpressionLanguage();
@@ -99,7 +99,7 @@ class ExpressionValidator extends ConstraintValidator
     private function getPropertyAccessor()
     {
         if (null === $this->propertyAccessor) {
-            if (!class_exists('Symfony\Component\PropertyAccess\PropertyAccess')) {
+            if (!class_exists('Symfony2\Component\PropertyAccess\PropertyAccess')) {
                 throw new RuntimeException('Unable to use expressions as the Symfony PropertyAccess component is not installed.');
             }
             $this->propertyAccessor = PropertyAccess::createPropertyAccessor();

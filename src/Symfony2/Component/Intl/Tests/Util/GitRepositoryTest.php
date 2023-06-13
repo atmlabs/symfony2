@@ -38,7 +38,7 @@ class GitRepositoryTest extends TestCase
 
     public function testItThrowsAnExceptionIfInitialisedWithNonGitDirectory()
     {
-        $this->expectException('Symfony\Component\Intl\Exception\RuntimeException');
+        $this->expectException('Symfony2\Component\Intl\Exception\RuntimeException');
 
         @mkdir($this->targetDir, '0777', true);
 
@@ -49,7 +49,7 @@ class GitRepositoryTest extends TestCase
     {
         $git = GitRepository::download(self::REPO_URL, $this->targetDir);
 
-        $this->assertInstanceOf('Symfony\Component\Intl\Util\GitRepository', $git);
+        $this->assertInstanceOf('Symfony2\Component\Intl\Util\GitRepository', $git);
         $this->assertDirectoryExists($this->targetDir.'/.git');
         $this->assertSame($this->targetDir, $git->getPath());
         $this->assertSame(self::REPO_URL, $git->getUrl());

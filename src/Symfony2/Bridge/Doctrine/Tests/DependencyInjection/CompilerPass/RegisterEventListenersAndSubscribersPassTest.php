@@ -100,7 +100,7 @@ class RegisterEventListenersAndSubscribersPassTest extends TestCase
         );
 
         // not lazy so must be reference
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Reference', $methodCalls[0][1][1]);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Reference', $methodCalls[0][1][1]);
 
         // lazy so id instead of reference and must mark service public
         $this->assertSame('a', $methodCalls[1][1][1]);

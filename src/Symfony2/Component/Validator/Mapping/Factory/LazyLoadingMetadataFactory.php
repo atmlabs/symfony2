@@ -144,7 +144,7 @@ class LazyLoadingMetadataFactory implements MetadataFactoryInterface
 
         // Include constraints from all directly implemented interfaces
         foreach ($interfaces as $interface) {
-            if ('Symfony\Component\Validator\GroupSequenceProviderInterface' === $interface->name) {
+            if ('Symfony2\Component\Validator\GroupSequenceProviderInterface' === $interface->name) {
                 continue;
             }
             $metadata->mergeConstraints($this->getMetadataFor($interface->name));

@@ -24,7 +24,7 @@ class SearchAndRenderBlockNode extends FunctionExpression
     public function compile(Compiler $compiler)
     {
         $compiler->addDebugInfo($this);
-        $compiler->raw('$this->env->getExtension(\'Symfony\Bridge\Twig\Extension\FormExtension\')->renderer->searchAndRenderBlock(');
+        $compiler->raw('$this->env->getExtension(\'Symfony2\Bridge\Twig\Extension\FormExtension\')->renderer->searchAndRenderBlock(');
 
         preg_match('/_([^_]+)$/', $this->getAttribute('name'), $matches);
 

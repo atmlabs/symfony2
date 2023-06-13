@@ -16,7 +16,7 @@ use Symfony2\Component\Intl\Util\IntlTestHelper;
 
 class CountryTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\CountryType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\CountryType';
 
     protected function setUp()
     {

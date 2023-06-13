@@ -29,7 +29,7 @@ class LegacyApcCacheTest extends TestCase
 
     public function testWrite()
     {
-        $meta = $this->getMockBuilder('Symfony\\Component\\Validator\\Mapping\\ClassMetadata')
+        $meta = $this->getMockBuilder('Symfony2\\Component\\Validator\\Mapping\\ClassMetadata')
             ->disableOriginalConstructor()
             ->setMethods(array('getClassName'))
             ->getMock();
@@ -41,12 +41,12 @@ class LegacyApcCacheTest extends TestCase
         $cache = new ApcCache('foo');
         $cache->write($meta);
 
-        $this->assertInstanceOf('Symfony\\Component\\Validator\\Mapping\\ClassMetadata', apc_fetch('foobar'), '->write() stores metadata in APC');
+        $this->assertInstanceOf('Symfony2\\Component\\Validator\\Mapping\\ClassMetadata', apc_fetch('foobar'), '->write() stores metadata in APC');
     }
 
     public function testHas()
     {
-        $meta = $this->getMockBuilder('Symfony\\Component\\Validator\\Mapping\\ClassMetadata')
+        $meta = $this->getMockBuilder('Symfony2\\Component\\Validator\\Mapping\\ClassMetadata')
             ->disableOriginalConstructor()
             ->setMethods(array('getClassName'))
             ->getMock();
@@ -66,7 +66,7 @@ class LegacyApcCacheTest extends TestCase
 
     public function testRead()
     {
-        $meta = $this->getMockBuilder('Symfony\\Component\\Validator\\Mapping\\ClassMetadata')
+        $meta = $this->getMockBuilder('Symfony2\\Component\\Validator\\Mapping\\ClassMetadata')
             ->disableOriginalConstructor()
             ->setMethods(array('getClassName'))
             ->getMock();
@@ -78,6 +78,6 @@ class LegacyApcCacheTest extends TestCase
         $cache = new ApcCache('foo');
         $cache->write($meta);
 
-        $this->assertInstanceOf('Symfony\\Component\\Validator\\Mapping\\ClassMetadata', $cache->read('bar'), '->read() returns metadata');
+        $this->assertInstanceOf('Symfony2\\Component\\Validator\\Mapping\\ClassMetadata', $cache->read('bar'), '->read() returns metadata');
     }
 }

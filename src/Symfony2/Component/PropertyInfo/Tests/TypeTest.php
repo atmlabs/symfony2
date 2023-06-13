@@ -29,11 +29,11 @@ class TypeTest extends TestCase
         $this->assertTrue($type->isCollection());
 
         $collectionKeyType = $type->getCollectionKeyType();
-        $this->assertInstanceOf('Symfony\Component\PropertyInfo\Type', $collectionKeyType);
+        $this->assertInstanceOf('Symfony2\Component\PropertyInfo\Type', $collectionKeyType);
         $this->assertEquals(Type::BUILTIN_TYPE_INT, $collectionKeyType->getBuiltinType());
 
         $collectionValueType = $type->getCollectionValueType();
-        $this->assertInstanceOf('Symfony\Component\PropertyInfo\Type', $collectionValueType);
+        $this->assertInstanceOf('Symfony2\Component\PropertyInfo\Type', $collectionValueType);
         $this->assertEquals(Type::BUILTIN_TYPE_STRING, $collectionValueType->getBuiltinType());
     }
 

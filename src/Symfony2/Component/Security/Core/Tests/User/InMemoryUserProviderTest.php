@@ -74,7 +74,7 @@ class InMemoryUserProviderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\UsernameNotFoundException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\UsernameNotFoundException
      */
     public function testLoadUserByUsernameDoesNotExist()
     {

@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
-use Symfony\Component\Security\Core\Authentication\AuthenticationTrustResolverInterface;
-use Symfony\Component\Security\Core\Authentication\Token\AnonymousToken;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Acl\Model\SecurityIdentityRetrievalStrategyInterface;
-use Symfony\Component\Security\Core\Role\Role;
-use Symfony\Component\Security\Core\Role\RoleHierarchyInterface;
-use Symfony\Component\Security\Core\Authorization\Voter\AuthenticatedVoter;
+use Symfony2\Component\Security\Core\Authentication\AuthenticationTrustResolverInterface;
+use Symfony2\Component\Security\Core\Authentication\Token\AnonymousToken;
+use Symfony2\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony2\Component\Security\Acl\Model\SecurityIdentityRetrievalStrategyInterface;
+use Symfony2\Component\Security\Core\Role\Role;
+use Symfony2\Component\Security\Core\Role\RoleHierarchyInterface;
+use Symfony2\Component\Security\Core\Authorization\Voter\AuthenticatedVoter;
 
 /**
  * Strategy for retrieving security identities.

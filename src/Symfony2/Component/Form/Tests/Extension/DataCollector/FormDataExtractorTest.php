@@ -61,13 +61,13 @@ class FormDataExtractorTest extends TestCase
     {
         $this->valueExporter = new FormDataExtractorTest_SimpleValueExporter();
         $this->dataExtractor = new FormDataExtractor($this->valueExporter);
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->factory = $this->getMockBuilder('Symfony2\Component\Form\FormFactoryInterface')->getMock();
     }
 
     public function testExtractConfiguration()
     {
-        $type = $this->getMockBuilder('Symfony\Component\Form\ResolvedFormTypeInterface')->getMock();
+        $type = $this->getMockBuilder('Symfony2\Component\Form\ResolvedFormTypeInterface')->getMock();
         $type->expects($this->any())
             ->method('getName')
             ->will($this->returnValue('type_name'));
@@ -92,7 +92,7 @@ class FormDataExtractorTest extends TestCase
 
     public function testExtractConfigurationSortsPassedOptions()
     {
-        $type = $this->getMockBuilder('Symfony\Component\Form\ResolvedFormTypeInterface')->getMock();
+        $type = $this->getMockBuilder('Symfony2\Component\Form\ResolvedFormTypeInterface')->getMock();
         $type->expects($this->any())
             ->method('getName')
             ->will($this->returnValue('type_name'));
@@ -130,7 +130,7 @@ class FormDataExtractorTest extends TestCase
 
     public function testExtractConfigurationSortsResolvedOptions()
     {
-        $type = $this->getMockBuilder('Symfony\Component\Form\ResolvedFormTypeInterface')->getMock();
+        $type = $this->getMockBuilder('Symfony2\Component\Form\ResolvedFormTypeInterface')->getMock();
         $type->expects($this->any())
             ->method('getName')
             ->will($this->returnValue('type_name'));
@@ -165,7 +165,7 @@ class FormDataExtractorTest extends TestCase
 
     public function testExtractConfigurationBuildsIdRecursively()
     {
-        $type = $this->getMockBuilder('Symfony\Component\Form\ResolvedFormTypeInterface')->getMock();
+        $type = $this->getMockBuilder('Symfony2\Component\Form\ResolvedFormTypeInterface')->getMock();
         $type->expects($this->any())
             ->method('getName')
             ->will($this->returnValue('type_name'));
@@ -175,11 +175,11 @@ class FormDataExtractorTest extends TestCase
 
         $grandParent = $this->createBuilder('grandParent')
             ->setCompound(true)
-            ->setDataMapper($this->getMockBuilder('Symfony\Component\Form\DataMapperInterface')->getMock())
+            ->setDataMapper($this->getMockBuilder('Symfony2\Component\Form\DataMapperInterface')->getMock())
             ->getForm();
         $parent = $this->createBuilder('parent')
             ->setCompound(true)
-            ->setDataMapper($this->getMockBuilder('Symfony\Component\Form\DataMapperInterface')->getMock())
+            ->setDataMapper($this->getMockBuilder('Symfony2\Component\Form\DataMapperInterface')->getMock())
             ->getForm();
         $form = $this->createBuilder('name')
             ->setType($type)

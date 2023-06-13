@@ -21,7 +21,7 @@ class TemplateFinderTest extends TestCase
     public function testFindAllTemplates()
     {
         $kernel = $this
-            ->getMockBuilder('Symfony\Component\HttpKernel\Kernel')
+            ->getMockBuilder('Symfony2\Component\HttpKernel\Kernel')
             ->disableOriginalConstructor()
             ->getMock()
         ;

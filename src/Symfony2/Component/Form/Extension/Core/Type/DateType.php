@@ -37,8 +37,8 @@ class DateType extends AbstractType
     );
 
     private static $widgets = array(
-        'text' => 'Symfony\Component\Form\Extension\Core\Type\TextType',
-        'choice' => 'Symfony\Component\Form\Extension\Core\Type\ChoiceType',
+        'text' => 'Symfony2\Component\Form\Extension\Core\Type\TextType',
+        'choice' => 'Symfony2\Component\Form\Extension\Core\Type\ChoiceType',
     );
 
     /**

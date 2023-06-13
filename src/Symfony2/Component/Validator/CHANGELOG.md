@@ -9,7 +9,7 @@ CHANGELOG
 2.7.0
 -----
 
- * deprecated `DefaultTranslator` in favor of `Symfony\Component\Translation\IdentityTranslator`
+ * deprecated `DefaultTranslator` in favor of `Symfony2\Component\Translation\IdentityTranslator`
  * deprecated PHP7-incompatible constraints (Null, True, False) and related validators (NullValidator, TrueValidator, FalseValidator) in favor of their `Is`-prefixed equivalent
 
 2.6.0
@@ -103,7 +103,7 @@ CHANGELOG
 
  * added the ISBN, ISSN, and IBAN validators
  * copied the constraints `Optional` and `Required` to the
-   `Symfony\Component\Validator\Constraints\` namespace and deprecated the original
+   `Symfony2\Component\Validator\Constraints\` namespace and deprecated the original
    classes.
  * added comparison validators (EqualTo, NotEqualTo, LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, IdenticalTo, NotIdenticalTo)
 

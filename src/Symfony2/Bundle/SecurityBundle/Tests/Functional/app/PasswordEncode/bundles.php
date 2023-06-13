@@ -10,6 +10,6 @@
  */
 
 return array(
-    new Symfony\Bundle\SecurityBundle\SecurityBundle(),
-    new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+    new Symfony2\Bundle\SecurityBundle\SecurityBundle(),
+    new Symfony2\Bundle\FrameworkBundle\FrameworkBundle(),
 );

@@ -31,7 +31,7 @@ class LoaderTest extends TestCase
     public function testLegacyGetSetDebugger()
     {
         $loader = new ProjectTemplateLoader4();
-        $debugger = $this->getMockBuilder('Symfony\Component\Templating\DebuggerInterface')->getMock();
+        $debugger = $this->getMockBuilder('Symfony2\Component\Templating\DebuggerInterface')->getMock();
         $loader->setDebugger($debugger);
         $this->assertSame($debugger, $loader->getDebugger(), '->setDebugger() sets the debugger instance');
     }

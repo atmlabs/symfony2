@@ -11,21 +11,21 @@
 
 namespace Symfony2\Component\Security\Acl\Tests\Dbal;
 
-use Symfony\Component\Security\Acl\Domain\RoleSecurityIdentity;
-use Symfony\Component\Security\Acl\Model\FieldEntryInterface;
-use Symfony\Component\Security\Acl\Model\AuditableEntryInterface;
-use Symfony\Component\Security\Acl\Model\EntryInterface;
-use Symfony\Component\Security\Acl\Domain\Entry;
-use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
-use Symfony\Component\Security\Acl\Domain\Acl;
-use Symfony\Component\Security\Acl\Exception\AclNotFoundException;
-use Symfony\Component\Security\Acl\Exception\ConcurrentModificationException;
-use Symfony\Component\Security\Acl\Dbal\AclProvider;
-use Symfony\Component\Security\Acl\Domain\PermissionGrantingStrategy;
-use Symfony\Component\Security\Acl\Dbal\MutableAclProvider;
-use Symfony\Component\Security\Acl\Dbal\Schema;
+use Symfony2\Component\Security\Acl\Domain\RoleSecurityIdentity;
+use Symfony2\Component\Security\Acl\Model\FieldEntryInterface;
+use Symfony2\Component\Security\Acl\Model\AuditableEntryInterface;
+use Symfony2\Component\Security\Acl\Model\EntryInterface;
+use Symfony2\Component\Security\Acl\Domain\Entry;
+use Symfony2\Component\Security\Acl\Domain\UserSecurityIdentity;
+use Symfony2\Component\Security\Acl\Domain\Acl;
+use Symfony2\Component\Security\Acl\Exception\AclNotFoundException;
+use Symfony2\Component\Security\Acl\Exception\ConcurrentModificationException;
+use Symfony2\Component\Security\Acl\Dbal\AclProvider;
+use Symfony2\Component\Security\Acl\Domain\PermissionGrantingStrategy;
+use Symfony2\Component\Security\Acl\Dbal\MutableAclProvider;
+use Symfony2\Component\Security\Acl\Dbal\Schema;
 use Doctrine\DBAL\DriverManager;
-use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
+use Symfony2\Component\Security\Acl\Domain\ObjectIdentity;
 
 /**
  * @requires extension pdo_sqlite
@@ -56,7 +56,7 @@ class MutableAclProviderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Acl\Exception\AclAlreadyExistsException
+     * @expectedException \Symfony2\Component\Security\Acl\Exception\AclAlreadyExistsException
      */
     public function testCreateAclThrowsExceptionWhenAclAlreadyExists()
     {
@@ -73,7 +73,7 @@ class MutableAclProviderTest extends \PHPUnit_Framework_TestCase
         $acl = $provider->createAcl($oid);
         $cachedAcl = $provider->findAcl($oid);
 
-        $this->assertInstanceOf('Symfony\Component\Security\Acl\Domain\Acl', $acl);
+        $this->assertInstanceOf('Symfony2\Component\Security\Acl\Domain\Acl', $acl);
         $this->assertSame($acl, $cachedAcl);
         $this->assertTrue($acl->getObjectIdentity()->equals($oid));
     }

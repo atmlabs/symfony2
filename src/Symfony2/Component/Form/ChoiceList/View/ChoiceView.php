@@ -17,7 +17,7 @@ namespace Symfony2\Component\Form\Extension\Core\View;
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 2.7, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Form\ChoiceList\View\ChoiceView} instead.
+ *             Use {@link \Symfony2\Component\Form\ChoiceList\View\ChoiceView} instead.
  */
 class ChoiceView
 {

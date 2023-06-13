@@ -317,7 +317,7 @@ abstract class DoctrineType extends AbstractType
         $resolver->setNormalizer('id_reader', $idReaderNormalizer);
 
         $resolver->setAllowedTypes('em', array('null', 'string', 'Doctrine\Common\Persistence\ObjectManager'));
-        $resolver->setAllowedTypes('loader', array('null', 'Symfony\Bridge\Doctrine\Form\ChoiceList\EntityLoaderInterface'));
+        $resolver->setAllowedTypes('loader', array('null', 'Symfony2\Bridge\Doctrine\Form\ChoiceList\EntityLoaderInterface'));
     }
 
     /**
@@ -333,6 +333,6 @@ abstract class DoctrineType extends AbstractType
 
     public function getParent()
     {
-        return 'Symfony\Component\Form\Extension\Core\Type\ChoiceType';
+        return 'Symfony2\Component\Form\Extension\Core\Type\ChoiceType';
     }
 }

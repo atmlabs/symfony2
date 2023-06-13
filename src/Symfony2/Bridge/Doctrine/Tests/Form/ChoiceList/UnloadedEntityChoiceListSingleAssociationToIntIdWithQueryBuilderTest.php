@@ -14,7 +14,7 @@ namespace Symfony2\Bridge\Doctrine\Tests\Form\ChoiceList;
 use Symfony2\Bridge\Doctrine\Form\ChoiceList\EntityChoiceList;
 use Symfony2\Bridge\Doctrine\Form\ChoiceList\ORMQueryBuilderLoader;
 
-if (!class_exists('Symfony\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
+if (!class_exists('Symfony2\Component\Form\Tests\Extension\Core\ChoiceList\AbstractChoiceListTest')) {
     return;
 }
 
@@ -26,7 +26,7 @@ if (!class_exists('Symfony\Component\Form\Tests\Extension\Core\ChoiceList\Abstra
 class UnloadedEntityChoiceListSingleAssociationToIntIdWithQueryBuilderTest extends UnloadedEntityChoiceListSingleAssociationToIntIdTest
 {
     /**
-     * @return \Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
+     * @return \Symfony2\Component\Form\Extension\Core\ChoiceList\ChoiceListInterface
      */
     protected function createChoiceList()
     {

@@ -30,10 +30,10 @@
     </filter>
 
     <listeners>
-        <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener">
+        <listener class="Symfony2\Bridge\PhpUnit\SymfonyTestsListener">
             <arguments>
                 <array>
-                    <element key="time-sensitive"><string>Symfony\Component\Console</string></element>
+                    <element key="time-sensitive"><string>Symfony2\Component\Console</string></element>
                 </array>
             </arguments>
         </listener>

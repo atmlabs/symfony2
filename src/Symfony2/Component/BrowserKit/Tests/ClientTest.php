@@ -59,7 +59,7 @@ class TestClient extends Client
 
     protected function getScript($request)
     {
-        $r = new \ReflectionClass('Symfony\Component\BrowserKit\Response');
+        $r = new \ReflectionClass('Symfony2\Component\BrowserKit\Response');
         $path = $r->getFileName();
 
         return <<<EOF
@@ -111,7 +111,7 @@ class ClientTest extends TestCase
         $client->request('GET', 'http://example.com/');
 
         $this->assertEquals('foo', $client->getResponse()->getContent(), '->getCrawler() returns the Response of the last request');
-        $this->assertInstanceOf('Symfony\Component\BrowserKit\Response', $client->getResponse(), '->getCrawler() returns the Response of the last request');
+        $this->assertInstanceOf('Symfony2\Component\BrowserKit\Response', $client->getResponse(), '->getCrawler() returns the Response of the last request');
     }
 
     public function testGetInternalResponse()
@@ -120,9 +120,9 @@ class ClientTest extends TestCase
         $client->setNextResponse(new SpecialResponse('foo'));
         $client->request('GET', 'http://example.com/');
 
-        $this->assertInstanceOf('Symfony\Component\BrowserKit\Response', $client->getInternalResponse());
-        $this->assertNotInstanceOf('Symfony\Component\BrowserKit\Tests\SpecialResponse', $client->getInternalResponse());
-        $this->assertInstanceOf('Symfony\Component\BrowserKit\Tests\SpecialResponse', $client->getResponse());
+        $this->assertInstanceOf('Symfony2\Component\BrowserKit\Response', $client->getInternalResponse());
+        $this->assertNotInstanceOf('Symfony2\Component\BrowserKit\Tests\SpecialResponse', $client->getInternalResponse());
+        $this->assertInstanceOf('Symfony2\Component\BrowserKit\Tests\SpecialResponse', $client->getResponse());
     }
 
     public function testGetContent()
@@ -584,12 +584,12 @@ class ClientTest extends TestCase
     {
         $client = new TestClient();
         $client->insulate();
-        $client->setNextScript("new Symfony\Component\BrowserKit\Response('foobar')");
+        $client->setNextScript("new Symfony2\Component\BrowserKit\Response('foobar')");
         $client->request('GET', 'http://www.example.com/foo/foobar');
 
         $this->assertEquals('foobar', $client->getResponse()->getContent(), '->insulate() process the request in a forked process');
 
-        $client->setNextScript("new Symfony\Component\BrowserKit\Response('foobar)");
+        $client->setNextScript("new Symfony2\Component\BrowserKit\Response('foobar)");
 
         try {
             $client->request('GET', 'http://www.example.com/foo/foobar');
@@ -683,7 +683,7 @@ class ClientTest extends TestCase
             'NEW_SERVER_KEY' => 'new-server-key-value',
         ));
 
-        $this->assertInstanceOf('Symfony\Component\BrowserKit\Request', $client->getInternalRequest());
+        $this->assertInstanceOf('Symfony2\Component\BrowserKit\Request', $client->getInternalRequest());
     }
 
     public function testInternalRequestNull()

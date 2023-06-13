@@ -30,11 +30,11 @@ class VirtualFormAwareIterator extends \IteratorIterator implements \RecursiveIt
         /*
          * Prevent to trigger deprecation notice when already using the
          * InheritDataAwareIterator class that extends this deprecated one.
-         * The {@link Symfony\Component\Form\Util\InheritDataAwareIterator::__construct} method
+         * The {@link Symfony2\Component\Form\Util\InheritDataAwareIterator::__construct} method
          * forces this argument to false.
          */
         if (__CLASS__ === \get_class($this)) {
-            @trigger_error('The '.__CLASS__.' class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony\Component\Form\Util\InheritDataAwareIterator class instead.', E_USER_DEPRECATED);
+            @trigger_error('The '.__CLASS__.' class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony2\Component\Form\Util\InheritDataAwareIterator class instead.', E_USER_DEPRECATED);
         }
 
         parent::__construct($iterator);

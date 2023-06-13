@@ -162,7 +162,7 @@ class DigestDataTest extends TestCase
 
     protected function setUp()
     {
-        class_exists('Symfony\Component\Security\Http\Firewall\DigestAuthenticationListener', true);
+        class_exists('Symfony2\Component\Security\Http\Firewall\DigestAuthenticationListener', true);
     }
 
     private function calculateServerDigest($username, $realm, $password, $key, $nc, $cnonce, $qop, $method, $uri)

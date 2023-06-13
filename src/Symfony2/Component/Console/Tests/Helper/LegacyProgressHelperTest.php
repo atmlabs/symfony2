@@ -143,7 +143,7 @@ class LegacyProgressHelperTest extends TestCase
 
     public function testRedrawFrequency()
     {
-        $progress = $this->getMockBuilder('Symfony\Component\Console\Helper\ProgressHelper')->setMethods(array('display'))->getMock();
+        $progress = $this->getMockBuilder('Symfony2\Component\Console\Helper\ProgressHelper')->setMethods(array('display'))->getMock();
         $progress->expects($this->exactly(4))
                  ->method('display');
 

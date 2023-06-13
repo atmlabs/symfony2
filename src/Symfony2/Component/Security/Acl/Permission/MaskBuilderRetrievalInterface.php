@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Permission;
+namespace Symfony2\Component\Security\Acl\Permission;
 
 /**
  * Retrieves the MaskBuilder.

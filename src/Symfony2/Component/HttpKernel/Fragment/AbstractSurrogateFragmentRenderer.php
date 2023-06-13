@@ -57,7 +57,7 @@ abstract class AbstractSurrogateFragmentRenderer extends RoutableFragmentRendere
      * Note, that not all surrogate strategies support all options. For now
      * 'alt' and 'comment' are only supported by ESI.
      *
-     * @see Symfony\Component\HttpKernel\HttpCache\SurrogateInterface
+     * @see Symfony2\Component\HttpKernel\HttpCache\SurrogateInterface
      */
     public function render($uri, Request $request, array $options = array())
     {

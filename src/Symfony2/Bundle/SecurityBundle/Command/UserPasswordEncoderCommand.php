@@ -36,7 +36,7 @@ class UserPasswordEncoderCommand extends ContainerAwareCommand
             ->setName('security:encode-password')
             ->setDescription('Encodes a password.')
             ->addArgument('password', InputArgument::OPTIONAL, 'The plain password to encode.')
-            ->addArgument('user-class', InputArgument::OPTIONAL, 'The User entity class path associated with the encoder used to encode the password.', 'Symfony\Component\Security\Core\User\User')
+            ->addArgument('user-class', InputArgument::OPTIONAL, 'The User entity class path associated with the encoder used to encode the password.', 'Symfony2\Component\Security\Core\User\User')
             ->addOption('empty-salt', null, InputOption::VALUE_NONE, 'Do not generate a salt or let the encoder generate one.')
             ->setHelp(<<<EOF
 
@@ -51,7 +51,7 @@ Suppose that you have the following security configuration in your application:
 # app/config/security.yml
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony2\Component\Security\Core\User\User: plaintext
         AppBundle\Entity\User: bcrypt
 </comment>
 

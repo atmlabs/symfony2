@@ -16,7 +16,7 @@ use Symfony2\Bridge\ProxyManager\LazyProxy\PhpDumper\ProxyDumper;
 use Symfony2\Component\DependencyInjection\Definition;
 
 /**
- * Tests for {@see \Symfony\Bridge\ProxyManager\LazyProxy\PhpDumper\ProxyDumper}.
+ * Tests for {@see \Symfony2\Bridge\ProxyManager\LazyProxy\PhpDumper\ProxyDumper}.
  *
  * @author Marco Pivetta <ocramius@gmail.com>
  */
@@ -56,7 +56,7 @@ class ProxyDumperTest extends TestCase
 
         $this->assertStringMatchesFormat(
             '%Aclass SymfonyBridgeProxyManagerTestsLazyProxyPhpDumperProxyDumperTest%aextends%w'
-                .'\Symfony\Bridge\ProxyManager\Tests\LazyProxy\PhpDumper\ProxyDumperTest%a',
+                .'\Symfony2\Bridge\ProxyManager\Tests\LazyProxy\PhpDumper\ProxyDumperTest%a',
             $code
         );
     }

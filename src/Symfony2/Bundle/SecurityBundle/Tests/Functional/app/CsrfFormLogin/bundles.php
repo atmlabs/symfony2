@@ -10,8 +10,8 @@
  */
 
 return array(
-    new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-    new Symfony\Bundle\SecurityBundle\SecurityBundle(),
-    new Symfony\Bundle\TwigBundle\TwigBundle(),
-    new Symfony\Bundle\SecurityBundle\Tests\Functional\Bundle\CsrfFormLoginBundle\CsrfFormLoginBundle(),
+    new Symfony2\Bundle\FrameworkBundle\FrameworkBundle(),
+    new Symfony2\Bundle\SecurityBundle\SecurityBundle(),
+    new Symfony2\Bundle\TwigBundle\TwigBundle(),
+    new Symfony2\Bundle\SecurityBundle\Tests\Functional\Bundle\CsrfFormLoginBundle\CsrfFormLoginBundle(),
 );

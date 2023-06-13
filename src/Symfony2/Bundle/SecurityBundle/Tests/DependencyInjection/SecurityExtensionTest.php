@@ -20,7 +20,7 @@ use Symfony2\Component\DependencyInjection\ContainerBuilder;
 class SecurityExtensionTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      * @expectedExceptionMessage The check_path "/some_area/login_check" for login method "form_login" is not matched by the firewall pattern "/secured_area/.*".
      */
     public function testInvalidCheckPath()
@@ -46,7 +46,7 @@ class SecurityExtensionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      * @expectedExceptionMessage No authentication listener registered for firewall "some_firewall"
      */
     public function testFirewallWithoutAuthenticationListener()
@@ -69,7 +69,7 @@ class SecurityExtensionTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony2\Component\Config\Definition\Exception\InvalidConfigurationException
      * @expectedExceptionMessage Unable to create definition for "security.user.provider.concrete.my_foo" user provider
      */
     public function testFirewallWithInvalidUserProvider()

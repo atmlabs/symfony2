@@ -5,9 +5,9 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="ssi" class="Symfony\Component\HttpKernel\HttpCache\Ssi" />
+        <service id="ssi" class="Symfony2\Component\HttpKernel\HttpCache\Ssi" />
 
-        <service id="ssi_listener" class="Symfony\Component\HttpKernel\EventListener\SurrogateListener">
+        <service id="ssi_listener" class="Symfony2\Component\HttpKernel\EventListener\SurrogateListener">
             <tag name="kernel.event_subscriber" />
             <argument type="service" id="ssi" on-invalid="ignore" />
         </service>

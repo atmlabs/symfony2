@@ -22,9 +22,9 @@ class ConstraintValidatorFactoryTest extends TestCase
 {
     public function testGetInstanceCreatesValidator()
     {
-        $class = \get_class($this->getMockForAbstractClass('Symfony\\Component\\Validator\\ConstraintValidator'));
+        $class = \get_class($this->getMockForAbstractClass('Symfony2\\Component\\Validator\\ConstraintValidator'));
 
-        $constraint = $this->getMockBuilder('Symfony\\Component\\Validator\\Constraint')->getMock();
+        $constraint = $this->getMockBuilder('Symfony2\\Component\\Validator\\Constraint')->getMock();
         $constraint
             ->expects($this->once())
             ->method('validatedBy')
@@ -54,11 +54,11 @@ class ConstraintValidatorFactoryTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ValidatorException
+     * @expectedException \Symfony2\Component\Validator\Exception\ValidatorException
      */
     public function testGetInstanceInvalidValidatorClass()
     {
-        $constraint = $this->getMockBuilder('Symfony\\Component\\Validator\\Constraint')->getMock();
+        $constraint = $this->getMockBuilder('Symfony2\\Component\\Validator\\Constraint')->getMock();
         $constraint
             ->expects($this->once())
             ->method('validatedBy')

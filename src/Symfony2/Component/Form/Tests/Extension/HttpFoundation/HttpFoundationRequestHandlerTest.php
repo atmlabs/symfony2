@@ -22,7 +22,7 @@ use Symfony2\Component\HttpFoundation\Request;
 class HttpFoundationRequestHandlerTest extends AbstractRequestHandlerTest
 {
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      */
     public function testRequestShouldNotBeNull()
     {
@@ -30,7 +30,7 @@ class HttpFoundationRequestHandlerTest extends AbstractRequestHandlerTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      */
     public function testRequestShouldBeInstanceOfRequest()
     {

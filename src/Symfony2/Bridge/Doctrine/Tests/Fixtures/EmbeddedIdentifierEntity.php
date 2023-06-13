@@ -21,7 +21,7 @@ class EmbeddedIdentifierEntity
     /**
      * @var Embeddable\Identifier
      *
-     * @ORM\Embedded(class="Symfony\Bridge\Doctrine\Tests\Fixtures\Embeddable\Identifier")
+     * @ORM\Embedded(class="Symfony2\Bridge\Doctrine\Tests\Fixtures\Embeddable\Identifier")
      */
     protected $id;
 }

@@ -52,7 +52,7 @@ class ValidationVisitor implements ValidationVisitorInterface, GlobalExecutionCo
     {
         foreach ($objectInitializers as $initializer) {
             if (!$initializer instanceof ObjectInitializerInterface) {
-                throw new UnexpectedTypeException($initializer, 'Symfony\Component\Validator\ObjectInitializerInterface');
+                throw new UnexpectedTypeException($initializer, 'Symfony2\Component\Validator\ObjectInitializerInterface');
             }
         }
 

@@ -32,7 +32,7 @@ class ImmutableEventDispatcherTest extends TestCase
 
     protected function setUp()
     {
-        $this->innerDispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->innerDispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
         $this->dispatcher = new ImmutableEventDispatcher($this->innerDispatcher);
     }
 
@@ -81,7 +81,7 @@ class ImmutableEventDispatcherTest extends TestCase
      */
     public function testAddSubscriberDisallowed()
     {
-        $subscriber = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventSubscriberInterface')->getMock();
+        $subscriber = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventSubscriberInterface')->getMock();
 
         $this->dispatcher->addSubscriber($subscriber);
     }
@@ -99,7 +99,7 @@ class ImmutableEventDispatcherTest extends TestCase
      */
     public function testRemoveSubscriberDisallowed()
     {
-        $subscriber = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventSubscriberInterface')->getMock();
+        $subscriber = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventSubscriberInterface')->getMock();
 
         $this->dispatcher->removeSubscriber($subscriber);
     }

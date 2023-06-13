@@ -32,7 +32,7 @@ class ResolveDefinitionTemplatesPassTest extends TestCase
         $this->process($container);
 
         $def = $container->getDefinition('child');
-        $this->assertNotInstanceOf('Symfony\Component\DependencyInjection\DefinitionDecorator', $def);
+        $this->assertNotInstanceOf('Symfony2\Component\DependencyInjection\DefinitionDecorator', $def);
         $this->assertEquals('bar', $def->getClass());
         $this->assertEquals(array('a', 'b'), $def->getArguments());
         $this->assertEquals(array('foo' => 'bar'), $def->getProperties());
@@ -280,23 +280,23 @@ class ResolveDefinitionTemplatesPassTest extends TestCase
         $this->process($container);
 
         $configurator = $container->getDefinition('sibling')->getConfigurator();
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Definition', $configurator);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Definition', $configurator);
         $this->assertSame('parentClass', $configurator->getClass());
 
         $factory = $container->getDefinition('sibling')->getFactory();
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Definition', $factory[0]);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Definition', $factory[0]);
         $this->assertSame('parentClass', $factory[0]->getClass());
 
         $argument = $container->getDefinition('sibling')->getArgument(0);
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Definition', $argument);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Definition', $argument);
         $this->assertSame('parentClass', $argument->getClass());
 
         $properties = $container->getDefinition('sibling')->getProperties();
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Definition', $properties['prop']);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Definition', $properties['prop']);
         $this->assertSame('parentClass', $properties['prop']->getClass());
 
         $methodCalls = $container->getDefinition('sibling')->getMethodCalls();
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Definition', $methodCalls[0][1][0]);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Definition', $methodCalls[0][1][0]);
         $this->assertSame('parentClass', $methodCalls[0][1][0]->getClass());
     }
 

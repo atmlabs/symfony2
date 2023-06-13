@@ -442,7 +442,7 @@ class ErrorHandler
             if (null !== self::$toStringException) {
                 $throw = self::$toStringException;
                 self::$toStringException = null;
-            } elseif ($scope && class_exists('Symfony\Component\Debug\Exception\ContextErrorException')) {
+            } elseif ($scope && class_exists('Symfony2\Component\Debug\Exception\ContextErrorException')) {
                 // Checking for class existence is a work around for https://bugs.php.net/42098
                 $throw = new ContextErrorException($this->levels[$type].': '.$message, 0, $type, $file, $line, $context);
             } else {

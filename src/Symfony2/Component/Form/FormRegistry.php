@@ -59,7 +59,7 @@ class FormRegistry implements FormRegistryInterface
     {
         foreach ($extensions as $extension) {
             if (!$extension instanceof FormExtensionInterface) {
-                throw new UnexpectedTypeException($extension, 'Symfony\Component\Form\FormExtensionInterface');
+                throw new UnexpectedTypeException($extension, 'Symfony2\Component\Form\FormExtensionInterface');
             }
         }
 
@@ -87,8 +87,8 @@ class FormRegistry implements FormRegistryInterface
                 if (!class_exists($name)) {
                     throw new InvalidArgumentException(sprintf('Could not load type "%s": class does not exist.', $name));
                 }
-                if (!is_subclass_of($name, 'Symfony\Component\Form\FormTypeInterface')) {
-                    throw new InvalidArgumentException(sprintf('Could not load type "%s": class does not implement "Symfony\Component\Form\FormTypeInterface".', $name));
+                if (!is_subclass_of($name, 'Symfony2\Component\Form\FormTypeInterface')) {
+                    throw new InvalidArgumentException(sprintf('Could not load type "%s": class does not implement "Symfony2\Component\Form\FormTypeInterface".', $name));
                 }
 
                 $type = new $name();

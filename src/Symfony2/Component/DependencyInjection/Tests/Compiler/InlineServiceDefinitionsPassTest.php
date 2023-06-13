@@ -38,7 +38,7 @@ class InlineServiceDefinitionsPassTest extends TestCase
         $this->process($container);
 
         $arguments = $container->getDefinition('service')->getArguments();
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Definition', $arguments[0]);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Definition', $arguments[0]);
         $this->assertSame($container->getDefinition('inlinable.service'), $arguments[0]);
     }
 

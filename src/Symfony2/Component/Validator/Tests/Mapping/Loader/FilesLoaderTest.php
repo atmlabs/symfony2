@@ -29,12 +29,12 @@ class FilesLoaderTest extends TestCase
         $fileLoader->expects($this->exactly(4))
             ->method('loadClassMetadata');
         $loader = $this->getFilesLoader($fileLoader);
-        $loader->loadClassMetadata(new ClassMetadata('Symfony\Component\Validator\Tests\Fixtures\Entity'));
+        $loader->loadClassMetadata(new ClassMetadata('Symfony2\Component\Validator\Tests\Fixtures\Entity'));
     }
 
     public function getFilesLoader(LoaderInterface $loader)
     {
-        return $this->getMockForAbstractClass('Symfony\Component\Validator\Tests\Fixtures\FilesLoader', array(array(
+        return $this->getMockForAbstractClass('Symfony2\Component\Validator\Tests\Fixtures\FilesLoader', array(array(
             __DIR__.'/constraint-mapping.xml',
             __DIR__.'/constraint-mapping.yaml',
             __DIR__.'/constraint-mapping.test',
@@ -44,6 +44,6 @@ class FilesLoaderTest extends TestCase
 
     public function getFileLoader()
     {
-        return $this->getMockBuilder('Symfony\Component\Validator\Mapping\Loader\LoaderInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Validator\Mapping\Loader\LoaderInterface')->getMock();
     }
 }

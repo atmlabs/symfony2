@@ -11,7 +11,7 @@
 
 namespace Symfony2\Component\Templating\Helper;
 
-@trigger_error('The Symfony\Component\Templating\Helper\CoreAssetsHelper is deprecated since Symfony 2.7 and will be removed in 3.0. Use the Asset component instead.', E_USER_DEPRECATED);
+@trigger_error('The Symfony2\Component\Templating\Helper\CoreAssetsHelper is deprecated since Symfony 2.7 and will be removed in 3.0. Use the Asset component instead.', E_USER_DEPRECATED);
 
 use Symfony2\Component\Templating\Asset\PackageInterface;
 

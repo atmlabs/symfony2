@@ -52,10 +52,10 @@ if (\function_exists('xdebug_disable')) {
 bar();
 ?>
 --EXPECTF--
-Fatal error: Call to undefined function Symfony\Component\Debug\notexist() in %s on line %d
-Symfony\Component\Debug\Exception\UndefinedFunctionException Object
+Fatal error: Call to undefined function Symfony2\Component\Debug\notexist() in %s on line %d
+Symfony2\Component\Debug\Exception\UndefinedFunctionException Object
 (
-    [message:protected] => Attempted to call function "notexist" from namespace "Symfony\Component\Debug".
+    [message:protected] => Attempted to call function "notexist" from namespace "Symfony2\Component\Debug".
     [string:Exception:private] =>
     [code:protected] => 0
     [file:protected] => %s
@@ -64,7 +64,7 @@ Symfony\Component\Debug\Exception\UndefinedFunctionException Object
         (
             [0] => Array
                 (
-%A                    [function] => Symfony\Component\Debug\foo
+%A                    [function] => Symfony2\Component\Debug\foo
 %A                    [args] => Array
                         (
                         )
@@ -73,7 +73,7 @@ Symfony\Component\Debug\Exception\UndefinedFunctionException Object
 
             [1] => Array
                 (
-%A                    [function] => Symfony\Component\Debug\bar
+%A                    [function] => Symfony2\Component\Debug\bar
 %A                    [args] => Array
                         (
                         )

@@ -19,10 +19,10 @@ class DefaultLogoutSuccessHandlerTest extends TestCase
 {
     public function testLogout()
     {
-        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
+        $request = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')->getMock();
         $response = new Response();
 
-        $httpUtils = $this->getMockBuilder('Symfony\Component\Security\Http\HttpUtils')->getMock();
+        $httpUtils = $this->getMockBuilder('Symfony2\Component\Security\Http\HttpUtils')->getMock();
         $httpUtils->expects($this->once())
             ->method('createRedirectResponse')
             ->with($request, '/dashboard')

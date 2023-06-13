@@ -43,7 +43,7 @@ class BCryptPasswordEncoderTest extends TestCase
      */
     public function testCostInRange($cost)
     {
-        $this->assertInstanceOf('Symfony\Component\Security\Core\Encoder\BCryptPasswordEncoder', new BCryptPasswordEncoder($cost));
+        $this->assertInstanceOf('Symfony2\Component\Security\Core\Encoder\BCryptPasswordEncoder', new BCryptPasswordEncoder($cost));
     }
 
     public function validRangeData()
@@ -70,7 +70,7 @@ class BCryptPasswordEncoderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\BadCredentialsException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\BadCredentialsException
      */
     public function testEncodePasswordLength()
     {

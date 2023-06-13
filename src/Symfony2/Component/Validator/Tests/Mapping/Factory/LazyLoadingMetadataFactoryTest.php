@@ -20,11 +20,11 @@ use Symfony2\Component\Validator\Tests\Fixtures\ConstraintA;
 
 class LazyLoadingMetadataFactoryTest extends TestCase
 {
-    const CLASS_NAME = 'Symfony\Component\Validator\Tests\Fixtures\Entity';
-    const PARENT_CLASS = 'Symfony\Component\Validator\Tests\Fixtures\EntityParent';
-    const INTERFACE_A_CLASS = 'Symfony\Component\Validator\Tests\Fixtures\EntityInterfaceA';
-    const INTERFACE_B_CLASS = 'Symfony\Component\Validator\Tests\Fixtures\EntityInterfaceB';
-    const PARENT_INTERFACE_CLASS = 'Symfony\Component\Validator\Tests\Fixtures\EntityParentInterface';
+    const CLASS_NAME = 'Symfony2\Component\Validator\Tests\Fixtures\Entity';
+    const PARENT_CLASS = 'Symfony2\Component\Validator\Tests\Fixtures\EntityParent';
+    const INTERFACE_A_CLASS = 'Symfony2\Component\Validator\Tests\Fixtures\EntityInterfaceA';
+    const INTERFACE_B_CLASS = 'Symfony2\Component\Validator\Tests\Fixtures\EntityInterfaceB';
+    const PARENT_INTERFACE_CLASS = 'Symfony2\Component\Validator\Tests\Fixtures\EntityParentInterface';
 
     public function testLoadClassMetadataWithInterface()
     {
@@ -78,7 +78,7 @@ class LazyLoadingMetadataFactoryTest extends TestCase
 
     public function testWriteMetadataToCache()
     {
-        $cache = $this->getMockBuilder('Symfony\Component\Validator\Mapping\Cache\CacheInterface')->getMock();
+        $cache = $this->getMockBuilder('Symfony2\Component\Validator\Mapping\Cache\CacheInterface')->getMock();
         $factory = new LazyLoadingMetadataFactory(new TestLoader(), $cache);
 
         $parentClassConstraints = array(
@@ -117,8 +117,8 @@ class LazyLoadingMetadataFactoryTest extends TestCase
 
     public function testReadMetadataFromCache()
     {
-        $loader = $this->getMockBuilder('Symfony\Component\Validator\Mapping\Loader\LoaderInterface')->getMock();
-        $cache = $this->getMockBuilder('Symfony\Component\Validator\Mapping\Cache\CacheInterface')->getMock();
+        $loader = $this->getMockBuilder('Symfony2\Component\Validator\Mapping\Loader\LoaderInterface')->getMock();
+        $cache = $this->getMockBuilder('Symfony2\Component\Validator\Mapping\Cache\CacheInterface')->getMock();
         $factory = new LazyLoadingMetadataFactory($loader, $cache);
 
         $metadata = new ClassMetadata(self::PARENT_CLASS);
@@ -150,13 +150,13 @@ class LazyLoadingMetadataFactoryTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\NoSuchMetadataException
+     * @expectedException \Symfony2\Component\Validator\Exception\NoSuchMetadataException
      */
     public function testNonClassNameStringValues()
     {
         $testedValue = 'error@example.com';
-        $loader = $this->getMockBuilder('Symfony\Component\Validator\Mapping\Loader\LoaderInterface')->getMock();
-        $cache = $this->getMockBuilder('Symfony\Component\Validator\Mapping\Cache\CacheInterface')->getMock();
+        $loader = $this->getMockBuilder('Symfony2\Component\Validator\Mapping\Loader\LoaderInterface')->getMock();
+        $cache = $this->getMockBuilder('Symfony2\Component\Validator\Mapping\Cache\CacheInterface')->getMock();
         $factory = new LazyLoadingMetadataFactory($loader, $cache);
         $cache
             ->expects($this->never())
@@ -166,7 +166,7 @@ class LazyLoadingMetadataFactoryTest extends TestCase
 
     public function testMetadataCacheWithRuntimeConstraint()
     {
-        $cache = $this->getMockBuilder('Symfony\Component\Validator\Mapping\Cache\CacheInterface')->getMock();
+        $cache = $this->getMockBuilder('Symfony2\Component\Validator\Mapping\Cache\CacheInterface')->getMock();
         $factory = new LazyLoadingMetadataFactory(new TestLoader(), $cache);
 
         $cache
@@ -191,9 +191,9 @@ class LazyLoadingMetadataFactoryTest extends TestCase
 
     public function testGroupsFromParent()
     {
-        $reader = new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader();
+        $reader = new \Symfony2\Component\Validator\Mapping\Loader\StaticMethodLoader();
         $factory = new LazyLoadingMetadataFactory($reader);
-        $metadata = $factory->getMetadataFor('Symfony\Component\Validator\Tests\Fixtures\EntityStaticCarTurbo');
+        $metadata = $factory->getMetadataFor('Symfony2\Component\Validator\Tests\Fixtures\EntityStaticCarTurbo');
         $groups = array();
 
         foreach ($metadata->getPropertyMetadata('wheels') as $propertyMetadata) {

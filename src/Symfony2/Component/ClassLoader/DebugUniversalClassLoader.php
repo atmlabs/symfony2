@@ -11,7 +11,7 @@
 
 namespace Symfony2\Component\ClassLoader;
 
-@trigger_error('The '.__NAMESPACE__.'\DebugUniversalClassLoader class is deprecated since Symfony 2.4 and will be removed in 3.0. Use the Symfony\Component\Debug\DebugClassLoader class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\DebugUniversalClassLoader class is deprecated since Symfony 2.4 and will be removed in 3.0. Use the Symfony2\Component\Debug\DebugClassLoader class instead.', E_USER_DEPRECATED);
 
 /**
  * Checks that the class is actually declared in the included file.
@@ -19,7 +19,7 @@ namespace Symfony2\Component\ClassLoader;
  * @author Fabien Potencier <fabien@symfony.com>
  *
  * @deprecated since version 2.4, to be removed in 3.0.
- *             Use the {@link \Symfony\Component\Debug\DebugClassLoader} class instead.
+ *             Use the {@link \Symfony2\Component\Debug\DebugClassLoader} class instead.
  */
 class DebugUniversalClassLoader extends UniversalClassLoader
 {

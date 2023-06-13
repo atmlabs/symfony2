@@ -52,7 +52,7 @@ class ResolveReferencesToAliasesPassTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\ServiceCircularReferenceException
      */
     public function testAliasCircularReference()
     {

@@ -38,7 +38,7 @@ class FormPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new FormPass());
 
-        $extDefinition = new Definition('Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension');
+        $extDefinition = new Definition('Symfony2\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension');
         $extDefinition->setArguments(array(
             new Reference('service_container'),
             array(),
@@ -77,7 +77,7 @@ class FormPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new FormPass());
 
-        $extDefinition = new Definition('Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension');
+        $extDefinition = new Definition('Symfony2\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension');
         $extDefinition->setArguments(array(
             new Reference('service_container'),
             array(),
@@ -111,7 +111,7 @@ class FormPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new FormPass());
 
-        $extDefinition = new Definition('Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension', array(
+        $extDefinition = new Definition('Symfony2\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension', array(
             new Reference('service_container'),
             array(),
             array(),
@@ -149,7 +149,7 @@ class FormPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new FormPass());
 
-        $extDefinition = new Definition('Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension', array(
+        $extDefinition = new Definition('Symfony2\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension', array(
             new Reference('service_container'),
             array(),
             array(),
@@ -181,7 +181,7 @@ class FormPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new FormPass());
 
-        $extDefinition = new Definition('Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension');
+        $extDefinition = new Definition('Symfony2\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension');
         $extDefinition->setArguments(array(
             new Reference('service_container'),
             array(),
@@ -216,7 +216,7 @@ class FormPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new FormPass());
 
-        $extDefinition = new Definition('Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension');
+        $extDefinition = new Definition('Symfony2\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension');
         $extDefinition->setArguments(array(
             new Reference('service_container'),
             array(),

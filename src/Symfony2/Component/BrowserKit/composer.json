@@ -27,7 +27,7 @@
         "symfony2/process": ""
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\BrowserKit\\": "" },
+        "psr-4": { "Symfony2\\Component\\BrowserKit\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

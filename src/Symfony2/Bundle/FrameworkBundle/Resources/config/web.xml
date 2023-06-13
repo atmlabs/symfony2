@@ -5,11 +5,11 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
-        <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
-        <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
-        <parameter key="streamed_response_listener.class">Symfony\Component\HttpKernel\EventListener\StreamedResponseListener</parameter>
-        <parameter key="locale_listener.class">Symfony\Component\HttpKernel\EventListener\LocaleListener</parameter>
+        <parameter key="controller_resolver.class">Symfony2\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
+        <parameter key="controller_name_converter.class">Symfony2\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
+        <parameter key="response_listener.class">Symfony2\Component\HttpKernel\EventListener\ResponseListener</parameter>
+        <parameter key="streamed_response_listener.class">Symfony2\Component\HttpKernel\EventListener\StreamedResponseListener</parameter>
+        <parameter key="locale_listener.class">Symfony2\Component\HttpKernel\EventListener\LocaleListener</parameter>
     </parameters>
 
     <services>
@@ -41,13 +41,13 @@
             <argument type="service" id="router" on-invalid="ignore" />
         </service>
 
-        <service id="translator_listener" class="Symfony\Component\HttpKernel\EventListener\TranslatorListener">
+        <service id="translator_listener" class="Symfony2\Component\HttpKernel\EventListener\TranslatorListener">
             <argument type="service" id="translator" />
             <argument type="service" id="request_stack" />
             <tag name="kernel.event_subscriber" />
         </service>
 
-        <service id="validate_request_listener" class="Symfony\Component\HttpKernel\EventListener\ValidateRequestListener">
+        <service id="validate_request_listener" class="Symfony2\Component\HttpKernel\EventListener\ValidateRequestListener">
             <tag name="kernel.event_subscriber" />
         </service>
     </services>

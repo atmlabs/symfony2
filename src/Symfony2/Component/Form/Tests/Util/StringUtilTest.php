@@ -97,7 +97,7 @@ class StringUtilTest extends TestCase
             array('Vendor\Name\Space\UserForm', 'user_form'),
             array('Vendor\Name\Space\UserType', 'user'),
             array('Vendor\Name\Space\usertype', 'user'),
-            array('Symfony\Component\Form\Form', 'form'),
+            array('Symfony2\Component\Form\Form', 'form'),
             array('Vendor\Name\Space\BarTypeBazType', 'bar_type_baz'),
             array('FooBarBazType', 'foo_bar_baz'),
         );

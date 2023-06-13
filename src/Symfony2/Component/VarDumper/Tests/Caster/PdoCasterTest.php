@@ -30,10 +30,10 @@ class PdoCasterTest extends TestCase
 
         $cast = PdoCaster::castPdo($pdo, array(), new Stub(), false);
 
-        $this->assertInstanceOf('Symfony\Component\VarDumper\Caster\EnumStub', $cast["\0~\0attributes"]);
+        $this->assertInstanceOf('Symfony2\Component\VarDumper\Caster\EnumStub', $cast["\0~\0attributes"]);
 
         $attr = $cast["\0~\0attributes"] = $cast["\0~\0attributes"]->value;
-        $this->assertInstanceOf('Symfony\Component\VarDumper\Caster\ConstStub', $attr['CASE']);
+        $this->assertInstanceOf('Symfony2\Component\VarDumper\Caster\ConstStub', $attr['CASE']);
         $this->assertSame('NATURAL', $attr['CASE']->class);
         $this->assertSame('BOTH', $attr['DEFAULT_FETCH_MODE']->class);
 

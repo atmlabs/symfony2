@@ -21,7 +21,7 @@ final class SecurityEvents
      *   - authentication using a HTTP basic or HTTP digest header.
      *
      * The event listener method receives a
-     * Symfony\Component\Security\Http\Event\InteractiveLoginEvent instance.
+     * Symfony2\Component\Security\Http\Event\InteractiveLoginEvent instance.
      *
      * @Event
      */
@@ -32,7 +32,7 @@ final class SecurityEvents
      * before exit from an already switched user.
      *
      * The event listener method receives a
-     * Symfony\Component\Security\Http\Event\SwitchUserEvent instance.
+     * Symfony2\Component\Security\Http\Event\SwitchUserEvent instance.
      *
      * @Event
      */

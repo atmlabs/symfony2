@@ -42,7 +42,7 @@ use Symfony2\Component\Validator\Exception\InvalidArgumentException;
  *
  * This translator does not support message catalogs, translation domains or
  * locales. Instead, it implements a subset of the capabilities of
- * {@link \Symfony\Component\Translation\Translator} and can be used in places
+ * {@link \Symfony2\Component\Translation\Translator} and can be used in places
  * where translation is not required by default but should be optional.
  *
  * @deprecated since version 2.7, to be removed in 3.0. use Symfony2\Component\Translation\IdentityTranslator instead.
@@ -88,11 +88,11 @@ class DefaultTranslator implements TranslatorInterface
      * exactly 1. "<plural>" is chosen otherwise.
      *
      * This format is consistent with the format supported by
-     * {@link \Symfony\Component\Translation\Translator}, but it does not
+     * {@link \Symfony2\Component\Translation\Translator}, but it does not
      * have the same expressiveness. While Translator supports intervals in
      * message translations, which are needed for languages other than English,
      * this translator does not. You should use Translator or a custom
-     * implementation of {@link \Symfony\Component\Translation\TranslatorInterface} if you need this or similar
+     * implementation of {@link \Symfony2\Component\Translation\TranslatorInterface} if you need this or similar
      * functionality.
      *
      * Example usage:

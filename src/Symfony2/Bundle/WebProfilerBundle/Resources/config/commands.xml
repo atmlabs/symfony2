@@ -5,8 +5,8 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="web_profiler.command.import.class">Symfony\Bundle\WebProfilerBundle\Command\ImportCommand</parameter>
-        <parameter key="web_profiler.command.export.class">Symfony\Bundle\WebProfilerBundle\Command\ExportCommand</parameter>
+        <parameter key="web_profiler.command.import.class">Symfony2\Bundle\WebProfilerBundle\Command\ImportCommand</parameter>
+        <parameter key="web_profiler.command.export.class">Symfony2\Bundle\WebProfilerBundle\Command\ExportCommand</parameter>
     </parameters>
 
     <services>

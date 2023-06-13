@@ -139,7 +139,7 @@ class DebugHandlersListener implements EventSubscriberInterface
     {
         $events = array(KernelEvents::REQUEST => array('configure', 2048));
 
-        if (\defined('Symfony\Component\Console\ConsoleEvents::COMMAND')) {
+        if (\defined('Symfony2\Component\Console\ConsoleEvents::COMMAND')) {
             $events[ConsoleEvents::COMMAND] = array('configure', 2048);
         }
 

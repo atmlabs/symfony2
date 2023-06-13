@@ -34,7 +34,7 @@ use Symfony2\Component\PropertyAccess\PropertyPath;
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since Symfony 2.7, to be removed in version 3.0.
- *             Use {@link \Symfony\Component\Form\ChoiceList\ArrayChoiceList} instead.
+ *             Use {@link \Symfony2\Component\Form\ChoiceList\ArrayChoiceList} instead.
  */
 class ObjectChoiceList extends ChoiceList
 {

@@ -22,7 +22,7 @@ class VoterTest extends TestCase
 
     protected function setUp()
     {
-        $this->token = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
+        $this->token = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
     }
 
     public function getTests()

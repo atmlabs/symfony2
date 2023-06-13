@@ -25,8 +25,8 @@ class ResizeFormListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->factory = $this->getMockBuilder('Symfony2\Component\Form\FormFactoryInterface')->getMock();
         $this->form = $this->getBuilder()
             ->setCompound(true)
             ->setDataMapper($this->getDataMapper())
@@ -55,12 +55,12 @@ class ResizeFormListenerTest extends TestCase
      */
     private function getDataMapper()
     {
-        return $this->getMockBuilder('Symfony\Component\Form\DataMapperInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Form\DataMapperInterface')->getMock();
     }
 
     protected function getMockForm()
     {
-        return $this->getMockBuilder('Symfony\Component\Form\Test\FormInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Form\Test\FormInterface')->getMock();
     }
 
     public function testPreSetDataResizesForm()
@@ -88,7 +88,7 @@ class ResizeFormListenerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      */
     public function testPreSetDataRequiresArrayOrTraversable()
     {
@@ -228,7 +228,7 @@ class ResizeFormListenerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\UnexpectedTypeException
+     * @expectedException \Symfony2\Component\Form\Exception\UnexpectedTypeException
      */
     public function testOnSubmitNormDataRequiresArrayOrTraversable()
     {

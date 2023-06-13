@@ -30,14 +30,14 @@ class RedirectControllerTest extends TestCase
 
         try {
             $controller->redirectAction($request, '', true);
-            $this->fail('Expected Symfony\Component\HttpKernel\Exception\HttpException to be thrown');
+            $this->fail('Expected Symfony2\Component\HttpKernel\Exception\HttpException to be thrown');
         } catch (HttpException $e) {
             $this->assertSame(410, $e->getStatusCode());
         }
 
         try {
             $controller->redirectAction($request, '', false);
-            $this->fail('Expected Symfony\Component\HttpKernel\Exception\HttpException to be thrown');
+            $this->fail('Expected Symfony2\Component\HttpKernel\Exception\HttpException to be thrown');
         } catch (HttpException $e) {
             $this->assertSame(404, $e->getStatusCode());
         }
@@ -66,14 +66,14 @@ class RedirectControllerTest extends TestCase
 
         $request->attributes = new ParameterBag($attributes);
 
-        $router = $this->getMockBuilder('Symfony\Component\Routing\RouterInterface')->getMock();
+        $router = $this->getMockBuilder('Symfony2\Component\Routing\RouterInterface')->getMock();
         $router
             ->expects($this->once())
             ->method('generate')
             ->with($this->equalTo($route), $this->equalTo($expectedAttributes))
             ->will($this->returnValue($url));
 
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
 
         $container
             ->expects($this->once())
@@ -107,14 +107,14 @@ class RedirectControllerTest extends TestCase
 
         try {
             $controller->urlRedirectAction($request, '', true);
-            $this->fail('Expected Symfony\Component\HttpKernel\Exception\HttpException to be thrown');
+            $this->fail('Expected Symfony2\Component\HttpKernel\Exception\HttpException to be thrown');
         } catch (HttpException $e) {
             $this->assertSame(410, $e->getStatusCode());
         }
 
         try {
             $controller->urlRedirectAction($request, '', false);
-            $this->fail('Expected Symfony\Component\HttpKernel\Exception\HttpException to be thrown');
+            $this->fail('Expected Symfony2\Component\HttpKernel\Exception\HttpException to be thrown');
         } catch (HttpException $e) {
             $this->assertSame(404, $e->getStatusCode());
         }
@@ -230,7 +230,7 @@ class RedirectControllerTest extends TestCase
 
     private function createRequestObject($scheme, $host, $port, $baseUrl, $queryString = '')
     {
-        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
+        $request = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')->getMock();
         $request
             ->expects($this->any())
             ->method('getScheme')
@@ -257,7 +257,7 @@ class RedirectControllerTest extends TestCase
 
     private function createRedirectController($httpPort = null, $httpsPort = null)
     {
-        $container = $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        $container = $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
 
         if (null !== $httpPort) {
             $container

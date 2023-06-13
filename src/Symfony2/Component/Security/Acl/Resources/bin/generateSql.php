@@ -11,9 +11,9 @@
 
 require_once __DIR__.'/../../../../ClassLoader/ClassLoader.php';
 
-use Symfony\Component\ClassLoader\ClassLoader;
-use Symfony\Component\Finder\Finder;
-use Symfony\Component\Security\Acl\Dbal\Schema;
+use Symfony2\Component\ClassLoader\ClassLoader;
+use Symfony2\Component\Finder\Finder;
+use Symfony2\Component\Security\Acl\Dbal\Schema;
 
 $loader = new ClassLoader();
 $loader->addPrefixes(array(

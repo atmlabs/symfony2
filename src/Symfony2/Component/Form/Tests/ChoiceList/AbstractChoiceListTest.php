@@ -19,7 +19,7 @@ use PHPUnit\Framework\TestCase;
 abstract class AbstractChoiceListTest extends TestCase
 {
     /**
-     * @var \Symfony\Component\Form\ChoiceList\ChoiceListInterface
+     * @var \Symfony2\Component\Form\ChoiceList\ChoiceListInterface
      */
     protected $list;
 
@@ -219,7 +219,7 @@ abstract class AbstractChoiceListTest extends TestCase
     }
 
     /**
-     * @return \Symfony\Component\Form\ChoiceList\ChoiceListInterface
+     * @return \Symfony2\Component\Form\ChoiceList\ChoiceListInterface
      */
     abstract protected function createChoiceList();
 

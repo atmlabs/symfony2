@@ -27,7 +27,7 @@ class FragmentRendererPassTest extends TestCase
     {
         $builder = new ContainerBuilder();
         $fragmentHandlerDefinition = $builder->register('fragment.handler');
-        $builder->register('my_content_renderer', 'Symfony\Component\HttpKernel\Tests\DependencyInjection\RendererService')
+        $builder->register('my_content_renderer', 'Symfony2\Component\HttpKernel\Tests\DependencyInjection\RendererService')
             ->addTag('kernel.fragment_renderer');
 
         $pass = new FragmentRendererPass();
@@ -46,7 +46,7 @@ class FragmentRendererPassTest extends TestCase
     {
         $builder = new ContainerBuilder();
         $fragmentHandlerDefinition = $builder->register('fragment.handler');
-        $builder->register('my_content_renderer', 'Symfony\Component\DependencyInjection\Definition')
+        $builder->register('my_content_renderer', 'Symfony2\Component\DependencyInjection\Definition')
             ->addTag('kernel.fragment_renderer', array('alias' => 'foo'));
 
         $pass = new FragmentRendererPass();
@@ -59,7 +59,7 @@ class FragmentRendererPassTest extends TestCase
     {
         $builder = new ContainerBuilder();
         $fragmentHandlerDefinition = $builder->register('fragment.handler');
-        $builder->register('my_content_renderer', 'Symfony\Component\HttpKernel\Tests\DependencyInjection\RendererService')
+        $builder->register('my_content_renderer', 'Symfony2\Component\HttpKernel\Tests\DependencyInjection\RendererService')
             ->addTag('kernel.fragment_renderer', array('alias' => 'foo'));
 
         $pass = new FragmentRendererPass();

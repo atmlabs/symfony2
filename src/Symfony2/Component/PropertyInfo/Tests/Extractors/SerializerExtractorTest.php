@@ -37,7 +37,7 @@ class SerializerExtractorTest extends TestCase
     {
         $this->assertEquals(
             array('collection'),
-            $this->extractor->getProperties('Symfony\Component\PropertyInfo\Tests\Fixtures\Dummy', array('serializer_groups' => array('a')))
+            $this->extractor->getProperties('Symfony2\Component\PropertyInfo\Tests\Fixtures\Dummy', array('serializer_groups' => array('a')))
         );
     }
 }

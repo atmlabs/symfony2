@@ -222,7 +222,7 @@ EOF
             return;
         }
 
-        $script = implode(' ', array_map(array('Symfony\Component\Process\ProcessUtils', 'escapeArgument'), array(
+        $script = implode(' ', array_map(array('Symfony2\Component\Process\ProcessUtils', 'escapeArgument'), array(
             $binary,
             '-S',
             $address,

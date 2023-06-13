@@ -47,7 +47,7 @@ class ContextListener implements ListenerInterface
 
         foreach ($userProviders as $userProvider) {
             if (!$userProvider instanceof UserProviderInterface) {
-                throw new \InvalidArgumentException(sprintf('User provider "%s" must implement "Symfony\Component\Security\Core\User\UserProviderInterface".', \get_class($userProvider)));
+                throw new \InvalidArgumentException(sprintf('User provider "%s" must implement "Symfony2\Component\Security\Core\User\UserProviderInterface".', \get_class($userProvider)));
             }
         }
 

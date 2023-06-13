@@ -50,8 +50,8 @@ class CliDumperTest extends VarDumperTestCase
         if (\PHP_VERSION_ID >= 50400) {
             $closure54 = <<<EOTXT
 
-    class: "Symfony\Component\VarDumper\Tests\CliDumperTest"
-    this: Symfony\Component\VarDumper\Tests\CliDumperTest {{$r} …}
+    class: "Symfony2\Component\VarDumper\Tests\CliDumperTest"
+    this: Symfony2\Component\VarDumper\Tests\CliDumperTest {{$r} …}
 EOTXT;
         }
 
@@ -78,7 +78,7 @@ array:24 [
     seekable: true
 %A  options: []
   }
-  "obj" => Symfony\Component\VarDumper\Tests\Fixture\DumbFoo {#%d
+  "obj" => Symfony2\Component\VarDumper\Tests\Fixture\DumbFoo {#%d
     +foo: "foo"
     +"bar": "bar"
   }
@@ -101,7 +101,7 @@ array:24 [
     0 => &4 array:1 [&4]
   ]
   8 => &1 null
-  "sobj" => Symfony\Component\VarDumper\Tests\Fixture\DumbFoo {#%d}
+  "sobj" => Symfony2\Component\VarDumper\Tests\Fixture\DumbFoo {#%d}
   "snobj" => &3 {#%d}
   "snobj2" => {#%d}
   "file" => "{$var['file']}"
@@ -277,7 +277,7 @@ stream resource {@{$ref}
   seekable: true
   uri: "php://memory"
 %Aoptions: []
-  ⚠: Symfony\Component\VarDumper\Exception\ThrowingCasterException {{$r}
+  ⚠: Symfony2\Component\VarDumper\Exception\ThrowingCasterException {{$r}
     #message: "Unexpected Exception thrown from a caster: Foobar"
     -trace: {
       %d. __TwigTemplate_VarDumperFixture_u75a09->doDisplay() ==> new Exception(): {

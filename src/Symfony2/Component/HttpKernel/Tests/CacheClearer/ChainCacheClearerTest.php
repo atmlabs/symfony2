@@ -53,6 +53,6 @@ class ChainCacheClearerTest extends TestCase
 
     protected function getMockClearer()
     {
-        return $this->getMockBuilder('Symfony\Component\HttpKernel\CacheClearer\CacheClearerInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\HttpKernel\CacheClearer\CacheClearerInterface')->getMock();
     }
 }

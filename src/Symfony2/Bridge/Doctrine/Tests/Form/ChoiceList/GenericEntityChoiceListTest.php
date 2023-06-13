@@ -25,13 +25,13 @@ use Symfony2\Component\Form\Extension\Core\View\ChoiceView;
  */
 class GenericEntityChoiceListTest extends TestCase
 {
-    const SINGLE_INT_ID_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity';
+    const SINGLE_INT_ID_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity';
 
-    const SINGLE_STRING_ID_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\SingleStringIdEntity';
+    const SINGLE_STRING_ID_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleStringIdEntity';
 
-    const COMPOSITE_ID_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\CompositeIntIdEntity';
+    const COMPOSITE_ID_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\CompositeIntIdEntity';
 
-    const GROUPABLE_CLASS = 'Symfony\Bridge\Doctrine\Tests\Fixtures\GroupableEntity';
+    const GROUPABLE_CLASS = 'Symfony2\Bridge\Doctrine\Tests\Fixtures\GroupableEntity';
 
     /**
      * @var \Doctrine\ORM\EntityManager
@@ -71,8 +71,8 @@ class GenericEntityChoiceListTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\StringCastException
-     * @expectedMessage   Entity "Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity" passed to the choice field must have a "__toString()" method defined (or you can also override the "property" option).
+     * @expectedException \Symfony2\Component\Form\Exception\StringCastException
+     * @expectedMessage   Entity "Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity" passed to the choice field must have a "__toString()" method defined (or you can also override the "property" option).
      */
     public function testEntitiesMustHaveAToStringMethod()
     {
@@ -98,7 +98,7 @@ class GenericEntityChoiceListTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Form\Exception\RuntimeException
      */
     public function testChoicesMustBeManaged()
     {

@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="debug.templating.engine.php.class">Symfony\Bundle\FrameworkBundle\Templating\TimedPhpEngine</parameter>
+        <parameter key="debug.templating.engine.php.class">Symfony2\Bundle\FrameworkBundle\Templating\TimedPhpEngine</parameter>
     </parameters>
 
     <services>

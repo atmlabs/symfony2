@@ -42,13 +42,13 @@ class RegisterListenersPassTest extends TestCase
 
         $builder = new ContainerBuilder();
         $eventDispatcherDefinition = $builder->register('event_dispatcher');
-        $builder->register('my_event_subscriber', 'Symfony\Component\EventDispatcher\Tests\DependencyInjection\SubscriberService')
+        $builder->register('my_event_subscriber', 'Symfony2\Component\EventDispatcher\Tests\DependencyInjection\SubscriberService')
             ->addTag('kernel.event_subscriber');
 
         $registerListenersPass = new RegisterListenersPass();
         $registerListenersPass->process($builder);
 
-        $this->assertEquals(array(array('addSubscriberService', array('my_event_subscriber', 'Symfony\Component\EventDispatcher\Tests\DependencyInjection\SubscriberService'))), $eventDispatcherDefinition->getMethodCalls());
+        $this->assertEquals(array(array('addSubscriberService', array('my_event_subscriber', 'Symfony2\Component\EventDispatcher\Tests\DependencyInjection\SubscriberService'))), $eventDispatcherDefinition->getMethodCalls());
     }
 
     /**
@@ -111,7 +111,7 @@ class RegisterListenersPassTest extends TestCase
     {
         $container = new ContainerBuilder();
 
-        $container->setParameter('subscriber.class', 'Symfony\Component\EventDispatcher\Tests\DependencyInjection\SubscriberService');
+        $container->setParameter('subscriber.class', 'Symfony2\Component\EventDispatcher\Tests\DependencyInjection\SubscriberService');
         $container->register('foo', '%subscriber.class%')->addTag('kernel.event_subscriber', array());
         $container->register('event_dispatcher', 'stdClass');
 
@@ -124,7 +124,7 @@ class RegisterListenersPassTest extends TestCase
                 'addSubscriberService',
                 array(
                     'foo',
-                    'Symfony\Component\EventDispatcher\Tests\DependencyInjection\SubscriberService',
+                    'Symfony2\Component\EventDispatcher\Tests\DependencyInjection\SubscriberService',
                 ),
             ),
         );
@@ -146,7 +146,7 @@ class RegisterListenersPassTest extends TestCase
     }
 }
 
-class SubscriberService implements \Symfony\Component\EventDispatcher\EventSubscriberInterface
+class SubscriberService implements \Symfony2\Component\EventDispatcher\EventSubscriberInterface
 {
     public static function getSubscribedEvents()
     {

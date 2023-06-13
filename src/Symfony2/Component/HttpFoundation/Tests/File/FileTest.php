@@ -64,7 +64,7 @@ class FileTest extends TestCase
 
     public function testConstructWhenFileNotExists()
     {
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\HttpFoundation\File\Exception\FileNotFoundException');
 
         new File(__DIR__.'/Fixtures/not_here');
     }
@@ -80,7 +80,7 @@ class FileTest extends TestCase
 
         $file = new File($path);
         $movedFile = $file->move($targetDir);
-        $this->assertInstanceOf('Symfony\Component\HttpFoundation\File\File', $movedFile);
+        $this->assertInstanceOf('Symfony2\Component\HttpFoundation\File\File', $movedFile);
 
         $this->assertFileExists($targetPath);
         $this->assertFileNotExists($path);
@@ -134,7 +134,7 @@ class FileTest extends TestCase
 
         $file = new File($path);
         $movedFile = $file->move($targetDir, $filename);
-        $this->assertInstanceOf('Symfony\Component\HttpFoundation\File\File', $movedFile);
+        $this->assertInstanceOf('Symfony2\Component\HttpFoundation\File\File', $movedFile);
 
         $this->assertFileExists($targetPath);
         $this->assertFileNotExists($path);
@@ -167,7 +167,7 @@ class FileTest extends TestCase
 
     protected function createMockGuesser($path, $mimeType)
     {
-        $guesser = $this->getMockBuilder('Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface')->getMock();
+        $guesser = $this->getMockBuilder('Symfony2\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface')->getMock();
         $guesser
             ->expects($this->once())
             ->method('guess')

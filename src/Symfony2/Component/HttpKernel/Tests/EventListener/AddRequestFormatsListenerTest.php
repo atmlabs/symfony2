@@ -40,7 +40,7 @@ class AddRequestFormatsListenerTest extends TestCase
 
     public function testIsAnEventSubscriber()
     {
-        $this->assertInstanceOf('Symfony\Component\EventDispatcher\EventSubscriberInterface', $this->listener);
+        $this->assertInstanceOf('Symfony2\Component\EventDispatcher\EventSubscriberInterface', $this->listener);
     }
 
     public function testRegisteredEvent()
@@ -65,13 +65,13 @@ class AddRequestFormatsListenerTest extends TestCase
 
     protected function getRequestMock()
     {
-        return $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')->getMock();
     }
 
     protected function getGetResponseEventMock(Request $request)
     {
         $event = $this
-            ->getMockBuilder('Symfony\Component\HttpKernel\Event\GetResponseEvent')
+            ->getMockBuilder('Symfony2\Component\HttpKernel\Event\GetResponseEvent')
             ->disableOriginalConstructor()
             ->getMock();
 

@@ -34,7 +34,7 @@ class DoctrineExtractorTest extends TestCase
         $entityManager = EntityManager::create(array('driver' => 'pdo_sqlite'), $config);
 
         if (!DBALType::hasType('foo')) {
-            DBALType::addType('foo', 'Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineFooType');
+            DBALType::addType('foo', 'Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineFooType');
             $entityManager->getConnection()->getDatabasePlatform()->registerDoctrineTypeMapping('custom_foo', 'foo');
         }
 
@@ -61,7 +61,7 @@ class DoctrineExtractorTest extends TestCase
                 'indexedBar',
                 'indexedFoo',
             ),
-            $this->extractor->getProperties('Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineDummy')
+            $this->extractor->getProperties('Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineDummy')
         );
     }
 
@@ -76,7 +76,7 @@ class DoctrineExtractorTest extends TestCase
                 'id',
                 'embedded',
             ),
-            $this->extractor->getProperties('Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineWithEmbedded')
+            $this->extractor->getProperties('Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineWithEmbedded')
         );
     }
 
@@ -85,7 +85,7 @@ class DoctrineExtractorTest extends TestCase
      */
     public function testExtract($property, array $type = null)
     {
-        $this->assertEquals($type, $this->extractor->getTypes('Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineDummy', $property, array()));
+        $this->assertEquals($type, $this->extractor->getTypes('Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineDummy', $property, array()));
     }
 
     public function testExtractWithEmbedded()
@@ -97,11 +97,11 @@ class DoctrineExtractorTest extends TestCase
         $expectedTypes = array(new Type(
             Type::BUILTIN_TYPE_OBJECT,
             false,
-            'Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineEmbeddable'
+            'Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineEmbeddable'
         ));
 
         $actualTypes = $this->extractor->getTypes(
-            'Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineWithEmbedded',
+            'Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineWithEmbedded',
             'embedded',
             array()
         );
@@ -120,14 +120,14 @@ class DoctrineExtractorTest extends TestCase
             array('bool', array(new Type(Type::BUILTIN_TYPE_BOOL))),
             array('binary', array(new Type(Type::BUILTIN_TYPE_RESOURCE))),
             array('json', array(new Type(Type::BUILTIN_TYPE_ARRAY, false, null, true))),
-            array('foo', array(new Type(Type::BUILTIN_TYPE_OBJECT, true, 'Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineRelation'))),
+            array('foo', array(new Type(Type::BUILTIN_TYPE_OBJECT, true, 'Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineRelation'))),
             array('bar', array(new Type(
                 Type::BUILTIN_TYPE_OBJECT,
                 false,
                 'Doctrine\Common\Collections\Collection',
                 true,
                 new Type(Type::BUILTIN_TYPE_INT),
-                new Type(Type::BUILTIN_TYPE_OBJECT, false, 'Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineRelation')
+                new Type(Type::BUILTIN_TYPE_OBJECT, false, 'Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineRelation')
             ))),
             array('indexedBar', array(new Type(
                 Type::BUILTIN_TYPE_OBJECT,
@@ -135,7 +135,7 @@ class DoctrineExtractorTest extends TestCase
                 'Doctrine\Common\Collections\Collection',
                 true,
                 new Type(Type::BUILTIN_TYPE_STRING),
-                new Type(Type::BUILTIN_TYPE_OBJECT, false, 'Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineRelation')
+                new Type(Type::BUILTIN_TYPE_OBJECT, false, 'Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineRelation')
             ))),
             array('indexedFoo', array(new Type(
                 Type::BUILTIN_TYPE_OBJECT,
@@ -143,7 +143,7 @@ class DoctrineExtractorTest extends TestCase
                 'Doctrine\Common\Collections\Collection',
                 true,
                 new Type(Type::BUILTIN_TYPE_STRING),
-                new Type(Type::BUILTIN_TYPE_OBJECT, false, 'Symfony\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineRelation')
+                new Type(Type::BUILTIN_TYPE_OBJECT, false, 'Symfony2\Bridge\Doctrine\Tests\PropertyInfo\Fixtures\DoctrineRelation')
             ))),
             array('simpleArray', array(new Type(Type::BUILTIN_TYPE_ARRAY, false, null, true, new Type(Type::BUILTIN_TYPE_INT), new Type(Type::BUILTIN_TYPE_STRING)))),
             array('customFoo', null),

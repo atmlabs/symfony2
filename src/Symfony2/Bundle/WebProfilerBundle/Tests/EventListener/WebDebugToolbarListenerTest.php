@@ -285,7 +285,7 @@ class WebDebugToolbarListenerTest extends TestCase
 
     protected function getRequestMock($isXmlHttpRequest = false, $requestFormat = 'html', $hasSession = true)
     {
-        $request = $this->getMockBuilder('Symfony\Component\HttpFoundation\Request')->setMethods(array('getSession', 'isXmlHttpRequest', 'getRequestFormat'))->disableOriginalConstructor()->getMock();
+        $request = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Request')->setMethods(array('getSession', 'isXmlHttpRequest', 'getRequestFormat'))->disableOriginalConstructor()->getMock();
         $request->expects($this->any())
             ->method('isXmlHttpRequest')
             ->will($this->returnValue($isXmlHttpRequest));
@@ -294,7 +294,7 @@ class WebDebugToolbarListenerTest extends TestCase
             ->will($this->returnValue($requestFormat));
 
         if ($hasSession) {
-            $session = $this->getMockBuilder('Symfony\Component\HttpFoundation\Session\Session')->disableOriginalConstructor()->getMock();
+            $session = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Session\Session')->disableOriginalConstructor()->getMock();
             $request->expects($this->any())
                 ->method('getSession')
                 ->will($this->returnValue($session));
@@ -315,11 +315,11 @@ class WebDebugToolbarListenerTest extends TestCase
 
     protected function getUrlGeneratorMock()
     {
-        return $this->getMockBuilder('Symfony\Component\Routing\Generator\UrlGeneratorInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Routing\Generator\UrlGeneratorInterface')->getMock();
     }
 
     protected function getKernelMock()
     {
-        return $this->getMockBuilder('Symfony\Component\HttpKernel\Kernel')->disableOriginalConstructor()->getMock();
+        return $this->getMockBuilder('Symfony2\Component\HttpKernel\Kernel')->disableOriginalConstructor()->getMock();
     }
 }

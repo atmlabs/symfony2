@@ -78,7 +78,7 @@ abstract class Bundle implements BundleInterface
 
             if (null !== $extension) {
                 if (!$extension instanceof ExtensionInterface) {
-                    throw new \LogicException(sprintf('Extension %s must implement Symfony\Component\DependencyInjection\Extension\ExtensionInterface.', \get_class($extension)));
+                    throw new \LogicException(sprintf('Extension %s must implement Symfony2\Component\DependencyInjection\Extension\ExtensionInterface.', \get_class($extension)));
                 }
 
                 // check naming convention
@@ -151,7 +151,7 @@ abstract class Bundle implements BundleInterface
      * Override this method if your bundle commands do not follow the conventions:
      *
      * * Commands are in the 'Command' sub-directory
-     * * Commands extend Symfony\Component\Console\Command\Command
+     * * Commands extend Symfony2\Component\Console\Command\Command
      */
     public function registerCommands(Application $application)
     {
@@ -159,7 +159,7 @@ abstract class Bundle implements BundleInterface
             return;
         }
 
-        if (!class_exists('Symfony\Component\Finder\Finder')) {
+        if (!class_exists('Symfony2\Component\Finder\Finder')) {
             throw new \RuntimeException('You need the symfony2/finder component to register bundle commands.');
         }
 
@@ -180,7 +180,7 @@ abstract class Bundle implements BundleInterface
                 }
             }
             $r = new \ReflectionClass($class);
-            if ($r->isSubclassOf('Symfony\\Component\\Console\\Command\\Command') && !$r->isAbstract() && !$r->getConstructor()->getNumberOfRequiredParameters()) {
+            if ($r->isSubclassOf('Symfony2\\Component\\Console\\Command\\Command') && !$r->isAbstract() && !$r->getConstructor()->getNumberOfRequiredParameters()) {
                 $application->add($r->newInstance());
             }
         }

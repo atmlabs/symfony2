@@ -16,7 +16,7 @@ namespace Symfony2\Component\Form\Tests\Extension\Core\Type;
  */
 class SubmitTypeTest extends ButtonTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\SubmitType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\SubmitType';
 
     /**
      * @group legacy
@@ -30,7 +30,7 @@ class SubmitTypeTest extends ButtonTypeTest
 
     public function testCreateSubmitButtonInstances()
     {
-        $this->assertInstanceOf('Symfony\Component\Form\SubmitButton', $this->factory->create(static::TESTED_TYPE));
+        $this->assertInstanceOf('Symfony2\Component\Form\SubmitButton', $this->factory->create(static::TESTED_TYPE));
     }
 
     public function testNotClickedByDefault()

@@ -54,6 +54,6 @@ class UploadValidatorExtension extends AbstractTypeExtension
      */
     public function getExtendedType()
     {
-        return 'Symfony\Component\Form\Extension\Core\Type\FormType';
+        return 'Symfony2\Component\Form\Extension\Core\Type\FormType';
     }
 }

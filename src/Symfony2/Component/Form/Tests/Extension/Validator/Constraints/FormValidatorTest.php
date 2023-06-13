@@ -48,9 +48,9 @@ class FormValidatorTest extends AbstractConstraintValidatorTest
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
-        $this->serverParams = $this->getMockBuilder('Symfony\Component\Form\Extension\Validator\Util\ServerParams')->setMethods(array('getNormalizedIniPostMaxSize', 'getContentLength'))->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->factory = $this->getMockBuilder('Symfony2\Component\Form\FormFactoryInterface')->getMock();
+        $this->serverParams = $this->getMockBuilder('Symfony2\Component\Form\Extension\Validator\Util\ServerParams')->setMethods(array('getNormalizedIniPostMaxSize', 'getContentLength'))->getMock();
 
         parent::setUp();
 
@@ -236,8 +236,8 @@ class FormValidatorTest extends AbstractConstraintValidatorTest
     public function testDontValidateConstraintsIfNoValidationGroups()
     {
         $object = $this->getMockBuilder('\stdClass')->getMock();
-        $constraint1 = $this->getMockBuilder('Symfony\Component\Validator\Constraint')->getMock();
-        $constraint2 = $this->getMockBuilder('Symfony\Component\Validator\Constraint')->getMock();
+        $constraint1 = $this->getMockBuilder('Symfony2\Component\Validator\Constraint')->getMock();
+        $constraint2 = $this->getMockBuilder('Symfony2\Component\Validator\Constraint')->getMock();
 
         $options = array(
             'validation_groups' => array(),
@@ -329,8 +329,8 @@ class FormValidatorTest extends AbstractConstraintValidatorTest
     public function testDontValidateConstraintsIfNotSynchronized()
     {
         $object = $this->getMockBuilder('\stdClass')->getMock();
-        $constraint1 = $this->getMockBuilder('Symfony\Component\Validator\Constraint')->getMock();
-        $constraint2 = $this->getMockBuilder('Symfony\Component\Validator\Constraint')->getMock();
+        $constraint1 = $this->getMockBuilder('Symfony2\Component\Validator\Constraint')->getMock();
+        $constraint2 = $this->getMockBuilder('Symfony2\Component\Validator\Constraint')->getMock();
 
         $options = array(
             'invalid_message' => 'invalid_message_key',
@@ -684,9 +684,9 @@ class FormValidatorTest extends AbstractConstraintValidatorTest
 
     private function getMockExecutionContext()
     {
-        $context = $this->getMockBuilder('Symfony\Component\Validator\Context\ExecutionContextInterface')->getMock();
-        $validator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ValidatorInterface')->getMock();
-        $contextualValidator = $this->getMockBuilder('Symfony\Component\Validator\Validator\ContextualValidatorInterface')->getMock();
+        $context = $this->getMockBuilder('Symfony2\Component\Validator\Context\ExecutionContextInterface')->getMock();
+        $validator = $this->getMockBuilder('Symfony2\Component\Validator\Validator\ValidatorInterface')->getMock();
+        $contextualValidator = $this->getMockBuilder('Symfony2\Component\Validator\Validator\ContextualValidatorInterface')->getMock();
 
         $validator->expects($this->any())
             ->method('inContext')
@@ -734,6 +734,6 @@ class FormValidatorTest extends AbstractConstraintValidatorTest
      */
     private function getDataMapper()
     {
-        return $this->getMockBuilder('Symfony\Component\Form\DataMapperInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Form\DataMapperInterface')->getMock();
     }
 }

@@ -24,7 +24,7 @@ class AddExpressionLanguageProvidersPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new AddExpressionLanguageProvidersPass());
 
-        $definition = new Definition('Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TestProvider');
+        $definition = new Definition('Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TestProvider');
         $definition->addTag('routing.expression_language_provider');
         $container->setDefinition('some_routing_provider', $definition);
 
@@ -43,7 +43,7 @@ class AddExpressionLanguageProvidersPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new AddExpressionLanguageProvidersPass());
 
-        $definition = new Definition('Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TestProvider');
+        $definition = new Definition('Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TestProvider');
         $definition->addTag('routing.expression_language_provider');
         $container->setDefinition('some_routing_provider', $definition);
 
@@ -63,7 +63,7 @@ class AddExpressionLanguageProvidersPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new AddExpressionLanguageProvidersPass());
 
-        $definition = new Definition('Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TestProvider');
+        $definition = new Definition('Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TestProvider');
         $definition->addTag('security.expression_language_provider');
         $container->setDefinition('some_security_provider', $definition);
 
@@ -82,7 +82,7 @@ class AddExpressionLanguageProvidersPassTest extends TestCase
         $container = new ContainerBuilder();
         $container->addCompilerPass(new AddExpressionLanguageProvidersPass());
 
-        $definition = new Definition('Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TestProvider');
+        $definition = new Definition('Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TestProvider');
         $definition->addTag('security.expression_language_provider');
         $container->setDefinition('some_security_provider', $definition);
 

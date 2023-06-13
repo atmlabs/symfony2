@@ -19,7 +19,7 @@ class FinderTest extends Iterator\RealIteratorTestCase
 {
     public function testCreate()
     {
-        $this->assertInstanceOf('Symfony\Component\Finder\Finder', Finder::create());
+        $this->assertInstanceOf('Symfony2\Component\Finder\Finder', Finder::create());
     }
 
     public function testDirectories()
@@ -422,7 +422,7 @@ class FinderTest extends Iterator\RealIteratorTestCase
 
     public function testAppendReturnsAFinder()
     {
-        $this->assertInstanceOf('Symfony\\Component\\Finder\\Finder', Finder::create()->append(array()));
+        $this->assertInstanceOf('Symfony2\\Component\\Finder\\Finder', Finder::create()->append(array()));
     }
 
     public function testAppendDoesNotRequireIn()
@@ -602,7 +602,7 @@ class FinderTest extends Iterator\RealIteratorTestCase
         $iterator = new \ArrayIterator(array());
         $filenames = $this->toAbsolute(array('foo', 'foo/bar.tmp', 'test.php', 'test.py', 'toto'));
         foreach ($filenames as $file) {
-            $iterator->append(new \Symfony\Component\Finder\SplFileInfo($file, null, null));
+            $iterator->append(new \Symfony2\Component\Finder\SplFileInfo($file, null, null));
         }
 
         $finder = Finder::create()
@@ -658,15 +658,15 @@ class FinderTest extends Iterator\RealIteratorTestCase
     {
         // test that by default, PhpAdapter is selected
         $adapters = Finder::create()->getAdapters();
-        $this->assertInstanceOf('Symfony\Component\Finder\Adapter\PhpAdapter', $adapters[0]);
+        $this->assertInstanceOf('Symfony2\Component\Finder\Adapter\PhpAdapter', $adapters[0]);
 
         // test another adapter selection
         $adapters = Finder::create()->setAdapter('gnu_find')->getAdapters();
-        $this->assertInstanceOf('Symfony\Component\Finder\Adapter\GnuFindAdapter', $adapters[0]);
+        $this->assertInstanceOf('Symfony2\Component\Finder\Adapter\GnuFindAdapter', $adapters[0]);
 
         // test that useBestAdapter method removes selection
         $adapters = Finder::create()->useBestAdapter()->getAdapters();
-        $this->assertNotInstanceOf('Symfony\Component\Finder\Adapter\PhpAdapter', $adapters[0]);
+        $this->assertNotInstanceOf('Symfony2\Component\Finder\Adapter\PhpAdapter', $adapters[0]);
     }
 
     public function getTestPathData()
@@ -732,7 +732,7 @@ class FinderTest extends Iterator\RealIteratorTestCase
                 $this->assertIterator($this->toAbsolute(array('foo bar', 'test.php', 'test.py')), $finder->getIterator());
                 $this->fail('Finder should throw an exception when opening a non-readable directory.');
             } catch (\Exception $e) {
-                $expectedExceptionClass = 'Symfony\\Component\\Finder\\Exception\\AccessDeniedException';
+                $expectedExceptionClass = 'Symfony2\\Component\\Finder\\Exception\\AccessDeniedException';
                 if ($e instanceof \PHPUnit_Framework_ExpectationFailedException) {
                     $this->fail(sprintf("Expected exception:\n%s\nGot:\n%s\nWith comparison failure:\n%s", $expectedExceptionClass, 'PHPUnit_Framework_ExpectationFailedException', $e->getComparisonFailure()->getExpectedAsString()));
                 }

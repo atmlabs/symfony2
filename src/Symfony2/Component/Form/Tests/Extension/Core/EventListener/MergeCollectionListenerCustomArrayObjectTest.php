@@ -23,6 +23,6 @@ class MergeCollectionListenerCustomArrayObjectTest extends MergeCollectionListen
 
     protected function getBuilder($name = 'name')
     {
-        return new FormBuilder($name, 'Symfony\Component\Form\Tests\Fixtures\CustomArrayObject', $this->dispatcher, $this->factory);
+        return new FormBuilder($name, 'Symfony2\Component\Form\Tests\Fixtures\CustomArrayObject', $this->dispatcher, $this->factory);
     }
 }

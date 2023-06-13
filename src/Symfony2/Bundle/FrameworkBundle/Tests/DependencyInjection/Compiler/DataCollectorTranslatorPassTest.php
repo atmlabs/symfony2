@@ -27,16 +27,16 @@ class DataCollectorTranslatorPassTest extends TestCase
         $this->container = new ContainerBuilder();
         $this->dataCollectorTranslatorPass = new DataCollectorTranslatorPass();
 
-        $this->container->setParameter('translator_implementing_bag', 'Symfony\Component\Translation\Translator');
-        $this->container->setParameter('translator_not_implementing_bag', 'Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TranslatorWithTranslatorBag');
+        $this->container->setParameter('translator_implementing_bag', 'Symfony2\Component\Translation\Translator');
+        $this->container->setParameter('translator_not_implementing_bag', 'Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TranslatorWithTranslatorBag');
 
-        $this->container->register('translator.data_collector', 'Symfony\Component\Translation\DataCollectorTranslator')
+        $this->container->register('translator.data_collector', 'Symfony2\Component\Translation\DataCollectorTranslator')
             ->setPublic(false)
             ->setDecoratedService('translator')
             ->setArguments(array(new Reference('translator.data_collector.inner')))
         ;
 
-        $this->container->register('data_collector.translation', 'Symfony\Component\Translation\DataCollector\TranslationDataCollector')
+        $this->container->register('data_collector.translation', 'Symfony2\Component\Translation\DataCollector\TranslationDataCollector')
             ->setArguments(array(new Reference('translator.data_collector')))
         ;
     }
@@ -68,7 +68,7 @@ class DataCollectorTranslatorPassTest extends TestCase
     public function getImplementingTranslatorBagInterfaceTranslatorClassNames()
     {
         return array(
-            array('Symfony\Component\Translation\Translator'),
+            array('Symfony2\Component\Translation\Translator'),
             array('%translator_implementing_bag%'),
         );
     }
@@ -100,7 +100,7 @@ class DataCollectorTranslatorPassTest extends TestCase
     public function getNotImplementingTranslatorBagInterfaceTranslatorClassNames()
     {
         return array(
-            array('Symfony\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TranslatorWithTranslatorBag'),
+            array('Symfony2\Bundle\FrameworkBundle\Tests\DependencyInjection\Compiler\TranslatorWithTranslatorBag'),
             array('%translator_not_implementing_bag%'),
         );
     }

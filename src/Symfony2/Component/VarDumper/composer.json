@@ -32,7 +32,7 @@
     },
     "autoload": {
         "files": [ "Resources/functions/dump.php" ],
-        "psr-4": { "Symfony\\Component\\VarDumper\\": "" },
+        "psr-4": { "Symfony2\\Component\\VarDumper\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

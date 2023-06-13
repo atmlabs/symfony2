@@ -77,7 +77,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testRelativeUrlWithNullParameterButNotOptional()
     {
@@ -163,7 +163,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\RouteNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\RouteNotFoundException
      */
     public function testGenerateWithoutRoutes()
     {
@@ -172,7 +172,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\MissingMandatoryParametersException
+     * @expectedException \Symfony2\Component\Routing\Exception\MissingMandatoryParametersException
      */
     public function testGenerateForRouteWithoutMandatoryParameter()
     {
@@ -181,7 +181,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testGenerateForRouteWithInvalidOptionalParameter()
     {
@@ -190,7 +190,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testGenerateForRouteWithInvalidParameter()
     {
@@ -226,7 +226,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testGenerateForRouteWithInvalidMandatoryParameter()
     {
@@ -235,7 +235,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testRequiredParamAndEmptyPassed()
     {
@@ -359,7 +359,7 @@ class UrlGeneratorTest extends TestCase
 
         // The default requirement for 'x' should not allow the separator '.' in this case because it would otherwise match everything
         // and following optional variables like _format could never match.
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Routing\Exception\InvalidParameterException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Routing\Exception\InvalidParameterException');
         $generator->generate('test', array('x' => 'do.t', 'y' => '123', 'z' => 'bar', '_format' => 'xml'));
     }
 
@@ -389,7 +389,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testDefaultRequirementOfVariableDisallowsSlash()
     {
@@ -398,7 +398,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testDefaultRequirementOfVariableDisallowsNextSeparator()
     {
@@ -428,7 +428,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testUrlWithInvalidParameterInHost()
     {
@@ -437,7 +437,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testUrlWithInvalidParameterInHostWhenParamHasADefaultValue()
     {
@@ -446,7 +446,7 @@ class UrlGeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\InvalidParameterException
+     * @expectedException \Symfony2\Component\Routing\Exception\InvalidParameterException
      */
     public function testUrlWithInvalidParameterEqualsDefaultValueInHost()
     {

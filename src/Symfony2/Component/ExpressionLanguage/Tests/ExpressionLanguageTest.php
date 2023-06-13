@@ -20,7 +20,7 @@ class ExpressionLanguageTest extends TestCase
 {
     public function testCachedParse()
     {
-        $cacheMock = $this->getMockBuilder('Symfony\Component\ExpressionLanguage\ParserCache\ParserCacheInterface')->getMock();
+        $cacheMock = $this->getMockBuilder('Symfony2\Component\ExpressionLanguage\ParserCache\ParserCacheInterface')->getMock();
         $savedParsedExpression = null;
         $expressionLanguage = new ExpressionLanguage($cacheMock);
 
@@ -35,7 +35,7 @@ class ExpressionLanguageTest extends TestCase
         $cacheMock
             ->expects($this->exactly(1))
             ->method('save')
-            ->with('1 + 1//', $this->isInstanceOf('Symfony\Component\ExpressionLanguage\ParsedExpression'))
+            ->with('1 + 1//', $this->isInstanceOf('Symfony2\Component\ExpressionLanguage\ParsedExpression'))
             ->will($this->returnCallback(function ($key, $expression) use (&$savedParsedExpression) {
                 $savedParsedExpression = $expression;
             }))
@@ -85,7 +85,7 @@ class ExpressionLanguageTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\ExpressionLanguage\SyntaxError
+     * @expectedException \Symfony2\Component\ExpressionLanguage\SyntaxError
      * @expectedExceptionMessage Unexpected end of expression around position 6 for expression `node.`.
      */
     public function testParseThrowsInsteadOfNotice()
@@ -136,7 +136,7 @@ class ExpressionLanguageTest extends TestCase
 
     public function testCachingWithDifferentNamesOrder()
     {
-        $cacheMock = $this->getMockBuilder('Symfony\Component\ExpressionLanguage\ParserCache\ParserCacheInterface')->getMock();
+        $cacheMock = $this->getMockBuilder('Symfony2\Component\ExpressionLanguage\ParserCache\ParserCacheInterface')->getMock();
         $expressionLanguage = new ExpressionLanguage($cacheMock);
         $savedParsedExpressions = array();
         $cacheMock

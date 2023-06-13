@@ -74,7 +74,7 @@ class Client extends BaseClient
         $kernel = var_export(serialize($this->kernel), true);
         $request = var_export(serialize($request), true);
 
-        $r = new \ReflectionClass('\\Symfony\\Component\\ClassLoader\\ClassLoader');
+        $r = new \ReflectionClass('\\Symfony2\\Component\\ClassLoader\\ClassLoader');
         $requirePath = var_export($r->getFileName(), true);
         $symfonyPath = var_export(\dirname(\dirname(\dirname(__DIR__))), true);
         $errorReporting = error_reporting();
@@ -86,7 +86,7 @@ error_reporting($errorReporting);
 
 require_once $requirePath;
 
-\$loader = new Symfony\Component\ClassLoader\ClassLoader();
+\$loader = new Symfony2\Component\ClassLoader\ClassLoader();
 \$loader->addPrefix('Symfony', $symfonyPath);
 \$loader->register();
 
@@ -102,7 +102,7 @@ EOF;
         return <<<'EOF'
 $response = $kernel->handle($request);
 
-if ($kernel instanceof Symfony\Component\HttpKernel\TerminableInterface) {
+if ($kernel instanceof Symfony2\Component\HttpKernel\TerminableInterface) {
     $kernel->terminate($request, $response);
 }
 

@@ -25,7 +25,7 @@ class MergeExtensionConfigurationPassTest extends TestCase
     {
         $tmpProviders = array();
 
-        $extension = $this->getMockBuilder('Symfony\\Component\\DependencyInjection\\Extension\\ExtensionInterface')->getMock();
+        $extension = $this->getMockBuilder('Symfony2\\Component\\DependencyInjection\\Extension\\ExtensionInterface')->getMock();
         $extension->expects($this->any())
             ->method('getXsdValidationBasePath')
             ->will($this->returnValue(false));
@@ -41,7 +41,7 @@ class MergeExtensionConfigurationPassTest extends TestCase
                 $tmpProviders = $container->getExpressionLanguageProviders();
             }));
 
-        $provider = $this->getMockBuilder('Symfony\\Component\\ExpressionLanguage\\ExpressionFunctionProviderInterface')->getMock();
+        $provider = $this->getMockBuilder('Symfony2\\Component\\ExpressionLanguage\\ExpressionFunctionProviderInterface')->getMock();
         $container = new ContainerBuilder(new ParameterBag());
         $container->registerExtension($extension);
         $container->prependExtensionConfig('foo', array('bar' => true));
@@ -55,7 +55,7 @@ class MergeExtensionConfigurationPassTest extends TestCase
 
     public function testExtensionConfigurationIsTrackedByDefault()
     {
-        $extension = $this->getMockBuilder('Symfony\\Component\\DependencyInjection\\Extension\\Extension')->getMock();
+        $extension = $this->getMockBuilder('Symfony2\\Component\\DependencyInjection\\Extension\\Extension')->getMock();
         $extension->expects($this->once())
             ->method('getConfiguration')
             ->will($this->returnValue(new FooConfiguration()));

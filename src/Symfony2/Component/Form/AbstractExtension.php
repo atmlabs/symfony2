@@ -153,7 +153,7 @@ abstract class AbstractExtension implements FormExtensionInterface
 
         foreach ($this->loadTypes() as $type) {
             if (!$type instanceof FormTypeInterface) {
-                throw new UnexpectedTypeException($type, 'Symfony\Component\Form\FormTypeInterface');
+                throw new UnexpectedTypeException($type, 'Symfony2\Component\Form\FormTypeInterface');
             }
 
             // Since Symfony 3.0 types are identified by their FQCN
@@ -180,7 +180,7 @@ abstract class AbstractExtension implements FormExtensionInterface
 
         foreach ($this->loadTypeExtensions() as $extension) {
             if (!$extension instanceof FormTypeExtensionInterface) {
-                throw new UnexpectedTypeException($extension, 'Symfony\Component\Form\FormTypeExtensionInterface');
+                throw new UnexpectedTypeException($extension, 'Symfony2\Component\Form\FormTypeExtensionInterface');
             }
 
             $type = $extension->getExtendedType();
@@ -200,7 +200,7 @@ abstract class AbstractExtension implements FormExtensionInterface
 
         $this->typeGuesser = $this->loadTypeGuesser();
         if (null !== $this->typeGuesser && !$this->typeGuesser instanceof FormTypeGuesserInterface) {
-            throw new UnexpectedTypeException($this->typeGuesser, 'Symfony\Component\Form\FormTypeGuesserInterface');
+            throw new UnexpectedTypeException($this->typeGuesser, 'Symfony2\Component\Form\FormTypeGuesserInterface');
         }
     }
 }

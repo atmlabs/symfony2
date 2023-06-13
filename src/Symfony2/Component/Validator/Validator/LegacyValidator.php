@@ -18,8 +18,8 @@ namespace Symfony2\Component\Validator\Validator;
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
- * @see \Symfony\Component\Validator\ValidatorInterface
- * @see \Symfony\Component\Validator\Validator\ValidatorInterface
+ * @see \Symfony2\Component\Validator\ValidatorInterface
+ * @see \Symfony2\Component\Validator\Validator\ValidatorInterface
  * @deprecated since version 2.5, to be removed in 3.0.
  */
 class LegacyValidator extends RecursiveValidator

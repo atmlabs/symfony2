@@ -24,7 +24,7 @@ final class KernelEvents
      *
      * This event allows you to create a response for a request before any
      * other code in the framework is executed. The event listener method
-     * receives a Symfony\Component\HttpKernel\Event\GetResponseEvent
+     * receives a Symfony2\Component\HttpKernel\Event\GetResponseEvent
      * instance.
      *
      * @Event
@@ -36,7 +36,7 @@ final class KernelEvents
      *
      * This event allows you to create a response for a thrown exception or
      * to modify the thrown exception. The event listener method receives
-     * a Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent
+     * a Symfony2\Component\HttpKernel\Event\GetResponseForExceptionEvent
      * instance.
      *
      * @Event
@@ -49,7 +49,7 @@ final class KernelEvents
      *
      * This event allows you to create a response for the return value of the
      * controller. The event listener method receives a
-     * Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent
+     * Symfony2\Component\HttpKernel\Event\GetResponseForControllerResultEvent
      * instance.
      *
      * @Event
@@ -62,7 +62,7 @@ final class KernelEvents
      *
      * This event allows you to change the controller that will handle the
      * request. The event listener method receives a
-     * Symfony\Component\HttpKernel\Event\FilterControllerEvent instance.
+     * Symfony2\Component\HttpKernel\Event\FilterControllerEvent instance.
      *
      * @Event
      */
@@ -74,7 +74,7 @@ final class KernelEvents
      *
      * This event allows you to modify or replace the response that will be
      * replied. The event listener method receives a
-     * Symfony\Component\HttpKernel\Event\FilterResponseEvent instance.
+     * Symfony2\Component\HttpKernel\Event\FilterResponseEvent instance.
      *
      * @Event
      */
@@ -85,7 +85,7 @@ final class KernelEvents
      *
      * This event allows you to run expensive post-response jobs.
      * The event listener method receives a
-     * Symfony\Component\HttpKernel\Event\PostResponseEvent instance.
+     * Symfony2\Component\HttpKernel\Event\PostResponseEvent instance.
      *
      * @Event
      */
@@ -97,7 +97,7 @@ final class KernelEvents
      * This event allows you to reset the global and environmental state of
      * the application, when it was changed during the request.
      * The event listener method receives a
-     * Symfony\Component\HttpKernel\Event\FinishRequestEvent instance.
+     * Symfony2\Component\HttpKernel\Event\FinishRequestEvent instance.
      *
      * @Event
      */

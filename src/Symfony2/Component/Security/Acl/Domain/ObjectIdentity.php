@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
-use Symfony\Component\Security\Acl\Exception\InvalidDomainObjectException;
-use Symfony\Component\Security\Acl\Model\DomainObjectInterface;
-use Symfony\Component\Security\Acl\Model\ObjectIdentityInterface;
-use Symfony\Component\Security\Acl\Util\ClassUtils;
+use Symfony2\Component\Security\Acl\Exception\InvalidDomainObjectException;
+use Symfony2\Component\Security\Acl\Model\DomainObjectInterface;
+use Symfony2\Component\Security\Acl\Model\ObjectIdentityInterface;
+use Symfony2\Component\Security\Acl\Util\ClassUtils;
 
 /**
  * ObjectIdentity implementation.

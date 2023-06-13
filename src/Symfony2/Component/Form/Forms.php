@@ -23,10 +23,10 @@ use Symfony2\Component\Form\Extension\Core\CoreExtension;
  *     $formFactory = Forms::createFormFactory();
  *
  *     $form = $formFactory->createBuilder()
- *         ->add('firstName', 'Symfony\Component\Form\Extension\Core\Type\TextType')
- *         ->add('lastName', 'Symfony\Component\Form\Extension\Core\Type\TextType')
- *         ->add('age', 'Symfony\Component\Form\Extension\Core\Type\IntegerType')
- *         ->add('gender', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(
+ *         ->add('firstName', 'Symfony2\Component\Form\Extension\Core\Type\TextType')
+ *         ->add('lastName', 'Symfony2\Component\Form\Extension\Core\Type\TextType')
+ *         ->add('age', 'Symfony2\Component\Form\Extension\Core\Type\IntegerType')
+ *         ->add('gender', 'Symfony2\Component\Form\Extension\Core\Type\ChoiceType', array(
  *             'choices' => array('Male' => 'm', 'Female' => 'f'),
  *             'choices_as_values' => true,
  *         ))

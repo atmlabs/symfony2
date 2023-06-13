@@ -79,7 +79,7 @@ class ContainerTest extends TestCase
         $this->assertFalse($sc->getParameterBag()->isResolved(), '->compile() resolves the parameter bag');
         $sc->compile();
         $this->assertTrue($sc->getParameterBag()->isResolved(), '->compile() resolves the parameter bag');
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag', $sc->getParameterBag(), '->compile() changes the parameter bag to a FrozenParameterBag instance');
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\ParameterBag\FrozenParameterBag', $sc->getParameterBag(), '->compile() changes the parameter bag to a FrozenParameterBag instance');
         $this->assertEquals(array('foo' => 'bar'), $sc->getParameterBag()->all(), '->compile() copies the current parameters to the new parameter bag');
     }
 
@@ -219,7 +219,7 @@ class ContainerTest extends TestCase
             $sc->get('');
             $this->fail('->get() throws a \InvalidArgumentException exception if the service is empty');
         } catch (\Exception $e) {
-            $this->assertInstanceOf('Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException', $e, '->get() throws a ServiceNotFoundException exception if the service is empty');
+            $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Exception\ServiceNotFoundException', $e, '->get() throws a ServiceNotFoundException exception if the service is empty');
         }
         $this->assertNull($sc->get('', ContainerInterface::NULL_ON_INVALID_REFERENCE), '->get() returns null if the service is empty');
     }
@@ -232,18 +232,18 @@ class ContainerTest extends TestCase
 
         try {
             $sc->get('foo1');
-            $this->fail('->get() throws an Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException if the key does not exist');
+            $this->fail('->get() throws an Symfony2\Component\DependencyInjection\Exception\ServiceNotFoundException if the key does not exist');
         } catch (\Exception $e) {
-            $this->assertInstanceOf('Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException', $e, '->get() throws an Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException if the key does not exist');
-            $this->assertEquals('You have requested a non-existent service "foo1". Did you mean this: "foo"?', $e->getMessage(), '->get() throws an Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException with some advices');
+            $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Exception\ServiceNotFoundException', $e, '->get() throws an Symfony2\Component\DependencyInjection\Exception\ServiceNotFoundException if the key does not exist');
+            $this->assertEquals('You have requested a non-existent service "foo1". Did you mean this: "foo"?', $e->getMessage(), '->get() throws an Symfony2\Component\DependencyInjection\Exception\ServiceNotFoundException with some advices');
         }
 
         try {
             $sc->get('bag');
-            $this->fail('->get() throws an Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException if the key does not exist');
+            $this->fail('->get() throws an Symfony2\Component\DependencyInjection\Exception\ServiceNotFoundException if the key does not exist');
         } catch (\Exception $e) {
-            $this->assertInstanceOf('Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException', $e, '->get() throws an Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException if the key does not exist');
-            $this->assertEquals('You have requested a non-existent service "bag". Did you mean one of these: "bar", "baz"?', $e->getMessage(), '->get() throws an Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException with some advices');
+            $this->assertInstanceOf('Symfony2\Component\DependencyInjection\Exception\ServiceNotFoundException', $e, '->get() throws an Symfony2\Component\DependencyInjection\Exception\ServiceNotFoundException if the key does not exist');
+            $this->assertEquals('You have requested a non-existent service "bag". Did you mean one of these: "bar", "baz"?', $e->getMessage(), '->get() throws an Symfony2\Component\DependencyInjection\Exception\ServiceNotFoundException with some advices');
         }
     }
 
@@ -254,7 +254,7 @@ class ContainerTest extends TestCase
             $sc->get('circular');
             $this->fail('->get() throws a ServiceCircularReferenceException if it contains circular reference');
         } catch (\Exception $e) {
-            $this->assertInstanceOf('\Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException', $e, '->get() throws a ServiceCircularReferenceException if it contains circular reference');
+            $this->assertInstanceOf('\Symfony2\Component\DependencyInjection\Exception\ServiceCircularReferenceException', $e, '->get() throws a ServiceCircularReferenceException if it contains circular reference');
             $this->assertStringStartsWith('Circular reference detected for service "circular"', $e->getMessage(), '->get() throws a \LogicException if it contains circular reference');
         }
     }
@@ -269,7 +269,7 @@ class ContainerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\RuntimeException
      * @expectedExceptionMessage You have requested a synthetic service ("request"). The DIC does not know how to construct this service.
      */
     public function testGetSyntheticServiceAlwaysThrows()
@@ -316,7 +316,7 @@ class ContainerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\DependencyInjection\Exception\LogicException
+     * @expectedException \Symfony2\Component\DependencyInjection\Exception\LogicException
      * @expectedExceptionMessage Resetting the container is not allowed when a scope is active.
      * @group legacy
      */
@@ -696,7 +696,7 @@ class ContainerTest extends TestCase
 
     public function testThatCloningIsNotSupported()
     {
-        $class = new \ReflectionClass('Symfony\Component\DependencyInjection\Container');
+        $class = new \ReflectionClass('Symfony2\Component\DependencyInjection\Container');
         $clone = $class->getMethod('__clone');
         if (\PHP_VERSION_ID >= 50400) {
             $this->assertFalse($class->isCloneable());

@@ -147,7 +147,7 @@ class LogoutListenerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\LogoutException
+     * @expectedException \Symfony2\Component\Security\Core\Exception\LogoutException
      */
     public function testCsrfValidationFails()
     {
@@ -173,17 +173,17 @@ class LogoutListenerTest extends TestCase
 
     private function getTokenManager()
     {
-        return $this->getMockBuilder('Symfony\Component\Security\Csrf\CsrfTokenManagerInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Security\Csrf\CsrfTokenManagerInterface')->getMock();
     }
 
     private function getTokenStorage()
     {
-        return $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
     }
 
     private function getGetResponseEvent()
     {
-        $event = $this->getMockBuilder('Symfony\Component\HttpKernel\Event\GetResponseEvent')
+        $event = $this->getMockBuilder('Symfony2\Component\HttpKernel\Event\GetResponseEvent')
             ->disableOriginalConstructor()
             ->getMock();
 
@@ -196,12 +196,12 @@ class LogoutListenerTest extends TestCase
 
     private function getHandler()
     {
-        return $this->getMockBuilder('Symfony\Component\Security\Http\Logout\LogoutHandlerInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Security\Http\Logout\LogoutHandlerInterface')->getMock();
     }
 
     private function getHttpUtils()
     {
-        return $this->getMockBuilder('Symfony\Component\Security\Http\HttpUtils')
+        return $this->getMockBuilder('Symfony2\Component\Security\Http\HttpUtils')
             ->disableOriginalConstructor()
             ->getMock();
     }
@@ -226,11 +226,11 @@ class LogoutListenerTest extends TestCase
 
     private function getSuccessHandler()
     {
-        return $this->getMockBuilder('Symfony\Component\Security\Http\Logout\LogoutSuccessHandlerInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Security\Http\Logout\LogoutSuccessHandlerInterface')->getMock();
     }
 
     private function getToken()
     {
-        return $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
     }
 }

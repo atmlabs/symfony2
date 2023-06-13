@@ -38,7 +38,7 @@
         "symfony2/ldap": "For using LDAP integration"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\Security\\Core\\": "" },
+        "psr-4": { "Symfony2\\Component\\Security\\Core\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

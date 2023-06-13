@@ -21,8 +21,8 @@ class PhpFinderTest extends FinderTest
 {
     public function testImplementationsAreSynchronized()
     {
-        $adapterReflector = new \ReflectionMethod('Symfony\Component\Finder\Adapter\PhpAdapter', 'searchInDirectory');
-        $finderReflector = new \ReflectionMethod('Symfony\Component\Finder\Finder', 'searchInDirectory');
+        $adapterReflector = new \ReflectionMethod('Symfony2\Component\Finder\Adapter\PhpAdapter', 'searchInDirectory');
+        $finderReflector = new \ReflectionMethod('Symfony2\Component\Finder\Finder', 'searchInDirectory');
 
         $adapterSource = \array_slice(file($adapterReflector->getFileName()), $adapterReflector->getStartLine() + 1, $adapterReflector->getEndLine() - $adapterReflector->getStartLine() - 1);
         $adapterSource = implode('', $adapterSource);

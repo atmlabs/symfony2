@@ -35,7 +35,7 @@
         "ext-intl": "to use the component with locales other than \"en\""
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\Intl\\": "" },
+        "psr-4": { "Symfony2\\Component\\Intl\\": "" },
         "classmap": [ "Resources/stubs" ],
         "exclude-from-classmap": [
             "/Tests/"

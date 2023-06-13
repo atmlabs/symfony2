@@ -75,7 +75,7 @@ class InlineTest extends TestCase
 
     /**
      * @group legacy
-     * throws \Symfony\Component\Yaml\Exception\ParseException in 3.0
+     * throws \Symfony2\Component\Yaml\Exception\ParseException in 3.0
      */
     public function testParseScalarWithNonEscapedBlackslashShouldThrowException()
     {
@@ -83,7 +83,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testParseScalarWithNonEscapedBlackslashAtTheEndShouldThrowException()
     {
@@ -91,7 +91,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testParseScalarWithIncorrectlyQuotedStringShouldThrowException()
     {
@@ -100,7 +100,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testParseScalarWithIncorrectlyDoubleQuotedStringShouldThrowException()
     {
@@ -109,7 +109,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testParseInvalidMappingKeyShouldThrowException()
     {
@@ -118,7 +118,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testParseInvalidMappingShouldThrowException()
     {
@@ -126,7 +126,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      */
     public function testParseInvalidSequenceShouldThrowException()
     {
@@ -174,7 +174,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      * @expectedExceptionMessage A reference must contain at least one character.
      */
     public function testParseUnquotedAsterisk()
@@ -183,7 +183,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      * @expectedExceptionMessage A reference must contain at least one character.
      */
     public function testParseUnquotedAsteriskFollowedByAComment()
@@ -194,7 +194,7 @@ class InlineTest extends TestCase
     /**
      * @group legacy
      * @expectedDeprecation Not quoting the scalar "@foo " starting with "@" is deprecated since Symfony 2.8 and will throw a ParseException in 3.0.
-     * throws \Symfony\Component\Yaml\Exception\ParseException in 3.0
+     * throws \Symfony2\Component\Yaml\Exception\ParseException in 3.0
      */
     public function testParseUnquotedScalarStartingWithReservedAtIndicator()
     {
@@ -204,7 +204,7 @@ class InlineTest extends TestCase
     /**
      * @group legacy
      * @expectedDeprecation Not quoting the scalar "`foo " starting with "`" is deprecated since Symfony 2.8 and will throw a ParseException in 3.0.
-     * throws \Symfony\Component\Yaml\Exception\ParseException in 3.0
+     * throws \Symfony2\Component\Yaml\Exception\ParseException in 3.0
      */
     public function testParseUnquotedScalarStartingWithReservedBacktickIndicator()
     {
@@ -214,7 +214,7 @@ class InlineTest extends TestCase
     /**
      * @group legacy
      * @expectedDeprecation Not quoting the scalar "|foo " starting with "|" is deprecated since Symfony 2.8 and will throw a ParseException in 3.0.
-     * throws \Symfony\Component\Yaml\Exception\ParseException in 3.0
+     * throws \Symfony2\Component\Yaml\Exception\ParseException in 3.0
      */
     public function testParseUnquotedScalarStartingWithLiteralStyleIndicator()
     {
@@ -224,7 +224,7 @@ class InlineTest extends TestCase
     /**
      * @group legacy
      * @expectedDeprecation Not quoting the scalar ">foo " starting with ">" is deprecated since Symfony 2.8 and will throw a ParseException in 3.0.
-     * throws \Symfony\Component\Yaml\Exception\ParseException in 3.0
+     * throws \Symfony2\Component\Yaml\Exception\ParseException in 3.0
      */
     public function testParseUnquotedScalarStartingWithFoldedStyleIndicator()
     {
@@ -466,7 +466,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      * @expectedExceptionMessage Malformed inline YAML string: {this, is not, supported}.
      */
     public function testNotSupportedMissingValue()
@@ -496,7 +496,7 @@ class InlineTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Yaml\Exception\ParseException
+     * @expectedException \Symfony2\Component\Yaml\Exception\ParseException
      * @expectedExceptionMessage Unexpected end of line, expected one of ",}".
      */
     public function testUnfinishedInlineMap()

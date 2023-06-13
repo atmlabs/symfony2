@@ -15,7 +15,7 @@ use Symfony2\Component\Form\Tests\Fixtures\Author;
 
 class CollectionTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\CollectionType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\CollectionType';
 
     /**
      * @group legacy
@@ -48,8 +48,8 @@ class CollectionTypeTest extends BaseTypeTest
         ));
         $form->setData(array('foo@foo.com', 'foo@bar.com'));
 
-        $this->assertInstanceOf('Symfony\Component\Form\Form', $form[0]);
-        $this->assertInstanceOf('Symfony\Component\Form\Form', $form[1]);
+        $this->assertInstanceOf('Symfony2\Component\Form\Form', $form[0]);
+        $this->assertInstanceOf('Symfony2\Component\Form\Form', $form[1]);
         $this->assertCount(2, $form);
         $this->assertEquals('foo@foo.com', $form[0]->getData());
         $this->assertEquals('foo@bar.com', $form[1]->getData());
@@ -59,7 +59,7 @@ class CollectionTypeTest extends BaseTypeTest
         $this->assertEquals(20, $formAttrs1['maxlength']);
 
         $form->setData(array('foo@baz.com'));
-        $this->assertInstanceOf('Symfony\Component\Form\Form', $form[0]);
+        $this->assertInstanceOf('Symfony2\Component\Form\Form', $form[0]);
         $this->assertArrayNotHasKey(1, $form);
         $this->assertCount(1, $form);
         $this->assertEquals('foo@baz.com', $form[0]->getData());
@@ -72,7 +72,7 @@ class CollectionTypeTest extends BaseTypeTest
         $form = $this->factory->create(static::TESTED_TYPE, null, array(
             'entry_type' => TextTypeTest::TESTED_TYPE,
         ));
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Form\Exception\UnexpectedTypeException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Form\Exception\UnexpectedTypeException');
         $form->setData(new \stdClass());
     }
 
@@ -157,7 +157,7 @@ class CollectionTypeTest extends BaseTypeTest
     public function testResizedDownIfSubmittedWithCompoundEmptyDataAndDeleteEmpty()
     {
         $form = $this->factory->create(static::TESTED_TYPE, null, array(
-            'entry_type' => 'Symfony\Component\Form\Tests\Fixtures\AuthorType',
+            'entry_type' => 'Symfony2\Component\Form\Tests\Fixtures\AuthorType',
             // If the field is not required, no new Author will be created if the
             // form is completely empty
             'entry_options' => array('required' => false),
@@ -287,7 +287,7 @@ class CollectionTypeTest extends BaseTypeTest
 
         $resolvedOptions = $form->getConfig()->getOptions();
 
-        $this->assertEquals('Symfony\Component\Form\Extension\Core\Type\NumberType', $resolvedOptions['entry_type']);
+        $this->assertEquals('Symfony2\Component\Form\Extension\Core\Type\NumberType', $resolvedOptions['entry_type']);
         $this->assertEquals(array('attr' => array('maxlength' => '10'), 'block_name' => 'entry'), $resolvedOptions['entry_options']);
     }
 

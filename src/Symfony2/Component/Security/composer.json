@@ -53,7 +53,7 @@
         "symfony2/ldap": "For using the LDAP user and authentication providers"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\Security\\": "" },
+        "psr-4": { "Symfony2\\Component\\Security\\": "" },
         "exclude-from-classmap": [
             "/Core/Tests/",
             "/Csrf/Tests/",

@@ -25,7 +25,7 @@ class FragmentHandlerTest extends TestCase
 
     protected function setUp()
     {
-        $this->requestStack = $this->getMockBuilder('Symfony\\Component\\HttpFoundation\\RequestStack')
+        $this->requestStack = $this->getMockBuilder('Symfony2\\Component\\HttpFoundation\\RequestStack')
             ->disableOriginalConstructor()
             ->getMock()
         ;
@@ -75,7 +75,7 @@ class FragmentHandlerTest extends TestCase
 
     protected function getHandler($returnValue, $arguments = array())
     {
-        $renderer = $this->getMockBuilder('Symfony\Component\HttpKernel\Fragment\FragmentRendererInterface')->getMock();
+        $renderer = $this->getMockBuilder('Symfony2\Component\HttpKernel\Fragment\FragmentRendererInterface')->getMock();
         $renderer
             ->expects($this->any())
             ->method('getName')

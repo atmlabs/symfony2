@@ -24,7 +24,7 @@ class LegacySessionCsrfProviderTest extends TestCase
 
     protected function setUp()
     {
-        $this->session = $this->getMockBuilder('Symfony\Component\HttpFoundation\Session\Session')->disableOriginalConstructor()->getMock();
+        $this->session = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Session\Session')->disableOriginalConstructor()->getMock();
         $this->provider = new SessionCsrfProvider($this->session, 'SECRET');
     }
 

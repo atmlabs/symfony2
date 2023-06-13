@@ -4,9 +4,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
-  <namespace prefix="custom">Symfony\Component\Validator\Tests\Fixtures\</namespace>
+  <namespace prefix="custom">Symfony2\Component\Validator\Tests\Fixtures\</namespace>
 
-  <class name="Symfony\Component\Validator\Tests\Fixtures\Entity">
+  <class name="Symfony2\Component\Validator\Tests\Fixtures\Entity">
 
     <group-sequence>
        <value>Foo</value>
@@ -16,7 +16,7 @@
     <!-- CLASS CONSTRAINTS -->
 
     <!-- Custom constraint -->
-    <constraint name="Symfony\Component\Validator\Tests\Fixtures\ConstraintA" />
+    <constraint name="Symfony2\Component\Validator\Tests\Fixtures\ConstraintA" />
 
     <!-- Custom constraint with namespace abbreviation-->
     <constraint name="custom:ConstraintB" />
@@ -27,7 +27,7 @@
     <constraint name="Callback">validateMeStatic</constraint>
 
     <constraint name="Callback">
-        <value>Symfony\Component\Validator\Tests\Fixtures\CallbackClass</value>
+        <value>Symfony2\Component\Validator\Tests\Fixtures\CallbackClass</value>
         <value>callback</value>
     </constraint>
 
@@ -115,7 +115,7 @@
     </getter>
   </class>
 
-  <class name="Symfony\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity">
+  <class name="Symfony2\Component\Validator\Tests\Fixtures\GroupSequenceProviderEntity">
 
     <!-- GROUP SEQUENCE PROVIDER -->
     <group-sequence-provider />

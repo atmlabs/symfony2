@@ -20,7 +20,7 @@
         "symfony/polyfill-ctype": "~1.8"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Component\\PropertyAccess\\": "" },
+        "psr-4": { "Symfony2\\Component\\PropertyAccess\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

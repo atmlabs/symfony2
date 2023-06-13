@@ -129,7 +129,7 @@ class PhpGeneratorDumperTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Routing\Exception\RouteNotFoundException
+     * @expectedException \Symfony2\Component\Routing\Exception\RouteNotFoundException
      */
     public function testGenerateNonExistingRoute()
     {

@@ -20,7 +20,7 @@ use Symfony2\Component\Validator\Constraints\Valid;
 class ValidTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testRejectGroupsOption()
     {

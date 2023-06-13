@@ -37,7 +37,7 @@ class FragmentRendererPass implements CompilerPassInterface
             // We must assume that the class value has been correctly filled, even if the service is created by a factory
             $class = $container->getDefinition($id)->getClass();
 
-            $interface = 'Symfony\Component\HttpKernel\Fragment\FragmentRendererInterface';
+            $interface = 'Symfony2\Component\HttpKernel\Fragment\FragmentRendererInterface';
             if (!is_subclass_of($class, $interface)) {
                 throw new \InvalidArgumentException(sprintf('Service "%s" must implement interface "%s".', $id, $interface));
             }

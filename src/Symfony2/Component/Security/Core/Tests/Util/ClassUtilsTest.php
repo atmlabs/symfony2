@@ -23,12 +23,12 @@ namespace Symfony2\Component\Security\Core\Tests\Util
         {
             return array(
                 array('stdClass', 'stdClass'),
-                array('Symfony\Component\Security\Core\Util\ClassUtils', 'Symfony\Component\Security\Core\Util\ClassUtils'),
+                array('Symfony2\Component\Security\Core\Util\ClassUtils', 'Symfony2\Component\Security\Core\Util\ClassUtils'),
                 array('MyProject\Proxies\__CG__\stdClass', 'stdClass'),
                 array('MyProject\Proxies\__CG__\OtherProject\Proxies\__CG__\stdClass', 'stdClass'),
-                array('MyProject\Proxies\__CG__\Symfony\Component\Security\Core\Tests\Util\ChildObject', 'Symfony\Component\Security\Core\Tests\Util\ChildObject'),
-                array(new TestObject(), 'Symfony\Component\Security\Core\Tests\Util\TestObject'),
-                array(new \Acme\DemoBundle\Proxy\__CG__\Symfony\Component\Security\Core\Tests\Util\TestObject(), 'Symfony\Component\Security\Core\Tests\Util\TestObject'),
+                array('MyProject\Proxies\__CG__\Symfony2\Component\Security\Core\Tests\Util\ChildObject', 'Symfony2\Component\Security\Core\Tests\Util\ChildObject'),
+                array(new TestObject(), 'Symfony2\Component\Security\Core\Tests\Util\TestObject'),
+                array(new \Acme\DemoBundle\Proxy\__CG__\Symfony2\Component\Security\Core\Tests\Util\TestObject(), 'Symfony2\Component\Security\Core\Tests\Util\TestObject'),
             );
         }
 
@@ -46,7 +46,7 @@ namespace Symfony2\Component\Security\Core\Tests\Util
     }
 }
 
-namespace Acme\DemoBundle\Proxy\__CG__\Symfony\Component\Security\Core\Tests\Util
+namespace Acme\DemoBundle\Proxy\__CG__\Symfony2\Component\Security\Core\Tests\Util
 {
     use Symfony2\Component\Security\Core\Tests\Util\TestObject as BaseTestObject;
 

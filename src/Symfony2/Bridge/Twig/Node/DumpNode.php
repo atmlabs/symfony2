@@ -55,17 +55,17 @@ class DumpNode extends Node
                 ->outdent()
                 ->write("}\n")
                 ->addDebugInfo($this)
-                ->write(sprintf('\Symfony\Component\VarDumper\VarDumper::dump($%svars);'."\n", $this->varPrefix));
+                ->write(sprintf('\Symfony2\Component\VarDumper\VarDumper::dump($%svars);'."\n", $this->varPrefix));
         } elseif (($values = $this->getNode('values')) && 1 === $values->count()) {
             $compiler
                 ->addDebugInfo($this)
-                ->write('\Symfony\Component\VarDumper\VarDumper::dump(')
+                ->write('\Symfony2\Component\VarDumper\VarDumper::dump(')
                 ->subcompile($values->getNode(0))
                 ->raw(");\n");
         } else {
             $compiler
                 ->addDebugInfo($this)
-                ->write('\Symfony\Component\VarDumper\VarDumper::dump(array('."\n")
+                ->write('\Symfony2\Component\VarDumper\VarDumper::dump(array('."\n")
                 ->indent();
             foreach ($values as $node) {
                 $compiler->write('');

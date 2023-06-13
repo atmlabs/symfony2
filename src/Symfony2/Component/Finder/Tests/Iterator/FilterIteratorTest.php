@@ -21,7 +21,7 @@ class FilterIteratorTest extends RealIteratorTestCase
         $i = new \FilesystemIterator($this->toAbsolute());
 
         // it is expected that there are test.py test.php in the tmpDir
-        $i = $this->getMockForAbstractClass('Symfony\Component\Finder\Iterator\FilterIterator', array($i));
+        $i = $this->getMockForAbstractClass('Symfony2\Component\Finder\Iterator\FilterIterator', array($i));
         $i->expects($this->any())
             ->method('accept')
             ->will($this->returnCallback(function () use ($i) {
@@ -44,7 +44,7 @@ class FilterIteratorTest extends RealIteratorTestCase
         }
 
         // This would fail in php older than 5.5.23/5.6.7 with \FilterIterator
-        // but works with Symfony\Component\Finder\Iterator\FilterIterator
+        // but works with Symfony2\Component\Finder\Iterator\FilterIterator
         // see https://bugs.php.net/68557
         $this->assertEquals(1, $c);
     }

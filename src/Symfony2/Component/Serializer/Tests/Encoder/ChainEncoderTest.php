@@ -29,7 +29,7 @@ class ChainEncoderTest extends TestCase
     protected function setUp()
     {
         $this->encoder1 = $this
-            ->getMockBuilder('Symfony\Component\Serializer\Encoder\EncoderInterface')
+            ->getMockBuilder('Symfony2\Component\Serializer\Encoder\EncoderInterface')
             ->getMock();
 
         $this->encoder1
@@ -41,7 +41,7 @@ class ChainEncoderTest extends TestCase
             )));
 
         $this->encoder2 = $this
-            ->getMockBuilder('Symfony\Component\Serializer\Encoder\EncoderInterface')
+            ->getMockBuilder('Symfony2\Component\Serializer\Encoder\EncoderInterface')
             ->getMock();
 
         $this->encoder2
@@ -71,7 +71,7 @@ class ChainEncoderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Serializer\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Serializer\Exception\RuntimeException
      */
     public function testEncodeUnsupportedFormat()
     {
@@ -90,7 +90,7 @@ class ChainEncoderTest extends TestCase
     public function testNeedsNormalizationChainNormalizationAware($bool)
     {
         $chainEncoder = $this
-            ->getMockBuilder('Symfony\Component\Serializer\Tests\Encoder\ChainNormalizationAwareEncoder')
+            ->getMockBuilder('Symfony2\Component\Serializer\Tests\Encoder\ChainNormalizationAwareEncoder')
             ->getMock();
 
         $chainEncoder->method('supportsEncoding')->willReturn(true);

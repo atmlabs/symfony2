@@ -23,28 +23,28 @@ class ExtensionPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        if (!class_exists('Symfony\Component\Asset\Packages')) {
+        if (!class_exists('Symfony2\Component\Asset\Packages')) {
             $container->removeDefinition('twig.extension.assets');
         }
 
-        if (!class_exists('Symfony\Component\ExpressionLanguage\Expression')) {
+        if (!class_exists('Symfony2\Component\ExpressionLanguage\Expression')) {
             $container->removeDefinition('twig.extension.expression');
         }
 
-        if (!interface_exists('Symfony\Component\Routing\Generator\UrlGeneratorInterface')) {
+        if (!interface_exists('Symfony2\Component\Routing\Generator\UrlGeneratorInterface')) {
             $container->removeDefinition('twig.extension.routing');
         }
-        if (!interface_exists('Symfony\Component\Translation\TranslatorInterface')) {
+        if (!interface_exists('Symfony2\Component\Translation\TranslatorInterface')) {
             $container->removeDefinition('twig.extension.trans');
         }
 
-        if (!class_exists('Symfony\Component\Yaml\Yaml')) {
+        if (!class_exists('Symfony2\Component\Yaml\Yaml')) {
             $container->removeDefinition('twig.extension.yaml');
         }
 
         if ($container->has('form.extension')) {
             $container->getDefinition('twig.extension.form')->addTag('twig.extension');
-            $reflClass = new \ReflectionClass('Symfony\Bridge\Twig\Extension\FormExtension');
+            $reflClass = new \ReflectionClass('Symfony2\Bridge\Twig\Extension\FormExtension');
 
             $coreThemePath = \dirname(\dirname($reflClass->getFileName())).'/Resources/views/Form';
             $container->getDefinition('twig.loader.native_filesystem')->addMethodCall('addPath', array($coreThemePath));
@@ -119,7 +119,7 @@ class ExtensionPass implements CompilerPassInterface
             $container->getDefinition('twig.extension.assets')->addTag('twig.extension');
         }
 
-        if (method_exists('Symfony\Bridge\Twig\AppVariable', 'setContainer')) {
+        if (method_exists('Symfony2\Bridge\Twig\AppVariable', 'setContainer')) {
             // we are on Symfony <3.0, where the setContainer method exists
             $container->getDefinition('twig.app_variable')->addMethodCall('setContainer', array(new Reference('service_container')));
         }

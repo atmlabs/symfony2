@@ -259,7 +259,7 @@ class TwigExtensionTest extends TestCase
         $container = $this->createContainer();
         $container->setParameter('kernel.debug', $debug);
         if ($stopwatchEnabled) {
-            $container->register('debug.stopwatch', 'Symfony\Component\Stopwatch\Stopwatch');
+            $container->register('debug.stopwatch', 'Symfony2\Component\Stopwatch\Stopwatch');
         }
         $container->registerExtension(new TwigExtension());
         $container->loadFromExtension('twig', array());
@@ -290,35 +290,35 @@ class TwigExtensionTest extends TestCase
             'kernel.charset' => 'UTF-8',
             'kernel.debug' => false,
             'kernel.bundles' => array(
-                'TwigBundle' => 'Symfony\\Bundle\\TwigBundle\\TwigBundle',
-                'ChildTwigBundle' => 'Symfony\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildTwigBundle\\ChildTwigBundle',
-                'ChildChildTwigBundle' => 'Symfony\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildTwigBundle\\ChildChildTwigBundle',
-                'ChildChildChildTwigBundle' => 'Symfony\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildChildTwigBundle\\ChildChildChildTwigBundle',
-                'ChildChildChildChildTwigBundle' => 'Symfony\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildChildChildTwigBundle\\ChildChildChildChildTwigBundle',
+                'TwigBundle' => 'Symfony2\\Bundle\\TwigBundle\\TwigBundle',
+                'ChildTwigBundle' => 'Symfony2\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildTwigBundle\\ChildTwigBundle',
+                'ChildChildTwigBundle' => 'Symfony2\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildTwigBundle\\ChildChildTwigBundle',
+                'ChildChildChildTwigBundle' => 'Symfony2\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildChildTwigBundle\\ChildChildChildTwigBundle',
+                'ChildChildChildChildTwigBundle' => 'Symfony2\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildChildChildTwigBundle\\ChildChildChildChildTwigBundle',
             ),
             'kernel.bundles_metadata' => array(
                 'ChildChildChildChildTwigBundle' => array(
-                    'namespace' => 'Symfony\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildChildChildTwigBundle\\ChildChildChildChildTwigBundle',
+                    'namespace' => 'Symfony2\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildChildChildTwigBundle\\ChildChildChildChildTwigBundle',
                     'parent' => 'ChildChildChildTwigBundle',
                     'path' => __DIR__.'/Fixtures/Bundle/ChildChildChildChildTwigBundle',
                 ),
                 'TwigBundle' => array(
-                    'namespace' => 'Symfony\\Bundle\\TwigBundle',
+                    'namespace' => 'Symfony2\\Bundle\\TwigBundle',
                     'parent' => null,
                     'path' => realpath(__DIR__.'/../..'),
                 ),
                 'ChildTwigBundle' => array(
-                    'namespace' => 'Symfony\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildTwigBundle\\ChildTwigBundle',
+                    'namespace' => 'Symfony2\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildTwigBundle\\ChildTwigBundle',
                     'parent' => 'TwigBundle',
                     'path' => __DIR__.'/Fixtures/Bundle/ChildTwigBundle',
                 ),
                 'ChildChildChildTwigBundle' => array(
-                    'namespace' => 'Symfony\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildChildTwigBundle\\ChildChildChildTwigBundle',
+                    'namespace' => 'Symfony2\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildChildTwigBundle\\ChildChildChildTwigBundle',
                     'parent' => 'ChildChildTwigBundle',
                     'path' => __DIR__.'/Fixtures/Bundle/ChildChildChildTwigBundle',
                 ),
                 'ChildChildTwigBundle' => array(
-                    'namespace' => 'Symfony\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildTwigBundle\\ChildChildTwigBundle',
+                    'namespace' => 'Symfony2\\Bundle\\TwigBundle\\Tests\\DependencyInjection\\Fixtures\\Bundle\\ChildChildTwigBundle\\ChildChildTwigBundle',
                     'parent' => 'ChildTwigBundle',
                     'path' => __DIR__.'/Fixtures/Bundle/ChildChildTwigBundle',
                 ),

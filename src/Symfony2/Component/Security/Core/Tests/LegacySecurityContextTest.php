@@ -27,14 +27,14 @@ class LegacySecurityContextTest extends TestCase
 
     protected function setUp()
     {
-        $this->tokenStorage = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
-        $this->authorizationChecker = $this->getMockBuilder('Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface')->getMock();
+        $this->tokenStorage = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
+        $this->authorizationChecker = $this->getMockBuilder('Symfony2\Component\Security\Core\Authorization\AuthorizationCheckerInterface')->getMock();
         $this->securityContext = new SecurityContext($this->tokenStorage, $this->authorizationChecker);
     }
 
     public function testGetTokenDelegation()
     {
-        $token = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
+        $token = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
 
         $this->tokenStorage
             ->expects($this->once())
@@ -46,7 +46,7 @@ class LegacySecurityContextTest extends TestCase
 
     public function testSetTokenDelegation()
     {
-        $token = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
+        $token = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\TokenInterface')->getMock();
 
         $this->tokenStorage
             ->expects($this->once())
@@ -86,10 +86,10 @@ class LegacySecurityContextTest extends TestCase
      */
     public function testOldConstructorSignature()
     {
-        $authenticationManager = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface')->getMock();
-        $accessDecisionManager = $this->getMockBuilder('Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface')->getMock();
+        $authenticationManager = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\AuthenticationManagerInterface')->getMock();
+        $accessDecisionManager = $this->getMockBuilder('Symfony2\Component\Security\Core\Authorization\AccessDecisionManagerInterface')->getMock();
 
-        $this->assertInstanceOf('Symfony\Component\Security\Core\SecurityContext', new SecurityContext($authenticationManager, $accessDecisionManager));
+        $this->assertInstanceOf('Symfony2\Component\Security\Core\SecurityContext', new SecurityContext($authenticationManager, $accessDecisionManager));
     }
 
     /**
@@ -103,10 +103,10 @@ class LegacySecurityContextTest extends TestCase
 
     public function oldConstructorSignatureFailuresProvider()
     {
-        $tokenStorage = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
-        $authorizationChecker = $this->getMockBuilder('Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface')->getMock();
-        $authenticationManager = $this->getMockBuilder('Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface')->getMock();
-        $accessDecisionManager = $this->getMockBuilder('Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface')->getMock();
+        $tokenStorage = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface')->getMock();
+        $authorizationChecker = $this->getMockBuilder('Symfony2\Component\Security\Core\Authorization\AuthorizationCheckerInterface')->getMock();
+        $authenticationManager = $this->getMockBuilder('Symfony2\Component\Security\Core\Authentication\AuthenticationManagerInterface')->getMock();
+        $accessDecisionManager = $this->getMockBuilder('Symfony2\Component\Security\Core\Authorization\AccessDecisionManagerInterface')->getMock();
 
         return array(
             array(new \stdClass(), new \stdClass()),

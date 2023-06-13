@@ -23,7 +23,7 @@ class WebProfilerExtensionTest extends TestCase
 {
     private $kernel;
     /**
-     * @var \Symfony\Component\DependencyInjection\Container
+     * @var \Symfony2\Component\DependencyInjection\Container
      */
     private $container;
 
@@ -45,10 +45,10 @@ class WebProfilerExtensionTest extends TestCase
     {
         parent::setUp();
 
-        $this->kernel = $this->getMockBuilder('Symfony\\Component\\HttpKernel\\KernelInterface')->getMock();
+        $this->kernel = $this->getMockBuilder('Symfony2\\Component\\HttpKernel\\KernelInterface')->getMock();
 
         $this->container = new ContainerBuilder();
-        $this->container->register('router', $this->getMockClass('Symfony\\Component\\Routing\\RouterInterface'));
+        $this->container->register('router', $this->getMockClass('Symfony2\\Component\\Routing\\RouterInterface'));
         $this->container->register('twig', 'Twig\Environment');
         $this->container->register('twig_loader', 'Twig\Loader\ArrayLoader')->addArgument(array());
         $this->container->register('twig', 'Twig\Environment')->addArgument(new Reference('twig_loader'));
@@ -56,9 +56,9 @@ class WebProfilerExtensionTest extends TestCase
         $this->container->setParameter('kernel.cache_dir', __DIR__);
         $this->container->setParameter('kernel.debug', false);
         $this->container->setParameter('kernel.root_dir', __DIR__);
-        $this->container->setParameter('profiler.class', array('Symfony\\Component\\HttpKernel\\Profiler\\Profiler'));
-        $this->container->register('profiler', $this->getMockClass('Symfony\\Component\\HttpKernel\\Profiler\\Profiler'))
-            ->addArgument(new Definition($this->getMockClass('Symfony\\Component\\HttpKernel\\Profiler\\ProfilerStorageInterface')));
+        $this->container->setParameter('profiler.class', array('Symfony2\\Component\\HttpKernel\\Profiler\\Profiler'));
+        $this->container->register('profiler', $this->getMockClass('Symfony2\\Component\\HttpKernel\\Profiler\\Profiler'))
+            ->addArgument(new Definition($this->getMockClass('Symfony2\\Component\\HttpKernel\\Profiler\\ProfilerStorageInterface')));
         $this->container->setParameter('data_collector.templates', array());
         $this->container->set('kernel', $this->kernel);
     }

@@ -5,14 +5,14 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="event_dispatcher.class">Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher</parameter>
-        <parameter key="http_kernel.class">Symfony\Component\HttpKernel\DependencyInjection\ContainerAwareHttpKernel</parameter>
-        <parameter key="filesystem.class">Symfony\Component\Filesystem\Filesystem</parameter>
-        <parameter key="cache_warmer.class">Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate</parameter>
-        <parameter key="cache_clearer.class">Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer</parameter>
-        <parameter key="file_locator.class">Symfony\Component\HttpKernel\Config\FileLocator</parameter>
-        <parameter key="uri_signer.class">Symfony\Component\HttpKernel\UriSigner</parameter>
-        <parameter key="request_stack.class">Symfony\Component\HttpFoundation\RequestStack</parameter>
+        <parameter key="event_dispatcher.class">Symfony2\Component\EventDispatcher\ContainerAwareEventDispatcher</parameter>
+        <parameter key="http_kernel.class">Symfony2\Component\HttpKernel\DependencyInjection\ContainerAwareHttpKernel</parameter>
+        <parameter key="filesystem.class">Symfony2\Component\Filesystem\Filesystem</parameter>
+        <parameter key="cache_warmer.class">Symfony2\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate</parameter>
+        <parameter key="cache_clearer.class">Symfony2\Component\HttpKernel\CacheClearer\ChainCacheClearer</parameter>
+        <parameter key="file_locator.class">Symfony2\Component\HttpKernel\Config\FileLocator</parameter>
+        <parameter key="uri_signer.class">Symfony2\Component\HttpKernel\UriSigner</parameter>
+        <parameter key="request_stack.class">Symfony2\Component\HttpFoundation\RequestStack</parameter>
     </parameters>
 
     <services>
@@ -34,7 +34,7 @@
             <argument type="collection" />
         </service>
 
-        <service id="kernel.class_cache.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ClassCacheCacheWarmer">
+        <service id="kernel.class_cache.cache_warmer" class="Symfony2\Bundle\FrameworkBundle\CacheWarmer\ClassCacheCacheWarmer">
             <tag name="kernel.cache_warmer" />
         </service>
 
@@ -47,8 +47,8 @@
         </service>
 
         <service id="service_container" synthetic="true">
-            <autowiring-type>Symfony\Component\DependencyInjection\ContainerInterface</autowiring-type>
-            <autowiring-type>Symfony\Component\DependencyInjection\Container</autowiring-type>
+            <autowiring-type>Symfony2\Component\DependencyInjection\ContainerInterface</autowiring-type>
+            <autowiring-type>Symfony2\Component\DependencyInjection\Container</autowiring-type>
         </service>
 
         <service id="kernel" synthetic="true" />
@@ -64,18 +64,18 @@
             <argument>%kernel.secret%</argument>
         </service>
 
-        <service id="config_cache_factory" class="Symfony\Component\Config\ResourceCheckerConfigCacheFactory">
+        <service id="config_cache_factory" class="Symfony2\Component\Config\ResourceCheckerConfigCacheFactory">
             <argument type="collection"></argument>
         </service>
 
-        <service class="Symfony\Component\Config\Resource\SelfCheckingResourceChecker" public="false">
+        <service class="Symfony2\Component\Config\Resource\SelfCheckingResourceChecker" public="false">
             <tag name="config_cache.resource_checker" priority="-990" />
         </service>
 
         <!--
             This service is deprecated and will be removed in 3.0.
         -->
-        <service class="Symfony\Component\Config\Resource\BCResourceInterfaceChecker" public="false">
+        <service class="Symfony2\Component\Config\Resource\BCResourceInterfaceChecker" public="false">
             <tag name="config_cache.resource_checker" priority="-1000" />
         </service>
 

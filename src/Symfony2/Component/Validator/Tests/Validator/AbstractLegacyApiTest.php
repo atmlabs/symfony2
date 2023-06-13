@@ -71,7 +71,7 @@ abstract class AbstractLegacyApiTest extends AbstractValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\NoSuchMetadataException
+     * @expectedException \Symfony2\Component\Validator\Exception\NoSuchMetadataException
      */
     public function testTraversableTraverseDisabled()
     {
@@ -92,7 +92,7 @@ abstract class AbstractLegacyApiTest extends AbstractValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\NoSuchMetadataException
+     * @expectedException \Symfony2\Component\Validator\Exception\NoSuchMetadataException
      */
     public function testRecursiveTraversableRecursiveTraversalDisabled()
     {
@@ -267,8 +267,8 @@ abstract class AbstractLegacyApiTest extends AbstractValidatorTest
         $entity->initialized = false;
 
         // prepare initializers that set "initialized" to true
-        $initializer1 = $this->getMockBuilder('Symfony\\Component\\Validator\\ObjectInitializerInterface')->getMock();
-        $initializer2 = $this->getMockBuilder('Symfony\\Component\\Validator\\ObjectInitializerInterface')->getMock();
+        $initializer1 = $this->getMockBuilder('Symfony2\\Component\\Validator\\ObjectInitializerInterface')->getMock();
+        $initializer2 = $this->getMockBuilder('Symfony2\\Component\\Validator\\ObjectInitializerInterface')->getMock();
 
         $initializer1->expects($this->once())
             ->method('initialize')

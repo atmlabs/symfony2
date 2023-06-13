@@ -125,7 +125,7 @@ class SymfonyQuestionHelperTest extends TestCase
     }
 
     /**
-     * @expectedException        \Symfony\Component\Console\Exception\RuntimeException
+     * @expectedException        \Symfony2\Component\Console\Exception\RuntimeException
      * @expectedExceptionMessage Aborted
      */
     public function testAskThrowsExceptionOnMissingInput()
@@ -155,7 +155,7 @@ class SymfonyQuestionHelperTest extends TestCase
 
     protected function createInputInterfaceMock($interactive = true)
     {
-        $mock = $this->getMockBuilder('Symfony\Component\Console\Input\InputInterface')->getMock();
+        $mock = $this->getMockBuilder('Symfony2\Component\Console\Input\InputInterface')->getMock();
         $mock->expects($this->any())
             ->method('isInteractive')
             ->will($this->returnValue($interactive));

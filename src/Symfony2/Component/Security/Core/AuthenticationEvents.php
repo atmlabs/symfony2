@@ -18,7 +18,7 @@ final class AuthenticationEvents
      * by one provider.
      *
      * The event listener method receives a
-     * Symfony\Component\Security\Core\Event\AuthenticationEvent instance.
+     * Symfony2\Component\Security\Core\Event\AuthenticationEvent instance.
      *
      * @Event
      */
@@ -29,7 +29,7 @@ final class AuthenticationEvents
      * authenticated by any of the providers.
      *
      * The event listener method receives a
-     * Symfony\Component\Security\Core\Event\AuthenticationFailureEvent
+     * Symfony2\Component\Security\Core\Event\AuthenticationFailureEvent
      * instance.
      *
      * @Event

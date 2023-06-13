@@ -936,7 +936,7 @@ abstract class AbstractLanguageDataProviderTest extends AbstractDataProviderTest
 
     /**
      * @dataProvider provideLanguagesWithoutAlpha3Equivalent
-     * @expectedException \Symfony\Component\Intl\Exception\MissingResourceException
+     * @expectedException \Symfony2\Component\Intl\Exception\MissingResourceException
      */
     public function testGetAlpha3CodeFailsIfNoAlpha3Equivalent($currency)
     {

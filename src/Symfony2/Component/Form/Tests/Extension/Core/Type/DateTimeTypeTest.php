@@ -15,7 +15,7 @@ use Symfony2\Component\Form\FormError;
 
 class DateTimeTypeTest extends BaseTypeTest
 {
-    const TESTED_TYPE = 'Symfony\Component\Form\Extension\Core\Type\DateTimeType';
+    const TESTED_TYPE = 'Symfony2\Component\Form\Extension\Core\Type\DateTimeType';
 
     protected function setUp()
     {
@@ -283,7 +283,7 @@ class DateTimeTypeTest extends BaseTypeTest
     {
         // Throws an exception if "data_class" option is not explicitly set
         // to null in the type
-        $this->assertInstanceOf('Symfony\Component\Form\FormInterface', $this->factory->create(static::TESTED_TYPE, new \DateTime()));
+        $this->assertInstanceOf('Symfony2\Component\Form\FormInterface', $this->factory->create(static::TESTED_TYPE, new \DateTime()));
     }
 
     public function testSingleTextWidgetShouldUseTheRightInputType()

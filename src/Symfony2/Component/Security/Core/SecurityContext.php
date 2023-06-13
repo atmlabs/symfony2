@@ -11,7 +11,7 @@
 
 namespace Symfony2\Component\Security\Core;
 
-@trigger_error('The '.__NAMESPACE__.'\SecurityContext class is deprecated since Symfony 2.6 and will be removed in 3.0. use Symfony2\Component\Security\Core\Authentication\Token\Storage\TokenStorage or Symfony\Component\Security\Core\Authorization\AuthorizationChecker instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\SecurityContext class is deprecated since Symfony 2.6 and will be removed in 3.0. use Symfony2\Component\Security\Core\Authentication\Token\Storage\TokenStorage or Symfony2\Component\Security\Core\Authorization\AuthorizationChecker instead.', E_USER_DEPRECATED);
 
 use Symfony2\Component\Security\Core\Authentication\AuthenticationManagerInterface;
 use Symfony2\Component\Security\Core\Authentication\Token\Storage\TokenStorage;

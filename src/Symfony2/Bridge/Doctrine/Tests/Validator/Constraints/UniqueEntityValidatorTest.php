@@ -131,11 +131,11 @@ class UniqueEntityValidatorTest extends AbstractConstraintValidatorTest
     {
         $schemaTool = new SchemaTool($em);
         $schemaTool->createSchema(array(
-            $em->getClassMetadata('Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity'),
-            $em->getClassMetadata('Symfony\Bridge\Doctrine\Tests\Fixtures\DoubleNameEntity'),
-            $em->getClassMetadata('Symfony\Bridge\Doctrine\Tests\Fixtures\DoubleNullableNameEntity'),
-            $em->getClassMetadata('Symfony\Bridge\Doctrine\Tests\Fixtures\CompositeIntIdEntity'),
-            $em->getClassMetadata('Symfony\Bridge\Doctrine\Tests\Fixtures\AssociationEntity'),
+            $em->getClassMetadata('Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity'),
+            $em->getClassMetadata('Symfony2\Bridge\Doctrine\Tests\Fixtures\DoubleNameEntity'),
+            $em->getClassMetadata('Symfony2\Bridge\Doctrine\Tests\Fixtures\DoubleNullableNameEntity'),
+            $em->getClassMetadata('Symfony2\Bridge\Doctrine\Tests\Fixtures\CompositeIntIdEntity'),
+            $em->getClassMetadata('Symfony2\Bridge\Doctrine\Tests\Fixtures\AssociationEntity'),
         ));
     }
 
@@ -250,7 +250,7 @@ class UniqueEntityValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      */
     public function testAllConfiguredFieldsAreCheckedOfBeingMappedByDoctrineWithIgnoreNullEnabled()
     {
@@ -480,7 +480,7 @@ class UniqueEntityValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
      * @expectedExceptionMessage Object manager "foo" does not exist.
      */
     public function testDedicatedEntityManagerNullObject()
@@ -502,8 +502,8 @@ class UniqueEntityValidatorTest extends AbstractConstraintValidatorTest
     }
 
     /**
-     * @expectedException \Symfony\Component\Validator\Exception\ConstraintDefinitionException
-     * @expectedExceptionMessage Unable to find the object manager associated with an entity of class "Symfony\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity"
+     * @expectedException \Symfony2\Component\Validator\Exception\ConstraintDefinitionException
+     * @expectedExceptionMessage Unable to find the object manager associated with an entity of class "Symfony2\Bridge\Doctrine\Tests\Fixtures\SingleIntIdEntity"
      */
     public function testEntityManagerNullObject()
     {

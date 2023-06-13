@@ -19,7 +19,7 @@ use Symfony2\Component\Filesystem\LockHandler;
 class LockHandlerTest extends TestCase
 {
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      * @expectedExceptionMessage Failed to create "/a/b/c/d/e": mkdir(): Permission denied.
      */
     public function testConstructWhenRepositoryDoesNotExist()
@@ -31,7 +31,7 @@ class LockHandlerTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Filesystem\Exception\IOException
+     * @expectedException \Symfony2\Component\Filesystem\Exception\IOException
      * @expectedExceptionMessage The directory "/" is not writable.
      */
     public function testConstructWhenRepositoryIsNotWriteable()
@@ -80,7 +80,7 @@ class LockHandlerTest extends TestCase
             $fs->remove($lockPath);
         }
 
-        $this->assertInstanceOf('Symfony\Component\Filesystem\Exception\IOException', $e, sprintf('Expected IOException to be thrown, got %s instead.', \get_class($e)));
+        $this->assertInstanceOf('Symfony2\Component\Filesystem\Exception\IOException', $e, sprintf('Expected IOException to be thrown, got %s instead.', \get_class($e)));
         $this->assertNull($wrongMessage, sprintf('Expected exception message to contain "Permission denied", got "%s" instead.', $wrongMessage));
     }
 

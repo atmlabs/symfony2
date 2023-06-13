@@ -31,7 +31,7 @@ class LoggingTranslatorPass implements CompilerPassInterface
             $definition = $container->getDefinition((string) $translatorAlias);
             $class = $container->getParameterBag()->resolveValue($definition->getClass());
 
-            if (is_subclass_of($class, 'Symfony\Component\Translation\TranslatorInterface') && is_subclass_of($class, 'Symfony\Component\Translation\TranslatorBagInterface')) {
+            if (is_subclass_of($class, 'Symfony2\Component\Translation\TranslatorInterface') && is_subclass_of($class, 'Symfony2\Component\Translation\TranslatorBagInterface')) {
                 $container->getDefinition('translator.logging')->setDecoratedService('translator');
                 $container->getDefinition('translation.warmer')->replaceArgument(0, new Reference('translator.logging.inner'));
             }

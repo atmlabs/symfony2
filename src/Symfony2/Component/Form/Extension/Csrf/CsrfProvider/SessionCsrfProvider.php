@@ -11,7 +11,7 @@
 
 namespace Symfony2\Component\Form\Extension\Csrf\CsrfProvider;
 
-@trigger_error('The '.__NAMESPACE__.'\SessionCsrfProvider is deprecated since Symfony 2.4 and will be removed in version 3.0. Use the Symfony\Component\Security\Csrf\TokenStorage\SessionTokenStorage class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\SessionCsrfProvider is deprecated since Symfony 2.4 and will be removed in version 3.0. Use the Symfony2\Component\Security\Csrf\TokenStorage\SessionTokenStorage class instead.', E_USER_DEPRECATED);
 
 use Symfony2\Component\HttpFoundation\Session\Session;
 
@@ -24,8 +24,8 @@ use Symfony2\Component\HttpFoundation\Session\Session;
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 2.4, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Security\Csrf\CsrfTokenManager} in
- *             combination with {@link \Symfony\Component\Security\Csrf\TokenStorage\SessionTokenStorage}
+ *             Use {@link \Symfony2\Component\Security\Csrf\CsrfTokenManager} in
+ *             combination with {@link \Symfony2\Component\Security\Csrf\TokenStorage\SessionTokenStorage}
  *             instead.
  */
 class SessionCsrfProvider extends DefaultCsrfProvider

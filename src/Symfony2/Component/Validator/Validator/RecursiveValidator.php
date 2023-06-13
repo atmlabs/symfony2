@@ -108,7 +108,7 @@ class RecursiveValidator implements ValidatorInterface, LegacyValidatorInterface
             $constraints = $groups;
             $groups = $traverse;
         } else {
-            @trigger_error('The Symfony\Component\Validator\ValidatorInterface::validate method is deprecated in version 2.5 and will be removed in version 3.0. Use the Symfony\Component\Validator\Validator\ValidatorInterface::validate method instead.', E_USER_DEPRECATED);
+            @trigger_error('The Symfony2\Component\Validator\ValidatorInterface::validate method is deprecated in version 2.5 and will be removed in version 3.0. Use the Symfony2\Component\Validator\Validator\ValidatorInterface::validate method instead.', E_USER_DEPRECATED);
 
             $constraints = new Valid(array('traverse' => $traverse, 'deep' => $deep));
         }
@@ -144,7 +144,7 @@ class RecursiveValidator implements ValidatorInterface, LegacyValidatorInterface
      */
     public function validateValue($value, $constraints, $groups = null)
     {
-        @trigger_error('The '.__METHOD__.' method is deprecated in version 2.5 and will be removed in version 3.0. Use the Symfony\Component\Validator\Validator\ValidatorInterface::validate method instead.', E_USER_DEPRECATED);
+        @trigger_error('The '.__METHOD__.' method is deprecated in version 2.5 and will be removed in version 3.0. Use the Symfony2\Component\Validator\Validator\ValidatorInterface::validate method instead.', E_USER_DEPRECATED);
 
         return $this->validate($value, $constraints, $groups);
     }
@@ -154,7 +154,7 @@ class RecursiveValidator implements ValidatorInterface, LegacyValidatorInterface
      */
     public function getMetadataFactory()
     {
-        @trigger_error('The '.__METHOD__.' method is deprecated in version 2.5 and will be removed in version 3.0. Use the Symfony\Component\Validator\Validator\ValidatorInterface::getMetadataFor or Symfony\Component\Validator\Validator\ValidatorInterface::hasMetadataFor method instead.', E_USER_DEPRECATED);
+        @trigger_error('The '.__METHOD__.' method is deprecated in version 2.5 and will be removed in version 3.0. Use the Symfony2\Component\Validator\Validator\ValidatorInterface::getMetadataFor or Symfony2\Component\Validator\Validator\ValidatorInterface::hasMetadataFor method instead.', E_USER_DEPRECATED);
 
         return $this->metadataFactory;
     }

@@ -9,18 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Voter;
+namespace Symfony2\Component\Security\Acl\Voter;
 
 use Psr\Log\LoggerInterface;
-use Symfony\Component\Security\Acl\Exception\NoAceFoundException;
-use Symfony\Component\Security\Acl\Exception\AclNotFoundException;
-use Symfony\Component\Security\Acl\Model\AclProviderInterface;
-use Symfony\Component\Security\Acl\Model\ObjectIdentityInterface;
-use Symfony\Component\Security\Acl\Permission\PermissionMapInterface;
-use Symfony\Component\Security\Acl\Model\SecurityIdentityRetrievalStrategyInterface;
-use Symfony\Component\Security\Acl\Model\ObjectIdentityRetrievalStrategyInterface;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
+use Symfony2\Component\Security\Acl\Exception\NoAceFoundException;
+use Symfony2\Component\Security\Acl\Exception\AclNotFoundException;
+use Symfony2\Component\Security\Acl\Model\AclProviderInterface;
+use Symfony2\Component\Security\Acl\Model\ObjectIdentityInterface;
+use Symfony2\Component\Security\Acl\Permission\PermissionMapInterface;
+use Symfony2\Component\Security\Acl\Model\SecurityIdentityRetrievalStrategyInterface;
+use Symfony2\Component\Security\Acl\Model\ObjectIdentityRetrievalStrategyInterface;
+use Symfony2\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony2\Component\Security\Core\Authorization\Voter\VoterInterface;
 
 /**
  * This voter can be used as a base class for implementing your own permissions.

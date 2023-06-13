@@ -26,22 +26,22 @@ class IntlTest extends TestCase
 
     public function testGetCurrencyBundleCreatesTheCurrencyBundle()
     {
-        $this->assertInstanceOf('Symfony\Component\Intl\ResourceBundle\CurrencyBundleInterface', Intl::getCurrencyBundle());
+        $this->assertInstanceOf('Symfony2\Component\Intl\ResourceBundle\CurrencyBundleInterface', Intl::getCurrencyBundle());
     }
 
     public function testGetLanguageBundleCreatesTheLanguageBundle()
     {
-        $this->assertInstanceOf('Symfony\Component\Intl\ResourceBundle\LanguageBundleInterface', Intl::getLanguageBundle());
+        $this->assertInstanceOf('Symfony2\Component\Intl\ResourceBundle\LanguageBundleInterface', Intl::getLanguageBundle());
     }
 
     public function testGetLocaleBundleCreatesTheLocaleBundle()
     {
-        $this->assertInstanceOf('Symfony\Component\Intl\ResourceBundle\LocaleBundleInterface', Intl::getLocaleBundle());
+        $this->assertInstanceOf('Symfony2\Component\Intl\ResourceBundle\LocaleBundleInterface', Intl::getLocaleBundle());
     }
 
     public function testGetRegionBundleCreatesTheRegionBundle()
     {
-        $this->assertInstanceOf('Symfony\Component\Intl\ResourceBundle\LocaleBundleInterface', Intl::getLocaleBundle());
+        $this->assertInstanceOf('Symfony2\Component\Intl\ResourceBundle\LocaleBundleInterface', Intl::getLocaleBundle());
     }
 
     public function testGetIcuVersionReadsTheVersionOfInstalledIcuLibrary()

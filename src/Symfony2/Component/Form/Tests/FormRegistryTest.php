@@ -64,9 +64,9 @@ class FormRegistryTest extends TestCase
 
     protected function setUp()
     {
-        $this->resolvedTypeFactory = $this->getMockBuilder('Symfony\Component\Form\ResolvedFormTypeFactory')->getMock();
-        $this->guesser1 = $this->getMockBuilder('Symfony\Component\Form\FormTypeGuesserInterface')->getMock();
-        $this->guesser2 = $this->getMockBuilder('Symfony\Component\Form\FormTypeGuesserInterface')->getMock();
+        $this->resolvedTypeFactory = $this->getMockBuilder('Symfony2\Component\Form\ResolvedFormTypeFactory')->getMock();
+        $this->guesser1 = $this->getMockBuilder('Symfony2\Component\Form\FormTypeGuesserInterface')->getMock();
+        $this->guesser2 = $this->getMockBuilder('Symfony2\Component\Form\FormTypeGuesserInterface')->getMock();
         $this->extension1 = new TestExtension($this->guesser1);
         $this->extension2 = new TestExtension($this->guesser2);
         $this->registry = new FormRegistry(array(
@@ -100,19 +100,19 @@ class FormRegistryTest extends TestCase
             ->with($type)
             ->willReturn($resolvedType);
 
-        $this->assertSame($resolvedType, $this->registry->getType('Symfony\Component\Form\Tests\Fixtures\FooType'));
+        $this->assertSame($resolvedType, $this->registry->getType('Symfony2\Component\Form\Tests\Fixtures\FooType'));
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Form\Exception\InvalidArgumentException
      */
     public function testFailIfUnregisteredTypeNoClass()
     {
-        $this->registry->getType('Symfony\Blubb');
+        $this->registry->getType('Symfony2\Blubb');
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Form\Exception\InvalidArgumentException
      */
     public function testFailIfUnregisteredTypeNoFormType()
     {
@@ -256,7 +256,7 @@ class FormRegistryTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Form\Exception\InvalidArgumentException
+     * @expectedException \Symfony2\Component\Form\Exception\InvalidArgumentException
      */
     public function testGetTypeThrowsExceptionIfTypeNotFound()
     {
@@ -280,12 +280,12 @@ class FormRegistryTest extends TestCase
 
     public function testHasTypeIfFQCN()
     {
-        $this->assertTrue($this->registry->hasType('Symfony\Component\Form\Tests\Fixtures\FooType'));
+        $this->assertTrue($this->registry->hasType('Symfony2\Component\Form\Tests\Fixtures\FooType'));
     }
 
     public function testDoesNotHaveTypeIfNonExistingClass()
     {
-        $this->assertFalse($this->registry->hasType('Symfony\Blubb'));
+        $this->assertFalse($this->registry->hasType('Symfony2\Blubb'));
     }
 
     public function testDoesNotHaveTypeIfNoFormType()
@@ -318,7 +318,7 @@ class FormRegistryTest extends TestCase
         $this->assertEquals($expectedGuesser, $this->registry->getTypeGuesser());
 
         $registry = new FormRegistry(
-            array($this->getMockBuilder('Symfony\Component\Form\FormExtensionInterface')->getMock()),
+            array($this->getMockBuilder('Symfony2\Component\Form\FormExtensionInterface')->getMock()),
             $this->resolvedTypeFactory
         );
 

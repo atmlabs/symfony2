@@ -67,7 +67,7 @@ class HelperSetTest extends TestCase
             $this->fail('->get() throws InvalidArgumentException when helper not found');
         } catch (\Exception $e) {
             $this->assertInstanceOf('\InvalidArgumentException', $e, '->get() throws InvalidArgumentException when helper not found');
-            $this->assertInstanceOf('Symfony\Component\Console\Exception\ExceptionInterface', $e, '->get() throws domain specific exception when helper not found');
+            $this->assertInstanceOf('Symfony2\Component\Console\Exception\ExceptionInterface', $e, '->get() throws domain specific exception when helper not found');
             $this->assertContains('The helper "foo" is not defined.', $e->getMessage(), '->get() throws InvalidArgumentException when helper not found');
         }
     }
@@ -111,7 +111,7 @@ class HelperSetTest extends TestCase
 
     private function getGenericMockHelper($name, HelperSet $helperset = null)
     {
-        $mock_helper = $this->getMockBuilder('\Symfony\Component\Console\Helper\HelperInterface')->getMock();
+        $mock_helper = $this->getMockBuilder('\Symfony2\Component\Console\Helper\HelperInterface')->getMock();
         $mock_helper->expects($this->any())
             ->method('getName')
             ->will($this->returnValue($name));

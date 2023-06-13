@@ -24,8 +24,8 @@ class FormBuilderTest extends TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $this->factory = $this->getMockBuilder('Symfony\Component\Form\FormFactoryInterface')->getMock();
+        $this->dispatcher = $this->getMockBuilder('Symfony2\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $this->factory = $this->getMockBuilder('Symfony2\Component\Form\FormFactoryInterface')->getMock();
         $this->builder = new FormBuilder('name', null, $this->dispatcher, $this->factory);
     }
 
@@ -49,13 +49,13 @@ class FormBuilderTest extends TestCase
 
     public function testAddNameNoStringAndNoInteger()
     {
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Form\Exception\UnexpectedTypeException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Form\Exception\UnexpectedTypeException');
         $this->builder->add(true);
     }
 
     public function testAddTypeNoString()
     {
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\Form\Exception\UnexpectedTypeException');
+        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony2\Component\Form\Exception\UnexpectedTypeException');
         $this->builder->add('foo', 1234);
     }
 
@@ -68,21 +68,21 @@ class FormBuilderTest extends TestCase
 
     public function testAddIsFluent()
     {
-        $builder = $this->builder->add('foo', 'Symfony\Component\Form\Extension\Core\Type\TextType', array('bar' => 'baz'));
+        $builder = $this->builder->add('foo', 'Symfony2\Component\Form\Extension\Core\Type\TextType', array('bar' => 'baz'));
         $this->assertSame($builder, $this->builder);
     }
 
     public function testAdd()
     {
         $this->assertFalse($this->builder->has('foo'));
-        $this->builder->add('foo', 'Symfony\Component\Form\Extension\Core\Type\TextType');
+        $this->builder->add('foo', 'Symfony2\Component\Form\Extension\Core\Type\TextType');
         $this->assertTrue($this->builder->has('foo'));
     }
 
     public function testAddIntegerName()
     {
         $this->assertFalse($this->builder->has(0));
-        $this->builder->add(0, 'Symfony\Component\Form\Extension\Core\Type\TextType');
+        $this->builder->add(0, 'Symfony2\Component\Form\Extension\Core\Type\TextType');
         $this->assertTrue($this->builder->has(0));
     }
 
@@ -90,13 +90,13 @@ class FormBuilderTest extends TestCase
     {
         $this->factory->expects($this->once())
             ->method('createNamedBuilder')
-            ->with('foo', 'Symfony\Component\Form\Extension\Core\Type\TextType')
+            ->with('foo', 'Symfony2\Component\Form\Extension\Core\Type\TextType')
             ->will($this->returnValue(new FormBuilder('foo', null, $this->dispatcher, $this->factory)));
 
         $this->assertCount(0, $this->builder->all());
         $this->assertFalse($this->builder->has('foo'));
 
-        $this->builder->add('foo', 'Symfony\Component\Form\Extension\Core\Type\TextType');
+        $this->builder->add('foo', 'Symfony2\Component\Form\Extension\Core\Type\TextType');
         $children = $this->builder->all();
 
         $this->assertTrue($this->builder->has('foo'));
@@ -109,9 +109,9 @@ class FormBuilderTest extends TestCase
      */
     public function testMaintainOrderOfLazyAndExplicitChildren()
     {
-        $this->builder->add('foo', 'Symfony\Component\Form\Extension\Core\Type\TextType');
+        $this->builder->add('foo', 'Symfony2\Component\Form\Extension\Core\Type\TextType');
         $this->builder->add($this->getFormBuilder('bar'));
-        $this->builder->add('baz', 'Symfony\Component\Form\Extension\Core\Type\TextType');
+        $this->builder->add('baz', 'Symfony2\Component\Form\Extension\Core\Type\TextType');
 
         $children = $this->builder->all();
 
@@ -121,13 +121,13 @@ class FormBuilderTest extends TestCase
     public function testAddFormType()
     {
         $this->assertFalse($this->builder->has('foo'));
-        $this->builder->add('foo', $this->getMockBuilder('Symfony\Component\Form\FormTypeInterface')->getMock());
+        $this->builder->add('foo', $this->getMockBuilder('Symfony2\Component\Form\FormTypeInterface')->getMock());
         $this->assertTrue($this->builder->has('foo'));
     }
 
     public function testRemove()
     {
-        $this->builder->add('foo', 'Symfony\Component\Form\Extension\Core\Type\TextType');
+        $this->builder->add('foo', 'Symfony2\Component\Form\Extension\Core\Type\TextType');
         $this->builder->remove('foo');
         $this->assertFalse($this->builder->has('foo'));
     }
@@ -141,17 +141,17 @@ class FormBuilderTest extends TestCase
     // https://github.com/symfony/symfony/pull/4826
     public function testRemoveAndGetForm()
     {
-        $this->builder->add('foo', 'Symfony\Component\Form\Extension\Core\Type\TextType');
+        $this->builder->add('foo', 'Symfony2\Component\Form\Extension\Core\Type\TextType');
         $this->builder->remove('foo');
         $form = $this->builder->getForm();
-        $this->assertInstanceOf('Symfony\Component\Form\Form', $form);
+        $this->assertInstanceOf('Symfony2\Component\Form\Form', $form);
     }
 
     public function testCreateNoTypeNo()
     {
         $this->factory->expects($this->once())
             ->method('createNamedBuilder')
-            ->with('foo', 'Symfony\Component\Form\Extension\Core\Type\TextType', null, array())
+            ->with('foo', 'Symfony2\Component\Form\Extension\Core\Type\TextType', null, array())
         ;
 
         $this->builder->create('foo');
@@ -168,10 +168,10 @@ class FormBuilderTest extends TestCase
     public function testGetUnknown()
     {
         if (method_exists($this, 'expectException')) {
-            $this->expectException('Symfony\Component\Form\Exception\InvalidArgumentException');
+            $this->expectException('Symfony2\Component\Form\Exception\InvalidArgumentException');
             $this->expectExceptionMessage('The child with the name "foo" does not exist.');
         } else {
-            $this->setExpectedException('Symfony\Component\Form\Exception\InvalidArgumentException', 'The child with the name "foo" does not exist.');
+            $this->setExpectedException('Symfony2\Component\Form\Exception\InvalidArgumentException', 'The child with the name "foo" does not exist.');
         }
 
         $this->builder->get('foo');
@@ -179,7 +179,7 @@ class FormBuilderTest extends TestCase
 
     public function testGetExplicitType()
     {
-        $expectedType = 'Symfony\Component\Form\Extension\Core\Type\TextType';
+        $expectedType = 'Symfony2\Component\Form\Extension\Core\Type\TextType';
         $expectedName = 'foo';
         $expectedOptions = array('bar' => 'baz');
 
@@ -230,7 +230,7 @@ class FormBuilderTest extends TestCase
 
     private function getFormBuilder($name = 'name')
     {
-        $mock = $this->getMockBuilder('Symfony\Component\Form\FormBuilder')
+        $mock = $this->getMockBuilder('Symfony2\Component\Form\FormBuilder')
             ->disableOriginalConstructor()
             ->getMock();
 

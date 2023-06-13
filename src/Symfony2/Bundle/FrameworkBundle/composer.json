@@ -66,7 +66,7 @@
         "symfony2/process": "For using the server:run, server:start, server:stop, and server:status commands"
     },
     "autoload": {
-        "psr-4": { "Symfony\\Bundle\\FrameworkBundle\\": "" },
+        "psr-4": { "Symfony2\\Bundle\\FrameworkBundle\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

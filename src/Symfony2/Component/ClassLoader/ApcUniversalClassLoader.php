@@ -11,7 +11,7 @@
 
 namespace Symfony2\Component\ClassLoader;
 
-@trigger_error('The '.__NAMESPACE__.'\ApcUniversalClassLoader class is deprecated since Symfony 2.7 and will be removed in 3.0. Use the Symfony\Component\ClassLoader\ApcClassLoader class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\ApcUniversalClassLoader class is deprecated since Symfony 2.7 and will be removed in 3.0. Use the Symfony2\Component\ClassLoader\ApcClassLoader class instead.', E_USER_DEPRECATED);
 
 /**
  * ApcUniversalClassLoader implements a "universal" autoloader cached in APC for PHP 5.3.
@@ -38,7 +38,7 @@ namespace Symfony2\Component\ClassLoader;
  *
  *     // register classes with namespaces
  *     $loader->registerNamespaces(array(
- *         'Symfony\Component' => __DIR__.'/component',
+ *         'Symfony2\Component' => __DIR__.'/component',
  *         'Symfony' => __DIR__.'/framework',
  *         'Sensio' => array(__DIR__.'/src', __DIR__.'/vendor'),
  *     ));
@@ -51,8 +51,8 @@ namespace Symfony2\Component\ClassLoader;
  *     // activate the autoloader
  *     $loader->register();
  *
- * In this example, if you try to use a class in the Symfony\Component
- * namespace or one of its children (Symfony\Component\Console for instance),
+ * In this example, if you try to use a class in the Symfony2\Component
+ * namespace or one of its children (Symfony2\Component\Console for instance),
  * the autoloader will first look for the class under the component/
  * directory, and it will then fallback to the framework/ directory if not
  * found before giving up.

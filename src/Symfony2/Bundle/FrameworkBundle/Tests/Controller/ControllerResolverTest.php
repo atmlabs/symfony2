@@ -25,11 +25,11 @@ class ControllerResolverTest extends BaseControllerResolverTest
     {
         $resolver = $this->createControllerResolver();
         $request = Request::create('/');
-        $request->attributes->set('_controller', 'Symfony\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController::testAction');
+        $request->attributes->set('_controller', 'Symfony2\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController::testAction');
 
         $controller = $resolver->getController($request);
 
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\ContainerInterface', $controller[0]->getContainer());
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\ContainerInterface', $controller[0]->getContainer());
         $this->assertSame('testAction', $controller[1]);
     }
 
@@ -37,12 +37,12 @@ class ControllerResolverTest extends BaseControllerResolverTest
     {
         $resolver = $this->createControllerResolver();
         $request = Request::create('/');
-        $request->attributes->set('_controller', 'Symfony\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController');
+        $request->attributes->set('_controller', 'Symfony2\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController');
 
         $controller = $resolver->getController($request);
 
-        $this->assertInstanceOf('Symfony\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController', $controller);
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\ContainerInterface', $controller->getContainer());
+        $this->assertInstanceOf('Symfony2\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController', $controller);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\ContainerInterface', $controller->getContainer());
     }
 
     public function testGetControllerWithBundleNotation()
@@ -52,7 +52,7 @@ class ControllerResolverTest extends BaseControllerResolverTest
         $parser->expects($this->once())
             ->method('parse')
             ->with($shortName)
-            ->will($this->returnValue('Symfony\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController::testAction'))
+            ->will($this->returnValue('Symfony2\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController::testAction'))
         ;
 
         $resolver = $this->createControllerResolver(null, $parser);
@@ -61,8 +61,8 @@ class ControllerResolverTest extends BaseControllerResolverTest
 
         $controller = $resolver->getController($request);
 
-        $this->assertInstanceOf('Symfony\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController', $controller[0]);
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\ContainerInterface', $controller[0]->getContainer());
+        $this->assertInstanceOf('Symfony2\Bundle\FrameworkBundle\Tests\Controller\ContainerAwareController', $controller[0]);
+        $this->assertInstanceOf('Symfony2\Component\DependencyInjection\ContainerInterface', $controller[0]->getContainer());
         $this->assertSame('testAction', $controller[1]);
     }
 
@@ -158,9 +158,9 @@ class ControllerResolverTest extends BaseControllerResolverTest
             array('oof::bar', '\InvalidArgumentException', 'Class "oof" does not exist.'),
             array('stdClass', '\LogicException', 'Unable to parse the controller name "stdClass".'),
             array(
-                'Symfony\Component\HttpKernel\Tests\Controller\ControllerResolverTest::bar',
+                'Symfony2\Component\HttpKernel\Tests\Controller\ControllerResolverTest::bar',
                 '\InvalidArgumentException',
-                'Controller "Symfony\Component\HttpKernel\Tests\Controller\ControllerResolverTest::bar" for URI "/" is not callable.',
+                'Controller "Symfony2\Component\HttpKernel\Tests\Controller\ControllerResolverTest::bar" for URI "/" is not callable.',
             ),
         );
     }
@@ -180,12 +180,12 @@ class ControllerResolverTest extends BaseControllerResolverTest
 
     protected function createMockParser()
     {
-        return $this->getMockBuilder('Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser')->disableOriginalConstructor()->getMock();
+        return $this->getMockBuilder('Symfony2\Bundle\FrameworkBundle\Controller\ControllerNameParser')->disableOriginalConstructor()->getMock();
     }
 
     protected function createMockContainer()
     {
-        return $this->getMockBuilder('Symfony\Component\DependencyInjection\ContainerInterface')->getMock();
+        return $this->getMockBuilder('Symfony2\Component\DependencyInjection\ContainerInterface')->getMock();
     }
 }
 

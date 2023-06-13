@@ -249,7 +249,7 @@ class ViolationMapper implements ViolationMapperInterface
                 $propertyPathBuilder->remove(0, $i + 1);
                 $i = 0;
             } else {
-                /* @var \Symfony\Component\PropertyAccess\PropertyPathInterface $propertyPath */
+                /* @var \Symfony2\Component\PropertyAccess\PropertyPathInterface $propertyPath */
                 $propertyPath = $scope->getPropertyPath();
 
                 if (null === $propertyPath) {

@@ -39,7 +39,7 @@ class TestSessionListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->listener = $this->getMockForAbstractClass('Symfony\Component\HttpKernel\EventListener\TestSessionListener');
+        $this->listener = $this->getMockForAbstractClass('Symfony2\Component\HttpKernel\EventListener\TestSessionListener');
         $this->session = $this->getSession();
     }
 
@@ -82,7 +82,7 @@ class TestSessionListenerTest extends TestCase
     {
         $request->setSession($this->session);
         $response = new Response();
-        $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+        $kernel = $this->getMockBuilder('Symfony2\Component\HttpKernel\HttpKernelInterface')->getMock();
         $event = new FilterResponseEvent($kernel, $request, $type, $response);
 
         $this->listener->onKernelResponse($event);
@@ -120,7 +120,7 @@ class TestSessionListenerTest extends TestCase
 
     private function getSession()
     {
-        $mock = $this->getMockBuilder('Symfony\Component\HttpFoundation\Session\Session')
+        $mock = $this->getMockBuilder('Symfony2\Component\HttpFoundation\Session\Session')
             ->disableOriginalConstructor()
             ->getMock();
 

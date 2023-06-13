@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Symfony\Component\Security\Acl\Domain;
+namespace Symfony2\Component\Security\Acl\Domain;
 
-use Symfony\Component\Security\Acl\Model\SecurityIdentityInterface;
-use Symfony\Component\Security\Acl\Util\ClassUtils;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony2\Component\Security\Acl\Model\SecurityIdentityInterface;
+use Symfony2\Component\Security\Acl\Util\ClassUtils;
+use Symfony2\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony2\Component\Security\Core\User\UserInterface;
 
 /**
  * A SecurityIdentity implementation used for actual users.

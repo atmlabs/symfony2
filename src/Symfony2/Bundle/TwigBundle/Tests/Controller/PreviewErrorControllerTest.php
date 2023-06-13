@@ -28,7 +28,7 @@ class PreviewErrorControllerTest extends TestCase
         $code = 123;
         $logicalControllerName = 'foo:bar:baz';
 
-        $kernel = $this->getMockBuilder('\Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+        $kernel = $this->getMockBuilder('\Symfony2\Component\HttpKernel\HttpKernelInterface')->getMock();
         $kernel
             ->expects($this->once())
             ->method('handle')
@@ -37,7 +37,7 @@ class PreviewErrorControllerTest extends TestCase
                     $self->assertEquals($logicalControllerName, $request->attributes->get('_controller'));
 
                     $exception = $request->attributes->get('exception');
-                    $self->assertInstanceOf('Symfony\Component\Debug\Exception\FlattenException', $exception);
+                    $self->assertInstanceOf('Symfony2\Component\Debug\Exception\FlattenException', $exception);
                     $self->assertEquals($code, $exception->getStatusCode());
 
                     $self->assertFalse($request->attributes->get('showException'));

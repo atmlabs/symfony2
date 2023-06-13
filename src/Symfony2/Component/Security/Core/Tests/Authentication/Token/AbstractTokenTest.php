@@ -71,7 +71,7 @@ class AbstractTokenTest extends TestCase
         $token->setUser(new TestUser('fabien'));
         $this->assertEquals('fabien', $token->getUsername());
 
-        $user = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock();
+        $user = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock();
         $user->expects($this->once())->method('getUsername')->will($this->returnValue('fabien'));
         $token->setUser($user);
         $this->assertEquals('fabien', $token->getUsername());
@@ -81,7 +81,7 @@ class AbstractTokenTest extends TestCase
     {
         $token = $this->getToken(array('ROLE_FOO'));
 
-        $user = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock();
+        $user = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock();
         $user->expects($this->once())->method('eraseCredentials');
         $token->setUser($user);
 
@@ -184,8 +184,8 @@ class AbstractTokenTest extends TestCase
 
     public function getUsers()
     {
-        $user = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock();
-        $advancedUser = $this->getMockBuilder('Symfony\Component\Security\Core\User\AdvancedUserInterface')->getMock();
+        $user = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock();
+        $advancedUser = $this->getMockBuilder('Symfony2\Component\Security\Core\User\AdvancedUserInterface')->getMock();
 
         return array(
             array($advancedUser),
@@ -213,8 +213,8 @@ class AbstractTokenTest extends TestCase
 
     public function getUserChanges()
     {
-        $user = $this->getMockBuilder('Symfony\Component\Security\Core\User\UserInterface')->getMock();
-        $advancedUser = $this->getMockBuilder('Symfony\Component\Security\Core\User\AdvancedUserInterface')->getMock();
+        $user = $this->getMockBuilder('Symfony2\Component\Security\Core\User\UserInterface')->getMock();
+        $advancedUser = $this->getMockBuilder('Symfony2\Component\Security\Core\User\AdvancedUserInterface')->getMock();
 
         return array(
             array(
@@ -280,6 +280,6 @@ class AbstractTokenTest extends TestCase
 
     protected function getToken(array $roles = array())
     {
-        return $this->getMockForAbstractClass('Symfony\Component\Security\Core\Authentication\Token\AbstractToken', array($roles));
+        return $this->getMockForAbstractClass('Symfony2\Component\Security\Core\Authentication\Token\AbstractToken', array($roles));
     }
 }

@@ -21,7 +21,7 @@ class FilesystemTestCase extends TestCase
     protected $longPathNamesWindows = array();
 
     /**
-     * @var \Symfony\Component\Filesystem\Filesystem
+     * @var \Symfony2\Component\Filesystem\Filesystem
      */
     protected $filesystem = null;
 

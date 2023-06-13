@@ -63,7 +63,7 @@ class BundleEntryReaderTest extends TestCase
 
     protected function setUp()
     {
-        $this->readerImpl = $this->getMockBuilder('Symfony\Component\Intl\Data\Bundle\Reader\BundleEntryReaderInterface')->getMock();
+        $this->readerImpl = $this->getMockBuilder('Symfony2\Component\Intl\Data\Bundle\Reader\BundleEntryReaderInterface')->getMock();
         $this->reader = new BundleEntryReader($this->readerImpl);
     }
 
@@ -103,7 +103,7 @@ class BundleEntryReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\MissingResourceException
+     * @expectedException \Symfony2\Component\Intl\Exception\MissingResourceException
      */
     public function testReadNonExistingEntry()
     {
@@ -131,7 +131,7 @@ class BundleEntryReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\MissingResourceException
+     * @expectedException \Symfony2\Component\Intl\Exception\MissingResourceException
      */
     public function testDontFallbackIfEntryDoesNotExistAndFallbackDisabled()
     {
@@ -159,7 +159,7 @@ class BundleEntryReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\MissingResourceException
+     * @expectedException \Symfony2\Component\Intl\Exception\MissingResourceException
      */
     public function testDontFallbackIfLocaleDoesNotExistAndFallbackDisabled()
     {
@@ -291,7 +291,7 @@ class BundleEntryReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\MissingResourceException
+     * @expectedException \Symfony2\Component\Intl\Exception\MissingResourceException
      */
     public function testFailIfEntryFoundNeitherInParentNorChild()
     {

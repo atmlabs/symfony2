@@ -21,11 +21,11 @@ use Symfony2\Component\Security\Acl\Domain\ObjectIdentity;
 use Symfony2\Component\Security\Acl\Domain\RoleSecurityIdentity;
 use Symfony2\Component\Security\Acl\Domain\UserSecurityIdentity;
 use Symfony2\Component\Security\Acl\Exception\AclNotFoundException;
-use Symfony\Component\Security\Acl\Exception\NotAllAclsFoundException;
-use Symfony\Component\Security\Acl\Model\AclCacheInterface;
-use Symfony\Component\Security\Acl\Model\AclProviderInterface;
-use Symfony\Component\Security\Acl\Model\ObjectIdentityInterface;
-use Symfony\Component\Security\Acl\Model\PermissionGrantingStrategyInterface;
+use Symfony2\Component\Security\Acl\Exception\NotAllAclsFoundException;
+use Symfony2\Component\Security\Acl\Model\AclCacheInterface;
+use Symfony2\Component\Security\Acl\Model\AclProviderInterface;
+use Symfony2\Component\Security\Acl\Model\ObjectIdentityInterface;
+use Symfony2\Component\Security\Acl\Model\PermissionGrantingStrategyInterface;
 
 /**
  * An ACL provider implementation.
@@ -514,7 +514,7 @@ QUERY;
         $permissionGrantingStrategy = $this->permissionGrantingStrategy;
 
         // we need these to set protected properties on hydrated objects
-        $aclReflection = new \ReflectionClass('Symfony\Component\Security\Acl\Domain\Acl');
+        $aclReflection = new \ReflectionClass('Symfony2\Component\Security\Acl\Domain\Acl');
         $aclClassAcesProperty = $aclReflection->getProperty('classAces');
         $aclClassAcesProperty->setAccessible(true);
         $aclClassFieldAcesProperty = $aclReflection->getProperty('classFieldAces');

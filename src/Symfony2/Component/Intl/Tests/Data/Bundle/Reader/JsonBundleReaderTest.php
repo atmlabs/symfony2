@@ -39,7 +39,7 @@ class JsonBundleReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\ResourceBundleNotFoundException
+     * @expectedException \Symfony2\Component\Intl\Exception\ResourceBundleNotFoundException
      */
     public function testReadFailsIfNonExistingLocale()
     {
@@ -47,7 +47,7 @@ class JsonBundleReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Intl\Exception\RuntimeException
      */
     public function testReadFailsIfNonExistingDirectory()
     {
@@ -55,7 +55,7 @@ class JsonBundleReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Intl\Exception\RuntimeException
      */
     public function testReadFailsIfNotAFile()
     {
@@ -63,7 +63,7 @@ class JsonBundleReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\RuntimeException
+     * @expectedException \Symfony2\Component\Intl\Exception\RuntimeException
      */
     public function testReadFailsIfInvalidJson()
     {
@@ -71,7 +71,7 @@ class JsonBundleReaderTest extends TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\Intl\Exception\ResourceBundleNotFoundException
+     * @expectedException \Symfony2\Component\Intl\Exception\ResourceBundleNotFoundException
      */
     public function testReaderDoesNotBreakOutOfGivenPath()
     {

@@ -14,7 +14,7 @@ namespace Symfony2\Component\Validator\Mapping\Factory;
 use Symfony2\Component\Validator\MetadataFactoryInterface as LegacyMetadataFactoryInterface;
 
 /**
- * Returns {@link \Symfony\Component\Validator\Mapping\MetadataInterface} instances for values.
+ * Returns {@link \Symfony2\Component\Validator\Mapping\MetadataInterface} instances for values.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  */

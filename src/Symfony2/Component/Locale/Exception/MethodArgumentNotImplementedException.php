@@ -11,17 +11,17 @@
 
 namespace Symfony2\Component\Locale\Exception;
 
-@trigger_error('The '.__NAMESPACE__.'\MethodArgumentNotImplementedException class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony\Component\Intl\Exception\MethodArgumentNotImplementedException class instead.', E_USER_DEPRECATED);
+@trigger_error('The '.__NAMESPACE__.'\MethodArgumentNotImplementedException class is deprecated since Symfony 2.3 and will be removed in 3.0. Use the Symfony2\Component\Intl\Exception\MethodArgumentNotImplementedException class instead.', E_USER_DEPRECATED);
 
 use Symfony2\Component\Intl\Exception\MethodArgumentNotImplementedException as BaseMethodArgumentNotImplementedException;
 
 /**
- * Alias of {@link \Symfony\Component\Intl\Exception\MethodArgumentNotImplementedException}.
+ * Alias of {@link \Symfony2\Component\Intl\Exception\MethodArgumentNotImplementedException}.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
  *
  * @deprecated since version 2.3, to be removed in 3.0.
- *             Use {@link \Symfony\Component\Intl\Exception\MethodArgumentNotImplementedException}
+ *             Use {@link \Symfony2\Component\Intl\Exception\MethodArgumentNotImplementedException}
  *             instead.
  */
 class MethodArgumentNotImplementedException extends BaseMethodArgumentNotImplementedException
