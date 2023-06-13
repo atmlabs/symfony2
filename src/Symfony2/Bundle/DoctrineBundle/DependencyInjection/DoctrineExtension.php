@@ -92,7 +92,7 @@ class DoctrineExtension extends AbstractDoctrineExtension
             'Doctrine\\Common\\Persistence\\ConnectionRegistry',
             'Doctrine\\Common\\Persistence\\Proxy',
             'Doctrine\\Common\\Util\\ClassUtils',
-            'Doctrine\\Bundle\\DoctrineBundle\\Registry',
+            'Symfony2\\Bundle\\DoctrineBundle\\Registry',
         ));
     }
 

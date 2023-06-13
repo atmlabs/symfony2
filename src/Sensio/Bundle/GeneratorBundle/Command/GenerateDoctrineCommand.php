@@ -18,7 +18,7 @@ abstract class GenerateDoctrineCommand extends GeneratorCommand
 {
     public function isEnabled()
     {
-        return class_exists('Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle');
+        return class_exists('Symfony2\\Bundle\\DoctrineBundle\\DoctrineBundle\\DoctrineBundle');
     }
 
     protected function parseShortcutNotation($shortcut)
