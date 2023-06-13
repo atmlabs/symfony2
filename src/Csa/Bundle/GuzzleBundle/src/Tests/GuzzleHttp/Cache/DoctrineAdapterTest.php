@@ -25,7 +25,7 @@ class DoctrineAdapterTest extends \PHPUnit_Framework_TestCase
 
     public function testFetch()
     {
-        $httpResponse = file_get_contents(__DIR__.'/../../Fixtures/response.txt');
+        $httpResponse = file_get_contents(__DIR__ . '/../../Fixtures/response.txt');
         $parser = new MessageParser();
         $cache = $this->getMock('Doctrine\Common\Cache\Cache');
 

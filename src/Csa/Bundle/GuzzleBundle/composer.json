@@ -14,16 +14,16 @@
         "symfony2/framework-bundle": "^2.8|^3.0",
         "symfony2/dependency-injection": "^2.8|^3.0",
         "symfony2/http-kernel": "^2.8|^3.0",
-        "twig/twig": "^1.34|^2.4",
+        "../../../../vendor/twig/twig": "^1.34|^2.4",
         "symfony2/expression-language": "^2.8|^3.0"
     },
     "suggest": {
-        "doctrine/cache": "Allows caching of responses",
+        "../../../../vendor/doctrine/cache": "Allows caching of responses",
         "guzzlehttp/guzzle-services": "Allow web service description"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.0",
-        "doctrine/cache": "^1.1",
+        "../../../../vendor/doctrine/cache": "^1.1",
         "symfony2/web-profiler-bundle": "^2.8|^3.0",
         "guzzlehttp/guzzle-services": ">=0.3|<0.6",
         "symfony2/phpunit-bridge": "^2.8|^3.0",

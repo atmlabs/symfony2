@@ -74,7 +74,7 @@ class DebugSubscriber implements SubscriberInterface, \IteratorAggregate
         ResponseInterface $response = null,
         RequestException $exception = null
     ) {
-        if (isset($this->transactions[$hash = spl_object_hash($request).spl_object_hash($response ?: $exception)])) {
+        if (isset($this->transactions[$hash = DebugSubscriber . phpspl_object_hash($request) . spl_object_hash($response ?: $exception)])) {
             return;
         }
 
