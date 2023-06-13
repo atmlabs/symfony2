@@ -12,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests\DependencyInjection;
+namespace Symfony2\Bundle\DoctrineBundle\Tests\DependencyInjection;
 
 use Symfony2\Component\DependencyInjection\ContainerBuilder;
 use Symfony2\Component\DependencyInjection\Loader\XmlFileLoader;

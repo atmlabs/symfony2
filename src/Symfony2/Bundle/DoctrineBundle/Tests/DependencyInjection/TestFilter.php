@@ -12,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests\DependencyInjection;
+namespace Symfony2\Bundle\DoctrineBundle\Tests\DependencyInjection;
 
 use Doctrine\ORM\Query\Filter\SQLFilter;
 use Doctrine\ORM\Mapping\ClassMetadata;

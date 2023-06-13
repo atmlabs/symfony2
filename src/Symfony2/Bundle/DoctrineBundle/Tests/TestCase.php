@@ -12,10 +12,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests;
+namespace Symfony2\Bundle\DoctrineBundle\Tests;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use Doctrine\Bundle\DoctrineBundle\DependencyInjection\DoctrineExtension;
+use Symfony2\Bundle\DoctrineBundle\DependencyInjection\DoctrineExtension;
 use Symfony2\Component\DependencyInjection\ContainerBuilder;
 use Symfony2\Component\DependencyInjection\Definition;
 use Symfony2\Component\DependencyInjection\ParameterBag\ParameterBag;

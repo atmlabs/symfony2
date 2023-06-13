@@ -12,10 +12,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests\DependencyInjection;
+namespace Symfony2\Bundle\DoctrineBundle\Tests\DependencyInjection;
 
-use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\EntityListenerPass;
-use Doctrine\Bundle\DoctrineBundle\DependencyInjection\DoctrineExtension;
+use Symfony2\Bundle\DoctrineBundle\DependencyInjection\Compiler\EntityListenerPass;
+use Symfony2\Bundle\DoctrineBundle\DependencyInjection\DoctrineExtension;
 use Doctrine\ORM\Version;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -594,8 +594,8 @@ abstract class AbstractDoctrineExtensionTest extends \PHPUnit_Framework_TestCase
 
         $definition = $container->getDefinition('doctrine.orm.default_configuration');
         $args = array(
-            array('soft_delete', 'Doctrine\Bundle\DoctrineBundle\Tests\DependencyInjection\TestFilter'),
-            array('myFilter', 'Doctrine\Bundle\DoctrineBundle\Tests\DependencyInjection\TestFilter'),
+            array('soft_delete', 'Symfony2\Bundle\DoctrineBundle\Tests\DependencyInjection\TestFilter'),
+            array('myFilter', 'Symfony2\Bundle\DoctrineBundle\Tests\DependencyInjection\TestFilter'),
         );
         $this->assertDICDefinitionMethodCallCount($definition, 'addFilter', $args, 2);
 

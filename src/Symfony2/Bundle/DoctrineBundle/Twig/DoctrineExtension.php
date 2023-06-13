@@ -12,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Twig;
+namespace Symfony2\Bundle\DoctrineBundle\Twig;
 
 /**
  * This class contains the needed functions in order to do the query highlighting

@@ -12,12 +12,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests\DataCollector;
+namespace Symfony2\Bundle\DoctrineBundle\Tests\DataCollector;
 
 use Symfony2\Component\HttpFoundation\Request;
 use Symfony2\Component\HttpFoundation\Response;
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
-use Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector;
+use Symfony2\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector;
 
 class DoctrineDataCollectorTest extends \PHPUnit_Framework_TestCase
 {

@@ -12,9 +12,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests\DependencyInjection;
+namespace Symfony2\Bundle\DoctrineBundle\Tests\DependencyInjection;
 
-use Doctrine\Bundle\DoctrineBundle\DependencyInjection\DoctrineExtension;
+use Symfony2\Bundle\DoctrineBundle\DependencyInjection\DoctrineExtension;
 use Doctrine\Common\Proxy\AbstractProxyFactory;
 use Doctrine\ORM\Version;
 use Symfony2\Component\DependencyInjection\ContainerBuilder;

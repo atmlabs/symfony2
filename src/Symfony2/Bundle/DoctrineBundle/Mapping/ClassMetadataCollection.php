@@ -12,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Mapping;
+namespace Symfony2\Bundle\DoctrineBundle\Mapping;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>

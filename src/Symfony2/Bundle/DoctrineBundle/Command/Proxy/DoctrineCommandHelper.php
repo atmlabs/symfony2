@@ -11,7 +11,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-namespace Doctrine\Bundle\DoctrineBundle\Command\Proxy;
+namespace Symfony2\Bundle\DoctrineBundle\Command\Proxy;
 
 use Symfony2\Bundle\FrameworkBundle\Console\Application;
 use Doctrine\DBAL\Tools\Console\Helper\ConnectionHelper;

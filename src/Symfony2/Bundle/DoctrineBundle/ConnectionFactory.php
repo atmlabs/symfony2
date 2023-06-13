@@ -12,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle;
+namespace Symfony2\Bundle\DoctrineBundle;
 
 use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Configuration;

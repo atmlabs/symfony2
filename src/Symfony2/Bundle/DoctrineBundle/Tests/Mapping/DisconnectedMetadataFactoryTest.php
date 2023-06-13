@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests\Mapping;
+namespace Symfony2\Bundle\DoctrineBundle\Tests\Mapping;
 
-use Doctrine\Bundle\DoctrineBundle\Mapping\ClassMetadataCollection;
-use Doctrine\Bundle\DoctrineBundle\Mapping\DisconnectedMetadataFactory;
-use Doctrine\Bundle\DoctrineBundle\Tests\TestCase;
+use Symfony2\Bundle\DoctrineBundle\Mapping\ClassMetadataCollection;
+use Symfony2\Bundle\DoctrineBundle\Mapping\DisconnectedMetadataFactory;
+use Symfony2\Bundle\DoctrineBundle\Tests\TestCase;
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
 
 class DisconnectedMetadataFactoryTest extends TestCase
@@ -35,7 +35,7 @@ class DisconnectedMetadataFactoryTest extends TestCase
         $registry = $this->getMock('Doctrine\Common\Persistence\ManagerRegistry');
         $factory = new DisconnectedMetadataFactory($registry);
 
-        $this->setExpectedException('RuntimeException', 'Can\'t find base path for "Doctrine\Bundle\DoctrineBundle\Tests\Mapping\DisconnectedMetadataFactoryTest');
+        $this->setExpectedException('RuntimeException', 'Can\'t find base path for "Symfony2\Bundle\DoctrineBundle\Tests\Mapping\DisconnectedMetadataFactoryTest');
         $factory->findNamespaceAndPathForMetadata($collection);
     }
 

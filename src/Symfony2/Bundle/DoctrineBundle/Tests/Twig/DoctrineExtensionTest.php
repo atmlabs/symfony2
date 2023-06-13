@@ -11,9 +11,9 @@
  * file that was distributed with this source code.
 */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests\Twig;
+namespace Symfony2\Bundle\DoctrineBundle\Tests\Twig;
 
-use Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension;
+use Symfony2\Bundle\DoctrineBundle\Twig\DoctrineExtension;
 
 class DoctrineExtensionTest extends \PHPUnit_Framework_TestCase
 {

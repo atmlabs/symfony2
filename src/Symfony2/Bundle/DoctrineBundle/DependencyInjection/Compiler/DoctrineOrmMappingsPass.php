@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler;
+namespace Symfony2\Bundle\DoctrineBundle\DependencyInjection\Compiler;
 
 use Symfony\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterMappingsPass;
 use Symfony\Component\DependencyInjection\Definition;

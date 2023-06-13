@@ -12,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\DependencyInjection;
+namespace Symfony2\Bundle\DoctrineBundle\DependencyInjection;
 
 use Doctrine\ORM\Version;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
@@ -24,8 +24,8 @@ use Symfony\Component\DependencyInjection\DefinitionDecorator;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Bridge\Doctrine\DependencyInjection\AbstractDoctrineExtension;
 use Symfony\Component\Config\FileLocator;
-use Doctrine\Bundle\DoctrineCacheBundle\DependencyInjection\SymfonyBridgeAdapter;
-use Doctrine\Bundle\DoctrineCacheBundle\DependencyInjection\CacheProviderLoader;
+use Symfony2\Bundle\DoctrineCacheBundle\DependencyInjection\SymfonyBridgeAdapter;
+use Symfony2\Bundle\DoctrineCacheBundle\DependencyInjection\CacheProviderLoader;
 
 /**
  * DoctrineExtension is an extension for the Doctrine DBAL and ORM library.

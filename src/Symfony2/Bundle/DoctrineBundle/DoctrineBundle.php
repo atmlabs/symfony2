@@ -12,13 +12,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle;
+namespace Symfony2\Bundle\DoctrineBundle;
 
 use Doctrine\Common\Util\ClassUtils;
-use Doctrine\Bundle\DoctrineBundle\Command\CreateDatabaseDoctrineCommand;
-use Doctrine\Bundle\DoctrineBundle\Command\DropDatabaseDoctrineCommand;
-use Doctrine\Bundle\DoctrineBundle\Command\Proxy\RunSqlDoctrineCommand;
-use Doctrine\Bundle\DoctrineBundle\DependencyInjection\Compiler\EntityListenerPass;
+use Symfony2\Bundle\DoctrineBundle\Command\CreateDatabaseDoctrineCommand;
+use Symfony2\Bundle\DoctrineBundle\Command\DropDatabaseDoctrineCommand;
+use Symfony2\Bundle\DoctrineBundle\Command\Proxy\RunSqlDoctrineCommand;
+use Symfony2\Bundle\DoctrineBundle\DependencyInjection\Compiler\EntityListenerPass;
 use Doctrine\ORM\Proxy\Autoloader;
 use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;

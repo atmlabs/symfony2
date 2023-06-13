@@ -8,10 +8,10 @@ doctrine:
     orm:
         filters:
             soft_delete:
-                class: Doctrine\Bundle\DoctrineBundle\Tests\DependencyInjection\TestFilter
+                class: Symfony2\Bundle\DoctrineBundle\Tests\DependencyInjection\TestFilter
                 enabled: true
             myFilter:
-                class: Doctrine\Bundle\DoctrineBundle\Tests\DependencyInjection\TestFilter
+                class: Symfony2\Bundle\DoctrineBundle\Tests\DependencyInjection\TestFilter
                 enabled: true
                 parameters:
                     myParameter: myValue

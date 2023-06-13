@@ -12,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Command\Proxy;
+namespace Symfony2\Bundle\DoctrineBundle\Command\Proxy;
 
 use Symfony2\Component\Console\Command\Command;
 use Symfony2\Component\Console\Input\InputOption;

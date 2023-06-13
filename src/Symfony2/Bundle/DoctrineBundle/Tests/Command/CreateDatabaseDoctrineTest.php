@@ -12,9 +12,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests\Command;
+namespace Symfony2\Bundle\DoctrineBundle\Tests\Command;
 
-use Doctrine\Bundle\DoctrineBundle\Command\CreateDatabaseDoctrineCommand;
+use Symfony2\Bundle\DoctrineBundle\Command\CreateDatabaseDoctrineCommand;
 use Symfony2\Component\Console\Application;
 use Symfony2\Component\Console\Tester\CommandTester;
 

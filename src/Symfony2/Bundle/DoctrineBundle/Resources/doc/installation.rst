@@ -31,7 +31,7 @@ file of your project::
             $bundles = array(
                 // ...
 
-                new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+                new Symfony2\Bundle\DoctrineBundle\DoctrineBundle(),
             );
 
             // ...

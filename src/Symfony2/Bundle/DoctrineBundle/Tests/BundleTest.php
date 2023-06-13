@@ -12,12 +12,12 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Tests;
+namespace Symfony2\Bundle\DoctrineBundle\Tests;
 
 use Symfony2\Bridge\Doctrine\DependencyInjection\CompilerPass\DoctrineValidationPass;
 use Symfony2\Bridge\Doctrine\DependencyInjection\CompilerPass\RegisterEventListenersAndSubscribersPass;
 use Symfony2\Component\DependencyInjection\ContainerBuilder;
-use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
+use Symfony2\Bundle\DoctrineBundle\DoctrineBundle;
 
 class BundleTest extends \PHPUnit_Framework_TestCase
 {

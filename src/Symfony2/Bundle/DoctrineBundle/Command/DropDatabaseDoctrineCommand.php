@@ -12,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Doctrine\Bundle\DoctrineBundle\Command;
+namespace Symfony2\Bundle\DoctrineBundle\Command;
 
 use Doctrine\DBAL\DriverManager;
 use Symfony\Component\Console\Input\InputOption;
